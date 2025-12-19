@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Alliance Anglophone</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Alliance Anglophone</h1>
+    <p>Transformer l’anglais en opportunité.</p>
+
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#programmes">Programmes</a>
+      <a href="#mission">Mission</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="container">
+<div class="card" id="accueil">
+
+<h2 id="accueil">Qui sommes-nous ?</h2>
+<p>
+Alliance Anglophone est un centre de formation en anglais à Toamasina.
+Nous aidons les enfants, les jeunes et les professionnels à apprendre
+l’anglais pour les études, le travail et la vie professionnelle.
+</p>
+</div>
+
+<div class="card" id="programmes">
+<h2>Nos programmes</h2>
+<ul>
+  <li>Anglais pour enfants</li>
+  <li>Anglais pour adultes</li>
+  <li>Anglais professionnel (business, ONG, tourisme)</li>
+  <li>Préparation TOEFL / IELTS / TOEIC</li>
+</ul>
+</div>
+
+<div class="card" id="mission">
+<h2>Notre mission</h2>
+<p>
+Donner à chacun la possibilité d'améliorer sa vie grâce à la langue anglaise,
+à l’orientation professionnelle et à la culture.
+</p>
+</div>
+
+<div class="card" id="contact">
+<h2>Contact</h2>
+<p>
+WhatsApp :
+<a href="https://wa.me/261349201200" target="_blank">
+<strong>+261 34 92 012 00</strong>
+</a>
+<br>
+Adresse : Lot 120 CMM Anjoma 23/24, derrière Station JOVENNA Manangareza, Toamasina, Madagascar
+</p>
+</div>
+
+<script>
+  // Force le scroll quand on clique sur un lien du menu
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute("href"); // ex: #contact
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+</script>
+<footer>
+  <div class="container">
+    <p>
+      © 2025 <strong>Alliance Anglophone</strong> — Tous droits réservés
+    </p>
+    <p>
+      Centre de formation en anglais • Toamasina • Madagascar
+    </p>
+  </div>
+</footer>
+</body>
+</html>
