@@ -130,6 +130,33 @@ header p{
   color: #444;
   margin: 8px 0 0;
 }
+.pricing{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.price-box{
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  padding: 14px;
+  background: #ffffff;
+}
+
+.price{
+  font-size: 20px;
+  font-weight: bold;
+  color: #0b4dbb;
+  margin: 8px 0;
+}
+
+.note{
+  margin: 0;
+  color: #555;
+  font-size: 14px;
+}
+
 
 
 
