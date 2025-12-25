@@ -160,6 +160,29 @@ header p{
 .topbar { position: relative; z-index: 9999; }
 .nav, .nav a { position: relative; z-index: 10000; }
 
+/* Fix 2: si un bloc (hero/overlay) recouvre le menu, on force le header au-dessus */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 2147483647;
+}
+
+.topbar, .topbar * {
+  pointer-events: auto !important;
+}
+
+/* Empêche les overlays/pseudo-elements de bloquer les clics sur la barre */
+.hero::before, .hero::after,
+.banner::before, .banner::after,
+.overlay, .backdrop {
+  pointer-events: none !important;
+}
+
+/* Au cas où une image pleine page recouvre */
+.hero img, .banner img {
+  pointer-events: none;
+}
+
 
 
 
