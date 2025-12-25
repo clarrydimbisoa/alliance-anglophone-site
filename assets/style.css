@@ -156,6 +156,10 @@ header p{
   color: #555;
   font-size: 14px;
 }
+/* Fix: rendre le menu cliquable (évite qu'un bloc recouvre la barre) */
+.topbar { position: relative; z-index: 9999; }
+.nav, .nav a { position: relative; z-index: 10000; }
+
 
 
 
