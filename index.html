@@ -96,19 +96,7 @@ Donner à chacun la possibilité d'améliorer sa vie grâce à la langue anglais
 à l’orientation professionnelle et à la culture.
 </p>
 </div>
-<script>
-  // Force le scroll quand on clique sur un lien du menu
-  document.querySelectorAll("nav a").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute("href"); // ex: #contact
-      const target = document.querySelector(targetId);
-      if (target) {
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    });
-  });
-</script>
+
 <footer>
   <div class="container">
     <p>
@@ -121,6 +109,7 @@ Donner à chacun la possibilité d'améliorer sa vie grâce à la langue anglais
 </footer>
 </body>
 </html>
+
 
 
 
