@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inscription — Alliance Anglophone</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container navwrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-aa.png" alt="Logo Alliance Anglophone" class="logo" />
+      <span>Alliance Anglophone</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a href="programmes.html">Programmes</a>
+      <a href="mission.html">Mission</a>
+      <a class="active" href="inscription.html">Inscription</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h1>Inscription</h1>
+    <p>Remplis ce formulaire, ou écris-nous directement sur WhatsApp.</p>
+
+    <div class="grid-2">
+      <div>
+        <h2>Formulaire rapide</h2>
+
+        <!-- Formulaire simple (sans base de données) -->
+        <form class="form" action="mailto:contact@allianceanglophone.mg" method="post" enctype="text/plain">
+          <label>Nom complet</label>
+          <input name="Nom" required />
+
+          <label>Téléphone (WhatsApp)</label>
+          <input name="Téléphone" required />
+
+          <label>Niveau souhaité</label>
+          <select name="Niveau">
+            <option>Débutant</option>
+            <option>Intermédiaire</option>
+            <option>Avancé</option>
+          </select>
+
+          <label>Programme</label>
+          <select name="Programme">
+            <option>Anglais général</option>
+            <option>Business English</option>
+            <option>Anglais enfants</option>
+            <option>Préparation examens</option>
+            <option>Conversation</option>
+            <option>Corporate</option>
+          </select>
+
+          <label>Message</label>
+          <textarea name="Message" rows="4" placeholder="Disponibilités, objectifs, etc."></textarea>
+
+          <button class="btn" type="submit">Envoyer</button>
+        </form>
+
+        <p class="hint">
+          Si ton ordinateur n’a pas d’application mail, utilise WhatsApp ci-dessous.
+        </p>
+      </div>
+
+      <div>
+        <h2>WhatsApp</h2>
+        <p>Clique ici pour t’inscrire sur WhatsApp :</p>
+        <p>
+          <a class="btn btn-outline" href="https://wa.me/261349201200" target="_blank">
+            S’inscrire via WhatsApp
+          </a>
+        </p>
+
+        <h2>Horaires</h2>
+        <p>Lundi–Samedi : 08:00–18:00</p>
+
+        <h2>Lieu</h2>
+        <p>Toamasina, Madagascar</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>© <span id="year"></span> Alliance Anglophone</small>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
