@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programmes — Alliance Anglophone</title>
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container navwrap">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-aa.png" alt="Logo Alliance Anglophone" class="logo" />
+      <span>Alliance Anglophone</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Accueil</a>
+      <a class="active" href="programmes.html">Programmes</a>
+      <a href="mission.html">Mission</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="card">
+    <h1>Nos programmes</h1>
+    <p>Choisis le programme adapté à ton niveau et à ton objectif.</p>
+
+    <div class="cards">
+      <article class="mini-card">
+        <h3>Anglais général</h3>
+        <p>Grammaire, vocabulaire, écoute, expression orale et écrite.</p>
+      </article>
+
+      <article class="mini-card">
+        <h3>Conversation</h3>
+        <p>Parler avec confiance, situations du quotidien, prononciation.</p>
+      </article>
+
+      <article class="mini-card">
+        <h3>Business English</h3>
+        <p>Email pro, réunions, présentations, négociation.</p>
+      </article>
+
+      <article class="mini-card">
+        <h3>Anglais enfants</h3>
+        <p>Apprendre en jouant, activités ludiques, progression douce.</p>
+      </article>
+
+      <article class="mini-card">
+        <h3>Préparation examens</h3>
+        <p>Méthode, entraînements, compréhension et production.</p>
+      </article>
+
+      <article class="mini-card">
+        <h3>Corporate (entreprise)</h3>
+        <p>Formation sur mesure pour équipes, objectifs et horaires flexibles.</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>© <span id="year"></span> Alliance Anglophone</small>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
