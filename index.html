@@ -1,126 +1,48 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alliance Anglophone</title>
-<link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
-<header>
-  <div class="container">
-    <h1>Alliance Anglophone</h1>
-   <p>Transformer l’anglais en opportunité pour tous. 
-   Transformer les opportunités en carrière. 
-     Transformer les carrières en impacts durables.</p>
-<div class="brand">
-  <div class="logo">AA</div>
-  <div>
-    <h1>Alliance Anglophone</h1>
-    <p>Transformer l’anglais en opportunité.</p>
-  </div>
-</div>
-
-  <nav class="nav">
-  <a href="index.html">Accueil</a>
-  <a href="programmes.html">Programmes</a>
-  <a href="mission.html">Mission</a>
-  <a href="inscription.html">Inscription</a>
-  <a href="contact.html">Contact</a>
-</nav>
+<header class="topbar">
+  <div class="container navwrap">
+    <span class="brand">
+      <span>Alliance Anglophone</span>
+    </span>
   </div>
 </header>
 
-<div class="container">
-<div class="card" id="accueil">
+<main class="container">
+  <section class="card">
+    <h1>Choisir la langue</h1>
+    <p>Choose your language / Fidio ny fiteny</p>
 
-<h2 id="accueil">Qui sommes-nous ?</h2>
-  <img class="hero-img" src="assets/hero.jpg" alt="Alliance Anglophone - formation en anglais">
-<p class="tagline">
-  Cours d’anglais accessibles, orientés carrière, avec une approche moderne (présentiel, en ligne, hybride).
-</p>
-  <p>
-Alliance Anglophone est un centre de formation en anglais à Toamasina.
-Nous aidons les enfants, les jeunes et les professionnels à apprendre
-l’anglais pour les études, le travail et la vie professionnelle.
-</p>
-</div>
-
-<div class="card" id="programmes">
-  <h2>Nos Programmes</h2>
-
-  <div class="programs">
-    <div class="program">
-      <h3>Anglais pour enfants</h3>
-      <p>Apprentissage progressif, ludique et structuré pour construire des bases solides dès le plus jeune âge.</p>
+    <div class="lang-chooser">
+      <a class="btn" href="fr/index.html">Français</a>
+      <a class="btn btn-outline" href="en/index.html">English</a>
+      <a class="btn btn-outline" href="mg/index.html">Malagasy</a>
     </div>
 
-    <div class="program">
-      <h3>Anglais pour adultes</h3>
-      <p>Anglais général et conversation pour la vie professionnelle, les études et les opportunités internationales.</p>
-    </div>
+    <p class="hint">
+      Si tu préfères, tu peux aller directement sur la version française :
+      <a href="fr/index.html"><strong>fr/index.html</strong></a>
+    </p>
+  </section>
+</main>
 
-    <div class="program">
-      <h3>Anglais professionnel</h3>
-      <p>Business English, anglais pour ONG, tourisme, santé, journalisme et autres métiers.</p>
-    </div>
-
-    <div class="program">
-      <h3>Certifications</h3>
-      <p>Préparation aux tests TOEFL, IELTS et TOEIC avec méthodes et simulations.</p>
-    </div>
-
-    <div class="program">
-      <h3>Coaching & orientation</h3>
-      <p>CV en anglais, préparation aux entretiens, accompagnement carrière et mobilité professionnelle.</p>
-    </div>
-
-    <div class="program">
-      <h3>Clubs & activités</h3>
-      <p>Clubs de conversation, films, lecture et activités culturelles pour pratiquer l’anglais en situation réelle.</p>
-    </div>
-  </div>
-</div>
-<h2>Nos programmes</h2>
-<ul>
-  <li>Anglais pour enfants</li>
-  <li>Anglais pour adultes</li>
-  <li>Anglais professionnel (business, ONG, tourisme)</li>
-  <li>Préparation TOEFL / IELTS / TOEIC</li>
-</ul>
-</div>
-<div class="card" id="mission">
-<h2>Notre mission</h2>
-<p>
-Donner à chacun la possibilité d'améliorer sa vie grâce à la langue anglaise,
-à l’orientation professionnelle et à la culture.
-</p>
-</div>
-
-<footer>
+<footer class="footer">
   <div class="container">
-    <p>
-      © 2025 <strong>Alliance Anglophone</strong> — Tous droits réservés
-    </p>
-    <p>
-      Centre de formation en anglais • Toamasina • Madagascar
-    </p>
+    <small>© <span id="year"></span> Alliance Anglophone</small>
   </div>
 </footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
