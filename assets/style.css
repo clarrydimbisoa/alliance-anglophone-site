@@ -182,6 +182,13 @@ header p{
 .hero img, .banner img {
   pointer-events: none;
 }
+.lang-chooser{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:12px;
+}
+
 
 
 
