@@ -261,6 +261,13 @@ header p{
   cursor: not-allowed;
   text-decoration: none;
 }
+.lang .langlink.disabled{
+  color: #b0b0b0 !important;
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 
 
 
