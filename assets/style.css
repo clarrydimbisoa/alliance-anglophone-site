@@ -288,6 +288,40 @@ header p{
 .clean-list li{
   margin: 10px 0;
 }
+.form-card{
+  margin: 40px 0 80px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.reg-form{
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.reg-form label{
+  display: grid;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.reg-form input,
+.reg-form select,
+.reg-form textarea{
+  padding: 12px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+.form-note{
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.8;
+}
+
 
 
 
