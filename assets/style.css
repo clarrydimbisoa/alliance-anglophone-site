@@ -94,21 +94,15 @@ footer p{
   font-size: 14px;
 }
 .brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.logo{
-  width:44px;
-  height:44px;
-  border-radius:12px;
-  background: white;
-  color:#0b4dbb;
-  font-weight:800;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+.brand img{
+  height: 42px;
+  width: auto;
+  display: block;
 }
 
 header h1{
@@ -445,6 +439,7 @@ header p{
   margin-bottom: 30px;
   font-size: 16px;
 }
+
 
 
 
