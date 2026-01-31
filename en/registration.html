@@ -141,7 +141,8 @@
 
     // Open WhatsApp
     const waLink = "https://wa.me/" + waNumber + "?text=" + text;
-    window.open(waLink, "_blank");
+    document.getElementById("successNote").style.display = "block";
+setTimeout(() => window.open(waLink, "_blank"), 600);
   });
 </script>
 
