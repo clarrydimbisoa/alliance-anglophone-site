@@ -43,7 +43,7 @@
   <section class="form-card">
     <h2>Student Information</h2>
 
-    <form class="reg-form">
+    <form class="reg-form" id="regForm">
 
       <label>
         Full Name
@@ -109,6 +109,38 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  const form = document.getElementById("regForm");
+
+  form.addEventListener("submit", function(e){
+    e.preventDefault(); // stop normal submit
+
+    const name = form.elements["name"].value.trim();
+    const age = form.elements["age"].value.trim();
+    const phone = form.elements["phone"].value.trim();
+    const email = form.elements["email"].value.trim();
+    const program = form.elements["program"].value;
+    const format = form.elements["format"].value;
+    const message = form.elements["message"].value.trim();
+
+    // Build WhatsApp message
+    let text =
+      "Hello Alliance Anglophone, I would like to register.%0A" +
+      "Name: " + name + "%0A" +
+      "Age: " + age + "%0A" +
+      "Phone/WhatsApp: " + phone + "%0A" +
+      (email ? ("Email: " + email + "%0A") : "") +
+      "Program: " + program + "%0A" +
+      "Format: " + format + "%0A" +
+      (message ? ("Message: " + message) : "");
+
+    // Your WhatsApp number (international format)
+    const waNumber = "261349201200";
+
+    // Open WhatsApp
+    const waLink = "https://wa.me/" + waNumber + "?text=" + text;
+    window.open(waLink, "_blank");
+  });
 </script>
 
 </body>
