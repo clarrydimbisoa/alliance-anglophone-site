@@ -344,6 +344,15 @@ header p{
   display: inline-block;
   margin-top: 10px;
 }
+.success-note{
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #eaf6ea;
+  border: 1px solid #bfe3bf;
+  font-size: 14px;
+}
+
 
 
 
