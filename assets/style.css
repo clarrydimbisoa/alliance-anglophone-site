@@ -387,11 +387,7 @@ header p{
   margin: 50px 0 80px;
   text-align: center;
 }
-.logo{
-  height: 42px;
-  margin-right: 10px;
-  vertical-align: middle;
-}
+
 .hero{
   background-image: url("hero.jpg");
   background-size: cover;
@@ -450,6 +446,7 @@ header p{
   width: auto;
   display: block;
 }
+
 
 
 
