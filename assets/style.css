@@ -352,6 +352,30 @@ header p{
   border: 1px solid #bfe3bf;
   font-size: 14px;
 }
+.contact-pro{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 30px 0 80px;
+}
+
+.contact-pro-card{
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+  background: #fff;
+}
+
+.contact-pro-card.primary{
+  border: 2px solid #cfe3ff;
+  background: #f7fbff;
+}
+
+.contact-pro-card .big{
+  font-size: 18px;
+  margin: 10px 0;
+}
+
 
 
 
