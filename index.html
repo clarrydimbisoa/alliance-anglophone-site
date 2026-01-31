@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,42 +7,41 @@
   <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
+  <div class="lang-landing">
+    <img class="brand-logo" src="assets/logo-aa.png" alt="Alliance Anglophone logo" />
 
-<header class="topbar">
-  <div class="container navwrap">
-    <span class="brand">
-      <span>Alliance Anglophone</span>
-    </span>
-  </div>
-</header>
+    <h1>Alliance Anglophone</h1>
+    <p class="tagline">
+      Professional English, Employability & International Opportunities
+    </p>
 
-<main class="container">
-  <section class="card">
-    <h1>Choisir la langue</h1>
-    <p>Choose your language / Fidio ny fiteny</p>
+    <div class="lang-dropdown">
+      <button class="lang-btn" id="langBtn">Language ▾</button>
+      <div class="lang-menu" id="langMenu">
+        <a href="en/index.html">English (EN)</a>
 
-    <div class="lang-chooser">
-      <a class="btn" href="fr/index.html">Français</a>
-      <a class="btn btn-outline" href="en/index.html">English</a>
-      <a class="btn btn-outline" href="mg/index.html">Malagasy</a>
+        <!-- FR and MG intentionally disabled until complete -->
+        <a class="disabled" href="#" onclick="return false;">Français (FR) — coming soon</a>
+        <a class="disabled" href="#" onclick="return false;">Malagasy (MG) — coming soon</a>
+      </div>
     </div>
 
-    <p class="hint">
-      Si tu préfères, tu peux aller directement sur la version française :
-      <a href="fr/index.html"><strong>fr/index.html</strong></a>
-    </p>
-  </section>
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
+    <a class="primary-cta" href="en/index.html">Enter the English Website</a>
   </div>
-</footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <script>
+    const btn = document.getElementById("langBtn");
+    const menu = document.getElementById("langMenu");
 
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("show");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!btn.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.remove("show");
+      }
+    });
+  </script>
 </body>
 </html>
