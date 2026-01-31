@@ -321,6 +321,30 @@ header p{
   font-size: 14px;
   opacity: 0.8;
 }
+.contact-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin: 30px 0 80px;
+}
+
+.contact-card{
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.small-note{
+  margin-top: 10px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.btn.whatsapp{
+  display: inline-block;
+  margin-top: 10px;
+}
+
 
 
 
