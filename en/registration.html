@@ -1,1 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration | Alliance Anglophone</title>
+  <link rel="stylesheet" href="../assets/style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container navwrap">
+    <a class="brand" href="index.html">
+      <span>Alliance Anglophone</span>
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="mission.html">Mission</a>
+      <a class="active" href="registration.html">Registration</a>
+      <a href="contact.html">Contact</a>
+
+      <span class="lang">
+        <span class="langlink disabled" title="Coming soon">FR</span>
+        <a class="langlink active" href="../en/index.html">EN</a>
+        <span class="langlink disabled" title="Coming soon">MG</span>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="page-head">
+    <h1>Registration</h1>
+    <p>
+      Register to start your English learning journey. We will contact you to confirm your program,
+      schedule, and level.
+    </p>
+  </section>
+
+  <section class="form-card">
+    <h2>Student Information</h2>
+
+    <form class="reg-form">
+
+      <label>
+        Full Name
+        <input type="text" name="name" placeholder="Your name" required>
+      </label>
+
+      <label>
+        Age
+        <input type="number" name="age" placeholder="Your age" min="3" max="99" required>
+      </label>
+
+      <label>
+        Phone / WhatsApp
+        <input type="text" name="phone" placeholder="e.g. +261..." required>
+      </label>
+
+      <label>
+        Email (optional)
+        <input type="email" name="email" placeholder="you@example.com">
+      </label>
+
+      <label>
+        Choose a program
+        <select name="program" required>
+          <option value="">Select one</option>
+          <option>General English</option>
+          <option>Professional English</option>
+          <option>English for Children & Teens</option>
+          <option>Corporate / Institutional Training</option>
+        </select>
+      </label>
+
+      <label>
+        Preferred format
+        <select name="format" required>
+          <option value="">Select one</option>
+          <option>In-person</option>
+          <option>Online</option>
+          <option>Hybrid</option>
+        </select>
+      </label>
+
+      <label>
+        Message (optional)
+        <textarea name="message" rows="4" placeholder="Tell us your goal (job, travel, school, etc.)"></textarea>
+      </label>
+
+      <button class="btn primary" type="submit">Submit Registration</button>
+
+      <p class="form-note">
+        After you submit, we will contact you to confirm your level and schedule.
+      </p>
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <small>© <span id="year"></span> Alliance Anglophone</small>
+  </div>
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
 
