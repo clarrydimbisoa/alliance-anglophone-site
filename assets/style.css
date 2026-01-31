@@ -375,6 +375,12 @@ header p{
   font-size: 18px;
   margin: 10px 0;
 }
+.section-divider{
+  margin: 30px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
 
 
 
