@@ -439,6 +439,18 @@ header p{
   width: auto;
   display: block;
 }
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-logo{
+  height: 42px;
+  width: auto;
+  display: block;
+}
+
 
 
 
