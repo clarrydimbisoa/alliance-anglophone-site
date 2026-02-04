@@ -40,12 +40,7 @@
   <section class="card">
   <h2>Volunteer Application Form</h2>
 
-  <form class="form" method="post" action="https://formsubmit.co/contact@allianceanglophone.mg">
-
-  <input type="hidden" name="_subject" value="New Volunteer Application - Alliance Anglophone">
-<input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_next" value="https://allianceanglophone.mg/en/thank-you.html">
+  <form class="form" onsubmit="sendVolunteerEmail(); return false;">
     
     <label>
       Full Name
@@ -130,6 +125,32 @@
 
 <script>
   document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+ <script>
+function sendVolunteerEmail() {
+  const name = document.querySelector('[name="name"]').value;
+  const email = document.querySelector('[name="email"]').value;
+  const phone = document.querySelector('[name="phone"]').value;
+  const interest = document.querySelector('[name="interest"]').value;
+  const availability = document.querySelector('[name="availability"]').value;
+  const motivation = document.querySelector('[name="motivation"]').value;
+
+  const subject = encodeURIComponent("Volunteer Application - Alliance Anglophone");
+
+  const body = encodeURIComponent(
+    "Volunteer Application\n\n" +
+    "Full Name: " + name + "\n" +
+    "Email: " + email + "\n" +
+    "Phone / WhatsApp: " + phone + "\n" +
+    "Area of Interest: " + interest + "\n" +
+    "Availability: " + availability + "\n\n" +
+    "Motivation:\n" + motivation
+  );
+
+  window.location.href =
+    "mailto:contact@allianceanglophone.mg?subject=" + subject + "&body=" + body;
+}
 </script>
 
 </body>
