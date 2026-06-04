@@ -3,67 +3,536 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alliance Anglophone — English</title>
+  <title>Alliance Anglophone | Professional English & Employability in Madagascar</title>
+  <meta name="description" content="Alliance Anglophone provides professional English, employability training, career-focused programs, and online English learning opportunities in Toamasina, Madagascar." />
+
   <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 620px;
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.45), rgba(6, 43, 99, 0.45)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 80px 8%;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 42px;
+      border-radius: 18px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin: 0 0 18px;
+    }
+
+    .hero h2 {
+      font-size: 1.45rem;
+      color: var(--gold);
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      margin-bottom: 24px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 850px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+      border-top: 4px solid var(--blue);
+    }
+
+    .section-white .card {
+      background: var(--light);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--dark-blue);
+      font-size: 1.2rem;
+    }
+
+    .card p {
+      margin-bottom: 0;
+    }
+
+    .highlight {
+      background: var(--dark-blue);
+      color: white;
+      padding: 70px 8%;
+    }
+
+    .highlight h2 {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .price-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .price-item {
+      background: white;
+      border-left: 5px solid var(--gold);
+      padding: 18px 22px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .price-item strong {
+      color: var(--dark-blue);
+    }
+
+    .status-box {
+      background: #fff7dd;
+      border-left: 5px solid var(--gold);
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 60px 5%;
+      }
+
+      .hero-content {
+        padding: 28px;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section,
+      .highlight {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
+  <header class="topbar">
     <a class="brand" href="index.html">
-  <img src="../assets/logo.jpeg" alt="Alliance Anglophone logo" class="brand-logo">
-  <span>Alliance Anglophone</span>
-</a>
+      <img src="../assets/logo.JPG" alt="Alliance Anglophone logo">
+      <span>Alliance Anglophone</span>
+    </a>
 
-    <nav class="nav">
-      <a class="active" href="index.html">Home</a>
-      <a href="programs.html">Programs</a>    
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
       <a href="pricing.html">Pricing</a>
       <a href="mission.html">Mission</a>
       <a href="registration.html">Registration</a>
       <a href="contact.html">Contact</a>
-
-     <span class="lang">
-  <span class="langlink disabled" title="Coming soon">FR</span>
-  <a class="langlink active" href="../en/index.html">EN</a>
-  <span class="langlink disabled" title="Coming soon">MG</span>
-</span>
+      <a href="../fr/index.html">FR</a>
+      <a href="index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main>
+  <main>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Alliance Anglophone</h1>
-      <h2>English Skills Booster</h2>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Professional English for Career Opportunities</h1>
+        <h2>From English skills to income. From income to career. From career to a better life.</h2>
+        <p>
+          Alliance Anglophone helps learners in Madagascar build practical English,
+          workplace communication, and employability skills for local and international opportunities.
+        </p>
 
-      <p class="hero-text">
-        Transform English skills into opportunity.<br>
-        Transform opportunity into a career.<br>
-        Transform careers into lasting impact.
+        <div class="btn-row">
+          <a class="btn btn-primary" href="registration.html">Register Now</a>
+          <a class="btn btn-secondary" href="https://wa.me/261349201200">Contact on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>More than an English school</h2>
+        <p>
+          Alliance Anglophone is a career-driven English and employability platform.
+          Our goal is not only to teach English, but to help learners become more confident,
+          more employable, and better prepared for real professional environments.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Practical English</h3>
+          <p>Learn English for real conversations, work situations, interviews, studies, and professional growth.</p>
+        </div>
+
+        <div class="card">
+          <h3>Employability Focus</h3>
+          <p>Improve communication, confidence, discipline, interview skills, teamwork, and workplace readiness.</p>
+        </div>
+
+        <div class="card">
+          <h3>Career Pathways</h3>
+          <p>Prepare for sectors such as tourism, hospitality, NGOs, development work, BPO, maritime, and remote work.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Current Learning Status</h2>
+        <p>
+          We are preparing a structured online learning offer before opening future in-person activities.
+        </p>
+      </div>
+
+      <div class="status-box">
+        <p><strong>Online classes:</strong> opening soon, if possible within the next two months.</p>
+        <p><strong>In-person classes:</strong> not planned for this year.</p>
+        <p><strong>Physical learning hub:</strong> under preparation in Toamasina, Madagascar.</p>
+        <p><strong>Contact:</strong> WhatsApp +261 34 920 1200.</p>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Programs</h2>
+        <p>
+          Choose the program that matches your level, your professional goal, and your learning rhythm.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>General English</h3>
+          <p>Grammar, vocabulary, listening, speaking, reading, and writing from beginner to advanced levels.</p>
+        </div>
+
+        <div class="card">
+          <h3>Intensive Spoken English</h3>
+          <p>Fluency-focused practice for learners who want to speak more naturally and confidently.</p>
+        </div>
+
+        <div class="card">
+          <h3>Business English</h3>
+          <p>Professional communication for meetings, emails, presentations, customer service, and teamwork.</p>
+        </div>
+
+        <div class="card">
+          <h3>Tourism & Hospitality English</h3>
+          <p>English for hotels, restaurants, tourism services, reception, guiding, and customer experience.</p>
+        </div>
+
+        <div class="card">
+          <h3>Call Center / BPO English</h3>
+          <p>Practical English for customer support, phone communication, scripts, and service interactions.</p>
+        </div>
+
+        <div class="card">
+          <h3>Technical & Maritime English</h3>
+          <p>Sector-based vocabulary and communication for logistics, maritime, technical, and operational contexts.</p>
+        </div>
+
+        <div class="card">
+          <h3>NGO & Development English</h3>
+          <p>English for project teams, field communication, reporting, coordination, and development-sector work.</p>
+        </div>
+
+        <div class="card">
+          <h3>CV & Interview Training</h3>
+          <p>Prepare your CV, practice interview answers, and learn how to present your experience professionally.</p>
+        </div>
+
+        <div class="card">
+          <h3>Pronunciation & Confidence Coaching</h3>
+          <p>Improve clarity, rhythm, pronunciation, confidence, and natural workplace communication.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="two-col">
+        <div>
+          <h2>English Resource & Career Library</h2>
+          <p>
+            Alliance Anglophone is preparing a future hybrid learning resource hub designed to support
+            continuous learning, self-study, and career acceleration.
+          </p>
+          <p>
+            The vision includes English books, audio learning, video learning, professional vocabulary resources,
+            mock interview practice, and quiet study areas.
+          </p>
+        </div>
+
+        <div class="status-box">
+          <p><strong>Purpose:</strong> support learners beyond the classroom.</p>
+          <p><strong>Focus:</strong> English, employability, confidence, and career preparation.</p>
+          <p><strong>Status:</strong> under preparation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Pricing</h2>
+        <p>
+          Clear and accessible pricing for learners, professionals, and organizations.
+        </p>
+      </div>
+
+      <div class="price-list">
+        <div class="price-item">
+          <strong>General English</strong>
+          <span>Ar 70,000 / month</span>
+        </div>
+
+        <div class="price-item">
+          <strong>Professional & Career English</strong>
+          <span>Ar 90,000 / module</span>
+        </div>
+
+        <div class="price-item">
+          <strong>English for Children & Teens</strong>
+          <span>Ar 35,000 / month</span>
+        </div>
+
+        <div class="price-item">
+          <strong>Corporate & Institutional Training</strong>
+          <span>From Ar 70,000 / session</span>
+        </div>
+
+        <div class="price-item">
+          <strong>English Speaking Club</strong>
+          <span>Ar 20,000 / month</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Impact and Partnerships</h2>
+        <p>
+          Alliance Anglophone is designed to support measurable outcomes:
+          improved English communication, job readiness, confidence, access to employment or further training,
+          and sustainable workforce integration.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>For Learners</h3>
+          <p>Build practical English skills, confidence, and a clearer pathway toward work or career growth.</p>
+        </div>
+
+        <div class="card">
+          <h3>For Employers</h3>
+          <p>Access better-prepared candidates with stronger communication and workplace readiness.</p>
+        </div>
+
+        <div class="card">
+          <h3>For Institutions</h3>
+          <p>Develop training partnerships with measurable outcomes, follow-up, and impact reporting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Start your English learning journey</h2>
+      <p>
+        Online classes are being prepared. Contact us now to express your interest or ask for information.
       </p>
 
-      <p class="hero-sub">
-        Professional English, employability, and international opportunities.
-      </p>
+      <div class="btn-row" style="justify-content:center;">
+        <a class="btn btn-primary" href="registration.html">Register Now</a>
+        <a class="btn btn-secondary" href="https://wa.me/261349201200">WhatsApp: +261 34 920 1200</a>
+      </div>
+    </section>
 
-      <a class="btn primary" href="programs.html">Explore Programs</a>
-    </div>
-  </section>
+  </main>
 
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <footer>
+    <p>© 2026 Alliance Anglophone. Based in Toamasina, Madagascar. Online classes opening soon.</p>
+  </footer>
 
 </body>
 </html>
