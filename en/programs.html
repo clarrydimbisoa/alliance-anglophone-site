@@ -3,84 +3,666 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Programs — Alliance Anglophone</title>
+
+  <title>Programs | Alliance Anglophone</title>
+  <meta name="description" content="Explore Alliance Anglophone programs: General English, Business English, Spoken English, Tourism English, Call Center English, NGO English, Maritime English, and employability training." />
+
   <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.72), rgba(6, 43, 99, 0.72)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .program-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
+
+    .section-white .program-card {
+      background: var(--light);
+    }
+
+    .program-card h3 {
+      color: var(--dark-blue);
+      font-size: 1.35rem;
+      margin: 0 0 12px;
+    }
+
+    .program-card .tag {
+      display: inline-block;
+      background: #fff1c7;
+      color: #6b4a00;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+
+    .program-card h4 {
+      color: var(--dark);
+      margin: 18px 0 6px;
+      font-size: 1rem;
+    }
+
+    .program-card p {
+      margin: 0 0 8px;
+    }
+
+    .program-card ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .program-card li {
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .highlight {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .highlight h2 {
+      color: var(--gold);
+    }
+
+    .pathway {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .pathway-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 26px;
+      border-radius: 14px;
+      border-left: 5px solid var(--gold);
+    }
+
+    .pathway-box h3 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: #25d366;
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .program-grid,
+      .pathway {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
+  <header class="topbar">
     <a class="brand" href="index.html">
-  <img src="../assets/logo.jpeg" alt="Alliance Anglophone logo" class="brand-logo">
-  <span>Alliance Anglophone</span>
-</a>
+      <img src="../assets/logo.JPG" alt="Alliance Anglophone logo">
+      <span>Alliance Anglophone</span>
+    </a>
 
-    <nav class="nav">
+    <nav>
       <a href="index.html">Home</a>
       <a class="active" href="programs.html">Programs</a>
       <a href="pricing.html">Pricing</a>
       <a href="mission.html">Mission</a>
       <a href="registration.html">Registration</a>
       <a href="contact.html">Contact</a>
-
-      <span class="lang">
-        <a class="langlink" href="../fr/programmes.html">FR</a>
-        <a class="langlink active" href="../en/programs.html">EN</a>
-        <a class="langlink" href="../mg/programa.html">MG</a>
-      </span>
+      <a href="../fr/index.html">FR</a>
+      <a href="index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <section class="card">
-    <h1>Our programs</h1>
-    <p>Choose the program that matches your level and your goal.</p>
+  <main>
 
-    <div class="cards">
-      <article class="mini-card">
-        <h3>General English</h3>
-        <p>Grammar, vocabulary, listening, speaking, and writing.</p>
-      </article>
+    <section class="page-hero">
+      <h1>Career-Focused English Programs</h1>
+      <p>
+        Learn practical English for real communication, professional confidence,
+        job readiness, and career opportunities in Madagascar and beyond.
+      </p>
+    </section>
 
-      <article class="mini-card">
-        <h3>Conversation</h3>
-        <p>Speak with confidence, daily situations, pronunciation.</p>
-      </article>
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Choose the right pathway</h2>
+        <p>
+          Alliance Anglophone programs are designed to move learners from language learning
+          to workplace readiness. Each program connects English practice with real professional use.
+        </p>
+      </div>
 
-      <article class="mini-card">
-        <h3>Business English</h3>
-        <p>Professional emails, meetings, presentations, negotiation.</p>
-      </article>
+      <div class="program-grid">
 
-      <article class="mini-card">
-        <h3>Kids English</h3>
-        <p>Learn through fun activities and steady progress.</p>
-      </article>
+        <article class="program-card">
+          <span class="tag">Core Program</span>
+          <h3>General English</h3>
+          <p>
+            Build a strong foundation in English for everyday communication, studies,
+            travel, work, and future professional development.
+          </p>
 
-      <article class="mini-card">
-        <h3>Exam preparation</h3>
-        <p>Method, practice tests, comprehension and production.</p>
-      </article>
+          <h4>Target audience</h4>
+          <p>Beginners, intermediate learners, students, adults, and workers who need structured progression.</p>
 
-      <article class="mini-card">
-        <h3>Corporate training</h3>
-        <p>Tailor-made training for teams with flexible schedules.</p>
-      </article>
-    </div>
-  </section>
-</main>
+          <h4>Skills developed</h4>
+          <ul>
+            <li>Grammar and vocabulary</li>
+            <li>Listening and speaking</li>
+            <li>Reading and writing</li>
+            <li>Confidence in everyday communication</li>
+          </ul>
 
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
+          <h4>Career relevance</h4>
+          <p>
+            This is the foundation for all other professional tracks.
+          </p>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Fluency Program</span>
+          <h3>Intensive Spoken English</h3>
+          <p>
+            A speaking-focused program for learners who understand some English but struggle to speak naturally.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>Learners who want to improve fluency, pronunciation, listening, and confidence.</p>
+
+          <h4>Skills developed</h4>
+          <ul>
+            <li>Conversation practice</li>
+            <li>Pronunciation and rhythm</li>
+            <li>Listening comprehension</li>
+            <li>Fast response in real-life situations</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            Useful for interviews, customer service, hospitality, online meetings, and professional networking.
+          </p>
+
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Professional Track</span>
+          <h3>Business English</h3>
+          <p>
+            Professional English for workplace communication, business situations, meetings,
+            emails, presentations, and team coordination.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>Professionals, entrepreneurs, employees, managers, and job seekers.</p>
+
+          <h4>Skills developed</h4>
+          <ul>
+            <li>Professional emails and messages</li>
+            <li>Meetings and presentations</li>
+            <li>Negotiation and customer communication</li>
+            <li>Workplace vocabulary</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            Ideal for learners who want to use English in companies, administration, entrepreneurship, or client relations.
+          </p>
+
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Sector Track</span>
+          <h3>Tourism & Hospitality English</h3>
+          <p>
+            Practical English for hotels, restaurants, tourism services, guiding,
+            reception, guest relations, and customer experience.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>Hotel staff, restaurant staff, tour guides, tourism students, and service workers.</p>
+
+          <h4>Skills developed</h4>
+          <ul>
+            <li>Welcoming guests</li>
+            <li>Explaining services</li>
+            <li>Handling complaints politely</li>
+            <li>Tourism and hospitality vocabulary</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            Useful for Toamasina, coastal tourism, hotels, restaurants, travel agencies, and international visitors.
+          </p>
+
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Sector Track</span>
+          <h3>Call Center / BPO English</h3>
+          <p>
+            English for customer support, phone communication, scripts, problem solving,
+            and professional service interactions.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>Young job seekers, customer service candidates, call center applicants, and BPO trainees.</p>
+
+          <h4>Skills developed</h4>
+          <ul>
+            <li>Phone and voice communication</li>
+            <li>Customer support expressions</li>
+            <li>Problem-solving conversations</li>
+            <li>Professional tone and clarity</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            Designed for learners targeting call centers, BPO work, customer service, and remote support jobs.
+          </p>
+
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Sector Track</span>
+          <h3>Technical & Maritime English</h3>
+          <p>
+            Sector-based English for technical, logistics, port, maritime, and operational environments.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>Workers, trainees, logistics staff, maritime candidates, technical staff, and operational teams.</p>
+
+          <h4>Skills developed</h4>
+          <ul>
+            <li>Technical vocabulary</li>
+            <li>Safety and operational instructions</li>
+            <li>Reporting problems clearly</li>
+            <li>Communication in structured work environments</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            Relevant for Toamasina’s port, logistics, maritime, technical, and operational sectors.
+          </p>
+
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Institutional Track</span>
+          <h3>NGO & Development English</h3>
+          <p>
+            English for project teams, NGO communication, development work, field coordination,
+            reporting, and institutional collaboration.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>NGO staff, project assistants, field workers, volunteers, and development-sector candidates.</p>
+
+          <h4>Skills developed</h4>
+          <ul>
+            <li>Project vocabulary</li>
+            <li>Field communication</li>
+            <li>Reporting and coordination</li>
+            <li>Professional interaction with international partners</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            Useful for development projects, humanitarian missions, institutional work, and international collaboration.
+          </p>
+
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Employability Layer</span>
+          <h3>CV & Interview Training</h3>
+          <p>
+            A practical employability module that helps learners present their experience,
+            prepare applications, and perform better in interviews.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>Job seekers, students, Day Crew members, young professionals, and career changers.</p>
+
+          <h4>Skills developed</h4>
+          <ul>
+            <li>CV writing</li>
+            <li>Interview answers</li>
+            <li>Professional self-presentation</li>
+            <li>Application preparation</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            This module connects English learning with real job applications and employment opportunities.
+          </p>
+
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Employability Layer</span>
+          <h3>Workplace Communication & Soft Skills</h3>
+          <p>
+            Training for professional discipline, teamwork, communication, confidence,
+            problem solving, and workplace behavior.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>Learners preparing for employment, internship, customer service, institutional work, or corporate environments.</p>
+
+          <h4>Skills developed</h4>
+          <ul>
+            <li>Team communication</li>
+            <li>Professional behavior</li>
+            <li>Workplace discipline</li>
+            <li>Confidence and responsibility</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            Helps learners become more employable, not only more fluent in English.
+          </p>
+
+          <a class="btn btn-primary" href="registration.html">Register for this program</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Learning Hub</span>
+          <h3>English Resource & Career Library</h3>
+          <p>
+            A future hybrid physical and digital learning hub designed to support continuous English practice,
+            self-learning, and career preparation.
+          </p>
+
+          <h4>Target audience</h4>
+          <p>Students, professionals, job seekers, and independent learners.</p>
+
+          <h4>Planned resources</h4>
+          <ul>
+            <li>English books and graded readers</li>
+            <li>Audio and listening resources</li>
+            <li>Video learning support</li>
+            <li>Mock interview practice</li>
+            <li>Quiet study areas</li>
+          </ul>
+
+          <h4>Career relevance</h4>
+          <p>
+            Supports long-term learning beyond the classroom.
+          </p>
+
+          <a class="btn btn-secondary" href="contact.html">Ask for information</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="section-title">
+        <h2>Our training pathway</h2>
+        <p>
+          Alliance Anglophone is designed to help learners move from English learning to economic opportunity.
+        </p>
+      </div>
+
+      <div class="pathway">
+        <div class="pathway-box">
+          <h3>1. English Skills</h3>
+          <p>Build practical language ability through structured learning and real communication practice.</p>
+        </div>
+
+        <div class="pathway-box">
+          <h3>2. Employability</h3>
+          <p>Develop job-readiness skills through CV preparation, interviews, workplace simulation, and soft skills.</p>
+        </div>
+
+        <div class="pathway-box">
+          <h3>3. Career Growth</h3>
+          <p>Prepare for sectors where English can support income, employment, and long-term career development.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Not sure which program is right for you?</h2>
+      <p>
+        Contact us on WhatsApp and we will help you choose the most suitable pathway.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="registration.html">Register Now</a>
+        <a class="btn btn-secondary" href="https://wa.me/261349201200">Contact on WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Based in Toamasina, Madagascar. Online classes opening soon.</p>
+  </footer>
 
 </body>
 </html>
-
