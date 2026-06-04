@@ -3,138 +3,629 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Pricing | Alliance Anglophone</title>
+  <meta name="description" content="View Alliance Anglophone pricing for General English, Professional & Career English, English for Children and Teens, Corporate Training, and Speaking Club." />
+
   <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.74), rgba(6, 43, 99, 0.74)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .price-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .section-white .price-card {
+      background: var(--light);
+    }
+
+    .price-card.featured {
+      border-top-color: var(--gold);
+      transform: translateY(-8px);
+    }
+
+    .price-card h3 {
+      color: var(--dark-blue);
+      font-size: 1.35rem;
+      margin: 0 0 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #fff1c7;
+      color: #6b4a00;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark-blue);
+      margin: 16px 0 4px;
+    }
+
+    .price small {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .note {
+      font-size: 0.92rem;
+      color: #5b6472;
+      margin-bottom: 18px;
+    }
+
+    .price-card ul {
+      padding-left: 20px;
+      margin: 18px 0;
+    }
+
+    .price-card li {
+      margin-bottom: 8px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .info-box {
+      background: #fff7dd;
+      border-left: 5px solid var(--gold);
+      padding: 24px;
+      border-radius: 14px;
+      margin-top: 30px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .simple-card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 5px solid var(--blue);
+    }
+
+    .section-white .simple-card {
+      background: var(--light);
+    }
+
+    .simple-card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+    }
+
+    .highlight {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .highlight h2 {
+      color: var(--gold);
+    }
+
+    .highlight .simple-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-left-color: var(--gold);
+      color: white;
+      box-shadow: none;
+    }
+
+    .highlight .simple-card h3 {
+      color: white;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1000px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .pricing-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
-   <a class="brand" href="index.html">
-  <img src="../assets/logo.jpeg" alt="Alliance Anglophone logo" class="brand-logo">
-  <span>Alliance Anglophone</span>
-</a>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Alliance Anglophone logo">
+      <span>Alliance Anglophone</span>
+    </a>
 
-    <nav class="nav">
+    <nav>
       <a href="index.html">Home</a>
       <a href="programs.html">Programs</a>
       <a class="active" href="pricing.html">Pricing</a>
       <a href="mission.html">Mission</a>
       <a href="registration.html">Registration</a>
       <a href="contact.html">Contact</a>
-
-      <span class="lang">
-        <span class="langlink disabled">FR</span>
-        <a class="langlink active" href="../en/index.html">EN</a>
-        <span class="langlink disabled">MG</span>
-      </span>
+      <a href="../fr/index.html">FR</a>
+      <a href="index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container">
+  <main>
 
-  <section class="page-head">
-    <h1>Programs & Pricing</h1>
-    <p>
-  Clear, transparent pricing designed to support real learning outcomes,
-  professional growth, and long-term opportunities.
-  No hidden fees. No unrealistic promises.
-</p>
-  </section>
+    <section class="page-hero">
+      <h1>Clear Pricing for Career-Focused English</h1>
+      <p>
+        Choose the learning option that matches your goal, your level, and your budget.
+        Our pricing is designed for practical English, employability, and long-term career growth.
+      </p>
+    </section>
 
-  <section class="pricing-grid">
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Training plans</h2>
+        <p>
+          These offers are designed for learners, professionals, children, companies, and institutions.
+          Online classes are currently being prepared.
+        </p>
+      </div>
 
-    <div class="pricing-card">
-  <h2>General English — Adults</h2>
-  <p class="price">Ar 70,000 / month</p>
-  <ul class="clean-list">
-    <li>Beginner to intermediate levels</li>
-    <li>Speaking, listening, vocabulary, grammar</li>
-    <li>2–4 sessions per week</li>
-    <li>In-person or online formats</li>
-  </ul>
-</div>
+      <div class="pricing-grid">
 
-    <div class="pricing-card">
-  <h2>Professional & Career English</h2>
-  <p class="price">Ar 90,000 / module</p>
-  <ul class="clean-list">
-    <li>Business & workplace English</li>
-    <li>Tourism, medical, technical English</li>
-    <li>Interview & career preparation</li>
-    <li>Short, targeted professional modules</li>
-  </ul>
-</div>
+        <article class="price-card">
+          <div>
+            <span class="tag">Core Program</span>
+            <h3>General English</h3>
+            <p>
+              Structured English learning for everyday communication, studies, work, and future professional growth.
+            </p>
 
-    <div class="pricing-card">
-  <h2>English for Children & Teens</h2>
-  <p class="price">Ar 35,000 / month</p>
-  <ul class="clean-list">
-    <li>Ages 7–15</li>
-    <li>Wednesday & Saturday classes</li>
-    <li>Fun, structured, age-appropriate learning</li>
-    <li>Focus on confidence and pronunciation</li>
-  </ul>
-</div>
+            <div class="price">Ar 70,000 <small>/ month</small></div>
+            <p class="note">Recommended for beginners and intermediate learners.</p>
 
-    <div class="pricing-card">
-      <h2>Corporate & Institutional Training</h2>
-      <p class="price">From Ar 70,000 / session</p>
-      <ul class="clean-list">
-        <li>Customized programs</li>
-        <li>On-site or online</li>
-        <li>Flexible scheduling</li>
-      </ul>
-    </div>
+            <ul>
+              <li>Grammar and vocabulary</li>
+              <li>Listening and speaking practice</li>
+              <li>Reading and writing support</li>
+              <li>Progressive level improvement</li>
+            </ul>
+          </div>
 
-    <div class="pricing-card">
-  <h2>English Speaking Club</h2>
-  <p class="price">Ar 20,000 / month</p>
-  <ul class="clean-list">
-    <li>Conversation & discussion practice</li>
-    <li>Debates, public speaking, movie talks</li>
-    <li>Relaxed and supportive environment</li>
-    <li>Open to all levels</li>
-  </ul>
-</div>
-    
-  </section>
+          <a class="btn btn-primary" href="registration.html">Register Now</a>
+        </article>
 
-  <section class="pricing-note">
-  <h2>Access, Inclusion & Social Impact</h2>
+        <article class="price-card featured">
+          <div>
+            <span class="tag">Recommended</span>
+            <h3>Professional & Career English</h3>
+            <p>
+              Career-oriented English for workplace communication, job readiness, interviews, and professional confidence.
+            </p>
 
-  <p>
-    Alliance Anglophone is committed to making English education a tool for
-    personal reconstruction, professional reintegration, and long-term opportunity.
-  </p>
+            <div class="price">Ar 90,000 <small>/ module</small></div>
+            <p class="note">Best choice for job seekers, workers, and professionals.</p>
 
-  <p>
-    Through carefully supervised programs, some learners from vulnerable backgrounds,
-    including individuals in post-rehabilitation phases, may benefit from
-    partial or full educational support.
-  </p>
+            <ul>
+              <li>Business English</li>
+              <li>CV and interview preparation</li>
+              <li>Workplace communication</li>
+              <li>Sector-based professional vocabulary</li>
+            </ul>
+          </div>
 
-  <p>
-    These initiatives are implemented in partnership with local organizations
-    and remain limited, structured, and aligned with our core academic standards.
-  </p>
+          <a class="btn btn-primary" href="registration.html">Choose this plan</a>
+        </article>
 
-  <a class="btn primary" href="contact.html">Learn more or contact us</a>
-</section>
+        <article class="price-card">
+          <div>
+            <span class="tag">Children & Teens</span>
+            <h3>English for Children & Teens</h3>
+            <p>
+              A progressive and motivating English program for younger learners.
+            </p>
 
-</main>
+            <div class="price">Ar 35,000 <small>/ month</small></div>
+            <p class="note">Designed for steady learning and confidence building.</p>
 
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
+            <ul>
+              <li>Basic vocabulary and sentences</li>
+              <li>Listening and speaking activities</li>
+              <li>Fun learning support</li>
+              <li>Progressive English confidence</li>
+            </ul>
+          </div>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+          <a class="btn btn-primary" href="registration.html">Register a learner</a>
+        </article>
+
+        <article class="price-card">
+          <div>
+            <span class="tag">Organizations</span>
+            <h3>Corporate & Institutional Training</h3>
+            <p>
+              Customized English and communication training for teams, organizations, companies, and institutions.
+            </p>
+
+            <div class="price">From Ar 70,000 <small>/ session</small></div>
+            <p class="note">Final pricing depends on objectives, group size, and training format.</p>
+
+            <ul>
+              <li>Customized modules</li>
+              <li>Team communication training</li>
+              <li>Sector-specific vocabulary</li>
+              <li>Flexible online delivery</li>
+            </ul>
+          </div>
+
+          <a class="btn btn-secondary" href="contact.html">Request a quote</a>
+        </article>
+
+        <article class="price-card">
+          <div>
+            <span class="tag">Practice Club</span>
+            <h3>English Speaking Club</h3>
+            <p>
+              A practical speaking space for learners who want regular conversation practice and confidence.
+            </p>
+
+            <div class="price">Ar 20,000 <small>/ month</small></div>
+            <p class="note">Useful as additional practice alongside other programs.</p>
+
+            <ul>
+              <li>Conversation practice</li>
+              <li>Confidence building</li>
+              <li>Pronunciation support</li>
+              <li>Peer learning atmosphere</li>
+            </ul>
+          </div>
+
+          <a class="btn btn-primary" href="registration.html">Join the club</a>
+        </article>
+
+        <article class="price-card">
+          <div>
+            <span class="tag">Need guidance?</span>
+            <h3>Not sure what to choose?</h3>
+            <p>
+              Contact us and we will help you identify the best pathway according to your level, goal, and availability.
+            </p>
+
+            <div class="price">Free <small>orientation</small></div>
+            <p class="note">Contact us before registration if you need advice.</p>
+
+            <ul>
+              <li>Program orientation</li>
+              <li>Goal clarification</li>
+              <li>Learning format information</li>
+              <li>WhatsApp support</li>
+            </ul>
+          </div>
+
+          <a class="btn btn-whatsapp" href="https://wa.me/261349201200">Ask on WhatsApp</a>
+        </article>
+
+      </div>
+
+      <div class="info-box">
+        <p>
+          <strong>Current status:</strong> Online classes are being prepared and may open soon.
+          In-person classes are not planned for this year. The physical learning hub in Toamasina is still under preparation.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>What is included?</h2>
+        <p>
+          Alliance Anglophone focuses on practical learning, career readiness, and measurable progress.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="simple-card">
+          <h3>For individual learners</h3>
+          <ul>
+            <li>Practical English training</li>
+            <li>Speaking and listening practice</li>
+            <li>Professional vocabulary according to goals</li>
+            <li>Confidence and communication support</li>
+            <li>Guidance toward career-focused pathways</li>
+          </ul>
+        </div>
+
+        <div class="simple-card">
+          <h3>For companies and institutions</h3>
+          <ul>
+            <li>Needs-based training design</li>
+            <li>Sector-focused English content</li>
+            <li>Workplace communication practice</li>
+            <li>Flexible training format</li>
+            <li>Follow-up and simple reporting when required</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="section-title">
+        <h2>No unrealistic promises</h2>
+        <p>
+          Alliance Anglophone does not sell magic fluency. We provide structured learning,
+          practical English, professional communication training, and a pathway toward employability.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="simple-card">
+          <h3>Transparent pricing</h3>
+          <p>
+            Prices are displayed clearly so learners and families can plan before registration.
+          </p>
+        </div>
+
+        <div class="simple-card">
+          <h3>Career-oriented value</h3>
+          <p>
+            The goal is not only to complete lessons, but to improve confidence,
+            communication, and readiness for real professional opportunities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Ready to choose your pathway?</h2>
+      <p>
+        Register now or contact us on WhatsApp if you need help choosing the right program.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="registration.html">Register Now</a>
+        <a class="btn btn-secondary" href="https://wa.me/261349201200">Contact on WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Based in Toamasina, Madagascar. Online classes opening soon.</p>
+  </footer>
 
 </body>
 </html>
-
