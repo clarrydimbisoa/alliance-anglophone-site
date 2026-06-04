@@ -3,112 +3,528 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Contact | Alliance Anglophone</title>
+  <meta name="description" content="Contact Alliance Anglophone for online English programs, professional English training, career-focused English, and institutional partnerships in Toamasina, Madagascar." />
+
   <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+      --border: #d9e2f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.76), rgba(6, 43, 99, 0.76)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
+
+    .contact-card.gold {
+      border-top-color: var(--gold);
+    }
+
+    .contact-card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 1.45rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 14px;
+      padding-left: 0;
+    }
+
+    .contact-list strong {
+      color: var(--dark-blue);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .notice {
+      background: #fff7dd;
+      border-left: 5px solid var(--gold);
+      padding: 22px;
+      border-radius: 14px;
+      margin-top: 28px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 5px solid var(--blue);
+    }
+
+    .section-white .info-card {
+      background: var(--light);
+    }
+
+    .info-card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+    }
+
+    .faq {
+      display: grid;
+      gap: 18px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+      border-left: 5px solid var(--blue);
+    }
+
+    .faq-item h3 {
+      color: var(--dark-blue);
+      margin: 0 0 8px;
+    }
+
+    .faq-item p {
+      margin: 0;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
-   <a class="brand" href="index.html">
-  <img src="../assets/logo.jpeg" alt="Alliance Anglophone logo" class="brand-logo">
-  <span>Alliance Anglophone</span>
-</a>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Alliance Anglophone logo">
+      <span>Alliance Anglophone</span>
+    </a>
 
-    <nav class="nav">
+    <nav>
       <a href="index.html">Home</a>
       <a href="programs.html">Programs</a>
       <a href="pricing.html">Pricing</a>
       <a href="mission.html">Mission</a>
       <a href="registration.html">Registration</a>
       <a class="active" href="contact.html">Contact</a>
-
-      <span class="lang">
-        <span class="langlink disabled" title="Coming soon">FR</span>
-        <a class="langlink active" href="../en/index.html">EN</a>
-        <span class="langlink disabled" title="Coming soon">MG</span>
-      </span>
+      <a href="../fr/index.html">FR</a>
+      <a href="index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container">
+  <main>
 
-  <section class="page-head">
-    <h1>Contact Alliance Anglophone</h1>
-<p>
-  Get in touch with our team for registrations, program information,
-  partnerships, or general inquiries.
-</p>
- <hr class="section-divider">
-  </section>
-
-  <section class="contact-pro">
-
-    <div class="contact-pro-card primary">
-      <h2>WhatsApp — Primary Contact</h2>
-      <p class="big">
-        <strong>+261 34 92 012 00</strong>
-      </p>
+    <section class="page-hero">
+      <h1>Contact Alliance Anglophone</h1>
       <p>
-       Our team will guide you through programs, placement, and registration steps.
+        Get in touch for online English programs, career-focused English training,
+        corporate learning, and partnership opportunities.
+      </p>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>How to reach us</h2>
+        <p>
+          The fastest way to contact us is through WhatsApp. You can also email us for
+          institutional, corporate, or partnership requests.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Direct contact</h3>
+          <p>
+            Contact us if you want to register, ask about programs, request pricing details,
+            or receive guidance before choosing your English pathway.
+          </p>
+
+          <ul class="contact-list">
+            <li><strong>WhatsApp:</strong> +261 34 920 1200</li>
+            <li><strong>Email:</strong> contact@allianceanglophone.mg</li>
+            <li><strong>Facebook page:</strong> English Skills Booster</li>
+            <li><strong>Location:</strong> Based in Toamasina, Madagascar</li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn btn-whatsapp" href="https://wa.me/261349201200">Contact on WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:contact@allianceanglophone.mg">Send an email</a>
+          </div>
+        </div>
+
+        <div class="contact-card gold">
+          <h3>Current status</h3>
+          <p>
+            Alliance Anglophone is currently preparing its online English programs.
+            The physical learning hub is also under preparation in Toamasina.
+          </p>
+
+          <ul class="contact-list">
+            <li><strong>Online classes:</strong> opening soon</li>
+            <li><strong>In-person classes:</strong> not planned for this year</li>
+            <li><strong>Physical learning hub:</strong> under preparation</li>
+            <li><strong>Address:</strong> not publicly displayed yet</li>
+          </ul>
+
+          <div class="notice">
+            We will publish the full physical address when the learning hub is ready to welcome learners.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>What can you contact us for?</h2>
+        <p>
+          We respond to learners, parents, professionals, companies, institutions, and potential partners.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>For learners</h3>
+          <p>
+            Ask about English levels, programs, online classes, speaking practice,
+            registration, and learning guidance.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>For parents</h3>
+          <p>
+            Ask about English programs for children and teens, learning rhythm,
+            online availability, and pricing.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>For companies</h3>
+          <p>
+            Request professional English training for teams, employees,
+            customer service, tourism, or workplace communication.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>For institutions</h3>
+          <p>
+            Discuss training partnerships, employability programs, career pathways,
+            and impact-oriented learning.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>For NGOs and projects</h3>
+          <p>
+            Contact us for English training linked to workforce readiness,
+            reintegration, youth employability, or development-sector communication.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>For partnerships</h3>
+          <p>
+            Explore collaboration around professional English, employability,
+            career preparation, and learning access.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Frequently asked questions</h2>
+        <p>
+          These answers clarify our current situation and help visitors understand how to contact us.
+        </p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Are online classes available now?</h3>
+          <p>
+            Online classes are currently being prepared and are expected to open soon.
+            You can contact us on WhatsApp to express your interest.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Do you offer in-person classes?</h3>
+          <p>
+            In-person classes are not planned for this year. The physical learning hub in Toamasina is still under preparation.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Why is the full address not displayed yet?</h3>
+          <p>
+            The physical learning hub is not ready to receive learners yet. The full address will be displayed when the site is ready for public visits.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Can companies or institutions contact you?</h3>
+          <p>
+            Yes. Companies, institutions, NGOs, and projects can contact us for customized English and employability training.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Have a question?</h2>
+      <p>
+        Send us a message on WhatsApp and we will guide you according to your goal.
       </p>
 
-      <a class="btn whatsapp"
-         href="https://wa.me/261349201200?text=Hello%20Alliance%20Anglophone,%20I%20would%20like%20information%20about%20your%20English%20programs."
-         target="_blank" rel="noopener">
-        Message on WhatsApp
-      </a>
+      <div class="btn-row" style="justify-content:center;">
+        <a class="btn btn-primary" href="https://wa.me/261349201200">Contact on WhatsApp</a>
+        <a class="btn btn-secondary" href="registration.html">Register Interest</a>
+      </div>
+    </section>
 
-      <p class="small-note">
-  For partnerships, corporate training, official documents,
-  and institutional communication.
-</p>
-    </div>
+  </main>
 
-    <div class="contact-pro-card">
-      <h2>Phone</h2>
-      <p class="big"><strong>0349201200</strong></p>
-      <p class="small-note">Calls and SMS during business hours.</p>
-    </div>
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
 
-    <div class="contact-pro-card">
-      <h2>Email</h2>
-      <p class="big"><strong>contact@allianceanglophone.mg</strong></p>
-      <p class="small-note">For partnerships, corporate training, and formal requests.</p>
-    </div>
-
-    <div class="contact-pro-card">
-      <h2>Location</h2>
-      <p class="big"><strong>Toamasina, Madagascar</strong></p>
-      <p class="small-note">Full address will be published soon.</p>
-    </div>
-
-    <div class="contact-pro-card">
-      <h2>Business Hours</h2>
-      <ul class="clean-list">
-        <li><strong>Mon–Fri:</strong> 08:00 – 17:00</li>
-        <li><strong>Saturday:</strong> 09:00 – 12:00</li>
-        <li><strong>Sunday:</strong> Closed</li>
-      </ul>
-      <p class="small-note">Hours can be adjusted later.</p>
-    </div>
-
-  </section>
-
-</main>
-
-
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <footer>
+    <p>© 2026 Alliance Anglophone. Based in Toamasina, Madagascar. Online classes opening soon.</p>
+  </footer>
 
 </body>
 </html>
-
