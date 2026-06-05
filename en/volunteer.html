@@ -1,161 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Volunteer Registration | Alliance Anglophone</title>
-  <link rel="stylesheet" href="../assets/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Volunteer | Alliance Anglophone</title>
+
+<meta name="description" content="Volunteer with Alliance Anglophone and help learners in Madagascar improve their English, employability, and career opportunities.">
+
+<link rel="stylesheet" href="../assets/style.css">
+
+<style>
+:root{
+    --blue:#0f4fbf;
+    --dark-blue:#062b63;
+    --gold:#d8aa2b;
+    --light:#f4f7fb;
+    --white:#ffffff;
+    --text:#374151;
+}
+
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:var(--light);
+    color:var(--text);
+}
+
+.hero{
+    background:
+    linear-gradient(rgba(6,43,99,.75),rgba(6,43,99,.75)),
+    url('../assets/hero.jpg') center/cover;
+    color:white;
+    text-align:center;
+    padding:90px 20px;
+}
+
+.hero h1{
+    font-size:56px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    max-width:900px;
+    margin:auto;
+    line-height:1.6;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:70px 20px;
+}
+
+.section-title{
+    color:var(--dark-blue);
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.intro{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    border-top:5px solid var(--blue);
+}
+
+.card h3{
+    color:var(--dark-blue);
+    margin-top:0;
+}
+
+.card p{
+    line-height:1.7;
+}
+
+.impact{
+    margin-top:70px;
+    background:white;
+    padding:40px;
+    border-radius:16px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.impact h2{
+    color:var(--dark-blue);
+}
+
+.impact ul{
+    line-height:2;
+}
+
+.cta{
+    margin-top:70px;
+    text-align:center;
+    background:var(--dark-blue);
+    color:white;
+    padding:60px 30px;
+    border-radius:18px;
+}
+
+.cta h2{
+    margin-top:0;
+    font-size:40px;
+}
+
+.cta p{
+    font-size:20px;
+    max-width:800px;
+    margin:auto auto 30px;
+    line-height:1.8;
+}
+
+.btn{
+    display:inline-block;
+    background:var(--gold);
+    color:#111827;
+    padding:18px 35px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.btn:hover{
+    opacity:.9;
+}
+
+.info{
+    margin-top:40px;
+    font-size:18px;
+    line-height:2;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:38px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.section-title{
+    font-size:32px;
+}
+
+.cta h2{
+    font-size:30px;
+}
+
+}
+</style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
-    <a class="brand" href="index.html">
-      <img src="../assets/logo.jpeg" alt="Alliance Anglophone logo" class="brand-logo">
-      <span>Alliance Anglophone</span>
-    </a>
-
-    <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="programs.html">Programs</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="mission.html">Mission</a>
-      <a href="impact.html">Impact</a>
-      <a class="active" href="volunteer.html">Volunteer</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
+<header>
+<nav class="navbar">
+<a href="index.html" class="logo">
+<img src="../assets/logo.JPG" alt="Alliance Anglophone Logo" style="height:55px;">
+</a>
+</nav>
 </header>
 
-<main class="container">
+<section class="hero">
+<h1>Become a Volunteer</h1>
 
-  <section class="page-head">
-    <h1>Volunteer Registration</h1>
-    <p>
-      Thank you for your interest in supporting Alliance Anglophone.
-      Please read the information below before applying.
-    </p>
-  </section>
-
-  <section class="card">
-  <h2>Volunteer Application Form</h2>
-
-  <form class="form" onsubmit="sendVolunteerEmail(); return false;">
-    
-    <label>
-      Full Name
-      <input type="text" name="name" required>
-    </label>
-
-    <label>
-      Email Address
-      <input type="email" name="email" required>
-    </label>
-
-    <label>
-      Phone / WhatsApp
-      <input type="text" name="phone">
-    </label>
-
-    <label>
-      Area of Interest
-      <select name="interest" required>
-        <option value="">Select one</option>
-        <option>English Teaching Support</option>
-        <option>Conversation & Speaking Club</option>
-        <option>Library & Learning Resources</option>
-        <option>Social Reintegration Programs</option>
-        <option>Cultural Activities & Events</option>
-        <option>Other</option>
-      </select>
-    </label>
-
-    <label>
-      Availability
-      <select name="availability" required>
-        <option value="">Select one</option>
-        <option>Weekdays</option>
-        <option>Weekends</option>
-        <option>Flexible</option>
-      </select>
-    </label>
-
-    <label>
-      Motivation (short message)
-      <textarea name="motivation" rows="4" required></textarea>
-    </label>
-
-    <button type="submit" class="btn primary">
-      Submit Application
-    </button>
-
-  </form>
-
-  <p style="margin-top:15px; font-size:0.9em;">
-    Submitting this form does not guarantee acceptance.
-    Selected applicants will be contacted if a suitable opportunity is available.
-  </p>
+<p>
+Help transform English skills into career opportunities.
+Join Alliance Anglophone and contribute to education,
+employability, and community development in Madagascar.
+</p>
 </section>
 
-  <section class="card">
-    <h2>Before You Apply</h2>
+<section class="container">
 
-    <p>
-      Alliance Anglophone welcomes motivated volunteers who wish to contribute
-      to education, language learning, and social inclusion.
-    </p>
+<h2 class="section-title">Why volunteer with us?</h2>
 
-    <p>
-      Volunteer roles are limited, supervised, and based on current needs.
-      Submitting this form does not guarantee acceptance.
-    </p>
+<p class="intro">
+Alliance Anglophone is building a learning platform that connects
+English education with professional growth. Volunteers play a key role
+in supporting learners, creating resources, mentoring students,
+promoting opportunities, and expanding access to quality English education.
+</p>
 
-    <p>
-      Selected applicants will be contacted for further discussion.
-    </p>
-  </section>
+<div class="cards">
 
-</main>
+<div class="card">
+<h3>English Mentor</h3>
+<p>
+Support learners through conversation practice,
+speaking activities, and confidence building.
+</p>
+</div>
 
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
+<div class="card">
+<h3>Trainer & Facilitator</h3>
+<p>
+Share your expertise in English, communication,
+leadership, employability, or career development.
+</p>
+</div>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<div class="card">
+<h3>Content Creator</h3>
+<p>
+Help create lessons, exercises, videos,
+articles, and learning resources.
+</p>
+</div>
 
- <script>
-function showVolunteerMessage() {
-  const name = document.querySelector('[name="name"]').value;
-  const email = document.querySelector('[name="email"]').value;
-  const phone = document.querySelector('[name="phone"]').value;
-  const interest = document.querySelector('[name="interest"]').value;
-  const availability = document.querySelector('[name="availability"]').value;
-  const motivation = document.querySelector('[name="motivation"]').value;
+<div class="card">
+<h3>Community Ambassador</h3>
+<p>
+Promote Alliance Anglophone programs,
+events, and opportunities in your network.
+</p>
+</div>
 
-  const message =
-`Volunteer Application – Alliance Anglophone
+<div class="card">
+<h3>Career Coach</h3>
+<p>
+Assist learners with CV writing,
+interview preparation, and workplace readiness.
+</p>
+</div>
 
-Full Name: ${name}
-Email: ${email}
-Phone / WhatsApp: ${phone}
-Area of Interest: ${interest}
-Availability: ${availability}
+<div class="card">
+<h3>Partner Volunteer</h3>
+<p>
+Represent organizations, institutions,
+or companies interested in collaboration.
+</p>
+</div>
 
-Motivation:
-${motivation}
+</div>
 
-Please send this message to:
-contact@allianceanglophone.mg
-or via WhatsApp if instructed.`;
+<div class="impact">
 
-  alert(message);
-}
-</script>
+<h2>Expected impact</h2>
+
+<ul>
+<li>Improve access to practical English education.</li>
+<li>Increase employability and career readiness.</li>
+<li>Support students, job seekers, and professionals.</li>
+<li>Create opportunities for international collaboration.</li>
+<li>Strengthen community development through education.</li>
+</ul>
+
+</div>
+
+<div class="cta">
+
+<h2>Join Our Volunteer Network</h2>
+
+<p>
+Whether you can contribute one hour per month or several hours per week,
+your support can make a meaningful difference.
+</p>
+
+<a
+class="btn"
+href="https://wa.me/261349201200?text=Hello%20Alliance%20Anglophone,%20I%20would%20like%20to%20volunteer."
+target="_blank">
+Apply via WhatsApp
+</a>
+
+<div class="info">
+📱 WhatsApp: +261 34 920 1200<br>
+📧 Email: contact@allianceanglophone.mg<br>
+📍 Toamasina, Madagascar
+</div>
+
+</div>
+
+</section>
 
 </body>
 </html>
-
