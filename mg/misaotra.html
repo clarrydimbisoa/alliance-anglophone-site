@@ -1,1 +1,228 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Misaotra | Alliance Anglophone</title>
+  <meta name="description" content="Misaotra anao nifandray tamin’ny Alliance Anglophone. Hamaly anao tsy ho ela amin’ny WhatsApp na email izahay.">
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --white: #ffffff;
+      --green: #25d366;
+      --text: #374151;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 70vh;
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 8%;
+      color: white;
+    }
+
+    .box {
+      max-width: 820px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 45px;
+      border-radius: 18px;
+    }
+
+    .box h1 {
+      font-size: 3rem;
+      margin: 0 0 18px;
+    }
+
+    .box p {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #111827;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 24px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .box h1 {
+        font-size: 2.2rem;
+      }
+
+      .box {
+        padding: 30px;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <span>Alliance Anglophone</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Fandraisana</a>
+      <a href="programa.html">Programa</a>
+      <a href="saram-piofanana.html">Saram-piofanana</a>
+      <a href="iraka.html">Iraka</a>
+      <a href="fiantraikany.html">Fiantraikany</a>
+      <a href="asa-an-tsitrapo.html">Asa an-tsitrapo</a>
+      <a href="fisoratana.html">Fisoratana</a>
+      <a href="fifandraisana.html">Fifandraisana</a>
+      <a href="../fr/index.html">FR</a>
+      <a href="../en/index.html">EN</a>
+      <a href="index.html">MG</a>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <div class="box">
+      <h1>Misaotra !</h1>
+
+      <p>
+        Ankasitrahanay ny fahaliananao amin’ny Alliance Anglophone.
+        Hamaly anao haingana araka izay azo atao amin’ny WhatsApp na email izahay.
+      </p>
+
+      <p>
+        Mbola eo am-panomanana ny cours en ligne. Afaka manohy mijery ny programa ianao
+        na mifandray aminay mivantana raha mila fanazavana maika.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="programa.html">Hijery programa</a>
+        <a class="btn btn-secondary" href="index.html">Hiverina amin’ny fandraisana</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/261349201200">Hifandray amin’ny WhatsApp</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Miorina eto Toamasina, Madagasikara. Ho avy tsy ho ela ny fiofanana an-tserasera.</p>
+  </footer>
+
+</body>
+</html>
