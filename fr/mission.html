@@ -3,78 +3,606 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mission — Alliance Anglophone</title>
+
+  <title>Mission | Alliance Anglophone</title>
+  <meta name="description" content="Découvrez la mission d’Alliance Anglophone : anglais professionnel, employabilité, développement de carrière et impact social à Madagascar." />
+
   <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 95px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .statement {
+      background: white;
+      border-radius: 18px;
+      padding: 36px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 6px solid var(--gold);
+      max-width: 980px;
+    }
+
+    .statement h2 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .statement p {
+      font-size: 1.12rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
+
+    .section-white .card {
+      background: var(--light);
+    }
+
+    .card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .pathway {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .pathway h2 {
+      color: var(--gold);
+    }
+
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .pathway-step {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 5px solid var(--gold);
+      padding: 24px;
+      border-radius: 14px;
+    }
+
+    .pathway-step span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .pathway-step h3 {
+      color: white;
+      margin: 0 0 8px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .impact-box {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 5px solid var(--blue);
+    }
+
+    .impact-box h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+    }
+
+    .impact-box ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .impact-box li {
+      margin-bottom: 8px;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1000px) {
+      .grid,
+      .pathway-grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
+  <header class="topbar">
     <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
       <span>Alliance Anglophone</span>
     </a>
 
-    <nav class="nav">
+    <nav>
       <a href="index.html">Accueil</a>
       <a href="programmes.html">Programmes</a>
+      <a href="tarifs.html">Tarifs</a>
       <a class="active" href="mission.html">Mission</a>
+      <a href="impact.html">Impact</a>
+      <a href="benevolat.html">Bénévolat</a>
       <a href="inscription.html">Inscription</a>
       <a href="contact.html">Contact</a>
-
-      <span class="lang">
-        <a class="langlink active" href="../fr/mission.html">FR</a>
-        <a class="langlink" href="../en/mission.html">EN</a>
-        <a class="langlink" href="../mg/tanjona.html">MG</a>
-      </span>
+      <a href="index.html">FR</a>
+      <a href="../en/index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <section class="card">
-    <h1>Notre mission</h1>
+  <main>
 
-    <p class="lead">
-      Donner à chacun les compétences en anglais nécessaires pour réussir
-      dans les études, le travail et la vie internationale.
-    </p>
+    <section class="page-hero">
+      <h1>Notre mission</h1>
+      <p>
+        Alliance Anglophone existe pour transformer les compétences en anglais en employabilité,
+        l’employabilité en revenu, et le revenu en opportunités de carrière durables.
+      </p>
+    </section>
 
-    <h2>Notre vision</h2>
-    <p>
-      Alliance Anglophone vise à devenir un centre de référence pour
-      l’apprentissage de l’anglais à Toamasina et à Madagascar.
-    </p>
+    <section class="section-white">
+      <div class="statement">
+        <h2>Plus qu’une simple école d’anglais</h2>
+        <p>
+          Alliance Anglophone est une plateforme d’anglais professionnel et d’employabilité.
+          Nous relions l’apprentissage de la langue à des résultats professionnels concrets :
+          communication, confiance, préparation au travail et accès à de meilleures opportunités.
+        </p>
+        <p>
+          Notre vision est simple : l’anglais ne doit pas rester seulement une matière à étudier.
+          Il doit devenir un outil pratique pour le travail, le revenu, la dignité et le développement personnel.
+        </p>
+      </div>
+    </section>
 
-    <h2>Notre approche</h2>
-    <ul>
-      <li>Apprentissage pratique et orienté vers la communication</li>
-      <li>Encadrement personnalisé selon le niveau</li>
-      <li>Équilibre entre grammaire, écoute et expression orale</li>
-    </ul>
+    <section>
+      <div class="section-title">
+        <h2>Quel problème voulons-nous résoudre ?</h2>
+        <p>
+          Beaucoup d’apprenants étudient l’anglais pendant des années sans être réellement prêts
+          à l’utiliser dans un contexte professionnel. Alliance Anglophone répond à cet écart
+          en reliant directement l’anglais à l’employabilité.
+        </p>
+      </div>
 
-    <h2>Nos valeurs</h2>
-    <ul>
-      <li>Excellence</li>
-      <li>Discipline</li>
-      <li>Respect</li>
-      <li>Engagement</li>
-    </ul>
+      <div class="grid">
+        <div class="card">
+          <h3>Manque de confiance pratique</h3>
+          <p>
+            Beaucoup d’apprenants connaissent une partie de l’anglais, mais hésitent à parler,
+            écrire ou l’utiliser dans de vraies situations de travail.
+          </p>
+        </div>
 
-    <p>
-      <a class="btn" href="inscription.html">S’inscrire</a>
-    </p>
-  </section>
-</main>
+        <div class="card">
+          <h3>Préparation insuffisante à l’emploi</h3>
+          <p>
+            L’anglais seul ne suffit pas. Les apprenants ont aussi besoin de savoir préparer un CV,
+            répondre à un entretien, communiquer au travail et adopter une posture professionnelle.
+          </p>
+        </div>
 
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
+        <div class="card">
+          <h3>Parcours de carrière limités</h3>
+          <p>
+            Madagascar offre des opportunités dans le tourisme, le BPO, les ONG, la logistique,
+            le maritime et les services à distance, mais beaucoup de candidats ne sont pas encore prêts.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <section class="pathway">
+      <div class="section-title">
+        <h2>Notre parcours de transformation</h2>
+        <p>
+          Nous concevons l’apprentissage de l’anglais comme un pont entre la compétence linguistique
+          et l’opportunité économique.
+        </p>
+      </div>
+
+      <div class="pathway-grid">
+        <div class="pathway-step">
+          <span>1</span>
+          <h3>Compétences en anglais</h3>
+          <p>Vocabulaire pratique, expression orale, écoute, écriture et confiance.</p>
+        </div>
+
+        <div class="pathway-step">
+          <span>2</span>
+          <h3>Employabilité</h3>
+          <p>CV, entretiens, communication professionnelle, soft skills et discipline.</p>
+        </div>
+
+        <div class="pathway-step">
+          <span>3</span>
+          <h3>Revenu</h3>
+          <p>Meilleure préparation aux emplois, services, missions freelance et opportunités professionnelles.</p>
+        </div>
+
+        <div class="pathway-step">
+          <span>4</span>
+          <h3>Croissance de carrière</h3>
+          <p>Confiance durable, apprentissage continu et meilleure mobilité professionnelle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Nos piliers principaux</h2>
+        <p>
+          Alliance Anglophone combine formation, préparation professionnelle et apprentissage orienté impact.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Anglais professionnel</h3>
+          <p>
+            Nous enseignons l’anglais pour un usage pratique : travail, entretiens, service client,
+            réunions, communication et confiance dans la vie réelle.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Préparation à la carrière</h3>
+          <p>
+            Nous aidons les apprenants à préparer l’emploi grâce au CV, aux simulations d’entretien,
+            à la communication professionnelle et aux soft skills.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Accès aux ressources</h3>
+          <p>
+            Nous préparons une future bibliothèque de ressources et de carrière pour soutenir
+            l’apprentissage continu, l’autoformation et la croissance à long terme.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Parcours sectoriels</h3>
+          <p>
+            Nous développons des parcours d’anglais liés au tourisme, à l’hôtellerie, au BPO,
+            aux ONG, au développement, à la logistique, au maritime et au travail à distance.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Impact social</h3>
+          <p>
+            Nous voulons soutenir les jeunes, les apprenants en transition et les personnes qui cherchent
+            un meilleur accès à l’emploi et à la mobilité économique.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Partenariats</h3>
+          <p>
+            Nous développons des collaborations avec entreprises, institutions, ONG et projets
+            qui ont besoin d’anglais professionnel et de formation à l’employabilité.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>L’impact que nous voulons mesurer</h2>
+        <p>
+          Le projet est conçu pour suivre la progression, et pas seulement pour dispenser des cours.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="impact-box">
+          <h3>Résultats pour les apprenants</h3>
+          <ul>
+            <li>Amélioration du niveau d’anglais pratique</li>
+            <li>Renforcement de la confiance à l’oral</li>
+            <li>Achèvement des programmes de formation</li>
+            <li>Préparation du CV et des entretiens</li>
+            <li>Accès à l’emploi, à la formation ou à d’autres opportunités</li>
+          </ul>
+        </div>
+
+        <div class="impact-box">
+          <h3>Résultats institutionnels</h3>
+          <ul>
+            <li>Meilleure préparation de la main-d’œuvre</li>
+            <li>Formation d’anglais adaptée aux secteurs</li>
+            <li>Suivi et mesure d’impact</li>
+            <li>Opportunités de partenariat</li>
+            <li>Contribution à l’employabilité et à la génération de revenus</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Situation actuelle du projet</h2>
+        <p>
+          Alliance Anglophone prépare actuellement son offre de formation en ligne.
+          Les cours en présentiel ne sont pas prévus pour cette année, et le futur centre physique
+          d’apprentissage à Toamasina est encore en préparation.
+        </p>
+      </div>
+
+      <div class="two-col">
+        <div class="impact-box">
+          <h3>Programmes en ligne</h3>
+          <p>
+            Les cours en ligne sont en préparation et devraient ouvrir prochainement.
+            Les personnes intéressées peuvent déjà manifester leur intérêt.
+          </p>
+          <a class="btn btn-primary" href="inscription.html">Manifester mon intérêt</a>
+        </div>
+
+        <div class="impact-box">
+          <h3>Centre physique d’apprentissage</h3>
+          <p>
+            Le centre physique d’apprentissage est en préparation à Toamasina.
+            L’adresse complète sera communiquée publiquement lorsque le lieu sera prêt
+            à accueillir les apprenants.
+          </p>
+          <a class="btn btn-secondary" href="contact.html">Nous contacter</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Rejoignez la mission</h2>
+      <p>
+        Que vous soyez apprenant, parent, entreprise, ONG, institution ou partenaire,
+        Alliance Anglophone construit un parcours reliant l’apprentissage de l’anglais à l’opportunité.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="inscription.html">Manifester mon intérêt</a>
+        <a class="btn btn-secondary" href="contact.html">Nous contacter</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Basé à Toamasina, Madagascar. Cours en ligne bientôt disponibles.</p>
+  </footer>
 
 </body>
 </html>
