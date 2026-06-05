@@ -1,1 +1,497 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Asa an-tsitrapo | Alliance Anglophone</title>
+  <meta name="description" content="Midira ho mpilatsaka an-tsitrapo miaraka amin’ny Alliance Anglophone ary ampio ny mpianatra eto Madagasikara hanatsara ny anglisy, employability ary fahafahana amin’ny asa." />
+
+  <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 95px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .statement {
+      background: white;
+      border-radius: 18px;
+      padding: 36px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 6px solid var(--gold);
+      max-width: 980px;
+    }
+
+    .statement h2 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .statement p {
+      font-size: 1.08rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
+
+    .section-white .card {
+      background: var(--light);
+    }
+
+    .card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .impact-box {
+      background: var(--dark-blue);
+      color: white;
+      border-radius: 18px;
+      padding: 40px;
+      margin-top: 50px;
+    }
+
+    .impact-box h2 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .impact-box ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .impact-box li {
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1000px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <span>Alliance Anglophone</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Fandraisana</a>
+      <a href="programa.html">Programa</a>
+      <a href="saram-piofanana.html">Saram-piofanana</a>
+      <a href="iraka.html">Iraka</a>
+      <a href="fiantraikany.html">Fiantraikany</a>
+      <a class="active" href="asa-an-tsitrapo.html">Asa an-tsitrapo</a>
+      <a href="fisoratana.html">Fisoratana</a>
+      <a href="fifandraisana.html">Fifandraisana</a>
+      <a href="../fr/index.html">FR</a>
+      <a href="../en/index.html">EN</a>
+      <a href="index.html">MG</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <h1>Midira ho mpilatsaka an-tsitrapo</h1>
+      <p>
+        Ampio izahay hanova ny fahaizana teny anglisy ho fahafahana amin’ny asa.
+        Miaraha amin’ny Alliance Anglophone hanohana ny fanabeazana, employability
+        ary ny fampandrosoana ny fiarahamonina eto Madagasikara.
+      </p>
+    </section>
+
+    <section class="section-white">
+      <div class="statement">
+        <h2>Nahoana no ilaina ny asa an-tsitrapo?</h2>
+        <p>
+          Alliance Anglophone dia manorina sehatra fianarana mampifandray ny teny anglisy
+          amin’ny fandrosoana matihanina. Ny mpilatsaka an-tsitrapo dia afaka manampy
+          amin’ny fanohanana mpianatra, famoronana ressources, mentoring, fanaparitahana
+          fahafahana ary fanitarana ny fidirana amin’ny fiofanana anglisy azo ampiasaina.
+        </p>
+        <p>
+          Na mpampianatra ianao, matihanina, mpianatra, mpanolo-tsaina, mpamorona votoaty,
+          na mpiara-miombon’antoka, afaka manampy ny mpianatra ho matoky tena sy ho vonona kokoa
+          amin’ny fahafahana tena izy ny anjara birikinao.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Asa azon’ny mpilatsaka an-tsitrapo atao</h2>
+        <p>
+          Afaka manohana ny iraka ianao araka ny fahaizanao, ny fotoana anananao ary ny traikefanao.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Mentor amin’ny teny anglisy</h3>
+          <p>
+            Manampy ny mpianatra amin’ny conversation, pratique orale, prononciation
+            ary fanamafisana ny fahatokisan-tena.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Formateur na facilitateur</h3>
+          <p>
+            Mizara traikefa amin’ny anglisy, communication, leadership,
+            employability na développement de carrière.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Mamorona votoaty</h3>
+          <p>
+            Manampy amin’ny famoronana leçons, exercices, vidéos, fiches pédagogiques,
+            publications réseaux sociaux ary ressources d’apprentissage.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ambassadeur communautaire</h3>
+          <p>
+            Mampahafantatra ny programa, événement ary fahafahana atolotry ny Alliance Anglophone
+            amin’ny réseau sy communauté misy anao.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Coach carrière</h3>
+          <p>
+            Manampy ny mpianatra amin’ny CV, entretien, communication professionnelle
+            ary fahatokisan-tena amin’ny tontolon’ny asa.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Mpilatsaka an-tsitrapo partenaire</h3>
+          <p>
+            Misolo tena organisation, institution na orinasa liana amin’ny fiaraha-miasa,
+            fiofanana na fanohanana impact.
+          </p>
+        </div>
+      </div>
+
+      <div class="impact-box">
+        <h2>Fiantraikany andrasana</h2>
+        <ul>
+          <li>Manatsara ny fidirana amin’ny fiofanana anglisy azo ampiasaina.</li>
+          <li>Manamafy ny employability sy ny fiomanana amin’ny asa.</li>
+          <li>Manohana mpianatra, mpitady asa, mpiasa ary matihanina.</li>
+          <li>Mamorona fahafahana ho an’ny mentoring sy collaboration internationale.</li>
+          <li>Manamafy ny fampandrosoana communautaire amin’ny alalan’ny fanabeazana sy communication.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Iza no afaka miditra ho mpilatsaka an-tsitrapo?</h2>
+        <p>
+          Tsy voatery ho tonga lafatra ianao. Ny ilaina indrindra dia fahavononana,
+          sérieux, fanajana, azo itokisana ary finiavana handray anjara amin’ny iraka mahasoa.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Olona mahay miteny anglisy</h3>
+          <p>
+            Native na non-native English speakers afaka manampy ny mpianatra hanao pratique sy hivoatra.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Mpampianatra sy formateur</h3>
+          <p>
+            Educateurs afaka manampy amin’ny méthodes, supports, leçons na coaching.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Matihanina</h3>
+          <p>
+            Olona manana traikefa amin’ny business, tourisme, ONG, service client,
+            logistics, maritime na career development.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Mpianatra</h3>
+          <p>
+            Mpianatra mazoto te hanohana activités d’apprentissage,
+            communication ary mobilisation communautaire.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Organisation</h3>
+          <p>
+            Vondrona, orinasa, fiangonana, fikambanana, ONG na institution
+            te hiara-hiasa.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Contributeur numérique</h3>
+          <p>
+            Mpilatsaka an-tsitrapo afaka manampy amin’ny contenu, design, vidéo,
+            réseaux sociaux, online learning na administration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Midira amin’ny réseau mpilatsaka an-tsitrapo</h2>
+      <p>
+        Na afaka manampy ora iray isam-bolana ianao, na ora maro isan-kerinandro,
+        afaka mitondra fiovana tena ilaina ny fanohananao.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://wa.me/261349201200?text=Salama%20Alliance%20Anglophone,%20liana%20ny%20hiditra%20ho%20mpilatsaka%20an-tsitrapo%20aho.">Hifandray amin’ny WhatsApp</a>
+        <a class="btn btn-secondary" href="mailto:contact@allianceanglophone.mg">Handefa email</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Miorina eto Toamasina, Madagasikara. Ho avy tsy ho ela ny fiofanana an-tserasera.</p>
+  </footer>
+
+</body>
+</html>
