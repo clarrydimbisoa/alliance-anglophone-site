@@ -1,1 +1,499 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Bénévolat | Alliance Anglophone</title>
+  <meta name="description" content="Devenez bénévole avec Alliance Anglophone et aidez les apprenants à Madagascar à améliorer leur anglais, leur employabilité et leurs opportunités de carrière." />
+
+  <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 95px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .statement {
+      background: white;
+      border-radius: 18px;
+      padding: 36px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 6px solid var(--gold);
+      max-width: 980px;
+    }
+
+    .statement h2 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .statement p {
+      font-size: 1.08rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
+
+    .section-white .card {
+      background: var(--light);
+    }
+
+    .card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .impact-box {
+      background: var(--dark-blue);
+      color: white;
+      border-radius: 18px;
+      padding: 40px;
+      margin-top: 50px;
+    }
+
+    .impact-box h2 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .impact-box ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .impact-box li {
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1000px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <span>Alliance Anglophone</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="programmes.html">Programmes</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="mission.html">Mission</a>
+      <a href="impact.html">Impact</a>
+      <a class="active" href="benevolat.html">Bénévolat</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">FR</a>
+      <a href="../en/index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <h1>Devenez bénévole</h1>
+      <p>
+        Aidez à transformer les compétences en anglais en opportunités de carrière.
+        Rejoignez Alliance Anglophone et contribuez à l’éducation, à l’employabilité
+        et au développement communautaire à Madagascar.
+      </p>
+    </section>
+
+    <section class="section-white">
+      <div class="statement">
+        <h2>Pourquoi devenir bénévole avec Alliance Anglophone ?</h2>
+        <p>
+          Alliance Anglophone construit une plateforme d’apprentissage qui relie l’éducation en anglais
+          à la croissance professionnelle. Les bénévoles peuvent soutenir les apprenants,
+          créer des ressources, accompagner les étudiants, promouvoir les opportunités
+          et aider à élargir l’accès à une formation d’anglais pratique.
+        </p>
+        <p>
+          Que vous soyez enseignant, professionnel, étudiant, communicateur, mentor ou partenaire,
+          votre contribution peut aider les apprenants à devenir plus confiants et mieux préparés
+          aux opportunités réelles.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Rôles possibles des bénévoles</h2>
+        <p>
+          Vous pouvez soutenir la mission selon vos compétences, votre disponibilité et votre expérience.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Mentor en anglais</h3>
+          <p>
+            Soutenir les apprenants par la pratique de la conversation, les activités orales,
+            la prononciation et le renforcement de la confiance.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Formateur ou facilitateur</h3>
+          <p>
+            Partager votre expertise en anglais, communication, leadership,
+            employabilité ou développement de carrière.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Créateur de contenus</h3>
+          <p>
+            Aider à créer des leçons, exercices, vidéos, fiches pédagogiques,
+            publications pour les réseaux sociaux et ressources d’apprentissage.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Ambassadeur communautaire</h3>
+          <p>
+            Promouvoir les programmes, événements et opportunités d’Alliance Anglophone
+            dans votre réseau et votre communauté.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Coach carrière</h3>
+          <p>
+            Aider les apprenants avec la rédaction de CV, la préparation aux entretiens,
+            la communication professionnelle et la confiance au travail.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Bénévole partenaire</h3>
+          <p>
+            Représenter des organisations, institutions ou entreprises intéressées
+            par la collaboration, la formation ou le soutien à l’impact.
+          </p>
+        </div>
+      </div>
+
+      <div class="impact-box">
+        <h2>Impact attendu</h2>
+        <ul>
+          <li>Améliorer l’accès à une formation d’anglais pratique.</li>
+          <li>Renforcer l’employabilité et la préparation professionnelle.</li>
+          <li>Soutenir les étudiants, chercheurs d’emploi, travailleurs et professionnels.</li>
+          <li>Créer des opportunités de mentorat et de collaboration internationale.</li>
+          <li>Renforcer le développement communautaire par l’éducation et la communication.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Qui peut devenir bénévole ?</h2>
+        <p>
+          Vous n’avez pas besoin d’être parfait. Vous devez surtout être sérieux,
+          respectueux, fiable et prêt à contribuer à une mission d’apprentissage utile.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Personnes parlant anglais</h3>
+          <p>
+            Locuteurs natifs ou non natifs capables d’aider les apprenants
+            à pratiquer et à progresser.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Enseignants et formateurs</h3>
+          <p>
+            Éducateurs capables de contribuer par des méthodes, supports,
+            leçons ou accompagnements.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Professionnels</h3>
+          <p>
+            Personnes expérimentées dans les affaires, le tourisme, les ONG,
+            le service client, la logistique, le maritime ou la carrière.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Étudiants</h3>
+          <p>
+            Étudiants motivés souhaitant soutenir les activités d’apprentissage,
+            la communication et la mobilisation communautaire.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Organisations</h3>
+          <p>
+            Groupes, entreprises, églises, associations, ONG ou institutions
+            souhaitant collaborer.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>Contributeurs numériques</h3>
+          <p>
+            Bénévoles pouvant aider avec le contenu, le design, la vidéo,
+            les réseaux sociaux, l’apprentissage en ligne ou l’administration.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Rejoignez notre réseau de bénévoles</h2>
+      <p>
+        Que vous puissiez contribuer une heure par mois ou plusieurs heures par semaine,
+        votre soutien peut faire une vraie différence.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://wa.me/261349201200?text=Bonjour%20Alliance%20Anglophone,%20je%20souhaite%20devenir%20b%C3%A9n%C3%A9vole.">Postuler via WhatsApp</a>
+        <a class="btn btn-secondary" href="mailto:contact@allianceanglophone.mg">Envoyer un email</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Basé à Toamasina, Madagascar. Cours en ligne bientôt disponibles.</p>
+  </footer>
+
+</body>
+</html>
