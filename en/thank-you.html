@@ -1,51 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You | Alliance Anglophone</title>
-  <link rel="stylesheet" href="../assets/style.css" />
+  <meta name="description" content="Thank you for contacting Alliance Anglophone. We will get back to you soon.">
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --white: #ffffff;
+      --green: #25d366;
+      --text: #374151;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: white;
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: white;
+      padding: 4px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 70vh;
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 8%;
+      color: white;
+    }
+
+    .box {
+      max-width: 820px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 45px;
+      border-radius: 18px;
+    }
+
+    .box h1 {
+      font-size: 3rem;
+      margin: 0 0 18px;
+    }
+
+    .box p {
+      font-size: 1.1rem;
+      margin-bottom: 24px;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #111827;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 24px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 800px) {
+      .box h1 {
+        font-size: 2.2rem;
+      }
+
+      .box {
+        padding: 30px;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
+  <header class="topbar">
     <a class="brand" href="index.html">
-      <img src="../assets/logo.jpeg" alt="Alliance Anglophone logo" class="brand-logo">
+      <img src="../assets/logo.JPG" alt="Alliance Anglophone logo">
       <span>Alliance Anglophone</span>
     </a>
-  </div>
-</header>
 
-<main class="container">
-  <section class="card" style="text-align:center; margin-top:60px;">
-    <h1>Thank You</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="mission.html">Mission</a>
+      <a href="impact.html">Impact</a>
+      <a href="registration.html">Registration</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-    <p>
-      Your volunteer application has been received successfully.
-    </p>
+  <main class="hero">
+    <div class="box">
+      <h1>Thank You!</h1>
+      <p>
+        Your interest in Alliance Anglophone is appreciated.
+        We will get back to you as soon as possible through WhatsApp or email.
+      </p>
 
-    <p>
-      Our team will review your submission and contact you if a suitable
-      opportunity is available.
-    </p>
+      <p>
+        Online classes are currently being prepared. You can continue exploring our programs
+        or contact us directly if you need urgent information.
+      </p>
 
-    <p style="margin-top:30px;">
-      <a href="index.html" class="btn primary">Return to Home</a>
-    </p>
-  </section>
-</main>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="programs.html">Explore Programs</a>
+        <a class="btn btn-secondary" href="index.html">Back to Home</a>
+        <a class="btn btn-whatsapp" href="https://wa.me/261349201200">Contact on WhatsApp</a>
+      </div>
+    </div>
+  </main>
 
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <footer>
+    <p>© 2026 Alliance Anglophone. Based in Toamasina, Madagascar. Online classes opening soon.</p>
+  </footer>
 
 </body>
 </html>
-
