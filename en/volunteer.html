@@ -1,296 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>Volunteer | Alliance Anglophone</title>
+  <title>Volunteer | Alliance Anglophone</title>
+  <meta name="description" content="Volunteer with Alliance Anglophone and help learners in Madagascar improve their English, employability, and career opportunities." />
 
-<meta name="description" content="Volunteer with Alliance Anglophone and help learners in Madagascar improve their English, employability, and career opportunities.">
+  <link rel="stylesheet" href="../assets/style.css" />
 
-<link rel="stylesheet" href="../assets/style.css">
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
 
-<style>
-:root{
-    --blue:#0f4fbf;
-    --dark-blue:#062b63;
-    --gold:#d8aa2b;
-    --light:#f4f7fb;
-    --white:#ffffff;
-    --text:#374151;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body{
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:var(--light);
-    color:var(--text);
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-.hero{
-    background:
-    linear-gradient(rgba(6,43,99,.75),rgba(6,43,99,.75)),
-    url('../assets/hero.jpg') center/cover;
-    color:white;
-    text-align:center;
-    padding:90px 20px;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.hero h1{
-    font-size:56px;
-    margin-bottom:20px;
-}
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
 
-.hero p{
-    font-size:22px;
-    max-width:900px;
-    margin:auto;
-    line-height:1.6;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
 
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:70px 20px;
-}
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
 
-.section-title{
-    color:var(--dark-blue);
-    font-size:42px;
-    margin-bottom:20px;
-}
+    .brand span {
+      color: #ffffff;
+    }
 
-.intro{
-    font-size:20px;
-    line-height:1.8;
-    margin-bottom:50px;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
-}
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
 
-.card{
-    background:white;
-    padding:30px;
-    border-radius:16px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    border-top:5px solid var(--blue);
-}
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
 
-.card h3{
-    color:var(--dark-blue);
-    margin-top:0;
-}
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 95px 8%;
+      text-align: center;
+    }
 
-.card p{
-    line-height:1.7;
-}
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
 
-.impact{
-    margin-top:70px;
-    background:white;
-    padding:40px;
-    border-radius:16px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+    .page-hero p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
 
-.impact h2{
-    color:var(--dark-blue);
-}
+    section {
+      padding: 70px 8%;
+    }
 
-.impact ul{
-    line-height:2;
-}
+    .section-white {
+      background: white;
+    }
 
-.cta{
-    margin-top:70px;
-    text-align:center;
-    background:var(--dark-blue);
-    color:white;
-    padding:60px 30px;
-    border-radius:18px;
-}
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
 
-.cta h2{
-    margin-top:0;
-    font-size:40px;
-}
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
 
-.cta p{
-    font-size:20px;
-    max-width:800px;
-    margin:auto auto 30px;
-    line-height:1.8;
-}
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
 
-.btn{
-    display:inline-block;
-    background:var(--gold);
-    color:#111827;
-    padding:18px 35px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:18px;
-}
+    .statement {
+      background: white;
+      border-radius: 18px;
+      padding: 36px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 6px solid var(--gold);
+      max-width: 980px;
+    }
 
-.btn:hover{
-    opacity:.9;
-}
+    .statement h2 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 2rem;
+    }
 
-.info{
-    margin-top:40px;
-    font-size:18px;
-    line-height:2;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
 
-@media(max-width:768px){
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
 
-.hero h1{
-    font-size:38px;
-}
+    .section-white .card {
+      background: var(--light);
+    }
 
-.hero p{
-    font-size:18px;
-}
+    .card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
 
-.section-title{
-    font-size:32px;
-}
+    .impact-box {
+      background: var(--dark-blue);
+      color: white;
+      border-radius: 18px;
+      padding: 40px;
+      margin-top: 50px;
+    }
 
-.cta h2{
-    font-size:30px;
-}
+    .impact-box h2 {
+      color: var(--gold);
+      margin-top: 0;
+    }
 
-}
-</style>
+    .impact-box ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    .impact-box li {
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1000px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-<nav class="navbar">
-<a href="index.html" class="logo">
-<img src="../assets/logo.JPG" alt="Alliance Anglophone Logo" style="height:55px;">
-</a>
-</nav>
-</header>
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Alliance Anglophone logo">
+      <span>Alliance Anglophone</span>
+    </a>
 
-<section class="hero">
-<h1>Become a Volunteer</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="mission.html">Mission</a>
+      <a href="impact.html">Impact</a>
+      <a class="active" href="volunteer.html">Volunteer</a>
+      <a href="registration.html">Registration</a>
+      <a href="contact.html">Contact</a>
+      <a href="../fr/index.html">FR</a>
+      <a href="index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
+    </nav>
+  </header>
 
-<p>
-Help transform English skills into career opportunities.
-Join Alliance Anglophone and contribute to education,
-employability, and community development in Madagascar.
-</p>
-</section>
+  <main>
 
-<section class="container">
+    <section class="page-hero">
+      <h1>Become a Volunteer</h1>
+      <p>
+        Help transform English skills into career opportunities. Join Alliance Anglophone
+        and contribute to education, employability, and community development in Madagascar.
+      </p>
+    </section>
 
-<h2 class="section-title">Why volunteer with us?</h2>
+    <section class="section-white">
+      <div class="statement">
+        <h2>Why volunteer with Alliance Anglophone?</h2>
+        <p>
+          Alliance Anglophone is building a learning platform that connects English education
+          with professional growth. Volunteers can support learners, create resources, mentor students,
+          promote opportunities, and help expand access to practical English education.
+        </p>
+        <p>
+          Whether you are a teacher, professional, student, communicator, mentor, or partner,
+          your contribution can help learners become more confident and better prepared for real opportunities.
+        </p>
+      </div>
+    </section>
 
-<p class="intro">
-Alliance Anglophone is building a learning platform that connects
-English education with professional growth. Volunteers play a key role
-in supporting learners, creating resources, mentoring students,
-promoting opportunities, and expanding access to quality English education.
-</p>
+    <section>
+      <div class="section-title">
+        <h2>Volunteer roles</h2>
+        <p>
+          You can support the mission according to your skills, availability, and experience.
+        </p>
+      </div>
 
-<div class="cards">
+      <div class="grid">
+        <div class="card">
+          <h3>English Mentor</h3>
+          <p>
+            Support learners through conversation practice, speaking activities, pronunciation,
+            and confidence building.
+          </p>
+        </div>
 
-<div class="card">
-<h3>English Mentor</h3>
-<p>
-Support learners through conversation practice,
-speaking activities, and confidence building.
-</p>
-</div>
+        <div class="card">
+          <h3>Trainer & Facilitator</h3>
+          <p>
+            Share your expertise in English, communication, leadership, employability,
+            or career development.
+          </p>
+        </div>
 
-<div class="card">
-<h3>Trainer & Facilitator</h3>
-<p>
-Share your expertise in English, communication,
-leadership, employability, or career development.
-</p>
-</div>
+        <div class="card">
+          <h3>Content Creator</h3>
+          <p>
+            Help create lessons, exercises, videos, worksheets, social media posts,
+            and learning resources.
+          </p>
+        </div>
 
-<div class="card">
-<h3>Content Creator</h3>
-<p>
-Help create lessons, exercises, videos,
-articles, and learning resources.
-</p>
-</div>
+        <div class="card">
+          <h3>Community Ambassador</h3>
+          <p>
+            Promote Alliance Anglophone programs, events, and opportunities in your network
+            and community.
+          </p>
+        </div>
 
-<div class="card">
-<h3>Community Ambassador</h3>
-<p>
-Promote Alliance Anglophone programs,
-events, and opportunities in your network.
-</p>
-</div>
+        <div class="card">
+          <h3>Career Coach</h3>
+          <p>
+            Assist learners with CV writing, interview preparation, workplace communication,
+            and professional confidence.
+          </p>
+        </div>
 
-<div class="card">
-<h3>Career Coach</h3>
-<p>
-Assist learners with CV writing,
-interview preparation, and workplace readiness.
-</p>
-</div>
+        <div class="card">
+          <h3>Partner Volunteer</h3>
+          <p>
+            Represent organizations, institutions, or companies interested in collaboration,
+            training, or impact support.
+          </p>
+        </div>
+      </div>
 
-<div class="card">
-<h3>Partner Volunteer</h3>
-<p>
-Represent organizations, institutions,
-or companies interested in collaboration.
-</p>
-</div>
+      <div class="impact-box">
+        <h2>Expected impact</h2>
+        <ul>
+          <li>Improve access to practical English education.</li>
+          <li>Increase employability and career readiness.</li>
+          <li>Support students, job seekers, workers, and professionals.</li>
+          <li>Create opportunities for mentoring and international collaboration.</li>
+          <li>Strengthen community development through education and communication.</li>
+        </ul>
+      </div>
+    </section>
 
-</div>
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Who can volunteer?</h2>
+        <p>
+          You do not need to be perfect. You need to be serious, respectful, reliable,
+          and willing to contribute to a meaningful learning mission.
+        </p>
+      </div>
 
-<div class="impact">
+      <div class="grid">
+        <div class="card">
+          <h3>English speakers</h3>
+          <p>
+            Native or non-native English speakers who can help learners practice and improve.
+          </p>
+        </div>
 
-<h2>Expected impact</h2>
+        <div class="card">
+          <h3>Teachers and trainers</h3>
+          <p>
+            Educators who can contribute methods, materials, lessons, or coaching.
+          </p>
+        </div>
 
-<ul>
-<li>Improve access to practical English education.</li>
-<li>Increase employability and career readiness.</li>
-<li>Support students, job seekers, and professionals.</li>
-<li>Create opportunities for international collaboration.</li>
-<li>Strengthen community development through education.</li>
-</ul>
+        <div class="card">
+          <h3>Professionals</h3>
+          <p>
+            People with experience in business, tourism, NGOs, customer service,
+            logistics, maritime, or career development.
+          </p>
+        </div>
 
-</div>
+        <div class="card">
+          <h3>Students</h3>
+          <p>
+            Motivated students who want to support learning activities, communication,
+            and community outreach.
+          </p>
+        </div>
 
-<div class="cta">
+        <div class="card">
+          <h3>Organizations</h3>
+          <p>
+            Groups, companies, churches, associations, NGOs, or institutions that want
+            to collaborate.
+          </p>
+        </div>
 
-<h2>Join Our Volunteer Network</h2>
+        <div class="card">
+          <h3>Digital contributors</h3>
+          <p>
+            Volunteers who can help with content, design, video, social media,
+            online learning, or administration.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<p>
-Whether you can contribute one hour per month or several hours per week,
-your support can make a meaningful difference.
-</p>
+    <section class="cta">
+      <h2>Join our volunteer network</h2>
+      <p>
+        Whether you can contribute one hour per month or several hours per week,
+        your support can make a meaningful difference.
+      </p>
 
-<a
-class="btn"
-href="https://wa.me/261349201200?text=Hello%20Alliance%20Anglophone,%20I%20would%20like%20to%20volunteer."
-target="_blank">
-Apply via WhatsApp
-</a>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://wa.me/261349201200?text=Hello%20Alliance%20Anglophone,%20I%20would%20like%20to%20volunteer.">Apply via WhatsApp</a>
+        <a class="btn btn-secondary" href="mailto:contact@allianceanglophone.mg">Send an Email</a>
+      </div>
+    </section>
 
-<div class="info">
-📱 WhatsApp: +261 34 920 1200<br>
-📧 Email: contact@allianceanglophone.mg<br>
-📍 Toamasina, Madagascar
-</div>
+  </main>
 
-</div>
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
 
-</section>
+  <footer>
+    <p>© 2026 Alliance Anglophone. Based in Toamasina, Madagascar. Online classes opening soon.</p>
+  </footer>
 
 </body>
 </html>
