@@ -3,202 +3,554 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Social Impact | Alliance Anglophone</title>
+
+  <title>Impact | Alliance Anglophone</title>
+  <meta name="description" content="Explore the impact model of Alliance Anglophone: English skills, employability, income generation, workforce integration, and social impact in Madagascar." />
+
   <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a { color: white; opacity: 0.95; }
+    nav a:hover, nav a.active { color: var(--gold); }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 95px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section { padding: 70px 8%; }
+
+    .section-white { background: white; }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .statement {
+      background: white;
+      border-radius: 18px;
+      padding: 36px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 6px solid var(--gold);
+      max-width: 980px;
+    }
+
+    .statement h2 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
+
+    .section-white .card { background: var(--light); }
+
+    .card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .metric {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--dark-blue);
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .highlight h2 { color: var(--gold); }
+
+    .impact-chain {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .chain-step {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 5px solid var(--gold);
+      padding: 24px;
+      border-radius: 14px;
+    }
+
+    .chain-step span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .chain-step h3 {
+      margin: 0 0 8px;
+      color: white;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .box {
+      background: white;
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 5px solid var(--blue);
+    }
+
+    .box h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+    }
+
+    .box ul { padding-left: 20px; margin-bottom: 0; }
+    .box li { margin-bottom: 8px; }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 1000px) {
+      .grid,
+      .impact-chain,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
+  <header class="topbar">
     <a class="brand" href="index.html">
-      <img src="../assets/logo.jpeg" alt="Alliance Anglophone logo" class="brand-logo">
+      <img src="../assets/logo.JPG" alt="Alliance Anglophone logo">
       <span>Alliance Anglophone</span>
     </a>
 
-    <nav class="nav">
-  <a href="index.html">Home</a>
-  <a href="programs.html">Programs</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="mission.html">Mission</a>
-  <a class="active" href="impact.html">Impact</a>
-  <a href="registration.html">Registration</a>
-  <a href="contact.html">Contact</a>
-</nav>
-  </div>
-</header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="programs.html">Programs</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="mission.html">Mission</a>
+      <a class="active" href="impact.html">Impact</a>
+      <a href="registration.html">Registration</a>
+      <a href="contact.html">Contact</a>
+      <a href="../fr/index.html">FR</a>
+      <a href="index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
+    </nav>
+  </header>
 
-<main class="container">
+  <main>
 
-  <section class="page-head">
-    <h1>Social Impact & Inclusion</h1>
-    <p>
-      Using English education as a tool for dignity, reconstruction,
-      and long-term professional opportunity.
-    </p>
-<section class="card">
-  <h2>Volunteer Workers</h2>
+    <section class="page-hero">
+      <h1>Impact Through English and Employability</h1>
+      <p>
+        Alliance Anglophone measures impact by connecting English learning to confidence,
+        job readiness, income opportunities, and sustainable workforce integration.
+      </p>
+    </section>
 
-  <p>
-    Alliance Anglophone welcomes committed volunteer workers who wish to contribute
-    their time, skills, and experience to education, social inclusion, and community development.
-  </p>
+    <section class="section-white">
+      <div class="statement">
+        <h2>Our impact logic</h2>
+        <p>
+          English is not the final destination. For Alliance Anglophone, English is a practical tool
+          that can support employability, income generation, professional confidence, and long-term
+          career development.
+        </p>
+        <p>
+          Our model is designed to help learners move from language ability to real-world outcomes.
+        </p>
+      </div>
+    </section>
 
-  <p>
-    Volunteers may support English learning activities, conversation clubs, cultural programs,
-    library support, or social reintegration initiatives, depending on their background and availability.
-  </p>
+    <section class="highlight">
+      <div class="section-title">
+        <h2>The impact chain</h2>
+        <p>
+          Our work follows a simple but powerful transformation pathway.
+        </p>
+      </div>
 
-  <p>
-    We value responsibility, respect, and collaboration. All volunteer roles are guided,
-    structured, and aligned with our mission of professional and human development.
-  </p>
+      <div class="impact-chain">
+        <div class="chain-step">
+          <span>1</span>
+          <h3>English Skills</h3>
+          <p>Practical speaking, listening, reading, writing, vocabulary, and professional communication.</p>
+        </div>
 
-  <p>
-    Interested volunteers are invited to contact us to discuss opportunities and expectations.
-  </p>
-</section>
-<section class="card">
-  <h2>Social & Professional Reintegration</h2>
+        <div class="chain-step">
+          <span>2</span>
+          <h3>Job Readiness</h3>
+          <p>CV preparation, interview practice, workplace behavior, soft skills, and confidence.</p>
+        </div>
 
-  <p>
-    Alliance Anglophone supports social and professional reintegration through
-    structured English education, discipline, and personal development.
-  </p>
+        <div class="chain-step">
+          <span>3</span>
+          <h3>Opportunity Access</h3>
+          <p>Better readiness for employment, training, internships, service jobs, or remote work.</p>
+        </div>
 
-  <p>
-    Our programs are designed to support individuals in recovery and those rebuilding
-    their lives by strengthening communication skills, confidence, and employability.
-  </p>
+        <div class="chain-step">
+          <span>4</span>
+          <h3>Career Growth</h3>
+          <p>Improved confidence, income opportunities, retention, and long-term professional mobility.</p>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    Learning English becomes a tool for stability, routine, dignity, and access to
-    new professional pathways, both locally and internationally.
-  </p>
+    <section>
+      <div class="section-title">
+        <h2>What we aim to measure</h2>
+        <p>
+          Impact should be tracked, not only claimed. Alliance Anglophone is preparing a simple monitoring system.
+        </p>
+      </div>
 
-  <p>
-    Participation in these programs is guided, respectful, and focused on long-term growth.
-    We work in collaboration with families, community actors, and social partners when applicable.
-  </p>
-</section>
+      <div class="grid">
+        <div class="card">
+          <div class="metric">01</div>
+          <h3>Participation</h3>
+          <p>Number of learners enrolled and number of learners completing programs.</p>
+        </div>
 
-    <section class="card">
-  <h2>Learning Library & Resources</h2>
+        <div class="card">
+          <div class="metric">02</div>
+          <h3>Learning progress</h3>
+          <p>Improvement in practical English level, confidence, and ability to communicate.</p>
+        </div>
 
-  <p>
-    Alliance Anglophone provides access to a growing learning library designed to
-    support students outside the classroom.
-  </p>
+        <div class="card">
+          <div class="metric">03</div>
+          <h3>Employability</h3>
+          <p>CVs created, interviews practiced, applications submitted, and job-readiness skills developed.</p>
+        </div>
 
-  <ul>
-    <li>English books and reading materials</li>
-    <li>Grammar references and exam preparation resources</li>
-    <li>Audio and video learning materials</li>
-    <li>Guided self-study recommendations</li>
-  </ul>
+        <div class="card">
+          <div class="metric">04</div>
+          <h3>Opportunity access</h3>
+          <p>Access to employment, further training, internships, career pathways, or professional opportunities.</p>
+        </div>
 
-  <p>
-    The library encourages independent learning, reading habits, and continuous
-    improvement at every level.
-  </p>
-</section>
+        <div class="card">
+          <div class="metric">05</div>
+          <h3>Retention</h3>
+          <p>Follow-up on learners who access employment or training and their ability to remain engaged over time.</p>
+        </div>
 
-    <section class="card">
-  <h2>Video Programs & Digital Learning</h2>
+        <div class="card">
+          <div class="metric">06</div>
+          <h3>Satisfaction</h3>
+          <p>Participant satisfaction, confidence improvement, and feedback from learners or partners.</p>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    Alliance Anglophone integrates video-based learning to reinforce classroom instruction
-    and support flexible learning schedules.
-  </p>
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Social impact focus</h2>
+        <p>
+          The social value of Alliance Anglophone is strongest where English training becomes a bridge to better opportunity.
+        </p>
+      </div>
 
- <section class="card">
-  <h2>Video Programs & Digital Learning</h2>
+      <div class="two-col">
+        <div class="box">
+          <h3>Who we aim to support</h3>
+          <ul>
+            <li>Young people seeking employability skills</li>
+            <li>Job seekers needing English for better opportunities</li>
+            <li>Workers who need professional communication</li>
+            <li>Learners in transition who need confidence and structure</li>
+            <li>Organizations seeking workforce development</li>
+          </ul>
+        </div>
 
-  <p>
-    Alliance Anglophone integrates video-based learning to reinforce classroom instruction
-    and support flexible learning schedules.
-  </p>
+        <div class="box">
+          <h3>What we aim to improve</h3>
+          <ul>
+            <li>Practical English communication</li>
+            <li>Job-readiness and professional confidence</li>
+            <li>Access to employment or further training</li>
+            <li>Income opportunities through better communication</li>
+            <li>Long-term learning habits and career mobility</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <ul>
-  <li>Recorded lessons and guided explanations</li>
-  <li>Listening and pronunciation practice</li>
-  <li>Career-oriented English scenarios</li>
-  <li>English movies and short films with guided discussion</li>
-  <li>Subtitles and vocabulary support when appropriate</li>
-</ul>
+    <section>
+      <div class="section-title">
+        <h2>Partnership value</h2>
+        <p>
+          Our impact model is useful for companies, NGOs, institutions, and projects that need measurable workforce development.
+        </p>
+      </div>
 
-  <p>
-    Video programs allow learners to review concepts, improve listening skills,
-    and progress at their own pace.
-  </p>
-</section>
+      <div class="grid">
+        <div class="card">
+          <h3>For companies</h3>
+          <p>
+            Better-prepared candidates and employees with stronger communication, confidence, and workplace readiness.
+          </p>
+        </div>
 
-  <section class="card">
-  <h2>English Speaking Club & Cultural Activities</h2>
+        <div class="card">
+          <h3>For NGOs and projects</h3>
+          <p>
+            Training that can support employability, youth development, reintegration, and professional communication.
+          </p>
+        </div>
 
-  <p>
-    Alliance Anglophone promotes active language use through English speaking clubs
-    and cultural exchange activities.
-  </p>
+        <div class="card">
+          <h3>For institutions</h3>
+          <p>
+            A practical model linking training, outcomes, reporting, and long-term learning infrastructure.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <ul>
-    <li>Conversation sessions and discussion groups</li>
-    <li>Debates, public speaking, and confidence-building activities</li>
-    <li>English movie discussions and cultural themes</li>
-    <li>Educational excursions and community-based activities when applicable</li>
-  </ul>
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Monitoring and reporting</h2>
+        <p>
+          Alliance Anglophone is preparing a simple monitoring and evaluation approach to track learning and employability outcomes.
+        </p>
+      </div>
 
-  <p>
-    These activities create a relaxed and supportive environment where learners
-    practice real-life communication and develop intercultural awareness.
-  </p>
-</section>
-    
-  <p>
-    Video programs allow learners to review concepts, improve listening skills,
-    and progress at their own pace.
-  </p>
-</section>
-<section class="card">
-  <h2>Donors & Partners</h2>
+      <div class="two-col">
+        <div class="box">
+          <h3>Tools we plan to use</h3>
+          <ul>
+            <li>Learner registration records</li>
+            <li>Pre/post English level checks</li>
+            <li>Completion tracking</li>
+            <li>Follow-up surveys</li>
+            <li>Employer or partner feedback when available</li>
+          </ul>
+        </div>
 
-  <p>
-    Alliance Anglophone welcomes partnerships and support from organizations,
-    institutions, and individuals who share our commitment to education,
-    employability, and social inclusion.
-  </p>
+        <div class="box">
+          <h3>Reports we can prepare</h3>
+          <ul>
+            <li>Training completion summaries</li>
+            <li>Progress reports</li>
+            <li>Participant feedback summaries</li>
+            <li>Employment or training access follow-up</li>
+            <li>Partner-oriented impact notes</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <p>
-    Contributions may support educational access, learning resources,
-    social reintegration initiatives, volunteer programs, or cultural activities.
-  </p>
+    <section class="cta">
+      <h2>Partner with an impact-oriented learning platform</h2>
+      <p>
+        Alliance Anglophone is building a practical pathway from English skills to employability,
+        income opportunities, and career growth.
+      </p>
 
-  <p>
-    All support is managed transparently and aligned with clearly defined
-    educational objectives and ethical standards.
-  </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="contact.html">Discuss Partnership</a>
+        <a class="btn btn-secondary" href="registration.html">Register Interest</a>
+      </div>
+    </section>
 
-  <p>
-    Organizations or individuals interested in supporting or partnering with
-    Alliance Anglophone are invited to contact us to explore meaningful and
-    responsible collaboration.
-  </p>
+  </main>
 
-  <a class="btn primary" href="contact.html">Become a Partner or Support the Project</a>
-</section>
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
 
-    
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+  <footer>
+    <p>© 2026 Alliance Anglophone. Based in Toamasina, Madagascar. Online classes opening soon.</p>
+  </footer>
 
 </body>
 </html>
-
