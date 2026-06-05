@@ -1,1 +1,537 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Fifandraisana | Alliance Anglophone</title>
+  <meta name="description" content="Mifandraisa amin’ny Alliance Anglophone raha mila fanazavana momba ny fiofanana teny anglisy, anglisy matihanina, employability, fiaraha-miasa ary programa eto Madagasikara." />
+
+  <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.76), rgba(6, 43, 99, 0.76)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
+
+    .contact-card.gold {
+      border-top-color: var(--gold);
+    }
+
+    .contact-card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+      font-size: 1.45rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+
+    .contact-list li {
+      margin-bottom: 14px;
+    }
+
+    .contact-list strong {
+      color: var(--dark-blue);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .notice {
+      background: #fff7dd;
+      border-left: 5px solid var(--gold);
+      padding: 22px;
+      border-radius: 14px;
+      margin-top: 28px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .info-card {
+      background: white;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 5px solid var(--blue);
+    }
+
+    .section-white .info-card {
+      background: var(--light);
+    }
+
+    .info-card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+    }
+
+    .faq {
+      display: grid;
+      gap: 18px;
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+      border-left: 5px solid var(--blue);
+    }
+
+    .faq-item h3 {
+      color: var(--dark-blue);
+      margin: 0 0 8px;
+    }
+
+    .faq-item p {
+      margin: 0;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <span>Alliance Anglophone</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Fandraisana</a>
+      <a href="programa.html">Programa</a>
+      <a href="saram-piofanana.html">Saram-piofanana</a>
+      <a href="iraka.html">Iraka</a>
+      <a href="fiantraikany.html">Fiantraikany</a>
+      <a href="asa-an-tsitrapo.html">Asa an-tsitrapo</a>
+      <a href="fisoratana.html">Fisoratana</a>
+      <a class="active" href="fifandraisana.html">Fifandraisana</a>
+      <a href="../fr/index.html">FR</a>
+      <a href="../en/index.html">EN</a>
+      <a href="index.html">MG</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <h1>Mifandraisa amin’ny Alliance Anglophone</h1>
+      <p>
+        Mifandraisa aminay raha mila fanazavana momba ny programa teny anglisy an-tserasera,
+        anglisy matihanina, fiofanana mifantoka amin’ny carrière, fiofanana entreprise
+        na fahafahana fiaraha-miasa.
+      </p>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Ahoana no hifandraisana aminay?</h2>
+        <p>
+          WhatsApp no fomba haingana indrindra hifandraisana aminay.
+          Afaka mandefa email ihany koa ianao ho an’ny fangatahana institutionnelle,
+          professionnelle na partenariat.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <h3>Fifandraisana mivantana</h3>
+          <p>
+            Mifandraisa aminay raha te hisoratra anarana, hanontany momba ny programa,
+            hahazo fanazavana momba ny saram-piofanana, na mila orientation alohan’ny hisafidianana parcours.
+          </p>
+
+          <ul class="contact-list">
+            <li><strong>WhatsApp :</strong> +261 34 920 1200</li>
+            <li><strong>Email principal :</strong> contact@allianceanglophone.mg</li>
+            <li><strong>Email information :</strong> info@allianceanglophone.mg</li>
+            <li><strong>Pejy Facebook :</strong> English Skills Booster</li>
+            <li><strong>Toerana :</strong> miorina eto Toamasina, Madagasikara</li>
+          </ul>
+
+          <div class="btn-row">
+            <a class="btn btn-whatsapp" href="https://wa.me/261349201200">Hifandray amin’ny WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:contact@allianceanglophone.mg">Handefa email</a>
+          </div>
+        </div>
+
+        <div class="contact-card gold">
+          <h3>Toetry ny tetikasa amin’izao fotoana izao</h3>
+          <p>
+            Alliance Anglophone dia manomana ny programa teny anglisy an-tserasera.
+            Ny foibe fianarana ara-batana eto Toamasina dia mbola eo am-panomanana ihany koa.
+          </p>
+
+          <ul class="contact-list">
+            <li><strong>Cours en ligne :</strong> ho avy tsy ho ela</li>
+            <li><strong>Cours présentiel :</strong> tsy mbola kasaina amin’ity taona ity</li>
+            <li><strong>Foibe fianarana :</strong> mbola eo am-panomanana</li>
+            <li><strong>Adiresy :</strong> mbola tsy aseho ampahibemaso amin’izao fotoana izao</li>
+          </ul>
+
+          <div class="notice">
+            Havoaka ampahibemaso ny adiresy feno rehefa vonona handray mpianatra ny foibe.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Nahoana ianao no afaka mifandray aminay?</h2>
+        <p>
+          Mamaly mpianatra, ray aman-dreny, matihanina, orinasa, institution ary partenaire mety hiara-miasa izahay.
+        </p>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <h3>Ho an’ny mpianatra</h3>
+          <p>
+            Manontania momba ny niveau, programa, cours en ligne, pratique orale,
+            fisoratana ary orientation.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Ho an’ny ray aman-dreny</h3>
+          <p>
+            Mangataha fanazavana momba ny programa ho an’ny ankizy sy tanora,
+            rythme d’apprentissage, disponibilité en ligne ary saram-piofanana.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Ho an’ny orinasa</h3>
+          <p>
+            Mangataha fiofanana anglisy matihanina ho an’ny ekipa, mpiasa,
+            service client, tourisme na communication amin’ny asa.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Ho an’ny institution</h3>
+          <p>
+            Afaka miresaka partenariat de formation, employability,
+            parcours carrière ary fianarana mifantoka amin’ny impact.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Ho an’ny ONG sy projet</h3>
+          <p>
+            Mifandraisa aminay ho an’ny fiofanana anglisy mifandray amin’ny employability,
+            réinsertion, tanora na communication amin’ny sehatry ny développement.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Ho an’ny fiaraha-miasa</h3>
+          <p>
+            Afaka mijery fiaraha-miasa momba ny anglisy matihanina,
+            employability, fanomanana carrière ary accès à l’apprentissage isika.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Fanontaniana matetika</h2>
+        <p>
+          Ireto valiny ireto dia manazava ny toetry ny tetikasa amin’izao fotoana izao
+          sy manampy ny mpitsidika hahafantatra ny fomba hifandraisana aminay.
+        </p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3>Efa misokatra ve ny cours en ligne?</h3>
+          <p>
+            Mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.
+            Afaka mifandray aminay amin’ny WhatsApp ianao raha liana.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Misy cours présentiel ve?</h3>
+          <p>
+            Tsy mbola kasaina amin’ity taona ity ny cours présentiel.
+            Ny foibe fianarana eto Toamasina dia mbola eo am-panomanana.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Nahoana no tsy mbola aseho ny adiresy feno?</h3>
+          <p>
+            Satria mbola tsy vonona handray mpianatra ny foibe ara-batana.
+            Haseho ny adiresy feno rehefa vonona amin’ny fitsidihana ampahibemaso ilay toerana.
+          </p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Afaka mifandray ve ny orinasa na institution?</h3>
+          <p>
+            Eny. Afaka mifandray aminay ny orinasa, institution, ONG ary projet
+            raha mila fiofanana manokana amin’ny anglisy sy employability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Manana fanontaniana?</h2>
+      <p>
+        Alefaso aminay amin’ny WhatsApp ny hafatrao, dia hanampy anao araka ny tanjonao izahay.
+      </p>
+
+      <div class="btn-row" style="justify-content:center;">
+        <a class="btn btn-primary" href="https://wa.me/261349201200">Hifandray amin’ny WhatsApp</a>
+        <a class="btn btn-secondary" href="fisoratana.html">Haneho fahalianana</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Miorina eto Toamasina, Madagasikara. Ho avy tsy ho ela ny fiofanana an-tserasera.</p>
+  </footer>
+
+</body>
+</html>
