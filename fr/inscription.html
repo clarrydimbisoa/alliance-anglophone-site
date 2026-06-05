@@ -3,104 +3,608 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inscription — Alliance Anglophone</title>
+
+  <title>Inscription | Alliance Anglophone</title>
+  <meta name="description" content="Inscrivez-vous aux programmes d’anglais en ligne d’Alliance Anglophone : anglais général, anglais professionnel, anglais pour enfants, club de conversation et formation entreprise." />
+
   <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+      --border: #d9e2f1;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.76), rgba(6, 43, 99, 0.76)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .form-card,
+    .side-card {
+      background: white;
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+    }
+
+    .form-card {
+      border-top: 5px solid var(--blue);
+    }
+
+    .side-card {
+      border-top: 5px solid var(--gold);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-weight: 700;
+      color: var(--dark-blue);
+      font-size: 0.95rem;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-size: 1rem;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #ffffff;
+      color: var(--dark);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid rgba(15, 79, 191, 0.25);
+      border-color: var(--blue);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: white;
+      width: 100%;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .notice {
+      background: #fff7dd;
+      border-left: 5px solid var(--gold);
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+    }
+
+    .side-card h3 {
+      color: var(--dark-blue);
+      margin-top: 0;
+    }
+
+    .side-card ul {
+      padding-left: 20px;
+      margin: 14px 0;
+    }
+
+    .side-card li {
+      margin-bottom: 8px;
+    }
+
+    .step-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 16px;
+      padding: 26px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-left: 5px solid var(--blue);
+    }
+
+    .step span {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .step h3 {
+      color: var(--dark-blue);
+      margin: 0 0 8px;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .layout,
+      .step-list {
+        grid-template-columns: 1fr;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
+  <header class="topbar">
     <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
       <span>Alliance Anglophone</span>
     </a>
 
-    <nav class="nav">
+    <nav>
       <a href="index.html">Accueil</a>
       <a href="programmes.html">Programmes</a>
+      <a href="tarifs.html">Tarifs</a>
       <a href="mission.html">Mission</a>
+      <a href="impact.html">Impact</a>
+      <a href="benevolat.html">Bénévolat</a>
       <a class="active" href="inscription.html">Inscription</a>
       <a href="contact.html">Contact</a>
-
-      <span class="lang">
-        <a class="langlink active" href="../fr/inscription.html">FR</a>
-        <a class="langlink" href="../en/registration.html">EN</a>
-        <a class="langlink" href="../mg/fisoratana.html">MG</a>
-      </span>
+      <a href="index.html">FR</a>
+      <a href="../en/index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main class="container">
-  <section class="card">
-    <h1>Inscription</h1>
-    <p>Remplis ce formulaire, ou écris-nous directement sur WhatsApp.</p>
+  <main>
 
-    <div class="grid-2">
-      <div>
-        <h2>Formulaire rapide</h2>
+    <section class="page-hero">
+      <h1>Commencez votre parcours vers la réussite en anglais</h1>
+      <p>
+        Manifestez votre intérêt pour les programmes en ligne d’Alliance Anglophone
+        et faites le premier pas vers un anglais pratique, l’employabilité et la confiance professionnelle.
+      </p>
+    </section>
 
-        <form class="form" action="mailto:contact@allianceanglophone.mg" method="post" enctype="text/plain">
-          <label>Nom complet</label>
-          <input name="Nom" required />
-
-          <label>Téléphone (WhatsApp)</label>
-          <input name="Téléphone" required />
-
-          <label>Niveau souhaité</label>
-          <select name="Niveau">
-            <option>Débutant</option>
-            <option>Intermédiaire</option>
-            <option>Avancé</option>
-          </select>
-
-          <label>Programme</label>
-          <select name="Programme">
-            <option>Anglais général</option>
-            <option>Business English</option>
-            <option>Anglais enfants</option>
-            <option>Préparation examens</option>
-            <option>Conversation</option>
-            <option>Corporate</option>
-          </select>
-
-          <label>Message</label>
-          <textarea name="Message" rows="4" placeholder="Disponibilités, objectifs, etc."></textarea>
-
-          <button class="btn" type="submit">Envoyer</button>
-        </form>
-
-        <p class="hint">
-          Si ton appareil n’a pas d’application mail, utilise WhatsApp ci-dessous.
-        </p>
-      </div>
-
-      <div>
-        <h2>WhatsApp</h2>
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Demande d’inscription</h2>
         <p>
-          <a class="btn btn-outline" href="https://wa.me/261349201200" target="_blank">
-            S’inscrire via WhatsApp
-          </a>
+          Les cours en ligne sont actuellement en préparation et devraient ouvrir prochainement.
+          Remplissez le formulaire ci-dessous, puis envoyez votre demande d’inscription par WhatsApp.
         </p>
-
-        <h2>Horaires</h2>
-        <p>Lundi–Samedi : 08:00–18:00</p>
-
-        <h2>Lieu</h2>
-        <p>Toamasina, Madagascar</p>
       </div>
-    </div>
-  </section>
-</main>
 
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
+      <div class="layout">
+        <div class="form-card">
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+          <div class="notice">
+            <strong>Important :</strong> ce formulaire ne stocke pas vos informations sur le site.
+            Lorsque vous cliquez sur le bouton, votre demande d’inscription sera préparée sous forme de message WhatsApp.
+          </div>
+
+          <form id="registrationForm">
+            <div class="form-grid">
+
+              <div class="field">
+                <label for="fullName">Nom complet</label>
+                <input type="text" id="fullName" placeholder="Exemple : Jean Andry" required>
+              </div>
+
+              <div class="field">
+                <label for="age">Âge</label>
+                <input type="number" id="age" placeholder="Exemple : 25" required>
+              </div>
+
+              <div class="field">
+                <label for="whatsapp">Numéro WhatsApp</label>
+                <input type="tel" id="whatsapp" placeholder="Exemple : +261 34 000 0000" required>
+              </div>
+
+              <div class="field">
+                <label for="email">Adresse email</label>
+                <input type="email" id="email" placeholder="Exemple : nom@email.com">
+              </div>
+
+              <div class="field">
+                <label for="city">Ville / Localisation</label>
+                <input type="text" id="city" placeholder="Exemple : Toamasina">
+              </div>
+
+              <div class="field">
+                <label for="level">Niveau actuel en anglais</label>
+                <select id="level" required>
+                  <option value="">Sélectionnez votre niveau</option>
+                  <option>Débutant</option>
+                  <option>Élémentaire</option>
+                  <option>Intermédiaire</option>
+                  <option>Intermédiaire avancé</option>
+                  <option>Avancé</option>
+                  <option>Je ne suis pas sûr(e)</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="program">Programme souhaité</label>
+                <select id="program" required>
+                  <option value="">Sélectionnez un programme</option>
+                  <option>Anglais général</option>
+                  <option>Anglais professionnel et carrière</option>
+                  <option>Anglais pour enfants et adolescents</option>
+                  <option>Club de conversation anglaise</option>
+                  <option>Formation entreprise</option>
+                  <option>Je ne suis pas encore sûr(e)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="format">Format souhaité</label>
+                <select id="format" required>
+                  <option value="">Sélectionnez un format</option>
+                  <option>En ligne individuel</option>
+                  <option>En ligne en groupe</option>
+                  <option>Formation entreprise</option>
+                  <option>Pas encore sûr(e)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="goal">Objectif principal</label>
+                <select id="goal" required>
+                  <option value="">Sélectionnez votre objectif</option>
+                  <option>Emploi</option>
+                  <option>Évolution de carrière</option>
+                  <option>Études à l’étranger</option>
+                  <option>Voyage</option>
+                  <option>Business</option>
+                  <option>Développement personnel</option>
+                  <option>Autre</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label for="message">Message complémentaire</label>
+                <textarea id="message" placeholder="Dites-nous davantage sur votre objectif, votre disponibilité ou vos questions."></textarea>
+              </div>
+
+            </div>
+
+            <button class="btn btn-whatsapp" type="submit">
+              Envoyer la demande d’inscription sur WhatsApp
+            </button>
+          </form>
+        </div>
+
+        <aside class="side-card">
+          <h3>Besoin d’aide avant l’inscription ?</h3>
+          <p>
+            Vous pouvez nous contacter directement si vous ne savez pas encore quel programme choisir.
+          </p>
+
+          <ul>
+            <li><strong>WhatsApp :</strong> +261 34 920 1200</li>
+            <li><strong>Email :</strong> contact@allianceanglophone.mg</li>
+            <li><strong>Localisation :</strong> basé à Toamasina, Madagascar</li>
+            <li><strong>Statut :</strong> cours en ligne bientôt disponibles</li>
+          </ul>
+
+          <a class="btn btn-secondary" href="mailto:contact@allianceanglophone.mg">Envoyer un email</a>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Comment fonctionne l’inscription ?</h2>
+        <p>
+          Le processus est simple et conçu pour aider les apprenants à recevoir une orientation claire avant de commencer.
+        </p>
+      </div>
+
+      <div class="step-list">
+        <div class="step">
+          <span>1</span>
+          <h3>Envoyez votre demande</h3>
+          <p>Remplissez le formulaire et envoyez vos informations par WhatsApp.</p>
+        </div>
+
+        <div class="step">
+          <span>2</span>
+          <h3>Recevez une orientation</h3>
+          <p>Nous examinons votre objectif, votre niveau et le format d’apprentissage souhaité.</p>
+        </div>
+
+        <div class="step">
+          <span>3</span>
+          <h3>Commencez dès l’ouverture</h3>
+          <p>Lorsque les cours en ligne seront ouverts, vous recevrez les détails du programme et les prochaines étapes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Pas encore prêt à vous inscrire ?</h2>
+      <p>
+        Contactez-nous sur WhatsApp et posez vos questions avant de choisir un programme.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="https://wa.me/261349201200">Contacter sur WhatsApp</a>
+        <a class="btn btn-secondary" href="programmes.html">Voir les programmes</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Basé à Toamasina, Madagascar. Cours en ligne bientôt disponibles.</p>
+  </footer>
+
+  <script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const fullName = document.getElementById("fullName").value.trim();
+      const age = document.getElementById("age").value.trim();
+      const whatsapp = document.getElementById("whatsapp").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const city = document.getElementById("city").value.trim();
+      const level = document.getElementById("level").value;
+      const program = document.getElementById("program").value;
+      const format = document.getElementById("format").value;
+      const goal = document.getElementById("goal").value;
+      const message = document.getElementById("message").value.trim();
+
+      const text =
+        "Bonjour Alliance Anglophone,%0A%0A" +
+        "Je souhaite m’inscrire ou recevoir des informations sur vos programmes d’anglais.%0A%0A" +
+        "Nom complet : " + encodeURIComponent(fullName) + "%0A" +
+        "Âge : " + encodeURIComponent(age) + "%0A" +
+        "Numéro WhatsApp : " + encodeURIComponent(whatsapp) + "%0A" +
+        "Email : " + encodeURIComponent(email || "Non indiqué") + "%0A" +
+        "Ville / Localisation : " + encodeURIComponent(city || "Non indiqué") + "%0A" +
+        "Niveau actuel en anglais : " + encodeURIComponent(level) + "%0A" +
+        "Programme souhaité : " + encodeURIComponent(program) + "%0A" +
+        "Format souhaité : " + encodeURIComponent(format) + "%0A" +
+        "Objectif principal : " + encodeURIComponent(goal) + "%0A" +
+        "Message complémentaire : " + encodeURIComponent(message || "Aucun message complémentaire") + "%0A%0A" +
+        "Merci.";
+
+      const whatsappUrl = "https://wa.me/261349201200?text=" + text;
+      window.open(whatsappUrl, "_blank");
+    });
+  </script>
 
 </body>
 </html>
