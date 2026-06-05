@@ -3,50 +3,541 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Alliance Anglophone — Français</title>
+
+  <title>Alliance Anglophone | Anglais professionnel et employabilité à Madagascar</title>
+  <meta name="description" content="Alliance Anglophone propose des formations d’anglais professionnel en ligne, orientées vers l’employabilité, la carrière et les opportunités à Madagascar." />
+
   <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span { color: #ffffff; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .hero {
+      min-height: 620px;
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.45), rgba(6, 43, 99, 0.45)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 80px 8%;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      background: rgba(0, 0, 0, 0.55);
+      padding: 42px;
+      border-radius: 18px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin: 0 0 18px;
+    }
+
+    .hero h2 {
+      font-size: 1.45rem;
+      color: var(--gold);
+      margin: 0 0 20px;
+    }
+
+    .hero p {
+      font-size: 1.08rem;
+      margin-bottom: 24px;
+    }
+
+    .btn-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--dark-blue);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    section { padding: 70px 8%; }
+
+    .section-white { background: white; }
+
+    .section-title {
+      max-width: 850px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-title p { font-size: 1.05rem; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 26px;
+      border-radius: 14px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+      border-top: 4px solid var(--blue);
+    }
+
+    .section-white .card { background: var(--light); }
+
+    .card h3 {
+      margin-top: 0;
+      color: var(--dark-blue);
+      font-size: 1.2rem;
+    }
+
+    .card p { margin-bottom: 0; }
+
+    .highlight {
+      background: var(--dark-blue);
+      color: white;
+      padding: 70px 8%;
+    }
+
+    .highlight h2 {
+      color: var(--gold);
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .price-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .price-item {
+      background: white;
+      border-left: 5px solid var(--gold);
+      padding: 18px 22px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .price-item strong { color: var(--dark-blue); }
+
+    .status-box {
+      background: #fff7dd;
+      border-left: 5px solid var(--gold);
+      padding: 22px;
+      border-radius: 12px;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid,
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 60px 5%;
+      }
+
+      .hero-content { padding: 28px; }
+
+      .hero h1 { font-size: 2.2rem; }
+
+      .topbar { padding: 16px 5%; }
+
+      section,
+      .highlight {
+        padding: 55px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header class="topbar">
-  <div class="container navwrap">
+  <header class="topbar">
     <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
       <span>Alliance Anglophone</span>
     </a>
 
-   <nav class="nav">
-  <a class="active" href="index.html">Accueil</a>
-  <a href="programmes.html">Programmes</a>
-  <a href="mission.html">Mission</a>
-  <a href="inscription.html">Inscription</a>
-  <a href="contact.html">Contact</a>
+    <nav>
+      <a class="active" href="index.html">Accueil</a>
+      <a href="programmes.html">Programmes</a>
+      <a href="tarifs.html">Tarifs</a>
+      <a href="mission.html">Mission</a>
+      <a href="impact.html">Impact</a>
+      <a href="benevolat.html">Bénévolat</a>
+      <a href="inscription.html">Inscription</a>
+      <a href="contact.html">Contact</a>
+      <a href="index.html">FR</a>
+      <a href="../en/index.html">EN</a>
+      <a href="../mg/index.html">MG</a>
+    </nav>
+  </header>
 
-  <span class="lang">
-    <a class="langlink active" href="../fr/index.html">FR</a>
-    <a class="langlink" href="../en/index.html">EN</a>
-    <a class="langlink" href="../mg/index.html">MG</a>
-  </span>
-</nav>
-  </div>
-</header>
+  <main>
 
-<main class="container">
-  <section class="card">
-    <h1>Bienvenue à Alliance Anglophone</h1>
-    <p>Cours d’anglais à Toamasina : enfants, adultes, professionnels.</p>
-    <p><a class="btn" href="inscription.html">S’inscrire</a></p>
-  </section>
-</main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Anglais professionnel pour les opportunités de carrière</h1>
+        <h2>Des compétences en anglais vers le revenu. Du revenu vers la carrière. De la carrière vers une vie meilleure.</h2>
+        <p>
+          Alliance Anglophone aide les apprenants à Madagascar à développer un anglais pratique,
+          une communication professionnelle et des compétences d’employabilité pour accéder à de meilleures opportunités.
+        </p>
 
-<footer class="footer">
-  <div class="container">
-    <small>© <span id="year"></span> Alliance Anglophone</small>
-  </div>
-</footer>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="inscription.html">S’inscrire</a>
+          <a class="btn btn-secondary" href="https://wa.me/261349201200">Contacter sur WhatsApp</a>
+        </div>
+      </div>
+    </section>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Plus qu’une simple école d’anglais</h2>
+        <p>
+          Alliance Anglophone est une plateforme d’anglais professionnel et d’employabilité.
+          Notre objectif n’est pas seulement d’enseigner l’anglais, mais d’aider les apprenants
+          à devenir plus confiants, plus employables et mieux préparés aux réalités professionnelles.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Anglais pratique</h3>
+          <p>Apprendre l’anglais pour les conversations réelles, le travail, les entretiens, les études et l’évolution professionnelle.</p>
+        </div>
+
+        <div class="card">
+          <h3>Orientation employabilité</h3>
+          <p>Renforcer la communication, la confiance, la discipline, les entretiens, le travail en équipe et la préparation au monde professionnel.</p>
+        </div>
+
+        <div class="card">
+          <h3>Parcours de carrière</h3>
+          <p>Se préparer aux secteurs comme le tourisme, l’hôtellerie, les ONG, le développement, le BPO, le maritime et le travail à distance.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Situation actuelle des formations</h2>
+        <p>
+          Nous préparons actuellement une offre de formation en ligne structurée avant l’ouverture future des activités en présentiel.
+        </p>
+      </div>
+
+      <div class="status-box">
+        <p><strong>Cours en ligne :</strong> ouverture prévue prochainement, si possible dans les deux prochains mois.</p>
+        <p><strong>Cours en présentiel :</strong> non prévus pour cette année.</p>
+        <p><strong>Centre physique d’apprentissage :</strong> en préparation à Toamasina, Madagascar.</p>
+        <p><strong>Contact :</strong> WhatsApp +261 34 920 1200.</p>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Programmes</h2>
+        <p>
+          Choisissez le programme qui correspond à votre niveau, votre objectif professionnel et votre rythme d’apprentissage.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Anglais général</h3>
+          <p>Grammaire, vocabulaire, compréhension orale, expression orale, lecture et écriture, du niveau débutant au niveau avancé.</p>
+        </div>
+
+        <div class="card">
+          <h3>Expression orale intensive</h3>
+          <p>Programme axé sur la fluidité pour parler plus naturellement, avec plus de confiance.</p>
+        </div>
+
+        <div class="card">
+          <h3>Anglais des affaires</h3>
+          <p>Communication professionnelle pour les réunions, emails, présentations, service client et travail en équipe.</p>
+        </div>
+
+        <div class="card">
+          <h3>Anglais du tourisme et de l’hôtellerie</h3>
+          <p>Anglais pour hôtels, restaurants, accueil, guidage, services touristiques et relation client.</p>
+        </div>
+
+        <div class="card">
+          <h3>Anglais Call Center / BPO</h3>
+          <p>Anglais pratique pour le support client, la communication téléphonique, les scripts et les interactions de service.</p>
+        </div>
+
+        <div class="card">
+          <h3>Anglais technique et maritime</h3>
+          <p>Vocabulaire et communication pour les contextes logistiques, maritimes, techniques et opérationnels.</p>
+        </div>
+
+        <div class="card">
+          <h3>Anglais ONG et développement</h3>
+          <p>Anglais pour les projets, la communication terrain, les rapports, la coordination et les partenaires internationaux.</p>
+        </div>
+
+        <div class="card">
+          <h3>CV et préparation aux entretiens</h3>
+          <p>Préparer son CV, s’entraîner aux entretiens et apprendre à présenter son expérience de manière professionnelle.</p>
+        </div>
+
+        <div class="card">
+          <h3>Prononciation et confiance</h3>
+          <p>Améliorer la clarté, le rythme, la prononciation, la confiance et la communication professionnelle naturelle.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="two-col">
+        <div>
+          <h2>Bibliothèque de ressources et de carrière</h2>
+          <p>
+            Alliance Anglophone prépare un futur espace hybride de ressources d’apprentissage,
+            conçu pour soutenir l’autoformation, la pratique continue et l’accélération de carrière.
+          </p>
+          <p>
+            La vision comprend des livres d’anglais, des ressources audio, des supports vidéo,
+            des bases de vocabulaire professionnel, des simulations d’entretien et des espaces calmes d’étude.
+          </p>
+        </div>
+
+        <div class="status-box">
+          <p><strong>Objectif :</strong> accompagner les apprenants au-delà des cours.</p>
+          <p><strong>Orientation :</strong> anglais, employabilité, confiance et préparation professionnelle.</p>
+          <p><strong>Statut :</strong> en préparation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Tarifs</h2>
+        <p>
+          Des tarifs clairs et accessibles pour les apprenants, les professionnels et les organisations.
+        </p>
+      </div>
+
+      <div class="price-list">
+        <div class="price-item">
+          <strong>Anglais général</strong>
+          <span>70 000 Ar / mois</span>
+        </div>
+
+        <div class="price-item">
+          <strong>Anglais professionnel et carrière</strong>
+          <span>90 000 Ar / module</span>
+        </div>
+
+        <div class="price-item">
+          <strong>Anglais pour enfants et adolescents</strong>
+          <span>35 000 Ar / mois</span>
+        </div>
+
+        <div class="price-item">
+          <strong>Formation entreprise et institutionnelle</strong>
+          <span>À partir de 70 000 Ar / séance</span>
+        </div>
+
+        <div class="price-item">
+          <strong>Club de conversation anglaise</strong>
+          <span>20 000 Ar / mois</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-title">
+        <h2>Impact et partenariats</h2>
+        <p>
+          Alliance Anglophone vise des résultats mesurables :
+          meilleure communication en anglais, préparation à l’emploi, confiance,
+          accès à l’emploi ou à la formation, et intégration durable dans le monde professionnel.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Pour les apprenants</h3>
+          <p>Développer des compétences pratiques en anglais, la confiance et un parcours plus clair vers l’emploi ou la carrière.</p>
+        </div>
+
+        <div class="card">
+          <h3>Pour les employeurs</h3>
+          <p>Accéder à des candidats mieux préparés, avec de meilleures compétences de communication et d’adaptation professionnelle.</p>
+        </div>
+
+        <div class="card">
+          <h3>Pour les institutions</h3>
+          <p>Développer des partenariats de formation avec des résultats mesurables, du suivi et des rapports d’impact.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Commencez votre parcours d’apprentissage de l’anglais</h2>
+      <p>
+        Les cours en ligne sont en préparation. Contactez-nous dès maintenant pour manifester votre intérêt ou demander des informations.
+      </p>
+
+      <div class="btn-row" style="justify-content:center;">
+        <a class="btn btn-primary" href="inscription.html">S’inscrire</a>
+        <a class="btn btn-secondary" href="https://wa.me/261349201200">WhatsApp : +261 34 920 1200</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Basé à Toamasina, Madagascar. Cours en ligne bientôt disponibles.</p>
+  </footer>
 
 </body>
 </html>
