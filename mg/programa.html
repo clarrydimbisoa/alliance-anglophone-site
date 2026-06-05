@@ -1,1 +1,688 @@
+<!DOCTYPE html>
+<html lang="mg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <title>Programa | Alliance Anglophone</title>
+  <meta name="description" content="Jereo ny programa atolotry ny Alliance Anglophone: anglisy ankapobeny, anglisy matihanina, Business English, tourisme, BPO, ONG, maritime ary employability." />
+
+  <link rel="stylesheet" href="../assets/style.css" />
+
+  <style>
+    :root {
+      --blue: #0f4fbf;
+      --dark-blue: #062b63;
+      --gold: #d8aa2b;
+      --light: #f4f7fb;
+      --dark: #111827;
+      --text: #374151;
+      --white: #ffffff;
+      --green: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      background: var(--blue);
+      color: var(--white);
+      padding: 18px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 4px;
+    }
+
+    .brand span {
+      color: #ffffff;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      color: white;
+      opacity: 0.95;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold);
+    }
+
+    .page-hero {
+      background:
+        linear-gradient(rgba(6, 43, 99, 0.72), rgba(6, 43, 99, 0.72)),
+        url("../assets/hero.jpg") center/cover no-repeat;
+      color: white;
+      padding: 90px 8%;
+      text-align: center;
+    }
+
+    .page-hero h1 {
+      font-size: 3rem;
+      margin: 0 0 16px;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      max-width: 860px;
+      margin: 0 auto;
+      font-size: 1.12rem;
+    }
+
+    section {
+      padding: 70px 8%;
+    }
+
+    .section-white {
+      background: white;
+    }
+
+    .section-title {
+      max-width: 900px;
+      margin-bottom: 36px;
+    }
+
+    .section-title h2 {
+      color: var(--dark-blue);
+      font-size: 2rem;
+      margin: 0 0 12px;
+    }
+
+    .section-title p {
+      font-size: 1.05rem;
+      margin: 0;
+    }
+
+    .program-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    .program-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+      border-top: 5px solid var(--blue);
+    }
+
+    .section-white .program-card {
+      background: var(--light);
+    }
+
+    .program-card h3 {
+      color: var(--dark-blue);
+      font-size: 1.35rem;
+      margin: 0 0 12px;
+    }
+
+    .program-card .tag {
+      display: inline-block;
+      background: #fff1c7;
+      color: #6b4a00;
+      font-weight: 700;
+      font-size: 0.82rem;
+      padding: 6px 10px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+
+    .program-card h4 {
+      color: var(--dark);
+      margin: 18px 0 6px;
+      font-size: 1rem;
+    }
+
+    .program-card p {
+      margin: 0 0 8px;
+    }
+
+    .program-card ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .program-card li {
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      opacity: 0.92;
+    }
+
+    .highlight {
+      background: var(--dark-blue);
+      color: white;
+    }
+
+    .highlight h2 {
+      color: var(--gold);
+    }
+
+    .pathway {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .pathway-box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 26px;
+      border-radius: 14px;
+      border-left: 5px solid var(--gold);
+    }
+
+    .pathway-box h3 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .cta {
+      text-align: center;
+      background: var(--blue);
+      color: white;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    .btn-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      background: var(--green);
+      color: white;
+      padding: 14px 18px;
+      border-radius: 50px;
+      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
+      z-index: 999;
+    }
+
+    footer {
+      background: var(--dark-blue);
+      color: white;
+      text-align: center;
+      padding: 26px 8%;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 900px) {
+      .program-grid,
+      .pathway {
+        grid-template-columns: 1fr;
+      }
+
+      .page-hero {
+        padding: 65px 5%;
+      }
+
+      .page-hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .topbar {
+        padding: 16px 5%;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <span>Alliance Anglophone</span>
+    </a>
+
+    <nav>
+      <a href="index.html">Fandraisana</a>
+      <a class="active" href="programa.html">Programa</a>
+      <a href="saram-piofanana.html">Saram-piofanana</a>
+      <a href="iraka.html">Iraka</a>
+      <a href="fiantraikany.html">Fiantraikany</a>
+      <a href="asa-an-tsitrapo.html">Asa an-tsitrapo</a>
+      <a href="fisoratana.html">Fisoratana</a>
+      <a href="fifandraisana.html">Fifandraisana</a>
+      <a href="../fr/index.html">FR</a>
+      <a href="../en/index.html">EN</a>
+      <a href="index.html">MG</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <h1>Programa teny anglisy mifantoka amin’ny asa sy carrière</h1>
+      <p>
+        Mianara teny anglisy azo ampiasaina amin’ny fifandraisana tena izy,
+        fahatokisan-tena, fiomanana amin’ny asa ary fahafahana matihanina eto Madagasikara sy any ivelany.
+      </p>
+    </section>
+
+    <section class="section-white">
+      <div class="section-title">
+        <h2>Safidio ny lalana mety aminao</h2>
+        <p>
+          Ny programa Alliance Anglophone dia natao hanampiana ny mpianatra hifindra
+          avy amin’ny fianarana teny anglisy mankany amin’ny fiomanana amin’ny tontolon’ny asa.
+          Ny programa tsirairay dia mampifandray ny anglisy amin’ny fampiasana azy amin’ny asa tena izy.
+        </p>
+      </div>
+
+      <div class="program-grid">
+
+        <article class="program-card">
+          <span class="tag">Programa fototra</span>
+          <h3>Anglisy ankapobeny</h3>
+          <p>
+            Manangana fototra matanjaka amin’ny teny anglisy ho an’ny fifandraisana andavanandro,
+            fianarana, dia, asa ary fandrosoana matihanina.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Débutant, niveau intermédiaire, mpianatra, olon-dehibe ary mpiasa mila fandrosoana voarindra.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Grammaire sy voambolana</li>
+            <li>Fihainoana sy fitenenana</li>
+            <li>Famakiana sy fanoratana</li>
+            <li>Fahatokisan-tena amin’ny fifandraisana andavanandro</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Ity no fototra hidirana amin’ny programa matihanina hafa rehetra.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Programa fitenenana</span>
+          <h3>Fitenenana anglisy intensive</h3>
+          <p>
+            Programa mifantoka amin’ny fitenenana ho an’ireo efa mahazo teny anglisy kely,
+            saingy mbola misalasala rehefa miteny.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Mpianatra te hanatsara ny fluidité, prononciation, écoute ary fahatokisan-tena.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Fanazaran-tena amin’ny conversation</li>
+            <li>Prononciation sy rythme</li>
+            <li>Compréhension orale</li>
+            <li>Valiny haingana amin’ny toe-javatra tena izy</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Ilaina amin’ny entretien, service client, hôtellerie, réunion en ligne ary fifandraisana matihanina.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Parcours matihanina</span>
+          <h3>Business English</h3>
+          <p>
+            Anglisy matihanina ho an’ny fifandraisana amin’ny asa, réunion,
+            email, présentation ary coordination amin’ny ekipa.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Matihanina, mpandraharaha, mpiasa, responsable ary mpitady asa.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Email sy hafatra matihanina</li>
+            <li>Réunion sy présentation</li>
+            <li>Négociation sy communication client</li>
+            <li>Voambolana amin’ny tontolon’ny asa</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Mety ho an’ireo te hampiasa anglisy amin’ny entreprise, administration,
+            entrepreneurship na relation client.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Sehatra manokana</span>
+          <h3>Anglisy ho an’ny fizahantany sy hôtellerie</h3>
+          <p>
+            Anglisy azo ampiasaina amin’ny hôtel, restaurant, service touristique,
+            guide, réception ary relation client.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Mpiasa hôtel, restaurant, guide touristique, mpianatra tourisme ary olona miasa amin’ny service.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Fandraisana vahiny</li>
+            <li>Fanazavana service</li>
+            <li>Fitantanana réclamation amin’ny fomba manaja</li>
+            <li>Voambolana tourisme sy hôtellerie</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Ilaina amin’ny fizahantany eto Toamasina, hôtel, restaurant,
+            agence de voyage ary fifandraisana amin’ny vahiny iraisam-pirenena.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Sehatra manokana</span>
+          <h3>Anglisy Call Center / BPO</h3>
+          <p>
+            Anglisy ho an’ny support client, fifandraisana an-telefaonina,
+            scripts, famahana olana ary service client.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Tanora mitady asa, kandidà amin’ny service client, call center ary BPO.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Fifandraisana amin’ny téléphone</li>
+            <li>Fiteny ampiasaina amin’ny support client</li>
+            <li>Resaka famahana olana</li>
+            <li>Feo, tonony ary fahazavana matihanina</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Natao ho an’ireo mikendry call center, BPO, service client na asa support à distance.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Sehatra manokana</span>
+          <h3>Anglisy teknika sy maritime</h3>
+          <p>
+            Anglisy mifanaraka amin’ny sehatra teknika, logistics, port,
+            maritime ary opération.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Mpiasa, stagiaire, personnel logistique, kandidà maritime, teknisiana ary équipe opérationnelle.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Voambolana teknika</li>
+            <li>Consignes de sécurité sy instructions opérationnelles</li>
+            <li>Fampitana olana amin’ny fomba mazava</li>
+            <li>Fifandraisana amin’ny tontolon’ny asa voarindra</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Mety amin’ny port de Toamasina, logistics, maritime, asa teknika ary opération.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Parcours institutionnel</span>
+          <h3>Anglisy ONG sy développement</h3>
+          <p>
+            Anglisy ho an’ny ekipa projet, communication ONG, asa développement,
+            coordination terrain ary fiaraha-miasa amin’ny institution.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Mpiasan’ny ONG, assistant projet, agent terrain, volontaire ary kandidà amin’ny secteur développement.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Voambolana projet</li>
+            <li>Communication terrain</li>
+            <li>Rapportage sy coordination</li>
+            <li>Fifandraisana amin’ny mpiara-miombon’antoka iraisam-pirenena</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Ilaina amin’ny projet de développement, mission humanitaire,
+            asa institutionnelle ary collaboration internationale.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Employability</span>
+          <h3>CV sy fanomanana entretien</h3>
+          <p>
+            Module pratique hanampiana ny mpianatra hampiseho tsara ny traikefany,
+            hanomana candidature ary hahavita entretien tsara kokoa.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Mpitady asa, mpianatra, Day Crew, tanora matihanina ary olona miova lalana amin’ny asa.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Fanoratana CV</li>
+            <li>Fanomanana valiny amin’ny entretien</li>
+            <li>Fampisehoana tena amin’ny fomba matihanina</li>
+            <li>Fanomanana candidature</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Mampifandray ny fianarana anglisy amin’ny candidature tena izy sy fahafahana mahazo asa.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Employability</span>
+          <h3>Communication professionnelle sy soft skills</h3>
+          <p>
+            Fiofanana momba ny discipline professionnelle, fiaraha-miasa,
+            communication, fahatokisan-tena, famahana olana ary fitondran-tena amin’ny asa.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Mpianatra miomana amin’ny asa, stage, service client, asa institutionnelle na entreprise.</p>
+
+          <h4>Fahaiza-manao ho azo</h4>
+          <ul>
+            <li>Fifandraisana amin’ny ekipa</li>
+            <li>Fitondran-tena matihanina</li>
+            <li>Discipline amin’ny asa</li>
+            <li>Fahatokisan-tena sy fandraisana andraikitra</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Manampy ny mpianatra ho employable kokoa, fa tsy mahay anglisy fotsiny.
+          </p>
+
+          <a class="btn btn-primary" href="fisoratana.html">Hisoratra amin’ity programa ity</a>
+        </article>
+
+        <article class="program-card">
+          <span class="tag">Ressources</span>
+          <h3>Bibliothèque anglisy sy carrière</h3>
+          <p>
+            Toerana fianarana hybride, physique sy numérique, kasaina hanohana ny pratique continue,
+            autoformation ary fanomanana carrière.
+          </p>
+
+          <h4>Ho an’iza?</h4>
+          <p>Mpianatra, matihanina, mpitady asa ary olona mianatra samirery.</p>
+
+          <h4>Ressources kasaina hatao</h4>
+          <ul>
+            <li>Boky anglisy sy lectures graduées</li>
+            <li>Ressources audio sy écoute</li>
+            <li>Support vidéo</li>
+            <li>Simulation entretien</li>
+            <li>Toerana mangina hianarana</li>
+          </ul>
+
+          <h4>Ilàna azy amin’ny asa</h4>
+          <p>
+            Manohana ny fianarana maharitra, mihoatra noho ny cours fotsiny.
+          </p>
+
+          <a class="btn btn-secondary" href="fifandraisana.html">Hangataka fanazavana</a>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="highlight">
+      <div class="section-title">
+        <h2>Ny lalan’ny fiofanana</h2>
+        <p>
+          Alliance Anglophone dia natao hanampiana ny mpianatra hifindra
+          avy amin’ny fianarana anglisy mankany amin’ny fahafahana ara-toekarena.
+        </p>
+      </div>
+
+      <div class="pathway">
+        <div class="pathway-box">
+          <h3>1. Fahaizana anglisy</h3>
+          <p>
+            Manangana fahaiza-miteny sy manoratra amin’ny alalan’ny fiofanana voarindra
+            sy pratique de communication tena izy.
+          </p>
+        </div>
+
+        <div class="pathway-box">
+          <h3>2. Employability</h3>
+          <p>
+            Manamafy fahaiza-manao matihanina amin’ny alalan’ny CV, entretien,
+            simulation asa ary soft skills.
+          </p>
+        </div>
+
+        <div class="pathway-box">
+          <h3>3. Fandrosoana amin’ny asa</h3>
+          <p>
+            Miomana amin’ny sehatra izay ahafahan’ny teny anglisy manampy amin’ny vola miditra,
+            asa ary carrière maharitra.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Tsy mbola fantatrao izay programa mety aminao?</h2>
+      <p>
+        Mifandraisa aminay amin’ny WhatsApp. Hanampy anao hisafidy ny lalana mifanaraka
+        amin’ny niveau, tanjona ary disponibilité-nao izahay.
+      </p>
+
+      <div class="btn-row">
+        <a class="btn btn-primary" href="fisoratana.html">Hisoratra anarana</a>
+        <a class="btn btn-secondary" href="https://wa.me/261349201200">Hifandray amin’ny WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
+
+  <footer>
+    <p>© 2026 Alliance Anglophone. Miorina eto Toamasina, Madagasikara. Ho avy tsy ho ela ny fiofanana an-tserasera.</p>
+  </footer>
+
+</body>
+</html>
