@@ -74,7 +74,14 @@ nav a{
   border-radius: 8px;
   display: inline-block;
 }
-
+.flag-icon {
+  width: 18px;
+  height: 12px;
+  object-fit: cover;
+  margin-right: 5px;
+  vertical-align: middle;
+  border-radius: 2px;
+}
 nav a:hover{
   background: rgba(255,255,255,0.18);
 }
