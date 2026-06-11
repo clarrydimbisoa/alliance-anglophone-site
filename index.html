@@ -1,40 +1,74 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Alliance Anglophone | Anglais professionnel et employabilité à Madagascar</title>
-  <meta name="description" content="Alliance Anglophone propose des formations d’anglais pratique, professionnel et orienté employabilité à Madagascar. Versions française, anglaise et malgache disponibles." />
+  <title>Alliance Anglophone Speaking Lab</title>
+  <meta name="description" content="A free speaking practice prototype for Alliance Anglophone learners." />
 
-  <link rel="canonical" href="https://allianceanglophone.mg/fr/index.html" />
-
-  <link rel="alternate" hreflang="fr" href="https://allianceanglophone.mg/fr/index.html" />
-  <link rel="alternate" hreflang="en" href="https://allianceanglophone.mg/en/index.html" />
-  <link rel="alternate" hreflang="mg" href="https://allianceanglophone.mg/mg/index.html" />
-  <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/index.html" />
-
-  <meta http-equiv="refresh" content="0; url=/fr/index.html" />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body>
-  <main>
-    <h1>Alliance Anglophone</h1>
-    <p>Redirection vers la version française du site...</p>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark">AA</div>
+      <div>
+        <p class="eyebrow">Alliance Anglophone</p>
+        <h1>Speaking Lab</h1>
+      </div>
+    </div>
 
-    <p>
-      Si la redirection ne fonctionne pas, choisissez votre langue :
-    </p>
+    <div class="header-actions">
+      <label for="voiceLang">Voice:</label>
+      <select id="voiceLang">
+        <option value="en-US">English US</option>
+        <option value="en-GB">English UK</option>
+      </select>
+    </div>
+  </header>
 
-    <ul>
-      <li><a href="/fr/index.html">Français</a></li>
-      <li><a href="/en/index.html">English</a></li>
-      <li><a href="/mg/index.html">Malagasy</a></li>
-    </ul>
+  <main class="app-shell">
+    <section class="intro-card">
+      <p class="eyebrow">Free prototype</p>
+      <h2>Practice. Speak. Pass. Unlock the next lesson.</h2>
+      <p>
+        Listen to the model sentence, repeat it aloud, and receive a basic score.
+        This first version works without paid APIs and saves progress in your browser.
+      </p>
+      <div class="support-warning" id="supportWarning" hidden>
+        Speech recognition is not available in this browser. You can still use manual mode by typing what you said.
+      </div>
+    </section>
+
+    <section class="layout">
+      <aside class="sidebar">
+        <div class="sidebar-title">
+          <h2>Beginner Level 1</h2>
+          <p id="progressSummary">0% completed</p>
+        </div>
+
+        <div id="lessonList" class="lesson-list"></div>
+
+        <button id="resetProgress" class="secondary-button" type="button">
+          Reset progress
+        </button>
+      </aside>
+
+      <section class="lesson-panel" id="lessonPanel">
+        <!-- App content is rendered here by app.js -->
+      </section>
+    </section>
   </main>
 
-  <script>
-    window.location.href = "/fr/index.html";
-  </script>
+  <footer class="site-footer">
+    <p>
+      Alliance Anglophone Speaking Lab — Version 1.0 free prototype.
+    </p>
+  </footer>
+
+  <script src="./lessons.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
