@@ -545,3 +545,166 @@ body[data-course="malagasy"] {
 .result-card.fail {
   background: #fff4f2;
 }
+/* ---------- Visual polish: icons, gradients, cards ---------- */
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(29, 78, 216, 0.08), transparent 32%),
+    radial-gradient(circle at top right, rgba(215, 168, 79, 0.10), transparent 28%),
+    var(--bg);
+}
+
+.site-header {
+  background:
+    linear-gradient(135deg, var(--navy), #073b8f 55%, #0b2252);
+  border-bottom: 4px solid rgba(215, 168, 79, 0.85);
+}
+
+.intro-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.intro-card::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  top: -80px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: var(--course-accent);
+  opacity: 0.08;
+}
+
+.course-selector-card::before {
+  content: "🌍";
+  font-size: 1.35rem;
+}
+
+.sidebar,
+.lesson-panel,
+.intro-card {
+  backdrop-filter: blur(6px);
+}
+
+.lesson-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.lesson-button::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 5px;
+  background: transparent;
+}
+
+.lesson-button.active::before,
+.lesson-button.completed::before {
+  background: var(--course-accent);
+}
+
+.lesson-button.active {
+  box-shadow: 0 8px 20px rgba(2, 33, 87, 0.10);
+}
+
+.lesson-button:hover:not(.locked) {
+  background: var(--course-soft);
+}
+
+.info-box {
+  position: relative;
+  box-shadow: 0 8px 18px rgba(2, 33, 87, 0.06);
+}
+
+.info-box h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-box:first-child h3::before {
+  content: "📘";
+}
+
+.info-box:nth-child(2) h3::before {
+  content: "🗣️";
+}
+
+.lesson-panel > h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--course-accent);
+}
+
+.lesson-panel > h3::before {
+  content: "🎙️";
+}
+
+.exercise-card {
+  border: 1px solid var(--course-border);
+  background:
+    linear-gradient(to bottom, #ffffff, var(--course-soft));
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exercise-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(2, 33, 87, 0.10);
+}
+
+.exercise-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--course-accent);
+}
+
+.exercise-card h3::before {
+  content: "✅";
+}
+
+.target-sentence {
+  box-shadow: inset 0 0 0 1px var(--course-border);
+}
+
+.primary-button,
+.secondary-button {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(2, 33, 87, 0.12);
+}
+
+.transcript-box:focus {
+  outline: none;
+  border-color: var(--course-accent);
+  box-shadow: 0 0 0 4px rgba(2, 33, 87, 0.08);
+}
+
+.result-card {
+  border-radius: 18px;
+}
+
+.result-card.pass::before {
+  content: "🎉 ";
+}
+
+.result-card.fail::before {
+  content: "💪 ";
+}
+
+@media (max-width: 860px) {
+  .intro-card::after {
+    width: 160px;
+    height: 160px;
+    right: -60px;
+    top: -60px;
+  }
+}
