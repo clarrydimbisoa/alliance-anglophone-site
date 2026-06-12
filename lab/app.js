@@ -13,9 +13,161 @@ const sidebarTitleEl = document.querySelector(".sidebar-title h2");
 const SpeechRecognitionClass = window.SpeechRecognition || window.webkitSpeechRecognition;
 const hasSpeechRecognition = Boolean(SpeechRecognitionClass);
 
-let selectedCourseId = localStorage.getItem(SELECTED_COURSE_KEY) || "english";
+const urlParams = new URLSearchParams(window.location.search);
+const courseFromUrl = urlParams.get("course");
+
+let selectedCourseId = courseFromUrl || localStorage.getItem(SELECTED_COURSE_KEY) || "english";
 let selectedLessonId = null;
 let currentRecognition = null;
+
+const UI_TRANSLATIONS = {
+  english: {
+    pageTitle: "Speaking Lab",
+    freePrototype: "Free prototype",
+    mainHeading: "Practice. Speak. Pass. Unlock the next lesson.",
+    introText:
+      "Listen to the model sentence, repeat it aloud, and receive a basic score. This first version works without paid APIs and saves progress in your browser.",
+    chooseCourse: "Choose a course:",
+    voice: "Voice:",
+    noSpeech:
+      "Speech recognition is not available in this browser. You can still use manual mode by typing what you said.",
+    lessonNote: "Lesson note",
+    vocabulary: "Vocabulary",
+    speakingExercises: "Speaking exercises",
+    passingScoreText:
+      "Passing score for this lesson:",
+    instructionText:
+      "Click Listen, then Speak. If speech recognition does not work, type your answer manually.",
+    exercise: "Exercise",
+    listen: "Listen",
+    speak: "Speak",
+    listening: "Listening...",
+    transcriptLabel: "Your transcript or manual answer:",
+    transcriptPlaceholder:
+      "Your recognized speech will appear here. You can also type manually.",
+    checkAnswer: "Check answer",
+    expected: "Expected:",
+    yourAnswer: "Your answer:",
+    noAnswer: "No answer detected.",
+    minimumRequired: "Minimum required score:",
+    passed: "Passed",
+    tryAgain: "Try again",
+    completed: "Completed",
+    unlocked: "Unlocked",
+    locked: "Locked",
+    exercises: "exercises",
+    completedPercent: "completed",
+    lessonCompleted: "Lesson completed. The next lesson is now unlocked.",
+    previousLesson: "Previous lesson",
+    nextLesson: "Next lesson",
+    resetProgress: "Reset progress",
+    resetConfirm: "Do you want to reset all progress for all courses?",
+    noLessonsTitle: "No lessons available yet",
+    noLessonsText: "Please add lessons for this course in lessons.js.",
+    ttsUnavailable: "Text-to-speech is not available in this browser.",
+    recognitionUnavailable:
+      "Speech recognition is not available in this browser. Please use manual mode.",
+    recognitionError: "Speech recognition error:"
+  },
+
+  french: {
+    pageTitle: "Laboratoire oral",
+    freePrototype: "Prototype gratuit",
+    mainHeading: "Écoutez. Parlez. Réussissez. Débloquez la leçon suivante.",
+    introText:
+      "Écoutez la phrase modèle, répétez-la à voix haute et recevez un score de base. Cette première version fonctionne sans API payante et enregistre la progression dans votre navigateur.",
+    chooseCourse: "Choisissez un cours :",
+    voice: "Voix :",
+    noSpeech:
+      "La reconnaissance vocale n’est pas disponible dans ce navigateur. Vous pouvez utiliser le mode manuel en tapant ce que vous avez dit.",
+    lessonNote: "Note de leçon",
+    vocabulary: "Vocabulaire",
+    speakingExercises: "Exercices oraux",
+    passingScoreText:
+      "Score minimum pour cette leçon :",
+    instructionText:
+      "Cliquez sur Écouter, puis sur Parler. Si la reconnaissance vocale ne fonctionne pas, tapez votre réponse manuellement.",
+    exercise: "Exercice",
+    listen: "Écouter",
+    speak: "Parler",
+    listening: "Écoute en cours...",
+    transcriptLabel: "Votre transcription ou réponse manuelle :",
+    transcriptPlaceholder:
+      "Votre parole reconnue apparaîtra ici. Vous pouvez aussi taper manuellement.",
+    checkAnswer: "Vérifier la réponse",
+    expected: "Phrase attendue :",
+    yourAnswer: "Votre réponse :",
+    noAnswer: "Aucune réponse détectée.",
+    minimumRequired: "Score minimum requis :",
+    passed: "Réussi",
+    tryAgain: "Réessayez",
+    completed: "Terminé",
+    unlocked: "Débloqué",
+    locked: "Bloqué",
+    exercises: "exercices",
+    completedPercent: "terminé",
+    lessonCompleted: "Leçon terminée. La leçon suivante est maintenant débloquée.",
+    previousLesson: "Leçon précédente",
+    nextLesson: "Leçon suivante",
+    resetProgress: "Réinitialiser la progression",
+    resetConfirm: "Voulez-vous réinitialiser toute la progression de tous les cours ?",
+    noLessonsTitle: "Aucune leçon disponible pour le moment",
+    noLessonsText: "Veuillez ajouter des leçons pour ce cours dans lessons.js.",
+    ttsUnavailable: "La synthèse vocale n’est pas disponible dans ce navigateur.",
+    recognitionUnavailable:
+      "La reconnaissance vocale n’est pas disponible dans ce navigateur. Veuillez utiliser le mode manuel.",
+    recognitionError: "Erreur de reconnaissance vocale :"
+  },
+
+  malagasy: {
+    pageTitle: "Laboratoara fitenenana",
+    freePrototype: "Prototype maimaim-poana",
+    mainHeading: "Mihainoa. Mitenena. Mandresy. Sokafy ny lesona manaraka.",
+    introText:
+      "Henoy ny fehezanteny modely, avereno amin’ny feo avo, ary raiso ny naoty fototra. Ity kinova voalohany ity dia tsy mampiasa API andoavam-bola ary mitahiry ny fandrosoana ao amin’ny navigateur-nao.",
+    chooseCourse: "Safidio ny taranja :",
+    voice: "Feo :",
+    noSpeech:
+      "Tsy mandeha amin’ity navigateur ity ny reconnaissance vocale. Afaka mampiasa fomba manuel ianao ka manoratra izay nolazainao.",
+    lessonNote: "Fanamarihana",
+    vocabulary: "Voambolana",
+    speakingExercises: "Fanazaran-tena am-bava",
+    passingScoreText:
+      "Naoty ilaina amin’ity lesona ity :",
+    instructionText:
+      "Tsindrio Henoy, avy eo Mitenena. Raha tsy mandeha ny reconnaissance vocale dia soraty amin’ny tanana ny valinteninao.",
+    exercise: "Fanazaran-tena",
+    listen: "Henoy",
+    speak: "Mitenena",
+    listening: "Mihaino...",
+    transcriptLabel: "Transcription na valiny soratana :",
+    transcriptPlaceholder:
+      "Hiseho eto ny feo voarakitra. Afaka manoratra amin’ny tanana koa ianao.",
+    checkAnswer: "Hamarino ny valiny",
+    expected: "Tokony ho izy :",
+    yourAnswer: "Valinteninao :",
+    noAnswer: "Tsy nisy valiny hita.",
+    minimumRequired: "Naoty farany ambany takiana :",
+    passed: "Tafita",
+    tryAgain: "Andramo indray",
+    completed: "Vita",
+    unlocked: "Misokatra",
+    locked: "Mikatona",
+    exercises: "fanazaran-tena",
+    completedPercent: "vita",
+    lessonCompleted: "Vita ny lesona. Misokatra izao ny lesona manaraka.",
+    previousLesson: "Lesona teo aloha",
+    nextLesson: "Lesona manaraka",
+    resetProgress: "Avereno aotra ny fandrosoana",
+    resetConfirm: "Tianao haverina aotra ve ny fandrosoana rehetra amin’ny taranja rehetra ?",
+    noLessonsTitle: "Tsy mbola misy lesona",
+    noLessonsText: "Ampidiro ao amin’ny lessons.js ny lesona ho an’ity taranja ity.",
+    ttsUnavailable: "Tsy mandeha amin’ity navigateur ity ny famakiana feo.",
+    recognitionUnavailable:
+      "Tsy mandeha amin’ity navigateur ity ny reconnaissance vocale. Ampiasao ny fomba manuel.",
+    recognitionError: "Olana amin’ny reconnaissance vocale :"
+  }
+};
 
 if (!hasSpeechRecognition) {
   supportWarningEl.hidden = false;
@@ -41,6 +193,35 @@ function getCurrentCourse() {
 function getCurrentLessons() {
   const course = getCurrentCourse();
   return course.lessons || [];
+}
+
+function getUI() {
+  return UI_TRANSLATIONS[selectedCourseId] || UI_TRANSLATIONS.english;
+}
+
+function t(key) {
+  const ui = getUI();
+  return ui[key] || UI_TRANSLATIONS.english[key] || key;
+}
+
+function updateStaticInterfaceText() {
+  const introEyebrow = document.querySelector(".intro-card .eyebrow");
+  const introHeading = document.querySelector(".intro-card h2");
+  const introParagraph = document.querySelector(".intro-card > p:not(.eyebrow)");
+  const courseLabel = document.querySelector(".course-selector-card label");
+  const voiceLabel = document.querySelector('label[for="voiceLang"]');
+  const pageHeading = document.querySelector(".brand h1");
+
+  document.title = `Alliance Anglophone ${t("pageTitle")}`;
+
+  if (pageHeading) pageHeading.textContent = t("pageTitle");
+  if (introEyebrow) introEyebrow.textContent = t("freePrototype");
+  if (introHeading) introHeading.textContent = t("mainHeading");
+  if (introParagraph) introParagraph.textContent = t("introText");
+  if (courseLabel) courseLabel.textContent = t("chooseCourse");
+  if (voiceLabel) voiceLabel.textContent = t("voice");
+  if (supportWarningEl) supportWarningEl.textContent = t("noSpeech");
+  if (resetProgressBtn) resetProgressBtn.textContent = t("resetProgress");
 }
 
 function initializeVoiceOptions() {
@@ -192,7 +373,7 @@ function getRecognitionLanguage() {
 
 function speakText(text) {
   if (!window.speechSynthesis) {
-    alert("Text-to-speech is not available in this browser.");
+    alert(t("ttsUnavailable"));
     return;
   }
 
@@ -208,7 +389,7 @@ function speakText(text) {
 
 function startRecognition(onResult, onEnd) {
   if (!hasSpeechRecognition) {
-    alert("Speech recognition is not available in this browser. Please use manual mode.");
+    alert(t("recognitionUnavailable"));
     return;
   }
 
@@ -229,7 +410,7 @@ function startRecognition(onResult, onEnd) {
   };
 
   recognition.onerror = (event) => {
-    alert("Speech recognition error: " + event.error);
+    alert(`${t("recognitionError")} ${event.error}`);
   };
 
   recognition.onend = () => {
@@ -253,7 +434,7 @@ function renderLessonList() {
   const completedCount = lessons.filter((lesson) => progress.completedLessons[lesson.id]).length;
   const percentage = lessons.length ? Math.round((completedCount / lessons.length) * 100) : 0;
 
-  progressSummaryEl.textContent = `${percentage}% completed`;
+  progressSummaryEl.textContent = `${percentage}% ${t("completedPercent")}`;
 
   lessonListEl.innerHTML = lessons
     .map((lesson, index) => {
@@ -270,8 +451,8 @@ function renderLessonList() {
         >
           <span class="lesson-title">${index + 1}. ${lesson.title}</span>
           <span class="lesson-meta">
-            <span>${lesson.exercises.length} exercises</span>
-            <span>${completed ? "Completed" : unlocked ? "Unlocked" : "Locked"}</span>
+            <span>${lesson.exercises.length} ${t("exercises")}</span>
+            <span>${completed ? t("completed") : unlocked ? t("unlocked") : t("locked")}</span>
           </span>
         </button>
       `;
@@ -292,8 +473,8 @@ function renderLessonPanel() {
   if (!lessons.length) {
     lessonPanelEl.innerHTML = `
       <div class="lesson-header">
-        <h2>No lessons available yet</h2>
-        <p class="objective">Please add lessons for this course in lessons.js.</p>
+        <h2>${t("noLessonsTitle")}</h2>
+        <p class="objective">${t("noLessonsText")}</p>
       </div>
     `;
     return;
@@ -327,23 +508,22 @@ function renderLessonPanel() {
 
     <div class="content-grid">
       <div class="info-box">
-        <h3>Lesson note</h3>
+        <h3>${t("lessonNote")}</h3>
         <p>${lesson.explanation}</p>
       </div>
 
       <div class="info-box">
-        <h3>Vocabulary</h3>
+        <h3>${t("vocabulary")}</h3>
         <ul>
           ${lesson.vocabulary.map((word) => `<li>${word}</li>`).join("")}
         </ul>
       </div>
     </div>
 
-    <h3>Speaking exercises</h3>
+    <h3>${t("speakingExercises")}</h3>
     <p>
-      Passing score for this lesson: <strong>${lesson.passScore}%</strong>.
-      Click <strong>Listen</strong>, then <strong>Speak</strong>.
-      If speech recognition does not work, type your answer manually.
+      ${t("passingScoreText")} <strong>${lesson.passScore}%</strong>.
+      ${t("instructionText")}
     </p>
 
     <div id="exerciseList">
@@ -352,16 +532,16 @@ function renderLessonPanel() {
 
     ${allExercisesPassed ? `
       <div class="lesson-complete-banner">
-        Lesson completed. The next lesson is now unlocked.
+        ${t("lessonCompleted")}
       </div>
     ` : ""}
 
     <div class="navigation-row">
       <button class="secondary-button" type="button" id="previousLesson" ${lessonIndex === 0 ? "disabled" : ""}>
-        Previous lesson
+        ${t("previousLesson")}
       </button>
       <button class="primary-button" type="button" id="nextLesson" ${lessonIndex >= lessons.length - 1 || !allExercisesPassed ? "disabled" : ""}>
-        Next lesson
+        ${t("nextLesson")}
       </button>
     </div>
   `;
@@ -389,7 +569,7 @@ function renderExerciseCard(lesson, exercise, exerciseIndex) {
 
   return `
     <article class="exercise-card" id="card-${exercise.id}">
-      <h3>Exercise ${exerciseIndex + 1}</h3>
+      <h3>${t("exercise")} ${exerciseIndex + 1}</h3>
       <p>${exercise.instruction}</p>
 
       <div class="target-sentence">
@@ -398,25 +578,25 @@ function renderExerciseCard(lesson, exercise, exerciseIndex) {
 
       <div class="controls">
         <button class="secondary-button listen-button" type="button" data-text="${escapeHtml(exercise.targetText)}">
-          Listen
+          ${t("listen")}
         </button>
         <button class="primary-button speak-button" type="button" data-exercise-id="${exercise.id}">
-          Speak
+          ${t("speak")}
         </button>
       </div>
 
       <label for="transcript-${exercise.id}">
-        Your transcript or manual answer:
+        ${t("transcriptLabel")}
       </label>
       <textarea
         class="transcript-box"
         id="transcript-${exercise.id}"
-        placeholder="Your recognized speech will appear here. You can also type manually."
+        placeholder="${t("transcriptPlaceholder")}"
       >${attempt?.transcript || ""}</textarea>
 
       <div class="controls">
         <button class="primary-button check-button" type="button" data-exercise-id="${exercise.id}">
-          Check answer
+          ${t("checkAnswer")}
         </button>
       </div>
 
@@ -429,15 +609,15 @@ function renderExerciseCard(lesson, exercise, exerciseIndex) {
 
 function renderResult(attempt, passScore) {
   const resultClass = attempt.passed ? "pass" : "fail";
-  const label = attempt.passed ? "Passed" : "Try again";
+  const label = attempt.passed ? t("passed") : t("tryAgain");
 
   return `
     <div class="result-card ${resultClass}">
       <p class="score">${attempt.score}% — ${label}</p>
-      <p><strong>Expected:</strong> ${attempt.expectedText}</p>
-      <p><strong>Your answer:</strong> ${attempt.transcript || "No answer detected."}</p>
+      <p><strong>${t("expected")}</strong> ${attempt.expectedText}</p>
+      <p><strong>${t("yourAnswer")}</strong> ${attempt.transcript || t("noAnswer")}</p>
       <p>
-        Minimum required score: ${passScore}%.
+        ${t("minimumRequired")} ${passScore}%.
       </p>
     </div>
   `;
@@ -455,7 +635,7 @@ function bindExerciseEvents(lesson) {
       const exerciseId = button.dataset.exerciseId;
       const textarea = document.getElementById(`transcript-${exerciseId}`);
 
-      button.textContent = "Listening...";
+      button.textContent = t("listening");
       button.disabled = true;
 
       startRecognition(
@@ -463,7 +643,7 @@ function bindExerciseEvents(lesson) {
           textarea.value = transcript;
         },
         () => {
-          button.textContent = "Speak";
+          button.textContent = t("speak");
           button.disabled = false;
         }
       );
@@ -513,13 +693,14 @@ function escapeHtml(text) {
 
 function renderApp() {
   document.body.setAttribute("data-course", selectedCourseId);
+  updateStaticInterfaceText();
   ensureSelectedLesson();
   renderLessonList();
   renderLessonPanel();
 }
 
 resetProgressBtn.addEventListener("click", () => {
-  const confirmed = confirm("Do you want to reset all progress for all courses?");
+  const confirmed = confirm(t("resetConfirm"));
   if (!confirmed) return;
 
   localStorage.removeItem(STORAGE_KEY);
