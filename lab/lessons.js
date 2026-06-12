@@ -1,218 +1,251 @@
-window.AA_LESSONS = [
-  {
-    id: "lesson-1",
-    level: "Beginner Level 1",
-    title: "Greetings",
-    objective: "The learner can greet someone politely and respond to a simple greeting.",
-    explanation: "Use short and clear greetings when you meet someone. In professional English, polite greetings are important.",
-    vocabulary: ["Hello", "Good morning", "Good afternoon", "How are you?", "I am fine"],
+window.AA_COURSES = {
+  english: {
+    id: "english",
+    title: "English Speaking Lessons",
+    levelTitle: "Beginner Level 1",
+    voiceLang: "en-US",
     passScore: 75,
-    exercises: [
+    lessons: [
       {
-        id: "l1-e1",
-        instruction: "Listen and repeat.",
-        targetText: "Good morning."
+        id: "en-lesson-1",
+        level: "English Speaking Lessons",
+        title: "Greetings",
+        objective: "The learner can greet someone politely and respond to a simple greeting.",
+        explanation: "Use short and clear greetings when you meet someone. In professional English, polite greetings are important.",
+        vocabulary: ["Hello", "Good morning", "Good afternoon", "How are you?", "I am fine"],
+        passScore: 75,
+        exercises: [
+          {
+            id: "en-l1-e1",
+            instruction: "Listen and repeat.",
+            targetText: "Good morning."
+          },
+          {
+            id: "en-l1-e2",
+            instruction: "Listen and repeat.",
+            targetText: "Hello, how are you?"
+          },
+          {
+            id: "en-l1-e3",
+            instruction: "Listen and repeat.",
+            targetText: "I am fine, thank you."
+          },
+          {
+            id: "en-l1-e4",
+            instruction: "Listen and repeat.",
+            targetText: "Nice to meet you."
+          },
+          {
+            id: "en-l1-e5",
+            instruction: "Final task. Say the full sentence clearly.",
+            targetText: "Good morning. I am fine, thank you."
+          }
+        ]
       },
       {
-        id: "l1-e2",
-        instruction: "Listen and repeat.",
-        targetText: "Hello, how are you?"
-      },
-      {
-        id: "l1-e3",
-        instruction: "Listen and repeat.",
-        targetText: "I am fine, thank you."
-      },
-      {
-        id: "l1-e4",
-        instruction: "Listen and repeat.",
-        targetText: "Nice to meet you."
-      },
-      {
-        id: "l1-e5",
-        instruction: "Final task. Say the full sentence clearly.",
-        targetText: "Good morning. I am fine, thank you."
+        id: "en-lesson-2",
+        level: "English Speaking Lessons",
+        title: "Introducing Yourself",
+        objective: "The learner can give a simple self-introduction.",
+        explanation: "A self-introduction usually includes your name, your country, your city, and your work or study.",
+        vocabulary: ["name", "from", "live", "work", "student"],
+        passScore: 75,
+        exercises: [
+          {
+            id: "en-l2-e1",
+            instruction: "Listen and repeat.",
+            targetText: "My name is David."
+          },
+          {
+            id: "en-l2-e2",
+            instruction: "Listen and repeat.",
+            targetText: "I am from Madagascar."
+          },
+          {
+            id: "en-l2-e3",
+            instruction: "Listen and repeat.",
+            targetText: "I live in Toamasina."
+          },
+          {
+            id: "en-l2-e4",
+            instruction: "Listen and repeat.",
+            targetText: "I work with an association."
+          },
+          {
+            id: "en-l2-e5",
+            instruction: "Final task. Say the full sentence clearly.",
+            targetText: "My name is David. I am from Madagascar."
+          }
+        ]
       }
     ]
   },
-  {
-    id: "lesson-2",
-    level: "Beginner Level 1",
-    title: "Introducing Yourself",
-    objective: "The learner can give a simple self-introduction.",
-    explanation: "A self-introduction usually includes your name, your country, your city, and your work or study.",
-    vocabulary: ["name", "from", "live", "work", "student"],
+
+  french: {
+    id: "french",
+    title: "French Speaking Lessons",
+    levelTitle: "Niveau débutant 1",
+    voiceLang: "fr-FR",
     passScore: 75,
-    exercises: [
+    lessons: [
       {
-        id: "l2-e1",
-        instruction: "Listen and repeat.",
-        targetText: "My name is David."
+        id: "fr-lesson-1",
+        level: "French Speaking Lessons",
+        title: "Salutations",
+        objective: "The learner can greet someone politely in French.",
+        explanation: "In French, greetings are important in daily and professional communication. Start with simple and polite expressions.",
+        vocabulary: ["Bonjour", "Bonsoir", "Comment allez-vous ?", "Très bien", "Merci"],
+        passScore: 75,
+        exercises: [
+          {
+            id: "fr-l1-e1",
+            instruction: "Listen and repeat.",
+            targetText: "Bonjour."
+          },
+          {
+            id: "fr-l1-e2",
+            instruction: "Listen and repeat.",
+            targetText: "Bonjour, comment allez-vous ?"
+          },
+          {
+            id: "fr-l1-e3",
+            instruction: "Listen and repeat.",
+            targetText: "Je vais bien, merci."
+          },
+          {
+            id: "fr-l1-e4",
+            instruction: "Listen and repeat.",
+            targetText: "Enchanté de vous rencontrer."
+          },
+          {
+            id: "fr-l1-e5",
+            instruction: "Final task. Say the full sentence clearly.",
+            targetText: "Bonjour, je vais bien, merci."
+          }
+        ]
       },
       {
-        id: "l2-e2",
-        instruction: "Listen and repeat.",
-        targetText: "I am from Madagascar."
-      },
-      {
-        id: "l2-e3",
-        instruction: "Listen and repeat.",
-        targetText: "I live in Toamasina."
-      },
-      {
-        id: "l2-e4",
-        instruction: "Listen and repeat.",
-        targetText: "I work with an association."
-      },
-      {
-        id: "l2-e5",
-        instruction: "Final task. Say the full sentence clearly.",
-        targetText: "My name is David. I am from Madagascar."
+        id: "fr-lesson-2",
+        level: "French Speaking Lessons",
+        title: "Se présenter",
+        objective: "The learner can introduce himself or herself in simple French.",
+        explanation: "A simple French introduction can include your name, your country, your city, and your activity.",
+        vocabulary: ["nom", "pays", "ville", "travail", "étudiant"],
+        passScore: 75,
+        exercises: [
+          {
+            id: "fr-l2-e1",
+            instruction: "Listen and repeat.",
+            targetText: "Je m'appelle David."
+          },
+          {
+            id: "fr-l2-e2",
+            instruction: "Listen and repeat.",
+            targetText: "Je viens de Madagascar."
+          },
+          {
+            id: "fr-l2-e3",
+            instruction: "Listen and repeat.",
+            targetText: "J'habite à Toamasina."
+          },
+          {
+            id: "fr-l2-e4",
+            instruction: "Listen and repeat.",
+            targetText: "Je travaille avec une association."
+          },
+          {
+            id: "fr-l2-e5",
+            instruction: "Final task. Say the full sentence clearly.",
+            targetText: "Je m'appelle David et je viens de Madagascar."
+          }
+        ]
       }
     ]
   },
-  {
-    id: "lesson-3",
-    level: "Beginner Level 1",
-    title: "Country and Nationality",
-    objective: "The learner can say where he or she is from and mention nationality.",
-    explanation: "Use 'I am from...' for country or city. Use nationality words such as Malagasy, French, British, or American.",
-    vocabulary: ["country", "city", "nationality", "Malagasy", "Madagascar"],
+
+  malagasy: {
+    id: "malagasy",
+    title: "Malagasy Speaking Lessons",
+    levelTitle: "Ambaratonga voalohany 1",
+    voiceLang: "mg-MG",
     passScore: 75,
-    exercises: [
+    lessons: [
       {
-        id: "l3-e1",
-        instruction: "Listen and repeat.",
-        targetText: "I am from Madagascar."
+        id: "mg-lesson-1",
+        level: "Malagasy Speaking Lessons",
+        title: "Fiarahabana",
+        objective: "The learner can greet someone politely in Malagasy.",
+        explanation: "Malagasy greetings are useful in daily communication. Start with short and clear expressions.",
+        vocabulary: ["Miarahaba", "Salama", "Manao ahoana", "Tsara", "Misaotra"],
+        passScore: 75,
+        exercises: [
+          {
+            id: "mg-l1-e1",
+            instruction: "Listen and repeat.",
+            targetText: "Miarahaba."
+          },
+          {
+            id: "mg-l1-e2",
+            instruction: "Listen and repeat.",
+            targetText: "Salama, manao ahoana ianao?"
+          },
+          {
+            id: "mg-l1-e3",
+            instruction: "Listen and repeat.",
+            targetText: "Salama tsara, misaotra."
+          },
+          {
+            id: "mg-l1-e4",
+            instruction: "Listen and repeat.",
+            targetText: "Faly miarahaba anao."
+          },
+          {
+            id: "mg-l1-e5",
+            instruction: "Final task. Say the full sentence clearly.",
+            targetText: "Salama tsara aho, misaotra."
+          }
+        ]
       },
       {
-        id: "l3-e2",
-        instruction: "Listen and repeat.",
-        targetText: "I am Malagasy."
-      },
-      {
-        id: "l3-e3",
-        instruction: "Listen and repeat.",
-        targetText: "I live in Antananarivo."
-      },
-      {
-        id: "l3-e4",
-        instruction: "Listen and repeat.",
-        targetText: "My country is beautiful."
-      },
-      {
-        id: "l3-e5",
-        instruction: "Final task. Say the full sentence clearly.",
-        targetText: "I am Malagasy and I am from Madagascar."
-      }
-    ]
-  },
-  {
-    id: "lesson-4",
-    level: "Beginner Level 1",
-    title: "Daily Activities",
-    objective: "The learner can describe simple daily activities.",
-    explanation: "Use the simple present to talk about your routine: I wake up, I work, I study, I eat, I sleep.",
-    vocabulary: ["wake up", "work", "study", "eat", "sleep"],
-    passScore: 75,
-    exercises: [
-      {
-        id: "l4-e1",
-        instruction: "Listen and repeat.",
-        targetText: "I wake up early."
-      },
-      {
-        id: "l4-e2",
-        instruction: "Listen and repeat.",
-        targetText: "I go to work."
-      },
-      {
-        id: "l4-e3",
-        instruction: "Listen and repeat.",
-        targetText: "I study English every day."
-      },
-      {
-        id: "l4-e4",
-        instruction: "Listen and repeat.",
-        targetText: "I eat lunch at noon."
-      },
-      {
-        id: "l4-e5",
-        instruction: "Final task. Say the full sentence clearly.",
-        targetText: "I study English every day because I want to improve."
-      }
-    ]
-  },
-  {
-    id: "lesson-5",
-    level: "Beginner Level 1",
-    title: "Simple Workplace English",
-    objective: "The learner can use simple professional sentences at work.",
-    explanation: "Professional English should be clear, polite, and direct. Start with simple sentences that you can use in real situations.",
-    vocabulary: ["meeting", "email", "help", "available", "thank you"],
-    passScore: 75,
-    exercises: [
-      {
-        id: "l5-e1",
-        instruction: "Listen and repeat.",
-        targetText: "I am available for the meeting."
-      },
-      {
-        id: "l5-e2",
-        instruction: "Listen and repeat.",
-        targetText: "Could you help me, please?"
-      },
-      {
-        id: "l5-e3",
-        instruction: "Listen and repeat.",
-        targetText: "I will send the email today."
-      },
-      {
-        id: "l5-e4",
-        instruction: "Listen and repeat.",
-        targetText: "Thank you for your support."
-      },
-      {
-        id: "l5-e5",
-        instruction: "Final task. Say the full sentence clearly.",
-        targetText: "I am available for the meeting and I will send the email today."
-      }
-    ]
-  },
-  {
-    id: "final-test",
-    level: "Beginner Level 1",
-    title: "Final Speaking Test",
-    objective: "The learner can combine greetings, introduction, nationality, routine, and workplace English.",
-    explanation: "This test checks the main sentences from Beginner Level 1. Speak slowly and clearly.",
-    vocabulary: ["greeting", "introduction", "routine", "workplace", "confidence"],
-    passScore: 80,
-    exercises: [
-      {
-        id: "ft-e1",
-        instruction: "Final test sentence 1.",
-        targetText: "Good morning. My name is David."
-      },
-      {
-        id: "ft-e2",
-        instruction: "Final test sentence 2.",
-        targetText: "I am Malagasy and I live in Madagascar."
-      },
-      {
-        id: "ft-e3",
-        instruction: "Final test sentence 3.",
-        targetText: "I study English every day because I want to improve."
-      },
-      {
-        id: "ft-e4",
-        instruction: "Final test sentence 4.",
-        targetText: "I am available for the meeting and I will send the email today."
-      },
-      {
-        id: "ft-e5",
-        instruction: "Final test sentence 5.",
-        targetText: "Thank you for your support. Nice to meet you."
+        id: "mg-lesson-2",
+        level: "Malagasy Speaking Lessons",
+        title: "Mampahafantatra tena",
+        objective: "The learner can introduce himself or herself in simple Malagasy.",
+        explanation: "A simple Malagasy introduction can include your name, your country, your city, and your activity.",
+        vocabulary: ["anarana", "avy", "monina", "miasa", "mpianatra"],
+        passScore: 75,
+        exercises: [
+          {
+            id: "mg-l2-e1",
+            instruction: "Listen and repeat.",
+            targetText: "David no anarako."
+          },
+          {
+            id: "mg-l2-e2",
+            instruction: "Listen and repeat.",
+            targetText: "Avy eto Madagasikara aho."
+          },
+          {
+            id: "mg-l2-e3",
+            instruction: "Listen and repeat.",
+            targetText: "Monina ao Toamasina aho."
+          },
+          {
+            id: "mg-l2-e4",
+            instruction: "Listen and repeat.",
+            targetText: "Miasa miaraka amin'ny fikambanana aho."
+          },
+          {
+            id: "mg-l2-e5",
+            instruction: "Final task. Say the full sentence clearly.",
+            targetText: "David no anarako ary avy eto Madagasikara aho."
+          }
+        ]
       }
     ]
   }
-];
+};
+
+// Temporary compatibility with the old app.js.
+// This keeps the English course working until we update app.js in the next step.
+window.AA_LESSONS = window.AA_COURSES.english.lessons;
