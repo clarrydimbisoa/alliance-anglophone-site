@@ -440,3 +440,108 @@ select {
     min-width: 100%;
   }
 }
+/* ---------- Course color themes ---------- */
+
+body[data-course="english"] {
+  --course-accent: #1d4ed8;
+  --course-soft: #eaf2ff;
+  --course-border: #bfd4ff;
+}
+
+body[data-course="french"] {
+  --course-accent: #c62828;
+  --course-soft: #fff0f0;
+  --course-border: #f2b8b5;
+}
+
+body[data-course="malagasy"] {
+  --course-accent: #2e7d32;
+  --course-soft: #eef9ef;
+  --course-border: #b8dfbb;
+}
+
+/* ---------- More colorful blocks ---------- */
+
+.intro-card {
+  border-top: 6px solid var(--course-accent);
+  background: linear-gradient(to bottom, var(--course-soft), #ffffff 40%);
+}
+
+.intro-card h2 {
+  color: var(--course-accent);
+}
+
+.course-selector-card {
+  background: var(--course-soft);
+  border: 1px solid var(--course-border);
+}
+
+.course-selector-card select {
+  border: 1px solid var(--course-border);
+}
+
+.sidebar {
+  border-top: 6px solid var(--course-accent);
+}
+
+.sidebar-title h2 {
+  color: var(--course-accent);
+}
+
+.lesson-button.active {
+  background: var(--course-soft);
+  border-color: var(--course-accent);
+}
+
+.lesson-button.completed {
+  background: var(--course-soft);
+  border-color: var(--course-border);
+}
+
+.lesson-title {
+  color: var(--course-accent);
+}
+
+.lesson-header h2 {
+  color: var(--course-accent);
+}
+
+.info-box {
+  background: linear-gradient(to bottom, var(--course-soft), #ffffff 65%);
+  border: 1px solid var(--course-border);
+}
+
+.info-box h3 {
+  color: var(--course-accent);
+}
+
+.target-sentence {
+  background: var(--course-soft);
+  color: var(--course-accent);
+  border-left: 6px solid var(--course-accent);
+}
+
+.primary-button {
+  background: var(--course-accent);
+  color: #ffffff;
+}
+
+.secondary-button {
+  background: var(--course-soft);
+  color: var(--course-accent);
+  border: 1px solid var(--course-border);
+}
+
+.lesson-complete-banner {
+  background: var(--course-soft);
+  border: 1px solid var(--course-border);
+  color: var(--course-accent);
+}
+
+.result-card.pass {
+  background: #eefaf0;
+}
+
+.result-card.fail {
+  background: #fff4f2;
+}
