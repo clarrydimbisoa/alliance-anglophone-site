@@ -392,3 +392,15 @@ select {
     grid-template-columns: 1fr;
   }
 }
+.site-header .brand-logo {
+  width: 54px !important;
+  height: 54px !important;
+  max-width: 54px !important;
+  max-height: 54px !important;
+  object-fit: contain !important;
+  display: block !important;
+  flex: 0 0 54px !important;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 4px;
+}
