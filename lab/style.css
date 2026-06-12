@@ -54,6 +54,15 @@ body {
   font-size: 1.2rem;
 }
 
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 4px;
+}
+
 .eyebrow {
   margin: 0;
   text-transform: uppercase;
