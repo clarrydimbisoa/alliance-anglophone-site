@@ -512,6 +512,7 @@ function escapeHtml(text) {
 }
 
 function renderApp() {
+  document.body.setAttribute("data-course", selectedCourseId);
   ensureSelectedLesson();
   renderLessonList();
   renderLessonPanel();
