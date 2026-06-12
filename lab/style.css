@@ -404,3 +404,39 @@ select {
   border-radius: 14px;
   padding: 4px;
 }
+.course-selector-card {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  background: #fbfcff;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.course-selector-card label {
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.course-selector-card select {
+  min-width: 260px;
+  border: 1px solid var(--border);
+  background: #ffffff;
+  color: var(--navy);
+  font-weight: 700;
+}
+
+@media (max-width: 600px) {
+  .course-selector-card {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .course-selector-card select {
+    width: 100%;
+    min-width: 100%;
+  }
+}
