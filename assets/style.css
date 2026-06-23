@@ -676,7 +676,26 @@ header p{
     font-size: 0.76rem;
   }
 }
+/* Final French homepage hero refinements */
 
+.hero-home {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(2, 25, 68, 0.98) 0%,
+      rgba(2, 33, 87, 0.94) 48%,
+      rgba(2, 33, 87, 0.52) 100%
+    ),
+    url("hero.jpg");
+}
+
+.hero-home .hero-content > * {
+  max-width: 700px;
+}
+
+.hero-home h1 {
+  max-width: 720px;
+}
 
 
 
