@@ -686,7 +686,7 @@ header p{
       rgba(2, 33, 87, 0.94) 48%,
       rgba(2, 33, 87, 0.52) 100%
     ),
-    url("hero.jpg");
+    url("hero-new.png");
 }
 
 .hero-home .hero-content > * {
