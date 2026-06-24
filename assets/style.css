@@ -472,7 +472,7 @@ header p{
       rgba(2, 33, 87, 0.91) 48%,
       rgba(2, 33, 87, 0.45) 100%
     ),
-    url("hero-new.png");
+   url("hero-new.png?v=2");
 
   background-size: cover;
   background-position: center;
