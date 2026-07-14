@@ -318,6 +318,36 @@
         padding: 55px 5%;
       }
     }
+  .program-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.program-title-row h3 {
+  margin: 0;
+  flex: 1;
+}
+
+.quick-register {
+  padding: 8px 14px;
+  font-size: 0.88rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .program-title-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .quick-register {
+    width: 100%;
+    text-align: center;
+  }
+}
   </style>
 </head>
 
@@ -960,5 +990,34 @@
 </p>
   </footer>
 
+<script>
+  document.querySelectorAll(".program-card").forEach(function(card) {
+    const title = card.querySelector("h3");
+    const registrationLink = card.querySelector('a.btn[href="inscription.html"]');
+
+    if (!title || !registrationLink) {
+      return;
+    }
+
+    const titleRow = document.createElement("div");
+    titleRow.className = "program-title-row";
+
+    title.parentNode.insertBefore(titleRow, title);
+    titleRow.appendChild(title);
+
+    const quickButton = document.createElement("a");
+    quickButton.className = "btn btn-primary quick-register";
+    quickButton.textContent = "S’inscrire";
+    quickButton.href =
+      "inscription.html?programme=" +
+      encodeURIComponent(title.textContent.trim());
+    quickButton.setAttribute(
+      "aria-label",
+      "S’inscrire au programme " + title.textContent.trim()
+    );
+
+    titleRow.appendChild(quickButton);
+  });
+</script>
 </body>
 </html>
