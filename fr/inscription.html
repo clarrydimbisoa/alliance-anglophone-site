@@ -618,6 +618,49 @@
   </footer>
 
   <script>
+    const programParameters = new URLSearchParams(window.location.search);
+const requestedProgram = programParameters.get("programme");
+const programSelect = document.getElementById("program");
+
+function normalizeProgramName(value) {
+  return value
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[–—,:]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+if (requestedProgram && programSelect) {
+  const requestedKey = normalizeProgramName(requestedProgram);
+
+  const programAliases = {
+    "anglais des affaires et entrepreneuriat":
+      "Anglais des affaires et entrepreneuriat",
+    "developpement de carriere cv et entretiens":
+      "Développement de carrière",
+    "developpement personnel leadership et communication professionnelle":
+      "Développement personnel et leadership",
+    "formation des enseignants et anglais de la classe":
+      "Formation des enseignants",
+    "journalisme pratique en anglais avec renforcement en francais":
+      "Journalisme pratique en anglais avec renforcement en français (6 mois minimum)"
+  };
+
+  const targetProgram = programAliases[requestedKey] || requestedProgram;
+  const targetKey = normalizeProgramName(targetProgram);
+
+  if (requestedKey !== "anglais general") {
+    const matchingOption = Array.from(programSelect.options).find(function(option) {
+      return normalizeProgramName(option.textContent) === targetKey;
+    });
+
+    if (matchingOption) {
+      programSelect.value = matchingOption.value;
+    }
+  }
+}
     document.getElementById("registrationForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
