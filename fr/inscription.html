@@ -487,7 +487,8 @@
                   <option>Anglais médical et communication en santé</option>
                   <option>Développement de carrière – Parcours complet</option>
                   <option>Développement de carrière – Module ciblé</option>
-                  <option>Développement personnel et leadership</option>
+                  <option>Développement personnel – Parcours complet</option>
+                  <option>Développement personnel – Module ciblé</option>
                   <option>Formation des enseignants</option>
                   <option>Journalisme pratique en anglais avec renforcement en français (6 mois minimum)</option>
                   <option>English Speaking Club</option>
@@ -511,6 +512,31 @@
                     <option>Simulation d’entretien avec retour personnalisé</option>
                     <option>Autre besoin à préciser dans le message</option>
                   </select>
+                </div>
+                <div class="field full" id="personalDevelopmentModuleField" hidden>
+              <label for="personalDevelopmentModule">
+                Module de développement personnel souhaité
+                </label>
+            
+                <select id="personalDevelopmentModule">
+                <option value="">Sélectionnez un module</option>
+                <option>Leadership et influence positive</option>
+                <option>Motivation, objectifs et passage à l’action</option>
+                <option>Confiance en soi et expression personnelle</option>
+                <option>Autodiscipline et développement d’habitudes positives</option>
+                <option>Gestion du temps et productivité personnelle</option>
+                <option>Intelligence émotionnelle</option>
+                <option>Communication assertive</option>
+                <option>Gestion du stress et résilience</option>
+                <option>Prise de décision et résolution de problèmes</option>
+                <option>Gestion des conflits</option>
+                <option>Travail en équipe et collaboration</option>
+                <option>Prise de parole en public</option>
+                <option>Valeurs personnelles, intégrité et responsabilité</option>
+                <option>Gestion financière personnelle de base</option>
+                <option>Équilibre de vie et bien-être</option>
+                <option>Autre besoin à préciser dans le message</option>
+                </select>
                 </div>
                 <div class="field">
                 <label for="duration">Durée souhaitée</label>
@@ -662,7 +688,10 @@ if (requestedProgram && programSelect) {
     "developpement de carriere cv et entretiens":
       "Développement de carrière",
     "developpement personnel leadership et communication professionnelle":
-      "Développement personnel et leadership",
+  "Développement personnel – Parcours complet",
+
+"developpement personnel leadership et competences de vie":
+  "Développement personnel – Parcours complet",
     "formation des enseignants et anglais de la classe":
       "Formation des enseignants",
     "journalisme pratique en anglais avec renforcement en francais":
@@ -698,6 +727,29 @@ function updateCareerModuleVisibility() {
 
 programSelect.addEventListener("change", updateCareerModuleVisibility);
 updateCareerModuleVisibility();
+    const personalDevelopmentModuleField =
+  document.getElementById("personalDevelopmentModuleField");
+
+const personalDevelopmentModuleSelect =
+  document.getElementById("personalDevelopmentModule");
+
+function updatePersonalDevelopmentModuleVisibility() {
+  const targetedModuleSelected =
+    programSelect.value === "Développement personnel – Module ciblé";
+
+  personalDevelopmentModuleField.hidden = !targetedModuleSelected;
+
+  if (!targetedModuleSelected) {
+    personalDevelopmentModuleSelect.value = "";
+  }
+}
+
+programSelect.addEventListener(
+  "change",
+  updatePersonalDevelopmentModuleVisibility
+);
+
+updatePersonalDevelopmentModuleVisibility();
     document.getElementById("registrationForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
@@ -709,6 +761,8 @@ updateCareerModuleVisibility();
       const level = document.getElementById("level").value;
       const program = document.getElementById("program").value;
       const careerModule = document.getElementById("careerModule").value;
+      const personalDevelopmentModule =
+      document.getElementById("personalDevelopmentModule").value;
       const duration = document.getElementById("duration").value;
       const format = document.getElementById("format").value;
       const goal = document.getElementById("goal").value;
@@ -724,7 +778,11 @@ updateCareerModuleVisibility();
         "Ville / Localisation : " + encodeURIComponent(city || "Non indiqué") + "%0A" +
         "Niveau actuel en anglais : " + encodeURIComponent(level) + "%0A" +
         "Programme souhaité : " + encodeURIComponent(program) + "%0A" +
-        "Module ciblé : " + encodeURIComponent(careerModule || "Non applicable") + "%0A" +
+        "Module de développement de carrière : " +
+        encodeURIComponent(careerModule || "Non applicable") + "%0A" +
+        
+        "Module de développement personnel : " +
+        encodeURIComponent(personalDevelopmentModule || "Non applicable") + "%0A" +
         "Durée souhaitée : " + encodeURIComponent(duration || "Selon le programme / à confirmer") + "%0A" +
         "Format souhaité : " + encodeURIComponent(format) + "%0A" +
         "Objectif principal : " + encodeURIComponent(goal) + "%0A" +
