@@ -495,7 +495,23 @@
                   <option>Je ne suis pas encore sûr(e)</option>
                 </select>
               </div>
-
+                <div class="field full" id="careerModuleField" hidden>
+                  <label for="careerModule">Module de développement de carrière souhaité</label>
+                
+                  <select id="careerModule">
+                    <option value="">Sélectionnez un module</option>
+                    <option>Orientation professionnelle et bilan des compétences</option>
+                    <option>Définition des objectifs et plan de carrière</option>
+                    <option>Préparation ou révision de CV</option>
+                    <option>Rédaction d’une lettre de motivation</option>
+                    <option>Recherche d’emploi et compréhension des offres</option>
+                    <option>Profil LinkedIn et image professionnelle</option>
+                    <option>Réseautage et elevator pitch</option>
+                    <option>Préparation aux entretiens</option>
+                    <option>Simulation d’entretien avec retour personnalisé</option>
+                    <option>Autre besoin à préciser dans le message</option>
+                  </select>
+                </div>
                 <div class="field">
                 <label for="duration">Durée souhaitée</label>
                 <select id="duration">
@@ -666,6 +682,22 @@ if (requestedProgram && programSelect) {
     }
   }
 }
+    const careerModuleField = document.getElementById("careerModuleField");
+const careerModuleSelect = document.getElementById("careerModule");
+
+function updateCareerModuleVisibility() {
+  const targetedModuleSelected =
+    programSelect.value === "Développement de carrière – Module ciblé";
+
+  careerModuleField.hidden = !targetedModuleSelected;
+
+  if (!targetedModuleSelected) {
+    careerModuleSelect.value = "";
+  }
+}
+
+programSelect.addEventListener("change", updateCareerModuleVisibility);
+updateCareerModuleVisibility();
     document.getElementById("registrationForm").addEventListener("submit", function(event) {
       event.preventDefault();
 
@@ -676,6 +708,7 @@ if (requestedProgram && programSelect) {
       const city = document.getElementById("city").value.trim();
       const level = document.getElementById("level").value;
       const program = document.getElementById("program").value;
+      const careerModule = document.getElementById("careerModule").value;
       const duration = document.getElementById("duration").value;
       const format = document.getElementById("format").value;
       const goal = document.getElementById("goal").value;
@@ -691,6 +724,7 @@ if (requestedProgram && programSelect) {
         "Ville / Localisation : " + encodeURIComponent(city || "Non indiqué") + "%0A" +
         "Niveau actuel en anglais : " + encodeURIComponent(level) + "%0A" +
         "Programme souhaité : " + encodeURIComponent(program) + "%0A" +
+        "Module ciblé : " + encodeURIComponent(careerModule || "Non applicable") + "%0A" +
         "Durée souhaitée : " + encodeURIComponent(duration || "Selon le programme / à confirmer") + "%0A" +
         "Format souhaité : " + encodeURIComponent(format) + "%0A" +
         "Objectif principal : " + encodeURIComponent(goal) + "%0A" +
