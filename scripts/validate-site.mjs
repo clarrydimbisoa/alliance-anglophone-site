@@ -23,7 +23,8 @@ for (const path of primary) {
   assert(/<html\s+lang="(fr|en|mg)"/i.test(html), `${file}: missing or invalid language`);
   assert((html.match(/<h1\b/gi) || []).length === 1, `${file}: expected exactly one h1`);
   assert(/<title>[^<]+<\/title>/i.test(html), `${file}: missing title`);
-  assert(/<meta\s+name="description"\s+content="[^"]+"/i.test(html), `${file}: missing description`);
+  assert(/<meta\s+name="description"\s+content="[^"]+"\s*\/?\s*>/i.test(html), `${file}: missing or malformed description`);
+  assert(!/>\s*\/>/.test(html), `${file}: stray self-closing fragment appears as visible text`);
   assert(/<link\s+rel="canonical"\s+href="https:\/\/allianceanglophone\.mg\//i.test(html), `${file}: missing canonical URL`);
   assert(!/<style>/i.test(html), `${file}: inline style block should be consolidated`);
   assert(html.includes("site-v2.js"), `${file}: missing shared navigation/accessibility script`);
@@ -68,6 +69,8 @@ for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratan
   for (const token of ['autocomplete="name"', 'autocomplete="tel"', 'autocomplete="email"', 'autocomplete="address-level2"', "registration-v2.js"]) {
     assert(html.includes(token), `${file}: missing ${token}`);
   }
+  assert(!/<a href="[^"]+">(?:privacy|terms|confidentialite|conditions|tsiambaratelo|fepetra)\.html<\/a>/i.test(html), `${file}: raw filename used as consent-link label`);
+  assert(/<aside class="side-card">[\s\S]*?href="https:\/\/wa\.me\/261349201200"/i.test(html), `${file}: help CTA must open WhatsApp`);
 }
 
 for (const file of ["fr/merci.html", "en/thank-you.html", "mg/misaotra.html"]) {

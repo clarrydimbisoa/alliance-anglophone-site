@@ -111,7 +111,7 @@ const registrationPrograms = {
 function replaceMain(file, main) {
   const path = join(root, file);
   let content = readFileSync(path, "utf8");
-  content = content.replace(/<main>[\s\S]*?<\/main>/, main);
+  content = content.replace(/<main\b[^>]*>[\s\S]*?<\/main>/, main);
   writeFileSync(path, content);
 }
 
