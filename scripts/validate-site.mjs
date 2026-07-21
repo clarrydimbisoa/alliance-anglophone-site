@@ -82,6 +82,12 @@ assert((sitemap.match(/<url>/g) || []).length === 31, "sitemap.xml: expected 31 
 assert(!/<priority>|<changefreq>|2026-06-05/.test(sitemap), "sitemap.xml: stale or ignored metadata remains");
 assert(existsSync(join(root, "404.html")), "Missing multilingual 404 page");
 
+const robots = readFileSync(join(root, "robots.txt"), "utf8");
+assert(/^User-agent:\s*\*/m.test(robots), "robots.txt: missing universal crawler rule");
+assert(/^Allow:\s*\/$/m.test(robots), "robots.txt: public crawling should be allowed");
+assert(/^Sitemap:\s*https:\/\/allianceanglophone\.mg\/sitemap\.xml$/m.test(robots), "robots.txt: missing canonical sitemap URL");
+assert(existsSync(join(root, "_headers")), "Missing production cache and security headers");
+
 if (errors.length) {
   console.error(`Validation failed with ${errors.length} issue(s):`);
   for (const error of errors) console.error(`- ${error}`);
