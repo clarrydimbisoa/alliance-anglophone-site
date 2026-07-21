@@ -14,617 +14,88 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Register for Online English Courses | Alliance Anglophone</title>
-  <meta name="description" content="Register for Alliance Anglophone online English courses in Madagascar. Improve your professional English, employability and career-ready communication skills."> />
+  <meta name="description" content="Register for Alliance Anglophone online English courses in Madagascar. Improve your professional English, employability and career-ready communication skills.">
 
  <link rel="canonical" href="https://allianceanglophone.mg/en/registration.html">
-  
+
   <link rel="alternate" hreflang="fr" href="https://allianceanglophone.mg/fr/inscription.html">
 <link rel="alternate" hreflang="en" href="https://allianceanglophone.mg/en/registration.html">
 <link rel="alternate" hreflang="mg" href="https://allianceanglophone.mg/mg/fisoratana.html">
 <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/inscription.html">
-  
-  <link rel="stylesheet" href="../assets/style.css" />
 
-  <style>
-    :root {
-      --blue: #0f4fbf;
-      --dark-blue: #062b63;
-      --gold: #d8aa2b;
-      --light: #f4f7fb;
-      --dark: #111827;
-      --text: #374151;
-      --white: #ffffff;
-      --green: #25d366;
-      --border: #d9e2f1;
-    }
+  <link rel="stylesheet" href="../assets/style-v2.css" />
+  <link rel="stylesheet" href="../assets/core-pages-v2.css">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="../assets/hero-registration-v1.webp" fetchpriority="high">
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .topbar {
-      background: var(--blue);
-      color: var(--white);
-      padding: 18px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-
-    .brand img {
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #ffffff;
-      padding: 4px;
-    }
-
-    .brand span {
-      color: #ffffff;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-
-    nav a {
-      color: white;
-      opacity: 0.95;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--gold);
-    }
-
-    .page-hero {
-      background:
-        linear-gradient(rgba(6, 43, 99, 0.76), rgba(6, 43, 99, 0.76)),
-        url("../assets/hero-registration-v1.webp") center/cover no-repeat;
-      color: white;
-      padding: 90px 8%;
-      text-align: center;
-    }
-
-    .page-hero h1 {
-      font-size: 3rem;
-      margin: 0 0 16px;
-      line-height: 1.1;
-    }
-
-    .page-hero p {
-      max-width: 860px;
-      margin: 0 auto;
-      font-size: 1.12rem;
-    }
-
-    section {
-      padding: 70px 8%;
-    }
-
-    .section-white {
-      background: white;
-    }
-
-    .section-title {
-      max-width: 900px;
-      margin-bottom: 36px;
-    }
-
-    .section-title h2 {
-      color: var(--dark-blue);
-      font-size: 2rem;
-      margin: 0 0 12px;
-    }
-
-    .section-title p {
-      font-size: 1.05rem;
-      margin: 0;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .form-card,
-    .side-card {
-      background: white;
-      border-radius: 18px;
-      padding: 32px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
-    }
-
-    .form-card {
-      border-top: 5px solid var(--blue);
-    }
-
-    .side-card {
-      border-top: 5px solid var(--gold);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-weight: 700;
-      color: var(--dark-blue);
-      font-size: 0.95rem;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      font-size: 1rem;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: var(--dark);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      outline: 2px solid rgba(15, 79, 191, 0.25);
-      border-color: var(--blue);
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: 0.2s;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--dark);
-    }
-
-    .btn-secondary {
-      background: var(--dark-blue);
-      color: white;
-    }
-
-    .btn-whatsapp {
-      background: var(--green);
-      color: white;
-      width: 100%;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
-    }
-
-    .notice {
-      background: #fff7dd;
-      border-left: 5px solid var(--gold);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 24px;
-    }
-
-    .side-card h3 {
-      color: var(--dark-blue);
-      margin-top: 0;
-    }
-
-    .side-card ul {
-      padding-left: 20px;
-      margin: 14px 0;
-    }
-
-    .side-card li {
-      margin-bottom: 8px;
-    }
-
-    .step-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .step {
-      background: white;
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
-      border-left: 5px solid var(--blue);
-    }
-
-    .step span {
-      display: inline-flex;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      background: var(--gold);
-      color: var(--dark);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .step h3 {
-      color: var(--dark-blue);
-      margin: 0 0 8px;
-    }
-
-    .cta {
-      text-align: center;
-      background: var(--blue);
-      color: white;
-    }
-
-    .cta h2 {
-      font-size: 2rem;
-      margin-top: 0;
-    }
-
-    .btn-row {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      background: var(--green);
-      color: white;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
-      z-index: 999;
-    }
-
-    footer {
-      background: var(--dark-blue);
-      color: white;
-      text-align: center;
-      padding: 26px 8%;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .layout,
-      .step-list {
-        grid-template-columns: 1fr;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .page-hero {
-        padding: 65px 5%;
-      }
-
-      .page-hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .topbar {
-        padding: 16px 5%;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-    }
-  </style>
+  <!-- Social sharing metadata -->
+  <meta property="og:title" content="Register for Online English Courses | Alliance Anglophone">
+  <meta property="og:description" content="Register for Alliance Anglophone online English courses in Madagascar. Improve your professional English, employability and career-ready communication skills.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://allianceanglophone.mg/en/registration.html">
+  <meta property="og:image" content="https://allianceanglophone.mg/assets/social-preview-registration-v1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Register for Online English Courses | Alliance Anglophone">
+  <meta property="og:site_name" content="Alliance Anglophone">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Register for Online English Courses | Alliance Anglophone">
+  <meta name="twitter:description" content="Register for Alliance Anglophone online English courses in Madagascar. Improve your professional English, employability and career-ready communication skills.">
+  <meta name="twitter:image" content="https://allianceanglophone.mg/assets/social-preview-registration-v1.jpg">
 </head>
 
-<body>
+<body class="registration-page">
 
   <header class="topbar">
     <a class="brand" href="index.html">
-      <img src="../assets/logo.JPG" alt="Alliance Anglophone logo">
+      <img src="../assets/logo-v2.webp" alt="Alliance Anglophone logo" width="56" height="56" decoding="async">
       <span>Alliance Anglophone</span>
     </a>
 
-    <nav>
+    <nav aria-label="Primary navigation">
       <a href="index.html">Home</a>
       <a href="programs.html">Programs</a>
       <a href="pricing.html">Pricing</a>
       <a href="mission.html">Mission</a>
+      <a href="impact.html">Impact</a>
       <a href="volunteer.html">Volunteer</a>
-      <a class="active" href="registration.html">Registration</a>
+      <a class="active" aria-current="page" href="registration.html">Registration</a>
       <a href="contact.html">Contact</a>
-      <a href="../fr/index.html"><img src="../assets/flag-fr.png" alt="Français" class="flag-icon"> FR</a>
-      <a href="index.html"><img src="../assets/flag-us.png" alt="English" class="flag-icon"> EN</a>
-      <a href="../mg/index.html"><img src="../assets/flag-mg.png" alt="Malagasy" class="flag-icon"> MG</a>
+      <a href="../fr/inscription.html" lang="fr"><img src="../assets/flag-fr-v2.svg" alt="" class="flag-icon" width="18" height="12"> FR</a>
+      <a href="registration.html" lang="en"><img src="../assets/flag-us-v2.svg" alt="" class="flag-icon" width="18" height="12"> EN</a>
+      <a href="../mg/fisoratana.html" lang="mg"><img src="../assets/flag-mg-v2.svg" alt="" class="flag-icon" width="18" height="12"> MG</a>
     </nav>
   </header>
 
-  <main>
-
-    <section class="page-hero">
-      <h1>Start Your English Success Journey</h1>
-      <p>
-        Register your interest in Alliance Anglophone online programs and take the first step
-        toward practical English, employability, and career confidence.
-      </p>
-    </section>
-
-    <section class="section-white">
-      <div class="section-title">
-        <h2>Registration request</h2>
-        <p>
-          Online classes are currently being prepared and are expected to open soon.
-          Complete the form below, then send your registration request through WhatsApp.
-        </p>
-      </div>
-
-      <div class="layout">
-        <div class="form-card">
-
-          <div class="notice">
-            <strong>Important:</strong> This form does not store your information on the website.
-            When you click the button, your registration request will be prepared as a WhatsApp message.
-          </div>
-
-          <form id="registrationForm">
-            <div class="form-grid">
-
-              <div class="field">
-                <label for="fullName">Full name</label>
-                <input type="text" id="fullName" placeholder="Example: John Andry" required>
-              </div>
-
-              <div class="field">
-                <label for="age">Age</label>
-                <input type="number" id="age" placeholder="Example: 25" required>
-              </div>
-
-              <div class="field">
-                <label for="whatsapp">WhatsApp number</label>
-                <input type="tel" id="whatsapp" placeholder="Example: +261 34 000 0000" required>
-              </div>
-
-              <div class="field">
-                <label for="email">Email address</label>
-                <input type="email" id="email" placeholder="Example: name@email.com">
-              </div>
-
-              <div class="field">
-                <label for="city">City / Location</label>
-                <input type="text" id="city" placeholder="Example: Toamasina">
-              </div>
-
-              <div class="field">
-                <label for="level">Current English level</label>
-                <select id="level" required>
-                  <option value="">Select your level</option>
-                  <option>Beginner</option>
-                  <option>Elementary</option>
-                  <option>Intermediate</option>
-                  <option>Upper Intermediate</option>
-                  <option>Advanced</option>
-                  <option>I am not sure</option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label for="program">Program of interest</label>
-                <select id="program" required>
-                  <option value="">Select a program</option>
-                  <option>General English</option>
-                  <option>Professional & Career English</option>
-                  <option>English for Children & Teens</option>
-                  <option>English Speaking Club</option>
-                  <option>Corporate Training</option>
-                  <option>I am not sure yet</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="format">Preferred learning format</label>
-                <select id="format" required>
-                  <option value="">Select a format</option>
-                  <option>Online Individual</option>
-                  <option>Online Group</option>
-                  <option>Corporate Training</option>
-                  <option>Not sure yet</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="goal">Main goal</label>
-                <select id="goal" required>
-                  <option value="">Select your goal</option>
-                  <option>Employment</option>
-                  <option>Career growth</option>
-                  <option>Study abroad</option>
-                  <option>Travel</option>
-                  <option>Business</option>
-                  <option>Personal development</option>
-                  <option>Other</option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label for="message">Additional message</label>
-                <textarea id="message" placeholder="Tell us more about your goal, availability, or questions."></textarea>
-              </div>
-
-            </div>
-
-            <button class="btn btn-whatsapp" type="submit">
-              Send Registration Request on WhatsApp
-            </button>
-          </form>
-        </div>
-
-        <aside class="side-card">
-          <h3>Need help before registering?</h3>
-          <p>
-            You can contact us directly if you are not sure which program is right for you.
-          </p>
-
-          <ul>
-            <li><strong>WhatsApp:</strong> +261 34 920 1200</li>
-            <li><strong>Email:</strong> contact@allianceanglophone.mg</li>
-            <li><strong>Location:</strong> Based in Toamasina, Madagascar</li>
-            <li><strong>Status:</strong> Online classes opening soon</li>
-          </ul>
-
-          <a class="btn btn-secondary" href="mailto:contact@allianceanglophone.mg">Send us an email</a>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">
-        <h2>How registration works</h2>
-        <p>
-          The process is simple and designed for learners who want clear guidance before starting.
-        </p>
-      </div>
-
-      <div class="step-list">
-        <div class="step">
-          <span>1</span>
-          <h3>Send your request</h3>
-          <p>Complete the form and send your information through WhatsApp.</p>
-        </div>
-
-        <div class="step">
-          <span>2</span>
-          <h3>Receive guidance</h3>
-          <p>We review your goal, level, and preferred learning format.</p>
-        </div>
-
-        <div class="step">
-          <span>3</span>
-          <h3>Start when available</h3>
-          <p>Once online classes open, you receive program details and next steps.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <h2>Not ready to register yet?</h2>
-      <p>
-        Contact us on WhatsApp and ask your questions before choosing a program.
-      </p>
-
-      <div class="btn-row">
-        <a class="btn btn-primary" href="https://wa.me/261349201200">Contact on WhatsApp</a>
-        <a class="btn btn-secondary" href="programs.html">Explore Programs</a>
-      </div>
-    </section>
-
-  </main>
+  <main id="main-content"><section class="page-hero"><h1>Start your journey toward English success</h1><p>Registration is open for online classes beginning on 7 September 2026.</p></section><section class="section-white"><div class="section-title"><h2>Registration request</h2><p>After receiving your message, we confirm guidance, group, price, and terms in writing.</p></div><div class="layout"><div class="form-card"><div class="notice"><strong>The website does not store this form. It prepares a WhatsApp message that you then choose whether to send.</strong></div><form id="registrationForm"><div class="form-grid"><div class="field"><label for="fullName">Full name</label><input type="text" id="fullName" autocomplete="name" required></div>
+<div class="field"><label for="age">Age</label><input type="number" id="age" inputmode="numeric" autocomplete="off" required></div>
+<div class="field"><label for="whatsapp">WhatsApp number</label><input type="tel" id="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+261 34 000 0000" required></div>
+<div class="field"><label for="email">Email address</label><input type="email" id="email" autocomplete="email"></div>
+<div class="field"><label for="city">City / Location</label><input type="text" id="city" autocomplete="address-level2"></div>
+<div class="field"><label for="level">Current English level</label><select id="level" required><option value="">Select</option><option>Beginner</option><option>Elementary</option><option>Intermediate</option><option>Upper-intermediate</option><option>Advanced</option><option>I am not sure</option></select></div>
+<div class="field full"><label for="program">Program of interest</label><select id="program" required><option value="">Select</option><option>General English – Beginner (3 months)</option><option>General English – Intermediate (3 months)</option><option>General English – Advanced (3 months)</option><option>Intensive English – 1 month</option><option>English for Children and Teens</option><option>Business English and Entrepreneurship</option><option>English for Tourism</option><option>English for Hospitality and Catering</option><option>Call Center / BPO English</option><option>Technical and Maritime English</option><option>NGO and Development English</option><option>Medical English and Healthcare Communication</option><option data-category="career">Career Development – complete pathway</option><option data-category="career">Career Development – targeted module</option><option data-category="personal">Personal Development – complete pathway</option><option data-category="personal">Personal Development – targeted module</option><option>Teacher Training</option><option>Practical Journalism in English with French Support (minimum 6 months)</option><option>English Speaking Club</option><option>Corporate or Institutional Training</option><option>I am not sure yet</option></select></div>
+<div class="field full" id="careerModuleField" hidden><label for="careerModule">Career development module</label><select id="careerModule"><option value="">Select</option><option>Career guidance and skills assessment</option><option>Goal setting and career plan</option><option>CV preparation or review</option><option>Cover-letter writing</option><option>Job search and understanding vacancies</option><option>LinkedIn profile and professional image</option><option>Networking and elevator pitch</option><option>Interview preparation</option><option>Mock interview with personalised feedback</option><option>Another need to describe</option></select></div>
+<div class="field full" id="personalDevelopmentModuleField" hidden><label for="personalDevelopmentModule">Personal development module</label><select id="personalDevelopmentModule"><option value="">Select</option><option>Leadership and positive influence</option><option>Motivation, goals, and action</option><option>Self-confidence and self-expression</option><option>Self-discipline and positive habits</option><option>Time management and productivity</option><option>Emotional intelligence</option><option>Assertive communication</option><option>Stress management and resilience</option><option>Decision-making and problem-solving</option><option>Conflict management</option><option>Teamwork and collaboration</option><option>Public speaking</option><option>Values, integrity, and responsibility</option><option>Basic personal financial management</option><option>Life balance and well-being</option><option>Another need to describe</option></select></div>
+<div class="field"><label for="duration">Preferred duration</label><select id="duration"><option value="">Select</option><option>According to program / to be confirmed</option><option>1 targeted session</option><option>2 targeted sessions</option><option>3 targeted sessions</option><option>12 weeks – complete pathway</option><option>1 month</option><option>3 months</option><option>6 months</option><option>I need guidance</option></select></div>
+<div class="field"><label for="format">Preferred format</label><select id="format" required><option value="">Select</option><option>Online group class (6 to 15 participants)</option><option>Online specialist micro-cohort</option><option>English Speaking Club only</option><option>Online corporate or institutional training</option><option>I am not sure yet</option></select></div>
+<div class="field"><label for="goal">Main goal</label><select id="goal" required><option value="">Select</option><option>Employment</option><option>Career progression</option><option>Study abroad</option><option>Travel</option><option>Business</option><option>Personal development</option><option>Other</option></select></div>
+<div class="field full"><label for="message">Additional message</label><textarea id="message" rows="5" placeholder="Tell us about your goal, availability, or questions."></textarea></div></div><label class="privacy-consent"><input type="checkbox" required><span>I have read the privacy policy and agree to prepare this WhatsApp message. <a href="privacy.html">privacy policy</a></span></label><label class="privacy-consent"><input type="checkbox" required><span>I understand that a place and payment are confirmed only after I receive the written terms. <a href="terms.html">payment terms</a></span></label><button class="btn btn-whatsapp" type="submit">Prepare request on WhatsApp</button></form></div><aside class="side-card"><h3>Need help before registering?</h3><p>After receiving your message, we confirm guidance, group, price, and terms in writing.</p><ul><li>WhatsApp: +261 34 920 1200</li><li>Email: contact@allianceanglophone.mg</li><li>Online classes begin on Monday, 7 September 2026. The English Speaking Club begins on Saturday, 12 September 2026.</li></ul><a class="btn btn-secondary" href="https://wa.me/261349201200">Contact us on WhatsApp</a></aside></div></section></main>
 
   <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
 
   <footer>
-    <p>© 2026 Alliance Anglophone. Based in Toamasina, Madagascar. Online classes opening soon.</p>
-  <p>
-  <a href="https://www.facebook.com/EnglishSkillsBooster" target="_blank">Facebook - English Skills Booster</a>
-</p>
-  </footer>
+    <p>© 2026 Alliance Anglophone. Registration is open — online classes begin on 7 September 2026.</p>
 
-  <script>
-    document.getElementById("registrationForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const fullName = document.getElementById("fullName").value.trim();
-      const age = document.getElementById("age").value.trim();
-      const whatsapp = document.getElementById("whatsapp").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const city = document.getElementById("city").value.trim();
-      const level = document.getElementById("level").value;
-      const program = document.getElementById("program").value;
-      const format = document.getElementById("format").value;
-      const goal = document.getElementById("goal").value;
-      const message = document.getElementById("message").value.trim();
-
-      const text =
-        "Hello Alliance Anglophone,%0A%0A" +
-        "I would like to register or receive information about your English programs.%0A%0A" +
-        "Full name: " + encodeURIComponent(fullName) + "%0A" +
-        "Age: " + encodeURIComponent(age) + "%0A" +
-        "WhatsApp number: " + encodeURIComponent(whatsapp) + "%0A" +
-        "Email: " + encodeURIComponent(email || "Not provided") + "%0A" +
-        "City / Location: " + encodeURIComponent(city || "Not provided") + "%0A" +
-        "Current English level: " + encodeURIComponent(level) + "%0A" +
-        "Program of interest: " + encodeURIComponent(program) + "%0A" +
-        "Preferred learning format: " + encodeURIComponent(format) + "%0A" +
-        "Main goal: " + encodeURIComponent(goal) + "%0A" +
-        "Additional message: " + encodeURIComponent(message || "No additional message") + "%0A%0A" +
-        "Thank you.";
-
-      const whatsappUrl = "https://wa.me/261349201200?text=" + text;
-      window.open(whatsappUrl, "_blank");
-      window.location.href = "thank-you.html";
-    });
-  </script>
-
-  <script src="../assets/mobile-nav.js"></script>
+    <nav class="footer-links" aria-label="Contact">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Payment and terms</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.facebook.com/AllianceAnglophoneMG" target="_blank" rel="noopener noreferrer">Facebook — Alliance Anglophone</a>
+    </nav>
+</footer>
+  <script src="../assets/registration-v2.js"></script>
+  <script src="../assets/site-v2.js"></script>
 </body>
 </html>

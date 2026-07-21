@@ -279,6 +279,189 @@ header p{
   font-size: 0.9rem;
 }
 
+/* Shared accessibility, contrast, and trust refinements */
+.skip-link {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 2147483647;
+  padding: 10px 14px;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #062b63;
+  font-weight: 700;
+  transform: translateY(-160%);
+  transition: transform 0.15s ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+:where(a, button, input, select, textarea):focus-visible {
+  outline: 3px solid #ffcc33 !important;
+  outline-offset: 3px;
+}
+
+.highlight .status-box,
+.highlight .status-box strong {
+  color: #111827;
+}
+
+.cta h2,
+.cta h3 {
+  color: #ffffff;
+}
+
+.whatsapp-float,
+.btn-whatsapp,
+.btn.whatsapp {
+  background: #117a3f !important;
+  color: #ffffff !important;
+}
+
+.privacy-consent {
+  display: flex !important;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 16px 0;
+  font-weight: 400 !important;
+}
+
+.privacy-consent input {
+  width: 20px;
+  height: 20px;
+  flex: 0 0 auto;
+  margin-top: 3px;
+}
+
+.privacy-consent a,
+.footer-links a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 18px;
+  margin: 8px 0 0;
+}
+
+.trust-note {
+  padding: 18px 22px;
+  border-left: 5px solid #d8aa2b;
+  border-radius: 10px;
+  background: #fff7dd;
+  color: #111827;
+}
+
+.policy-page {
+  background: #f4f7fb;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.policy-page .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 14px 8%;
+  background: #0f4fbf;
+  color: #ffffff;
+}
+
+.policy-page .brand {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.policy-page .brand img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #ffffff;
+  padding: 4px;
+}
+
+.policy-page .topbar nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.policy-page .topbar nav a {
+  color: #ffffff;
+  margin: 0;
+}
+
+.policy-page .policy-hero {
+  padding: 64px 8%;
+  background: linear-gradient(rgba(6, 43, 99, 0.84), rgba(6, 43, 99, 0.84)), url("hero-contact-v1.webp") center/cover;
+  color: #ffffff;
+}
+
+.policy-page .policy-hero h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.15;
+}
+
+.policy-page .policy-hero p {
+  max-width: 760px;
+  margin: 14px 0 0;
+}
+
+.policy-page .policy-content {
+  max-width: 900px;
+  margin: 40px auto 70px;
+  padding: 34px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.policy-page .policy-content h2 {
+  margin-top: 34px;
+  color: #062b63;
+}
+
+.policy-page .policy-content a {
+  color: #0b4dbb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .policy-page .policy-content {
+    margin: 24px 5% 50px;
+    padding: 22px;
+  }
+}
+
+.price-card .note,
+.program-card .note {
+  color: #4b5563;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 @media (max-width: 1400px) {
   .topbar {
     display: grid !important;
@@ -937,23 +1120,3 @@ header p{
     padding: 25px;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

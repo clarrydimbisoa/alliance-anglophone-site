@@ -17,643 +17,86 @@
   <meta name="description" content="Jereo ny saram-piofanana ao amin’ny Alliance Anglophone ho an’ny teny anglisy ankapobeny, anglisy matihanina, ankizy ary fiofanana mifandraika amin’ny asa.">
 
   <link rel="canonical" href="https://allianceanglophone.mg/mg/saram-piofanana.html">
-  
+
   <link rel="alternate" hreflang="fr" href="https://allianceanglophone.mg/fr/tarifs.html">
 <link rel="alternate" hreflang="en" href="https://allianceanglophone.mg/en/pricing.html">
 <link rel="alternate" hreflang="mg" href="https://allianceanglophone.mg/mg/saram-piofanana.html">
 <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/tarifs.html">
-  
-  <link rel="stylesheet" href="../assets/style.css" />
 
-  <style>
-    :root {
-      --blue: #0f4fbf;
-      --dark-blue: #062b63;
-      --gold: #d8aa2b;
-      --light: #f4f7fb;
-      --dark: #111827;
-      --text: #374151;
-      --white: #ffffff;
-      --green: #25d366;
-    }
+  <link rel="stylesheet" href="../assets/style-v2.css" />
+  <link rel="stylesheet" href="../assets/core-pages-v2.css">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="../assets/hero-options-v1.webp" fetchpriority="high">
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
- 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .topbar {
-      background: var(--blue);
-      color: var(--white);
-      padding: 18px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-
-    .brand img {
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #ffffff;
-      padding: 4px;
-    }
-
-    .brand span {
-      color: #ffffff;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-
-    nav a {
-      color: white;
-      opacity: 0.95;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--gold);
-    }
-
-    .page-hero {
-      background:
-        linear-gradient(rgba(6, 43, 99, 0.74), rgba(6, 43, 99, 0.74)),
-        url("../assets/hero-options-v1.webp") center/cover no-repeat;
-      color: white;
-      padding: 90px 8%;
-      text-align: center;
-    }
-
-    .page-hero h1 {
-      font-size: 3rem;
-      margin: 0 0 16px;
-      line-height: 1.1;
-    }
-
-    .page-hero p {
-      max-width: 860px;
-      margin: 0 auto;
-      font-size: 1.12rem;
-    }
-
-    section {
-      padding: 70px 8%;
-    }
-
-    .section-white {
-      background: white;
-    }
-
-    .section-title {
-      max-width: 900px;
-      margin-bottom: 36px;
-    }
-
-    .section-title h2 {
-      color: var(--dark-blue);
-      font-size: 2rem;
-      margin: 0 0 12px;
-    }
-
-    .section-title p {
-      font-size: 1.05rem;
-      margin: 0;
-    }
-
-    .pricing-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .price-card {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
-      border-top: 5px solid var(--blue);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .section-white .price-card {
-      background: var(--light);
-    }
-
-    .price-card.featured {
-      border-top-color: var(--gold);
-      transform: translateY(-8px);
-    }
-
-    .price-card h3 {
-      color: var(--dark-blue);
-      font-size: 1.35rem;
-      margin: 0 0 10px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #fff1c7;
-      color: #6b4a00;
-      font-weight: 700;
-      font-size: 0.82rem;
-      padding: 6px 10px;
-      border-radius: 30px;
-      margin-bottom: 16px;
-      width: fit-content;
-    }
-
-    .price {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--dark-blue);
-      margin: 16px 0 4px;
-    }
-
-    .price small {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .note {
-      font-size: 0.92rem;
-      color: #5b6472;
-      margin-bottom: 18px;
-    }
-
-    .price-card ul {
-      padding-left: 20px;
-      margin: 18px 0;
-    }
-
-    .price-card li {
-      margin-bottom: 8px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: 0.2s;
-      text-align: center;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--dark);
-    }
-
-    .btn-secondary {
-      background: var(--dark-blue);
-      color: white;
-    }
-
-    .btn-whatsapp {
-      background: var(--green);
-      color: white;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
-    }
-
-    .info-box {
-      background: #fff7dd;
-      border-left: 5px solid var(--gold);
-      padding: 24px;
-      border-radius: 14px;
-      margin-top: 30px;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 26px;
-      align-items: start;
-    }
-
-    .simple-card {
-      background: white;
-      border-radius: 16px;
-      padding: 28px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
-      border-left: 5px solid var(--blue);
-    }
-
-    .section-white .simple-card {
-      background: var(--light);
-    }
-
-    .simple-card h3 {
-      color: var(--dark-blue);
-      margin-top: 0;
-    }
-
-    .highlight {
-      background: var(--dark-blue);
-      color: white;
-    }
-
-    .highlight h2 {
-      color: var(--gold);
-    }
-
-    .highlight .simple-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-left-color: var(--gold);
-      color: white;
-      box-shadow: none;
-    }
-
-    .highlight .simple-card h3 {
-      color: white;
-    }
-
-    .cta {
-      text-align: center;
-      background: var(--blue);
-      color: white;
-    }
-
-    .cta h2 {
-      font-size: 2rem;
-      margin-top: 0;
-    }
-
-    .btn-row {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      background: var(--green);
-      color: white;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
-      z-index: 999;
-    }
-
-    footer {
-      background: var(--dark-blue);
-      color: white;
-      text-align: center;
-      padding: 26px 8%;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 1000px) {
-      .pricing-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .price-card.featured {
-        transform: none;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .pricing-grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .page-hero {
-        padding: 65px 5%;
-      }
-
-      .page-hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .topbar {
-        padding: 16px 5%;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-    }
-  </style>
+  <!-- Social sharing metadata -->
+  <meta property="og:title" content="Saram-piofanana teny Anglisy | Alliance Anglophone Madagascar">
+  <meta property="og:description" content="Jereo ny saram-piofanana ao amin’ny Alliance Anglophone ho an’ny teny anglisy ankapobeny, anglisy matihanina, ankizy ary fiofanana mifandraika amin’ny asa.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://allianceanglophone.mg/mg/saram-piofanana.html">
+  <meta property="og:image" content="https://allianceanglophone.mg/assets/social-preview-options-v1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Saram-piofanana teny Anglisy | Alliance Anglophone Madagascar">
+  <meta property="og:site_name" content="Alliance Anglophone">
+  <meta property="og:locale" content="mg_MG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saram-piofanana teny Anglisy | Alliance Anglophone Madagascar">
+  <meta name="twitter:description" content="Jereo ny saram-piofanana ao amin’ny Alliance Anglophone ho an’ny teny anglisy ankapobeny, anglisy matihanina, ankizy ary fiofanana mifandraika amin’ny asa.">
+  <meta name="twitter:image" content="https://allianceanglophone.mg/assets/social-preview-options-v1.jpg">
 </head>
 
-<body>
+<body class="pricing-page">
 
   <header class="topbar">
     <a class="brand" href="index.html">
-      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <img src="../assets/logo-v2.webp" alt="Logo Alliance Anglophone" width="56" height="56" decoding="async">
       <span>Alliance Anglophone</span>
     </a>
 
-    <nav>
+    <nav aria-label="Fitetezana lehibe">
       <a href="index.html">Fandraisana</a>
       <a href="programa.html">Programa</a>
-      <a class="active" href="saram-piofanana.html">Saram-piofanana</a>
+      <a class="active" aria-current="page" href="saram-piofanana.html">Saram-piofanana</a>
       <a href="iraka.html">Iraka</a>
       <a href="fiantraikany.html">Fiantraikany</a>
       <a href="asa-an-tsitrapo.html">Asa an-tsitrapo</a>
       <a href="fisoratana.html">Fisoratana</a>
       <a href="fifandraisana.html">Fifandraisana</a>
-      <a href="../fr/index.html"><img src="../assets/flag-fr.png" alt="Français" class="flag-icon"> FR</a>
-      <a href="../en/index.html"><img src="../assets/flag-us.png" alt="English" class="flag-icon"> EN</a>
-      <a href="index.html"><img src="../assets/flag-mg.png" alt="Malagasy" class="flag-icon"> MG</a>
+      <a href="../fr/tarifs.html" lang="fr"><img src="../assets/flag-fr-v2.svg" alt="" class="flag-icon" width="18" height="12"> FR</a>
+      <a href="../en/pricing.html" lang="en"><img src="../assets/flag-us-v2.svg" alt="" class="flag-icon" width="18" height="12"> EN</a>
+      <a href="saram-piofanana.html" lang="mg"><img src="../assets/flag-mg-v2.svg" alt="" class="flag-icon" width="18" height="12"> MG</a>
     </nav>
   </header>
 
-  <main>
-
-    <section class="page-hero">
-      <h1>Saram-piofanana mazava ho an’ny anglisy mifantoka amin’ny asa</h1>
-      <p>
-        Safidio ny fiofanana mifanaraka amin’ny tanjonao, ny niveau-nao ary ny teti-bolanao.
-        Ny sarany dia natao hanohanana fianarana anglisy azo ampiasaina, employability ary fandrosoana matihanina.
-      </p>
-    </section>
-
-    <section class="section-white">
-      <div class="section-title">
-        <h2>Safidy fiofanana</h2>
-        <p>
-          Ireo tolotra ireo dia natao ho an’ny mpianatra, matihanina, ankizy, orinasa ary institution.
-          Eo am-panomanana ny cours en ligne amin’izao fotoana izao.
-        </p>
-      </div>
-
-      <div class="pricing-grid">
-
-        <article class="price-card">
-          <div>
-            <span class="tag">Programa fototra</span>
-            <h3>Anglisy ankapobeny</h3>
-            <p>
-              Fiofanana voarindra ho an’ny fifandraisana andavanandro, fianarana,
-              asa ary fandrosoana matihanina.
-            </p>
-
-            <div class="price">70 000 Ar <small>/ volana</small></div>
-            <p class="note">Soso-kevitra ho an’ny débutant sy niveau intermédiaire.</p>
-
-            <ul>
-              <li>Grammaire sy voambolana</li>
-              <li>Pratique écoute sy expression orale</li>
-              <li>Famakiana sy fanoratana</li>
-              <li>Fandrosoana tsikelikely amin’ny niveau</li>
-            </ul>
-          </div>
-
-          <a class="btn btn-primary" href="fisoratana.html">Hisoratra anarana</a>
-        </article>
-
-        <article class="price-card featured">
-          <div>
-            <span class="tag">Soso-kevitra indrindra</span>
-            <h3>Anglisy matihanina sy carrière</h3>
-            <p>
-              Anglisy mifantoka amin’ny asa ho an’ny communication professionnelle,
-              employability, entretien ary fahatokisan-tena matihanina.
-            </p>
-
-            <div class="price">90 000 Ar <small>/ module</small></div>
-            <p class="note">Mety indrindra ho an’ny mpitady asa, mpiasa ary matihanina.</p>
-
-            <ul>
-              <li>Business English</li>
-              <li>Fanomanana CV sy entretien</li>
-              <li>Communication professionnelle</li>
-              <li>Voambolana araka ny sehatry ny asa</li>
-            </ul>
-          </div>
-
-          <a class="btn btn-primary" href="fisoratana.html">Hisafidy ity tolotra ity</a>
-        </article>
-
-        <article class="price-card">
-          <div>
-            <span class="tag">Ankizy sy tanora</span>
-            <h3>Anglisy ho an’ny ankizy sy tanora</h3>
-            <p>
-              Programa mandroso tsikelikely sy manentana ho an’ny ankizy sy tanora mianatra anglisy.
-            </p>
-
-            <div class="price">35 000 Ar <small>/ volana</small></div>
-            <p class="note">Natao hampitombo tsikelikely ny fahatokisan-tena amin’ny anglisy.</p>
-
-            <ul>
-              <li>Voambolana sy fehezanteny fototra</li>
-              <li>Activités écoute sy expression orale</li>
-              <li>Fianarana manentana</li>
-              <li>Fahatokisan-tena tsikelikely amin’ny anglisy</li>
-            </ul>
-          </div>
-
-          <a class="btn btn-primary" href="fisoratana.html">Hisoratra ho an’ny mpianatra</a>
-        </article>
-
-        <article class="price-card">
-          <div>
-            <span class="tag">Orinasa sy institution</span>
-            <h3>Fiofanana entreprise sy institution</h3>
-            <p>
-              Fiofanana anglisy sy communication natao manokana ho an’ny ekipa,
-              orinasa, organisation ary institution.
-            </p>
-
-            <div class="price">Manomboka amin’ny 70 000 Ar <small>/ séance</small></div>
-            <p class="note">Miankina amin’ny tanjona, isan’ny olona ary format ny sarany farany.</p>
-
-            <ul>
-              <li>Module natao manokana</li>
-              <li>Communication d’équipe</li>
-              <li>Voambolana araka ny secteur</li>
-              <li>Format en ligne flexible</li>
-            </ul>
-          </div>
-
-          <a class="btn btn-secondary" href="fifandraisana.html">Hangataka devis</a>
-        </article>
-
-        <article class="price-card">
-          <div>
-            <span class="tag">Pratique orale</span>
-            <h3>Club de conversation anglaise</h3>
-            <p>
-              Toerana hianarana sy hitenenana anglisy matetika mba hahazoana
-              fahatokisan-tena amin’ny conversation.
-            </p>
-
-            <div class="price">20 000 Ar <small>/ volana</small></div>
-            <p class="note">Mety ho complément amin’ny programa hafa.</p>
-
-            <ul>
-              <li>Pratique conversation</li>
-              <li>Fanamafisana fahatokisan-tena</li>
-              <li>Fanampiana amin’ny prononciation</li>
-              <li>Fianarana miaraka amin’ny hafa</li>
-            </ul>
-          </div>
-
-          <a class="btn btn-primary" href="fisoratana.html">Hiditra amin’ny club</a>
-        </article>
-
-        <article class="price-card">
-          <div>
-            <span class="tag">Mila fanampiana?</span>
-            <h3>Tsy mbola fantatrao izay safidy mety?</h3>
-            <p>
-              Mifandraisa aminay. Hanampy anao hamantatra ny programa mety indrindra
-              araka ny niveau-nao, tanjonao ary disponibilité-nao izahay.
-            </p>
-
-            <div class="price">Maimaim-poana <small>orientation</small></div>
-            <p class="note">Mifandraisa aminay alohan’ny fisoratana raha mila torohevitra.</p>
-
-            <ul>
-              <li>Orientation amin’ny programa mety</li>
-              <li>Fanazavana ny tanjonao</li>
-              <li>Fampahafantarana ny format fiofanana</li>
-              <li>Fanohanana amin’ny WhatsApp</li>
-            </ul>
-          </div>
-
-          <a class="btn btn-whatsapp" href="https://wa.me/261349201200">Hanontany amin’ny WhatsApp</a>
-        </article>
-
-      </div>
-
-      <div class="info-box">
-        <p>
-          <strong>Toetry ny fiofanana :</strong> mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.
-          Ny cours présentiel dia tsy mbola kasaina amin’ity taona ity. Ny centre physique eto Toamasina
-          dia mbola eo am-panomanana.
-        </p>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">
-        <h2>Inona no tafiditra ao?</h2>
-        <p>
-          Alliance Anglophone dia mifantoka amin’ny fianarana azo ampiasaina,
-          fiomanana matihanina ary fandrosoana azo refesina.
-        </p>
-      </div>
-
-      <div class="two-col">
-        <div class="simple-card">
-          <h3>Ho an’ny mpianatra tsirairay</h3>
-          <ul>
-            <li>Fiofanana anglisy azo ampiasaina</li>
-            <li>Pratique expression orale sy écoute</li>
-            <li>Voambolana matihanina araka ny tanjona</li>
-            <li>Fanohanana fahatokisan-tena sy communication</li>
-            <li>Orientation mankany amin’ny parcours carrière</li>
-          </ul>
-        </div>
-
-        <div class="simple-card">
-          <h3>Ho an’ny orinasa sy institution</h3>
-          <ul>
-            <li>Fiofanana mifanaraka amin’ny filàna</li>
-            <li>Contenu anglisy araka ny secteur</li>
-            <li>Pratique communication professionnelle</li>
-            <li>Format fiofanana flexible</li>
-            <li>Suivi sy rapport tsotra raha ilaina</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section class="highlight">
-      <div class="section-title">
-        <h2>Fianarana voarindra sy fandrosoana azo ampiasaina</h2>
-<p>Alliance Anglophone dia manolotra fiofanana voarindra, teny anglisy azo ampiasaina, communication professionnelle ary lalana mazava mankany amin’ny employability, fahatokisan-tena ary fiomanana amin’ny asa.</p>
-      </div>
-
-      <div class="two-col">
-        <div class="simple-card">
-          <h3>Saram-piofanana mazava</h3>
-          <p>
-            Asehontsika mazava ny vidiny mba hahafahan’ny mpianatra sy ny fianakaviana
-            mandamina mialoha ny teti-bola.
-          </p>
-        </div>
-
-        <div class="simple-card">
-          <h3>Soatoavina mifantoka amin’ny carrière</h3>
-          <p>
-            Ny tanjona dia tsy ny manaraka cours fotsiny, fa ny manamafy ny fahatokisan-tena,
-            communication ary fiomanana amin’ny opportunités professionnelles tena izy.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <h2>Vonona hisafidy ny lalanao?</h2>
-      <p>
-        Misorata anarana izao na mifandraisa aminay amin’ny WhatsApp raha mila fanampiana
-        amin’ny fisafidianana programa mety aminao.
-      </p>
-
-      <div class="btn-row">
-        <a class="btn btn-primary" href="fisoratana.html">Hisoratra anarana</a>
-        <a class="btn btn-secondary" href="https://wa.me/261349201200">Hifandray amin’ny WhatsApp</a>
-      </div>
-    </section>
-
-  </main>
+  <main id="main-content"><section class="page-hero"><h1>Saram-piofanana sy faharetana mazava</h1><p>Ireo vola etsy ambany dia mitovy amin’ny sarany efa navoaka. Tokony hohamafisina an-tsoratra ny toerana sy ny fandoavana rehetra.</p></section><section class="section-white"><div class="pricing-grid"><article class="price-card"><div><span class="tag">Fototra</span><h3>Anglisy ankapobeny – Débutant</h3><div class="price">50 000 Ar / volana</div><p class="note">Telo volana. Vidiny fanombohana ho an’ny cohorte voalohany 2026.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Anglisy%20ankapobeny%20%E2%80%93%20D%C3%A9butant">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Ankapobeny</span><h3>Anglisy ankapobeny – Intermédiaire</h3><div class="price">70 000 Ar / volana</div><p class="note">Telo volana.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Anglisy%20ankapobeny%20%E2%80%93%20Interm%C3%A9diaire">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Ankapobeny</span><h3>Anglisy ankapobeny – Avancé</h3><div class="price">70 000 Ar / volana</div><p class="note">Telo volana.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Anglisy%20ankapobeny%20%E2%80%93%20Avanc%C3%A9">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Intensif</span><h3>Anglisy intensive – 1 volana</h3><div class="price">70 000 Ar / programa</div><p class="note">Tafiditra ny English Speaking Club.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Anglisy%20intensive%20%E2%80%93%201%20volana">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Asa</span><h3>Fampandrosoana ny asa – lalana feno</h3><div class="price">180 000 Ar</div><p class="note">12 herinandro. 165 000 Ar raha aloa manontolo mialoha. Module manokana: 25 000 Ar ho an’ny séance iray, 45 000 Ar ho an’ny roa, 60 000 Ar ho an’ny telo.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Fampandrosoana%20ny%20asa%20%E2%80%93%20lalana%20feno">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Leadership</span><h3>Fampandrosoana manokana sy fahaiza-miaina</h3><div class="price">Hohamafisina ny sarany</div><p class="note">Lalana feno 12 herinandro na module manokana. Angataho an-tsoratra ny fepetra alohan’ny handoavana.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Fampandrosoana%20manokana%20sy%20fahaiza-miaina">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Manokana</span><h3>Programa manokana sy matihanina</h3><div class="price">70 000 Ar / volana</div><p class="note">Anisan’izany ny business, BPO, teknika, maritime, ONG, fahasalamana ary fampiofanana mpampianatra.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Programa%20manokana%20sy%20matihanina">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Journalisme</span><h3>Asa fanaovan-gazety amin’ny anglisy</h3><div class="price">90 000 Ar / volana</div><p class="note">Enim-bolana farafahakeliny. Vidiny pilote 2026.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Asa%20fanaovan-gazety%20amin%E2%80%99ny%20anglisy">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Fizahantany</span><h3>Anglisy ho an’ny fizahantany</h3><div class="price">90 000 Ar / volana</div><p class="note">Tafiditra ny fanamafisana frantsay. Vidiny pilote 2026.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Anglisy%20ho%20an%E2%80%99ny%20fizahantany">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Hôtellerie</span><h3>Anglisy ho an’ny hôtellerie sy restauration</h3><div class="price">90 000 Ar / volana</div><p class="note">Tafiditra ny fanamafisana frantsay. Vidiny pilote 2026.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Anglisy%20ho%20an%E2%80%99ny%20h%C3%B4tellerie%20sy%20restauration">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Tanora</span><h3>Anglisy ho an’ny ankizy sy tanora</h3><div class="price">35 000 Ar / volana</div><p class="note">Cours en ligne manomboka ny 7 Septambra 2026.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Anglisy%20ho%20an%E2%80%99ny%20ankizy%20sy%20tanora">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Fikambanana</span><h3>Fiofanana ho an’ny orinasa sy andrim-panjakana</h3><div class="price">150 000 Ar / séance</div><p class="note">Séance en ligne 90 minitra, hatramin’ny 15 olona. Forfait séance valo: 1 100 000 Ar. Sur mesure: devis.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Fiofanana%20ho%20an%E2%80%99ny%20orinasa%20sy%20andrim-panjakana">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Club</span><h3>English Speaking Club</h3><div class="price">20 000 Ar / volana</div><p class="note">Tafiditra maimaim-poana ho an’ny mpianatra misoratra amin’ny programa hafa.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=English%20Speaking%20Club">Hanomboka</a></article>
+<article class="price-card"><div><span class="tag">Orientation</span><h3>Mila fanampiana hisafidy?</h3><div class="price">Maimaim-poana</div><p class="note">Mifandraisa aminay alohan’ny fisoratana.</p></div><a class="btn btn-primary" href="fisoratana.html?programme=Mila%20fanampiana%20hisafidy%3F">Hanomboka</a></article></div></section><section><div class="trust-note">Alohan’ny handoavana dia mahazo fanamafisana an-tsoratra momba ny programa, daty, vola ary fepetra ampiharina ianao. <a href="fepetra.html">Hamaky ny fepetra</a>.</div></section></main>
 
   <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
 
   <footer>
-    <p>© 2026 Alliance Anglophone. Miorina eto Toamasina, Madagasikara. Ho avy tsy ho ela ny fiofanana an-tserasera.</p>
-  <p>
-  <a href="https://www.facebook.com/EnglishSkillsBooster" target="_blank">Facebook - English Skills Booster</a>
-</p>
-  </footer>
+    <p>© 2026 Alliance Anglophone. Misokatra ny fisoratana anarana — manomboka ny 7 Septambra 2026 ny fiofanana an-tserasera.</p>
 
-  <script src="../assets/mobile-nav.js"></script>
+    <nav class="footer-links" aria-label="Fifandraisana">
+      <a href="tsiambaratelo.html">Tsiambaratelo</a>
+      <a href="fepetra.html">Fandoavam-bola sy fepetra</a>
+      <a href="fifandraisana.html">Fifandraisana</a>
+      <a href="https://www.facebook.com/AllianceAnglophoneMG" target="_blank" rel="noopener noreferrer">Facebook — Alliance Anglophone</a>
+    </nav>
+</footer>
+
+  <script src="../assets/site-v2.js"></script>
 </body>
 </html>
