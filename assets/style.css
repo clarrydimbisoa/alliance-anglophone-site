@@ -257,7 +257,7 @@ header p{
   cursor: not-allowed;
   pointer-events: none;
 }
-/* Compact, accessible navigation on phones and tablets */
+/* Compact, accessible navigation on laptops, tablets, and phones */
 .menu-toggle {
   display: none;
   border: 2px solid rgba(255, 255, 255, 0.85);
@@ -279,7 +279,7 @@ header p{
   font-size: 0.9rem;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1400px) {
   .topbar {
     display: grid !important;
     grid-template-columns: minmax(0, 1fr) auto;
