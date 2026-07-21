@@ -53,6 +53,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   window.addEventListener("resize", function () {
-    if (window.innerWidth > 900) setMenu(false);
+    if (window.innerWidth > 1400) setMenu(false);
   });
 });
