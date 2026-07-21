@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 741 390" role="img" aria-label="United States flag">
+  <path fill="#fff" d="M0 0h741v390H0z"/>
+  <path stroke="#b22234" stroke-width="30" stroke-dasharray="30" d="M0 15h741M0 75h741M0 135h741M0 195h741M0 255h741M0 315h741M0 375h741"/>
+  <path fill="#3c3b6e" d="M0 0h296.4v210H0z"/>
+  <g fill="#fff">
+    <g id="s6"><circle id="s" cx="24.7" cy="21" r="6"/><use href="#s" x="49.4"/><use href="#s" x="98.8"/><use href="#s" x="148.2"/><use href="#s" x="197.6"/><use href="#s" x="247"/></g>
+    <g id="s5"><circle cx="49.4" cy="42" r="6"/><circle cx="98.8" cy="42" r="6"/><circle cx="148.2" cy="42" r="6"/><circle cx="197.6" cy="42" r="6"/><circle cx="247" cy="42" r="6"/></g>
+    <use href="#s6" y="42"/><use href="#s5" y="42"/><use href="#s6" y="84"/><use href="#s5" y="84"/><use href="#s6" y="126"/><use href="#s5" y="126"/><use href="#s6" y="168"/>
+  </g>
+</svg>

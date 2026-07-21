@@ -22,1008 +22,314 @@
 <link rel="alternate" hreflang="en" href="https://allianceanglophone.mg/en/programs.html">
 <link rel="alternate" hreflang="mg" href="https://allianceanglophone.mg/mg/programa.html">
 <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/programmes.html">
-  
-    <link rel="stylesheet" href="../assets/style.css" />
 
-  <style>
-    :root {
-      --blue: #0f4fbf;
-      --dark-blue: #062b63;
-      --gold: #d8aa2b;
-      --light: #f4f7fb;
-      --dark: #111827;
-      --text: #374151;
-      --white: #ffffff;
-      --green: #25d366;
-    }
+    <link rel="stylesheet" href="../assets/style-v2.css" />
+  <link rel="stylesheet" href="../assets/core-pages-v2.css">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="../assets/hero-programs-v1.webp" fetchpriority="high">
 
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .topbar {
-      background: var(--blue);
-      color: var(--white);
-      padding: 18px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-
-    .brand img {
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #ffffff;
-      padding: 4px;
-    }
-
-    .brand span {
-      color: #ffffff;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-
-    nav a {
-      color: white;
-      opacity: 0.95;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--gold);
-    }
-
-    .page-hero {
-      background:
-        linear-gradient(rgba(6, 43, 99, 0.72), rgba(6, 43, 99, 0.72)),
-        url("../assets/hero-programs-v1.webp") center/cover no-repeat;
-      color: white;
-      padding: 90px 8%;
-      text-align: center;
-    }
-
-    .page-hero h1 {
-      font-size: 3rem;
-      margin: 0 0 16px;
-      line-height: 1.1;
-    }
-
-    .page-hero p {
-      max-width: 860px;
-      margin: 0 auto;
-      font-size: 1.12rem;
-    }
-
-    section {
-      padding: 70px 8%;
-    }
-
-    .section-white {
-      background: white;
-    }
-
-    .section-title {
-      max-width: 900px;
-      margin-bottom: 36px;
-    }
-
-    .section-title h2 {
-      color: var(--dark-blue);
-      font-size: 2rem;
-      margin: 0 0 12px;
-    }
-
-    .section-title p {
-      font-size: 1.05rem;
-      margin: 0;
-    }
-
-    .program-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 26px;
-    }
-
-    .program-card {
-      background: white;
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
-      border-top: 5px solid var(--blue);
-    }
-
-    .section-white .program-card {
-      background: var(--light);
-    }
-
-    .program-card h3 {
-      color: var(--dark-blue);
-      font-size: 1.35rem;
-      margin: 0 0 12px;
-    }
-
-    .program-card .tag {
-      display: inline-block;
-      background: #fff1c7;
-      color: #6b4a00;
-      font-weight: 700;
-      font-size: 0.82rem;
-      padding: 6px 10px;
-      border-radius: 30px;
-      margin-bottom: 16px;
-    }
-
-    .program-card h4 {
-      color: var(--dark);
-      margin: 18px 0 6px;
-      font-size: 1rem;
-    }
-
-    .program-card p {
-      margin: 0 0 8px;
-    }
-
-    .program-card ul {
-      margin: 8px 0 0;
-      padding-left: 20px;
-    }
-
-    .program-card li {
-      margin-bottom: 6px;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 12px 20px;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--dark);
-    }
-
-    .btn-secondary {
-      background: var(--dark-blue);
-      color: white;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
-    }
-
-    .highlight {
-      background: var(--dark-blue);
-      color: white;
-    }
-
-    .highlight h2 {
-      color: var(--gold);
-    }
-
-    .pathway {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 30px;
-    }
-
-    .pathway-box {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 26px;
-      border-radius: 14px;
-      border-left: 5px solid var(--gold);
-    }
-
-    .pathway-box h3 {
-      margin-top: 0;
-      color: white;
-    }
-
-    .cta {
-      text-align: center;
-      background: var(--blue);
-      color: white;
-    }
-
-    .cta h2 {
-      font-size: 2rem;
-      margin-top: 0;
-    }
-
-    .btn-row {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      background: #25d366;
-      color: white;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
-      z-index: 999;
-    }
-
-    footer {
-      background: var(--dark-blue);
-      color: white;
-      text-align: center;
-      padding: 26px 8%;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .program-grid,
-      .pathway {
-        grid-template-columns: 1fr;
+  <!-- Social sharing metadata -->
+  <meta property="og:title" content="Programmes d’anglais professionnel à Madagascar | Alliance Anglophone">
+  <meta property="og:description" content="Découvrez nos programmes d’anglais à Madagascar : anglais professionnel, employabilité, affaires, tourisme, ONG, BPO et maritime. Formations en ligne adaptées au marché du travail.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://allianceanglophone.mg/fr/programmes.html">
+  <meta property="og:image" content="https://allianceanglophone.mg/assets/social-preview-programs-v1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Programmes d’anglais professionnel à Madagascar | Alliance Anglophone">
+  <meta property="og:site_name" content="Alliance Anglophone">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Programmes d’anglais professionnel à Madagascar | Alliance Anglophone">
+  <meta name="twitter:description" content="Découvrez nos programmes d’anglais à Madagascar : anglais professionnel, employabilité, affaires, tourisme, ONG, BPO et maritime. Formations en ligne adaptées au marché du travail.">
+  <meta name="twitter:image" content="https://allianceanglophone.mg/assets/social-preview-programs-v1.jpg">
+  <script id="course-schema" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais général",
+        "description": "Du niveau débutant au niveau avancé : compréhension, expression orale, lecture, écriture, grammaire et vocabulaire.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
       }
-
-      .page-hero {
-        padding: 65px 5%;
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais intensif – 1 mois",
+        "description": "Un programme accéléré axé sur la compréhension, la prononciation, le vocabulaire pratique et la fluidité.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
       }
-
-      .page-hero h1 {
-        font-size: 2.2rem;
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais des affaires et entrepreneuriat",
+        "description": "Communication pour réunions, emails, présentations, service client, négociation et projets d’entreprise.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
       }
-
-      .topbar {
-        padding: 16px 5%;
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais pour le tourisme",
+        "description": "Accueil, guidage, réservations, itinéraires, patrimoine et communication avec les voyageurs.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
       }
-
-      section {
-        padding: 55px 5%;
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais pour l’hôtellerie et la restauration",
+        "description": "Réception, réservations, restauration, réclamations et relation client.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais Call Center / BPO",
+        "description": "Communication téléphonique, écoute, scripts, support client et gestion professionnelle des échanges.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 7,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais technique et maritime",
+        "description": "Vocabulaire et communication pour la logistique, les opérations portuaires, la maintenance et la sécurité.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 8,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais ONG et développement",
+        "description": "Communication de projet, terrain, rapports, coordination et partenaires internationaux.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 9,
+      "item": {
+        "@type": "Course",
+        "name": "Développement de carrière, CV et entretiens",
+        "description": "Orientation, objectifs, CV, lettre de motivation, recherche d’emploi, LinkedIn et simulations d’entretien.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 10,
+      "item": {
+        "@type": "Course",
+        "name": "Développement personnel et compétences de vie",
+        "description": "Confiance, leadership, communication assertive, gestion du temps, résilience, collaboration et prise de décision.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 11,
+      "item": {
+        "@type": "Course",
+        "name": "Formation des enseignants et anglais de la classe",
+        "description": "Planification, consignes, activités, gestion de classe, évaluation et enseignement à distance.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 12,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais médical et communication en santé",
+        "description": "Terminologie et communication professionnelle pour les soins, l’hôpital et les équipes internationales. Ce programme ne remplace pas une formation clinique.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 13,
+      "item": {
+        "@type": "Course",
+        "name": "Anglais pour enfants et adolescents",
+        "description": "Parcours progressif pour développer compréhension, expression et confiance chez les jeunes apprenants.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 14,
+      "item": {
+        "@type": "Course",
+        "name": "Journalisme pratique en anglais avec renforcement en français",
+        "description": "Formation professionnalisante de six mois minimum avec théorie, pratique encadrée et activités de terrain.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 15,
+      "item": {
+        "@type": "Course",
+        "name": "English Speaking Club",
+        "description": "Sessions régulières de conversation guidée pour renforcer la fluidité, l’écoute et la confiance.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
+      }
+    },
+    {
+      "@type": "ListItem",
+      "position": 16,
+      "item": {
+        "@type": "Course",
+        "name": "Formation entreprise et institutionnelle",
+        "description": "Programme personnalisé pour les équipes, entreprises, associations et institutions.",
+        "provider": {
+          "@type": "EducationalOrganization",
+          "name": "Alliance Anglophone",
+          "url": "https://allianceanglophone.mg/"
+        }
       }
     }
-  .program-title-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 16px;
-  margin-bottom: 12px;
+  ]
 }
-
-.program-title-row h3 {
-  margin: 0;
-  flex: 1;
-}
-
-.quick-register {
-  padding: 8px 14px;
-  font-size: 0.88rem;
-  white-space: nowrap;
-}
-
-@media (max-width: 640px) {
-  .program-title-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .quick-register {
-    width: 100%;
-    text-align: center;
-  }
-}
-  </style>
+  </script>
 </head>
 
-<body>
+<body class="programs-page">
 
   <header class="topbar">
     <a class="brand" href="index.html">
-      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <img src="../assets/logo-v2.webp" alt="Logo Alliance Anglophone" width="56" height="56" decoding="async">
       <span>Alliance Anglophone</span>
     </a>
 
-    <nav>
+    <nav aria-label="Navigation principale">
       <a href="index.html">Accueil</a>
-      <a class="active" href="programmes.html">Programmes</a>
+      <a class="active" aria-current="page" href="programmes.html">Programmes</a>
       <a href="tarifs.html">Tarifs</a>
       <a href="mission.html">Mission</a>
       <a href="impact.html">Impact</a>
       <a href="benevolat.html">Bénévolat</a>
       <a href="inscription.html">Inscription</a>
       <a href="contact.html">Contact</a>
-      <a href="index.html"><img src="../assets/flag-fr.png" alt="Français" class="flag-icon"> FR</a>
-      <a href="../en/index.html"><img src="../assets/flag-us.png" alt="English" class="flag-icon"> EN</a>
-      <a href="../mg/index.html"><img src="../assets/flag-mg.png" alt="Malagasy" class="flag-icon"> MG</a>
+      <a href="programmes.html" lang="fr"><img src="../assets/flag-fr-v2.svg" alt="" class="flag-icon" width="18" height="12"> FR</a>
+      <a href="../en/programs.html" lang="en"><img src="../assets/flag-us-v2.svg" alt="" class="flag-icon" width="18" height="12"> EN</a>
+      <a href="../mg/programa.html" lang="mg"><img src="../assets/flag-mg-v2.svg" alt="" class="flag-icon" width="18" height="12"> MG</a>
     </nav>
   </header>
 
-  <main>
-
-    <section class="page-hero">
-      <h1>Programmes d’anglais orientés carrière</h1>
-      <p>
-        Apprenez un anglais pratique pour communiquer avec confiance, préparer votre avenir professionnel
-        et accéder à de meilleures opportunités à Madagascar et ailleurs.
-      </p>
-    </section>
-
-    <section class="section-white">
-      <div class="section-title">
-        <h2>Choisissez le bon parcours</h2>
-        <p>
-          Les programmes d’Alliance Anglophone sont conçus pour faire passer les apprenants
-          de l’apprentissage de l’anglais à la préparation professionnelle. Chaque programme relie
-          la pratique de l’anglais à un usage concret dans le monde du travail.
-        </p>
-      </div>
-
-      <div class="program-grid">
-
-        <article class="program-card">
-          <span class="tag">Programme de base</span>
-          <h3>Anglais général</h3>
-          <p>
-            Construisez une base solide en anglais pour la communication quotidienne,
-            les études, les voyages, le travail et le développement professionnel.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Débutants, apprenants intermédiaires, étudiants, adultes et travailleurs qui ont besoin d’une progression structurée.</p>
-
-          <h4>Compétences développées</h4>
-          <ul>
-            <li>Grammaire et vocabulaire</li>
-            <li>Compréhension orale et expression orale</li>
-            <li>Lecture et écriture</li>
-            <li>Confiance dans la communication quotidienne</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-            Ce programme sert de base à tous les autres parcours professionnels.
-          </p>
-
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-        </article>
-
-        <article class="program-card">
-          <span class="tag">Programme de fluidité</span>
-          <h3>Anglais intensif – 1 mois</h3>
-          <p>
-          Programme intensif d’un mois pour développer rapidement la compréhension,
-          l’expression orale, la prononciation et la confiance dans des situations réelles.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Apprenants qui veulent améliorer leur fluidité, leur prononciation, leur écoute et leur confiance.</p>
-
-          <h4>Compétences développées</h4>
-          <ul>
-            <li>Pratique de conversation</li>
-            <li>Prononciation et rythme</li>
-            <li>Compréhension orale</li>
-            <li>Réponse rapide dans des situations réelles</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-            Utile pour les entretiens, le service client, l’hôtellerie, les réunions en ligne
-            et le réseautage professionnel.
-            Tarif : 70 000 Ar pour le programme d’un mois.
-          </p>
-
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-        </article>
-
-        <article class="program-card">
-          <span class="tag">Parcours professionnel</span>
-          <h3>Anglais des affaires et entrepreneuriat</h3>
-          <p>
-            Anglais professionnel pour la communication au travail, les réunions,
-            les emails, les présentations et la coordination d’équipe.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Professionnels, entrepreneurs, employés, responsables et chercheurs d’emploi.</p>
-
-          <h4>Compétences développées</h4>
-          <ul>
-            <li>Emails et messages professionnels</li>
-            <li>Réunions et présentations</li>
-            <li>Négociation et communication client</li>
-            <li>Vocabulaire du monde professionnel</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-            Idéal pour les personnes qui veulent utiliser l’anglais en entreprise,
-            dans l’administration, l’entrepreneuriat ou la relation client.
-          </p>
-
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-        </article>
-
-        <article class="program-card">
-          <span class="tag">Parcours sectoriel</span>
-          <h3>Anglais pour le tourisme</h3>
-          <p>
-          Anglais pratique pour les guides, les agences de voyage, l’accueil des visiteurs,
-          les excursions, les transports et la présentation de Madagascar.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Guides touristiques, agents de voyage, étudiants en tourisme, chauffeurs, personnel d’accueil et personnes qui travaillent avec des visiteurs internationaux.</p>
-
-          <h4>Compétences développées</h4>
-          <ul>
-            <li>Accueil et orientation des visiteurs</li>
-            <li>Présentation des lieux, activités et itinéraires</li>
-            <li>Réservation et communication pratique</li>
-            <li>Vocabulaire du tourisme et des voyages</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-          Utile pour le tourisme côtier, les agences de voyage, les excursions,
-          les transports, les guides et les visiteurs internationaux à Madagascar.
-          </p>
-
-          <h4>Langues d’enseignement</h4>
-          <p>
-            La langue principale du programme est l’anglais. Des cours obligatoires de
-            renforcement en français sont également inclus afin d’améliorer les compétences
-            linguistiques et la communication professionnelle des participants.
-          </p>
-          
-          <h4>Organisation et tarif</h4>
-          <p>
-            Programme en ligne pouvant ouvrir dès un apprenant confirmé, avec une séance
-            en direct dédiée le samedi selon un horaire convenu. Tarif pilote 2026 :
-            90 000 Ar par mois. Ce tarif pourra être révisé pour les futures sessions,
-            après information préalable.
-          </p>
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-        </article>
-
-        <article class="program-card">
-  <span class="tag">Parcours sectoriel</span>
-  <h3>Anglais pour l’hôtellerie et la restauration</h3>
-  <p>
-    Anglais pratique pour les hôtels, restaurants, cafés, services de restauration,
-    réception, réservations et relation avec les clients.
-  </p>
-
-  <h4>Public cible</h4>
-  <p>Personnel hôtelier, restaurateurs, réceptionnistes, serveurs, cuisiniers, étudiants et personnes qui souhaitent travailler dans les services d’accueil.</p>
-
-  <h4>Compétences développées</h4>
-  <ul>
-    <li>Accueil, réservation et prise de commande</li>
-    <li>Présentation des chambres, menus et services</li>
-    <li>Communication polie avec les clients</li>
-    <li>Gestion des demandes et réclamations courantes</li>
-  </ul>
-
-  <h4>Utilité professionnelle</h4>
-  <p>
-    Utile pour les hôtels, restaurants, cafés, services de restauration,
-    événements et établissements qui accueillent une clientèle internationale.
-  </p>
-
-          <h4>Langues d’enseignement</h4>
-        <p>
-          La langue principale du programme est l’anglais. Des cours obligatoires de
-          renforcement en français sont également inclus afin d’améliorer les compétences
-          linguistiques et la communication professionnelle des participants.
-        </p>
-        
-        <h4>Organisation et tarif</h4>
-        <p>
-          Programme en ligne pouvant ouvrir dès un apprenant confirmé, avec une séance
-          en direct dédiée le samedi selon un horaire convenu. Tarif pilote 2026 :
-          90 000 Ar par mois. Ce tarif pourra être révisé pour les futures sessions,
-          après information préalable.
-        </p>
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-</article>
-        <article class="program-card">
-          <span class="tag">Parcours sectoriel</span>
-          <h3>Anglais Call Center / BPO</h3>
-          <p>
-            Anglais pour le support client, la communication téléphonique,
-            les scripts, la résolution de problèmes et les interactions de service.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Jeunes chercheurs d’emploi, candidats au service client, candidats en centre d’appel et apprenants BPO.</p>
-
-          <h4>Compétences développées</h4>
-          <ul>
-            <li>Communication téléphonique</li>
-            <li>Expressions du support client</li>
-            <li>Conversations de résolution de problèmes</li>
-            <li>Ton professionnel et clarté</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-            Conçu pour les apprenants qui visent les centres d’appel, le BPO,
-            le service client ou les emplois de support à distance.
-          </p>
-
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-        </article>
-
-        <article class="program-card">
-          <span class="tag">Parcours sectoriel</span>
-          <h3>Anglais technique et maritime</h3>
-          <p>
-            Anglais sectoriel pour les environnements techniques, logistiques,
-            portuaires, maritimes et opérationnels.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Travailleurs, stagiaires, personnel logistique, candidats maritimes, techniciens et équipes opérationnelles.</p>
-
-          <h4>Compétences développées</h4>
-          <ul>
-            <li>Vocabulaire technique</li>
-            <li>Consignes de sécurité et instructions opérationnelles</li>
-            <li>Signalement clair des problèmes</li>
-            <li>Communication dans des environnements de travail structurés</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-            Pertinent pour le port de Toamasina, la logistique, le maritime,
-            les secteurs techniques et les opérations.
-          </p>
-
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-        </article>
-
-        <article class="program-card">
-          <span class="tag">Parcours institutionnel</span>
-          <h3>Anglais ONG et développement</h3>
-          <p>
-            Anglais pour les équipes de projet, la communication ONG,
-            le travail de développement, la coordination terrain et la collaboration institutionnelle.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Personnel d’ONG, assistants de projet, agents de terrain, volontaires et candidats au secteur du développement.</p>
-
-          <h4>Compétences développées</h4>
-          <ul>
-            <li>Vocabulaire de projet</li>
-            <li>Communication terrain</li>
-            <li>Rapportage et coordination</li>
-            <li>Interaction professionnelle avec des partenaires internationaux</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-            Utile pour les projets de développement, les missions humanitaires,
-            le travail institutionnel et la collaboration internationale.
-          </p>
-
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-        </article>
-
-        <article class="program-card">
-          <span class="tag">Employabilité</span>
-          <h3>Développement de carrière, CV et entretiens</h3>
-          <p>
-            Module pratique d’employabilité pour aider les apprenants à présenter leur expérience,
-            préparer leurs candidatures et mieux réussir leurs entretiens.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Chercheurs d’emploi, étudiants, Day Crew, jeunes professionnels et personnes en reconversion.</p>
-
-          <h4>Compétences développées</h4>
-          <ul>
-            <li>Rédaction de CV</li>
-            <li>Réponses aux entretiens</li>
-            <li>Présentation professionnelle de soi</li>
-            <li>Préparation des candidatures</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-            Ce module relie l’apprentissage de l’anglais aux candidatures réelles
-            et aux opportunités d’emploi.
-          </p>
-
-          <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-        </article>
-
-        <article class="program-card">
-  <span class="tag">Leadership et compétences de vie</span>
-
-  <h3>Développement personnel, leadership et compétences de vie</h3>
-
-  <p>
-    Programme pratique destiné à renforcer la connaissance de soi, la confiance,
-    le leadership et les compétences nécessaires pour mieux agir dans la vie
-    personnelle, sociale et professionnelle.
-  </p>
-
-  <h4>Public cible</h4>
-
-  <p>
-    Jeunes, étudiants, professionnels, entrepreneurs, responsables associatifs,
-    parents et toute personne souhaitant progresser personnellement, améliorer
-    ses relations ou développer son influence positive.
-  </p>
-
-  <h4>Principaux modules</h4>
-
-  <ul>
-    <li>Leadership et influence positive</li>
-    <li>Motivation, objectifs et passage à l’action</li>
-    <li>Confiance en soi et expression personnelle</li>
-    <li>Autodiscipline, habitudes positives et gestion du temps</li>
-    <li>Intelligence émotionnelle et communication assertive</li>
-    <li>Gestion du stress, résilience et équilibre de vie</li>
-    <li>Prise de décision et résolution de problèmes</li>
-    <li>Gestion des conflits, collaboration et travail en équipe</li>
-    <li>Prise de parole en public</li>
-    <li>Valeurs personnelles, intégrité et responsabilité</li>
-    <li>Gestion financière personnelle de base</li>
-  </ul>
-
-  <h4>Organisation du programme</h4>
-
-  <p>
-    Le parcours complet est organisé sur 12 semaines. Certains modules peuvent
-    également être demandés séparément sous forme d’un accompagnement ciblé
-    d’une à trois séances.
-  </p>
-
-  <p>
-    La formation est principalement proposée en anglais. Un renforcement en
-    français peut être organisé selon les besoins des participants.
-  </p>
-
-  <h4>Résultats attendus</h4>
-
-  <p>
-    À la fin du parcours, le participant pourra définir des objectifs réalistes,
-    mieux gérer ses priorités et ses émotions, communiquer avec davantage
-    d’assurance et exercer un leadership positif dans son environnement.
-  </p>
-
-  <a class="btn btn-primary"
-     href="inscription.html?programme=D%C3%A9veloppement%20personnel%20%E2%80%93%20Parcours%20complet">
-    Manifester mon intérêt
-  </a>
-</article>
-
-        <article class="program-card">
-  <span class="tag">Formation des enseignants</span>
-  <h3>Formation des enseignants et anglais de la classe</h3>
-  <p>
-    Programme destiné à renforcer les compétences linguistiques, pédagogiques
-    et pratiques des enseignants d’anglais et des futurs enseignants.
-  </p>
-
-  <h4>Public cible</h4>
-  <p>
-    Enseignants d’anglais, futurs enseignants, répétiteurs, animateurs éducatifs,
-    responsables de clubs et personnes souhaitant développer leurs compétences pédagogiques.
-  </p>
-
-  <h4>Compétences développées</h4>
-  <ul>
-    <li>Anglais utilisé pour les consignes et interactions en classe</li>
-    <li>Planification des cours et formulation d’objectifs d’apprentissage</li>
-    <li>Enseignement de la grammaire, du vocabulaire et de la prononciation</li>
-    <li>Activités d’écoute, d’expression orale, de lecture et d’écriture</li>
-    <li>Gestion de classe et participation des apprenants</li>
-    <li>Création d’activités adaptées aux enfants, adolescents et adultes</li>
-    <li>Évaluation, correction et retour constructif</li>
-    <li>Enseignement à distance et utilisation pédagogique de WhatsApp</li>
-  </ul>
-
-  <h4>Langues d’enseignement</h4>
-  <p>
-    La langue principale est l’anglais. Un renforcement facultatif en français
-    peut être proposé selon les besoins du participant.
-  </p>
-
-  <h4>Organisation et tarif</h4>
-  <p>
-    Formation en ligne avec travaux pratiques, préparation de leçons et
-    simulations d’enseignement. Tarif : 70 000 Ar par mois.
-    Le calendrier est confirmé selon les inscriptions.
-  </p>
-
-  <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-</article>
-        <article class="program-card">
-  <span class="tag">Santé et communication médicale</span>
-  <h3>Anglais médical et communication en santé</h3>
-  <p>
-    Programme d’anglais professionnel développé en collaboration avec un médecin,
-    pour améliorer la communication dans les environnements médicaux et sanitaires.
-    Il ne remplace pas une formation clinique ou un diplôme médical.
-  </p>
-
-  <h4>Public cible</h4>
-<p>
-  Médecins, chirurgiens, sages-femmes, infirmiers, anesthésistes, étudiants en
-  santé, personnel hospitalier, agents de santé, traducteurs et interprètes
-  médicaux, ainsi que les professionnels travaillant avec des patients,
-  des équipes ou des partenaires internationaux.
-</p>
-
-  <h4>Compétences développées</h4>
-<ul>
-  <li>Terminologie médicale, chirurgicale, anatomique et hospitalière essentielle</li>
-  <li>Communication préopératoire, peropératoire et postopératoire</li>
-  <li>Communication claire entre chirurgiens, anesthésistes, infirmiers et autres membres de l’équipe</li>
-  <li>Accueil du patient, recueil d’informations et explication professionnelle simple</li>
-  <li>Briefing, transmission, reformulation, confirmation et communication en boucle fermée</li>
-  <li>Communication relative au consentement, à l’identité du patient, au site opératoire, aux allergies et aux risques signalés</li>
-  <li>Familiarisation linguistique avec la Liste de contrôle de la sécurité chirurgicale de l’OMS</li>
-  <li>Vocabulaire des instruments, procédures, médicaments, examens et équipements courants</li>
-  <li>Transmission des incidents, complications, urgences et informations critiques</li>
-  <li>Lecture et rédaction de notes, comptes rendus et documents professionnels simples</li>
-  <li>Exactitude, confidentialité, neutralité et clarification pour les traducteurs et interprètes médicaux</li>
-  <li>Communication interculturelle avec les patients et les équipes internationales</li>
-</ul>
-          <p class="note">
-  Le module consacré à la sécurité chirurgicale porte sur la terminologie et
-  la communication utilisées aux trois moments clés de la liste de contrôle :
-  avant l’anesthésie, avant l’incision et avant que le patient ne quitte le bloc
-  opératoire. Il ne constitue pas une certification clinique.
-</p>
-
-  <h4>Langues d’enseignement</h4>
-  <p>
-    La langue principale est l’anglais. Un renforcement facultatif en français
-    peut être proposé selon les besoins du participant.
-  </p>
-
-  <h4>Organisation et tarif</h4>
-  <p>
-    Options d’un, trois ou six mois, selon les objectifs du participant.
-    Tarif : 70 000 Ar par mois. Cours en ligne, supports spécialisés et séance
-    en direct le samedi selon le calendrier confirmé.
-  </p>
-
-  <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-</article>
-        <article class="program-card">
-  <span class="tag">Enfants et adolescents</span>
-  <h3>Anglais pour enfants et adolescents</h3>
-  <p>
-    Programme en ligne progressif et motivant pour aider les jeunes apprenants
-    à comprendre, parler et aimer l’anglais.
-  </p>
-
-  <h4>Public cible</h4>
-  <p>Enfants et adolescents qui souhaitent développer une base solide et une bonne confiance en anglais.</p>
-
-  <h4>Compétences développées</h4>
-        <ul>
-        <li>Vocabulaire et phrases utiles du quotidien</li>
-        <li>Écoute, prononciation et expression orale</li>
-        <li>Lecture et écriture adaptées à l’âge</li>
-        <li>Chansons, comptines et jeux en anglais</li>
-        <li>Activités ludiques, défis et participation en groupe</li>
-        <li>Confiance, créativité et plaisir d’apprendre</li>
-        </ul>
-
-  <h4>Organisation</h4>
-  <p>Cours en ligne à partir du lundi 7 septembre 2026. Tarif : 35 000 Ar par mois.</p>
-
-  <a class="btn btn-primary" href="inscription.html">Inscrire un enfant ou un adolescent</a>
-</article>
-        
-        <article class="program-card">
-  <span class="tag">Programme professionnalisant</span>
-  <h3>Journalisme pratique en anglais avec renforcement en français</h3>
-     <p>
-      Programme professionnalisant de six mois minimum, réalisé en collaboration
-      avec un journaliste professionnel. L’enseignement principal est dispensé en
-      anglais et comprend la théorie journalistique, la rédaction, les entretiens
-      et des activités pratiques encadrées sur le terrain.
-      </p>
-
-  <h4>Public cible</h4>
-  <p>Étudiants, journalistes débutants, créateurs de contenu, animateurs, responsables de communication et personnes souhaitant se préparer au métier de journaliste.</p>
-
-  <h4>Compétences développées</h4>
-  <ul>
-    <li>Fondements, éthique et vérification de l’information</li>
-    <li>Anglais pour les médias, les entretiens et la communication</li>
-    <li>Renforcement obligatoire en français oral et écrit</li>
-    <li>Préparation et conduite d’entretiens</li>
-    <li>Rédaction de brèves, reportages et contenus médiatiques</li>
-    <li>Pratique encadrée sur le terrain</li>
-  </ul>
-
-  <h4>Langues d’enseignement</h4>
-<p>
-  La langue principale du programme est l’anglais. Des cours obligatoires de
-  renforcement en français sont inclus afin de consolider l’expression orale,
-  la rédaction et la communication journalistique des participants.
-</p>
-
-<h4>Organisation et tarif</h4>
-<p>
-  Programme de six mois minimum, pouvant ouvrir dès un apprenant confirmé.
-  Il comprend des cours théoriques en ligne, des travaux pratiques, des activités
-  de terrain encadrées et une séance en direct dédiée le samedi selon un horaire
-  convenu. Tarif pilote 2026 : 90 000 Ar par mois. Ce tarif pourra être révisé
-  pour les futures sessions, après information préalable.
-</p>
-
-  <a class="btn btn-primary" href="inscription.html">S’inscrire à ce programme</a>
-</article>
-        
-        <article class="program-card">
-  <span class="tag">Pratique orale</span>
-  <h3>English Speaking Club</h3>
-  <p>
-    Espace convivial de pratique orale pour parler régulièrement en anglais,
-    améliorer sa confiance et rencontrer d’autres apprenants.
-  </p>
-
-  <h4>Public cible</h4>
-  <p>
-    Adolescents, adultes, étudiants, professionnels et toute personne souhaitant
-    pratiquer l’anglais dans un environnement encourageant.
-  </p>
-
-  <h4>Activités proposées</h4>
-  <ul>
-    <li>Conversations guidées autour de thèmes pratiques</li>
-    <li>Prononciation, écoute et expression spontanée</li>
-    <li>Jeux de rôle et situations de la vie quotidienne</li>
-    <li>Débats accessibles, présentations et échanges en groupe</li>
-    <li>Défis de vocabulaire et activités interactives</li>
-  </ul>
-
-  <h4>Organisation et tarif</h4>
-  <p>
-    Début le samedi 12 septembre 2026. Sessions en ligne le samedi via WhatsApp.
-    Tarif pour une inscription au club uniquement : 20 000 Ar par mois.
-    L’accès est inclus sans frais supplémentaires pour les apprenants inscrits
-    à un autre programme d’Alliance Anglophone.
-  </p>
-
-  <a class="btn btn-primary" href="inscription.html">Rejoindre le club</a>
-</article>
-        <article class="program-card">
-          <span class="tag">Espace de ressources</span>
-          <h3>Bibliothèque d’anglais, de ressources et de carrière</h3>
-          <p>
-            Futur espace hybride, physique et numérique, conçu pour soutenir la pratique continue
-            de l’anglais, l’autoformation et la préparation à la carrière.
-          </p>
-
-          <h4>Public cible</h4>
-          <p>Étudiants, professionnels, chercheurs d’emploi et apprenants autonomes.</p>
-
-          <h4>Ressources prévues</h4>
-          <ul>
-            <li>Livres d’anglais et lectures graduées</li>
-            <li>Ressources audio et d’écoute</li>
-            <li>Supports vidéo d’apprentissage</li>
-            <li>Simulations d’entretien</li>
-            <li>Espaces calmes d’étude</li>
-          </ul>
-
-          <h4>Utilité professionnelle</h4>
-          <p>
-            Soutient l’apprentissage à long terme au-delà des cours.
-          </p>
-
-          <a class="btn btn-secondary" href="contact.html">Demander des informations</a>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="highlight">
-      <div class="section-title">
-        <h2>Notre parcours de formation</h2>
-        <p>
-          Alliance Anglophone est conçu pour aider les apprenants à passer
-          de l’apprentissage de l’anglais à l’opportunité économique.
-        </p>
-      </div>
-
-      <div class="pathway">
-        <div class="pathway-box">
-          <h3>1. Compétences en anglais</h3>
-          <p>
-            Développer une capacité linguistique pratique grâce à une formation structurée
-            et à une vraie pratique de communication.
-          </p>
-        </div>
-
-        <div class="pathway-box">
-          <h3>2. Employabilité</h3>
-          <p>
-            Renforcer les compétences professionnelles grâce au CV, aux entretiens,
-            aux simulations de travail et aux soft skills.
-          </p>
-        </div>
-
-        <div class="pathway-box">
-          <h3>3. Croissance professionnelle</h3>
-          <p>
-            Se préparer aux secteurs où l’anglais peut soutenir le revenu,
-            l’emploi et l’évolution de carrière.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <h2>Vous ne savez pas encore quel programme choisir ?</h2>
-      <p>
-        Contactez-nous sur WhatsApp. Nous vous aiderons à choisir le parcours
-        le plus adapté à votre niveau, votre objectif et votre disponibilité.
-      </p>
-
-      <div class="btn-row">
-        <a class="btn btn-primary" href="inscription.html">S’inscrire maintenant</a>
-        <a class="btn btn-secondary" href="https://wa.me/261349201200">Contacter sur WhatsApp</a>
-      </div>
-    </section>
-
-  </main>
+  <main id="main-content"><section class="page-hero"><h1>Des programmes pour chaque objectif</h1><p>Choisissez un parcours selon votre niveau, votre secteur et votre projet. Les détails de groupe et d’horaire sont confirmés par écrit avant l’inscription.</p></section><section class="section-white"><div class="program-grid"><article class="program-card"><span class="tag">Fondamentaux</span><h3>Anglais général</h3><p>Du niveau débutant au niveau avancé : compréhension, expression orale, lecture, écriture, grammaire et vocabulaire.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20g%C3%A9n%C3%A9ral">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Intensif</span><h3>Anglais intensif – 1 mois</h3><p>Un programme accéléré axé sur la compréhension, la prononciation, le vocabulaire pratique et la fluidité.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20intensif%20%E2%80%93%201%20mois">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Entrepreneuriat</span><h3>Anglais des affaires et entrepreneuriat</h3><p>Communication pour réunions, emails, présentations, service client, négociation et projets d’entreprise.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20des%20affaires%20et%20entrepreneuriat">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Tourisme</span><h3>Anglais pour le tourisme</h3><p>Accueil, guidage, réservations, itinéraires, patrimoine et communication avec les voyageurs.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20pour%20le%20tourisme">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Hôtellerie</span><h3>Anglais pour l’hôtellerie et la restauration</h3><p>Réception, réservations, restauration, réclamations et relation client.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20pour%20l%E2%80%99h%C3%B4tellerie%20et%20la%20restauration">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">BPO</span><h3>Anglais Call Center / BPO</h3><p>Communication téléphonique, écoute, scripts, support client et gestion professionnelle des échanges.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20Call%20Center%20%2F%20BPO">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Technique</span><h3>Anglais technique et maritime</h3><p>Vocabulaire et communication pour la logistique, les opérations portuaires, la maintenance et la sécurité.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20technique%20et%20maritime">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Développement</span><h3>Anglais ONG et développement</h3><p>Communication de projet, terrain, rapports, coordination et partenaires internationaux.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20ONG%20et%20d%C3%A9veloppement">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Employabilité</span><h3>Développement de carrière, CV et entretiens</h3><p>Orientation, objectifs, CV, lettre de motivation, recherche d’emploi, LinkedIn et simulations d’entretien.</p><a class="btn btn-primary" href="inscription.html?programme=D%C3%A9veloppement%20de%20carri%C3%A8re%2C%20CV%20et%20entretiens">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Leadership</span><h3>Développement personnel et compétences de vie</h3><p>Confiance, leadership, communication assertive, gestion du temps, résilience, collaboration et prise de décision.</p><a class="btn btn-primary" href="inscription.html?programme=D%C3%A9veloppement%20personnel%20et%20comp%C3%A9tences%20de%20vie">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Pédagogie</span><h3>Formation des enseignants et anglais de la classe</h3><p>Planification, consignes, activités, gestion de classe, évaluation et enseignement à distance.</p><a class="btn btn-primary" href="inscription.html?programme=Formation%20des%20enseignants%20et%20anglais%20de%20la%20classe">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Santé</span><h3>Anglais médical et communication en santé</h3><p>Terminologie et communication professionnelle pour les soins, l’hôpital et les équipes internationales. Ce programme ne remplace pas une formation clinique.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20m%C3%A9dical%20et%20communication%20en%20sant%C3%A9">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Jeunes</span><h3>Anglais pour enfants et adolescents</h3><p>Parcours progressif pour développer compréhension, expression et confiance chez les jeunes apprenants.</p><a class="btn btn-primary" href="inscription.html?programme=Anglais%20pour%20enfants%20et%20adolescents">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Médias</span><h3>Journalisme pratique en anglais avec renforcement en français</h3><p>Formation professionnalisante de six mois minimum avec théorie, pratique encadrée et activités de terrain.</p><a class="btn btn-primary" href="inscription.html?programme=Journalisme%20pratique%20en%20anglais%20avec%20renforcement%20en%20fran%C3%A7ais">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Pratique orale</span><h3>English Speaking Club</h3><p>Sessions régulières de conversation guidée pour renforcer la fluidité, l’écoute et la confiance.</p><a class="btn btn-primary" href="inscription.html?programme=English%20Speaking%20Club">Commencer maintenant</a></article>
+<article class="program-card"><span class="tag">Organisations</span><h3>Formation entreprise et institutionnelle</h3><p>Programme personnalisé pour les équipes, entreprises, associations et institutions.</p><a class="btn btn-primary" href="inscription.html?programme=Formation%20entreprise%20et%20institutionnelle">Commencer maintenant</a></article></div></section><section><div class="trust-note">Avant tout paiement, vous recevez une confirmation écrite du programme, des dates, du montant et des conditions applicables.</div><div class="btn-row" style="margin-top:24px"><a class="btn btn-primary" href="tarifs.html">Voir les tarifs</a><a class="btn btn-secondary" href="contact.html">Nous contacter sur WhatsApp</a></div></section></main>
 
   <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
 
   <footer>
-    <p>© 2026 Alliance Anglophone. Basé à Toamasina, Madagascar. Inscriptions ouvertes — cours en ligne à partir du 7 septembre 2026.</p>
-    <p>
-  <a href="https://www.facebook.com/EnglishSkillsBooster" target="_blank">Facebook - Alliance Anglophone</a>
-</p>
-  </footer>
+    <p>© 2026 Alliance Anglophone. Inscriptions ouvertes — cours en ligne à partir du 7 septembre 2026.</p>
+
+    <nav class="footer-links" aria-label="Contact">
+      <a href="confidentialite.html">Confidentialité</a>
+      <a href="conditions.html">Paiement et conditions</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://www.facebook.com/AllianceAnglophoneMG" target="_blank" rel="noopener noreferrer">Facebook — Alliance Anglophone</a>
+    </nav>
+</footer>
 
 <script>
   document.querySelectorAll(".program-card").forEach(function(card) {
@@ -1054,6 +360,6 @@
     titleRow.appendChild(quickButton);
   });
 </script>
-  <script src="../assets/mobile-nav.js"></script>
+  <script src="../assets/site-v2.js"></script>
 </body>
 </html>

@@ -16,614 +16,85 @@
   <meta name="description" content="Misorata anarana amin’ny fiofanana teny anglisy an-tserasera ao amin’ny Alliance Anglophone ary ampitomboy ny fahaizanao miteny anglisy sy ny fahafahanao mahazo asa.">
 
   <link rel="canonical" href="https://allianceanglophone.mg/mg/fisoratana.html">
-  
+
   <link rel="alternate" hreflang="fr" href="https://allianceanglophone.mg/fr/inscription.html">
 <link rel="alternate" hreflang="en" href="https://allianceanglophone.mg/en/registration.html">
 <link rel="alternate" hreflang="mg" href="https://allianceanglophone.mg/mg/fisoratana.html">
 <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/inscription.html">
-  
-  <link rel="stylesheet" href="../assets/style.css" />
 
-  <style>
-    :root {
-      --blue: #0f4fbf;
-      --dark-blue: #062b63;
-      --gold: #d8aa2b;
-      --light: #f4f7fb;
-      --dark: #111827;
-      --text: #374151;
-      --white: #ffffff;
-      --green: #25d366;
-      --border: #d9e2f1;
-    }
+  <link rel="stylesheet" href="../assets/style-v2.css" />
+  <link rel="stylesheet" href="../assets/core-pages-v2.css">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="../assets/hero-registration-v1.webp" fetchpriority="high">
 
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .topbar {
-      background: var(--blue);
-      color: var(--white);
-      padding: 18px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-
-    .brand img {
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #ffffff;
-      padding: 4px;
-    }
-
-    .brand span {
-      color: #ffffff;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-
-    nav a {
-      color: white;
-      opacity: 0.95;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--gold);
-    }
-
-    .page-hero {
-      background:
-        linear-gradient(rgba(6, 43, 99, 0.76), rgba(6, 43, 99, 0.76)),
-        url("../assets/hero-registration-v1.webp") center/cover no-repeat;
-      color: white;
-      padding: 90px 8%;
-      text-align: center;
-    }
-
-    .page-hero h1 {
-      font-size: 3rem;
-      margin: 0 0 16px;
-      line-height: 1.1;
-    }
-
-    .page-hero p {
-      max-width: 860px;
-      margin: 0 auto;
-      font-size: 1.12rem;
-    }
-
-    section {
-      padding: 70px 8%;
-    }
-
-    .section-white {
-      background: white;
-    }
-
-    .section-title {
-      max-width: 900px;
-      margin-bottom: 36px;
-    }
-
-    .section-title h2 {
-      color: var(--dark-blue);
-      font-size: 2rem;
-      margin: 0 0 12px;
-    }
-
-    .section-title p {
-      font-size: 1.05rem;
-      margin: 0;
-    }
-
-    .layout {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 30px;
-      align-items: start;
-    }
-
-    .form-card,
-    .side-card {
-      background: white;
-      border-radius: 18px;
-      padding: 32px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
-    }
-
-    .form-card {
-      border-top: 5px solid var(--blue);
-    }
-
-    .side-card {
-      border-top: 5px solid var(--gold);
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .field {
-      display: flex;
-      flex-direction: column;
-      gap: 7px;
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    label {
-      font-weight: 700;
-      color: var(--dark-blue);
-      font-size: 0.95rem;
-    }
-
-    input,
-    select,
-    textarea {
-      width: 100%;
-      padding: 13px 14px;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      font-size: 1rem;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #ffffff;
-      color: var(--dark);
-    }
-
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-
-    input:focus,
-    select:focus,
-    textarea:focus {
-      outline: 2px solid rgba(15, 79, 191, 0.25);
-      border-color: var(--blue);
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 22px;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: 0.2s;
-      text-align: center;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--dark);
-    }
-
-    .btn-secondary {
-      background: var(--dark-blue);
-      color: white;
-    }
-
-    .btn-whatsapp {
-      background: var(--green);
-      color: white;
-      width: 100%;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
-    }
-
-    .notice {
-      background: #fff7dd;
-      border-left: 5px solid var(--gold);
-      padding: 20px;
-      border-radius: 12px;
-      margin-bottom: 24px;
-    }
-
-    .side-card h3 {
-      color: var(--dark-blue);
-      margin-top: 0;
-    }
-
-    .side-card ul {
-      padding-left: 20px;
-      margin: 14px 0;
-    }
-
-    .side-card li {
-      margin-bottom: 8px;
-    }
-
-    .step-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .step {
-      background: white;
-      border-radius: 16px;
-      padding: 26px;
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
-      border-left: 5px solid var(--blue);
-    }
-
-    .step span {
-      display: inline-flex;
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      align-items: center;
-      justify-content: center;
-      background: var(--gold);
-      color: var(--dark);
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .step h3 {
-      color: var(--dark-blue);
-      margin: 0 0 8px;
-    }
-
-    .cta {
-      text-align: center;
-      background: var(--blue);
-      color: white;
-    }
-
-    .cta h2 {
-      font-size: 2rem;
-      margin-top: 0;
-    }
-
-    .btn-row {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      background: var(--green);
-      color: white;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
-      z-index: 999;
-    }
-
-    footer {
-      background: var(--dark-blue);
-      color: white;
-      text-align: center;
-      padding: 26px 8%;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .layout,
-      .step-list {
-        grid-template-columns: 1fr;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .page-hero {
-        padding: 65px 5%;
-      }
-
-      .page-hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .topbar {
-        padding: 16px 5%;
-      }
-
-      section {
-        padding: 55px 5%;
-      }
-    }
-  </style>
+  <!-- Social sharing metadata -->
+  <meta property="og:title" content="Fisoratana anarana amin’ny fiofanana teny Anglisy">
+  <meta property="og:description" content="Misorata anarana amin’ny fiofanana teny anglisy an-tserasera ao amin’ny Alliance Anglophone ary ampitomboy ny fahaizanao miteny anglisy sy ny fahafahanao mahazo asa.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://allianceanglophone.mg/mg/fisoratana.html">
+  <meta property="og:image" content="https://allianceanglophone.mg/assets/social-preview-registration-v1.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Fisoratana anarana amin’ny fiofanana teny Anglisy">
+  <meta property="og:site_name" content="Alliance Anglophone">
+  <meta property="og:locale" content="mg_MG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fisoratana anarana amin’ny fiofanana teny Anglisy">
+  <meta name="twitter:description" content="Misorata anarana amin’ny fiofanana teny anglisy an-tserasera ao amin’ny Alliance Anglophone ary ampitomboy ny fahaizanao miteny anglisy sy ny fahafahanao mahazo asa.">
+  <meta name="twitter:image" content="https://allianceanglophone.mg/assets/social-preview-registration-v1.jpg">
 </head>
 
-<body>
+<body class="registration-page">
 
   <header class="topbar">
     <a class="brand" href="index.html">
-      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <img src="../assets/logo-v2.webp" alt="Logo Alliance Anglophone" width="56" height="56" decoding="async">
       <span>Alliance Anglophone</span>
     </a>
 
-    <nav>
+    <nav aria-label="Fitetezana lehibe">
       <a href="index.html">Fandraisana</a>
       <a href="programa.html">Programa</a>
       <a href="saram-piofanana.html">Saram-piofanana</a>
       <a href="iraka.html">Iraka</a>
       <a href="fiantraikany.html">Fiantraikany</a>
       <a href="asa-an-tsitrapo.html">Asa an-tsitrapo</a>
-      <a class="active" href="fisoratana.html">Fisoratana</a>
+      <a class="active" aria-current="page" href="fisoratana.html">Fisoratana</a>
       <a href="fifandraisana.html">Fifandraisana</a>
-      <a href="../fr/index.html"><img src="../assets/flag-fr.png" alt="Français" class="flag-icon"> FR</a>
-      <a href="../en/index.html"><img src="../assets/flag-us.png" alt="English" class="flag-icon"> EN</a>
-      <a href="index.html"><img src="../assets/flag-mg.png" alt="Malagasy" class="flag-icon"> MG</a>
+      <a href="../fr/inscription.html" lang="fr"><img src="../assets/flag-fr-v2.svg" alt="" class="flag-icon" width="18" height="12"> FR</a>
+      <a href="../en/registration.html" lang="en"><img src="../assets/flag-us-v2.svg" alt="" class="flag-icon" width="18" height="12"> EN</a>
+      <a href="fisoratana.html" lang="mg"><img src="../assets/flag-mg-v2.svg" alt="" class="flag-icon" width="18" height="12"> MG</a>
     </nav>
   </header>
 
-  <main>
-
-    <section class="page-hero">
-      <h1>Atombohy ny dianao ho amin’ny fahombiazana amin’ny teny anglisy</h1>
-      <p>
-        Asehoy ny fahaliananao amin’ny programa en ligne Alliance Anglophone
-        ary manaova dingana voalohany mankany amin’ny anglisy azo ampiasaina,
-        employability ary fahatokisan-tena matihanina.
-      </p>
-    </section>
-
-    <section class="section-white">
-      <div class="section-title">
-        <h2>Fangatahana fisoratana</h2>
-        <p>
-          Mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.
-          Fenoy ny formulaire eto ambany, dia alefaso amin’ny WhatsApp ny fangatahanao.
-        </p>
-      </div>
-
-      <div class="layout">
-        <div class="form-card">
-
-          <div class="notice">
-            <strong>Zava-dehibe :</strong> tsy mitahiry ny mombamomba anao eto amin’ny site ity formulaire ity.
-            Rehefa manindry ny bokotra ianao dia hamboarina ho hafatra WhatsApp ny fangatahanao.
-          </div>
-
-          <form id="registrationForm">
-            <div class="form-grid">
-
-              <div class="field">
-                <label for="fullName">Anarana feno</label>
-                <input type="text" id="fullName" placeholder="Ohatra : Jean Andry" required>
-              </div>
-
-              <div class="field">
-                <label for="age">Taona</label>
-                <input type="number" id="age" placeholder="Ohatra : 25" required>
-              </div>
-
-              <div class="field">
-                <label for="whatsapp">Laharana WhatsApp</label>
-                <input type="tel" id="whatsapp" placeholder="Ohatra : +261 34 000 0000" required>
-              </div>
-
-              <div class="field">
-                <label for="email">Adiresy email</label>
-                <input type="email" id="email" placeholder="Ohatra : anarana@email.com">
-              </div>
-
-              <div class="field">
-                <label for="city">Tanàna / Toerana</label>
-                <input type="text" id="city" placeholder="Ohatra : Toamasina">
-              </div>
-
-              <div class="field">
-                <label for="level">Niveau-nao amin’ny teny anglisy</label>
-                <select id="level" required>
-                  <option value="">Safidio ny niveau-nao</option>
-                  <option>Débutant</option>
-                  <option>Élémentaire</option>
-                  <option>Intermédiaire</option>
-                  <option>Intermédiaire avancé</option>
-                  <option>Avancé</option>
-                  <option>Tsy azoko antoka</option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label for="program">Programa tianao harahina</label>
-                <select id="program" required>
-                  <option value="">Safidio ny programa</option>
-                  <option>Anglisy ankapobeny</option>
-                  <option>Anglisy matihanina sy carrière</option>
-                  <option>Anglisy ho an’ny ankizy sy tanora</option>
-                  <option>Club de conversation anglaise</option>
-                  <option>Fiofanana entreprise</option>
-                  <option>Tsy mbola azoko antoka</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="format">Format tianao</label>
-                <select id="format" required>
-                  <option value="">Safidio ny format</option>
-                  <option>En ligne individuel</option>
-                  <option>En ligne en groupe</option>
-                  <option>Fiofanana entreprise</option>
-                  <option>Tsy mbola azoko antoka</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="goal">Tanjona lehibe</label>
-                <select id="goal" required>
-                  <option value="">Safidio ny tanjonao</option>
-                  <option>Asa</option>
-                  <option>Fandrosoana amin’ny carrière</option>
-                  <option>Fianarana any ivelany</option>
-                  <option>Dia / Voyage</option>
-                  <option>Business</option>
-                  <option>Fampandrosoana manokana</option>
-                  <option>Hafa</option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label for="message">Hafatra fanampiny</label>
-                <textarea id="message" placeholder="Lazao aminay ny tanjonao, disponibilité-nao na fanontanianao."></textarea>
-              </div>
-
-            </div>
-
-            <button class="btn btn-whatsapp" type="submit">
-              Handefa fangatahana fisoratana amin’ny WhatsApp
-            </button>
-          </form>
-        </div>
-
-        <aside class="side-card">
-          <h3>Mila fanampiana alohan’ny fisoratana?</h3>
-          <p>
-            Afaka mifandray mivantana aminay ianao raha mbola tsy fantatrao izay programa mety aminao.
-          </p>
-
-          <ul>
-            <li><strong>WhatsApp :</strong> +261 34 920 1200</li>
-            <li><strong>Email :</strong> contact@allianceanglophone.mg</li>
-            <li><strong>Toerana :</strong> miorina eto Toamasina, Madagasikara</li>
-            <li><strong>Statut :</strong> ho avy tsy ho ela ny cours en ligne</li>
-          </ul>
-
-          <a class="btn btn-secondary" href="mailto:contact@allianceanglophone.mg">Handefa email</a>
-        </aside>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">
-        <h2>Ahoana ny fizotry ny fisoratana?</h2>
-        <p>
-          Tsotra ny dingana, ary natao hanampiana ny mpianatra hahazo orientation mazava alohan’ny hanombohana.
-        </p>
-      </div>
-
-      <div class="step-list">
-        <div class="step">
-          <span>1</span>
-          <h3>Alefaso ny fangatahanao</h3>
-          <p>Fenoy ny formulaire ary alefaso amin’ny WhatsApp ny mombamomba anao.</p>
-        </div>
-
-        <div class="step">
-          <span>2</span>
-          <h3>Mahazoa orientation</h3>
-          <p>Hojerenay ny tanjonao, ny niveau-nao ary ny format tianao.</p>
-        </div>
-
-        <div class="step">
-          <span>3</span>
-          <h3>Manomboka rehefa misokatra</h3>
-          <p>Rehefa misokatra ny cours en ligne dia hahazo ny antsipirihan’ny programa sy ny dingana manaraka ianao.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <h2>Tsy mbola vonona hisoratra?</h2>
-      <p>
-        Mifandraisa aminay amin’ny WhatsApp ary apetraho ny fanontanianao alohan’ny hisafidianana programa.
-      </p>
-
-      <div class="btn-row">
-        <a class="btn btn-primary" href="https://wa.me/261349201200">Hifandray amin’ny WhatsApp</a>
-        <a class="btn btn-secondary" href="programa.html">Hijery programa</a>
-      </div>
-    </section>
-
-  </main>
+  <main id="main-content"><section class="page-hero"><h1>Atombohy ny dianao ho amin’ny fahombiazana amin’ny anglisy</h1><p>Misokatra ny fisoratana ho an’ny cours en ligne manomboka ny 7 Septambra 2026.</p></section><section class="section-white"><div class="section-title"><h2>Fangatahana fisoratana</h2><p>Rehefa voaray ny hafatrao dia hamafisinay an-tsoratra ny orientation, groupe, vidiny ary fepetra.</p></div><div class="layout"><div class="form-card"><div class="notice"><strong>Tsy mitahiry ity formulaire ity ny tranonkala. Manomana hafatra WhatsApp izy ary ianao no misafidy handefa izany.</strong></div><form id="registrationForm"><div class="form-grid"><div class="field"><label for="fullName">Anarana feno</label><input type="text" id="fullName" autocomplete="name" required></div>
+<div class="field"><label for="age">Taona</label><input type="number" id="age" inputmode="numeric" autocomplete="off" required></div>
+<div class="field"><label for="whatsapp">Laharana WhatsApp</label><input type="tel" id="whatsapp" autocomplete="tel" inputmode="tel" placeholder="+261 34 000 0000" required></div>
+<div class="field"><label for="email">Adiresy email</label><input type="email" id="email" autocomplete="email"></div>
+<div class="field"><label for="city">Tanàna / Toerana</label><input type="text" id="city" autocomplete="address-level2"></div>
+<div class="field"><label for="level">Haavo amin’ny teny anglisy</label><select id="level" required><option value="">Safidio</option><option>Débutant</option><option>Élémentaire</option><option>Intermédiaire</option><option>Intermédiaire avancé</option><option>Avancé</option><option>Tsy azoko antoka</option></select></div>
+<div class="field full"><label for="program">Programa tiana</label><select id="program" required><option value="">Safidio</option><option>Anglisy ankapobeny – Débutant (3 volana)</option><option>Anglisy ankapobeny – Intermédiaire (3 volana)</option><option>Anglisy ankapobeny – Avancé (3 volana)</option><option>Anglisy intensive – 1 volana</option><option>Anglisy ho an’ny ankizy sy tanora</option><option>Anglisy ho an’ny raharaham-barotra sy fandraharahana</option><option>Anglisy ho an’ny fizahantany</option><option>Anglisy ho an’ny hôtellerie sy restauration</option><option>Anglisy Call Center / BPO</option><option>Anglisy teknika sy maritime</option><option>Anglisy ho an’ny ONG sy développement</option><option>Anglisy ara-pitsaboana sy fifandraisana amin’ny fahasalamana</option><option data-category="career">Fampandrosoana ny asa – lalana feno</option><option data-category="career">Fampandrosoana ny asa – module manokana</option><option data-category="personal">Fampandrosoana manokana – lalana feno</option><option data-category="personal">Fampandrosoana manokana – module manokana</option><option>Fampiofanana mpampianatra</option><option>Asa fanaovan-gazety amin’ny anglisy miaraka amin’ny fanamafisana frantsay (6 volana farafahakeliny)</option><option>English Speaking Club</option><option>Fiofanana ho an’ny orinasa na andrim-panjakana</option><option>Tsy mbola azoko antoka</option></select></div>
+<div class="field full" id="careerModuleField" hidden><label for="careerModule">Module fampandrosoana ny asa</label><select id="careerModule"><option value="">Safidio</option><option>Orientation matihanina sy bilan des compétences</option><option>Fametrahana tanjona sy plan de carrière</option><option>Fanomanana na fanitsiana CV</option><option>Fanoratana lettre de motivation</option><option>Fitadiavana asa sy fahazoana offre</option><option>Profil LinkedIn sy endrika matihanina</option><option>Réseautage sy elevator pitch</option><option>Fanomanana entretien</option><option>Simulation entretien miaraka amin’ny retour manokana</option><option>Filàna hafa hazavaina</option></select></div>
+<div class="field full" id="personalDevelopmentModuleField" hidden><label for="personalDevelopmentModule">Module fampandrosoana manokana</label><select id="personalDevelopmentModule"><option value="">Safidio</option><option>Leadership sy influence positive</option><option>Motivation, tanjona ary fandraisana andraikitra</option><option>Fahatokisan-tena sy fanehoan-kevitra</option><option>Autodiscipline sy fahazarana tsara</option><option>Fitantanana fotoana sy productivité</option><option>Intelligence émotionnelle</option><option>Communication assertive</option><option>Fitantanana stress sy résilience</option><option>Fanapahan-kevitra sy famahana olana</option><option>Fitantanana conflit</option><option>Fiaraha-miasa sy collaboration</option><option>Fitenenana ampahibemaso</option><option>Soatoavina, intégrité ary responsabilité</option><option>Fitantanana vola manokana fototra</option><option>Équilibre de vie sy bien-être</option><option>Filàna hafa hazavaina</option></select></div>
+<div class="field"><label for="duration">Faharetana tiana</label><select id="duration"><option value="">Safidio</option><option>Araka ny programa / hohamafisina</option><option>Séance manokana 1</option><option>Séance manokana 2</option><option>Séance manokana 3</option><option>12 herinandro – lalana feno</option><option>1 volana</option><option>3 volana</option><option>6 volana</option><option>Mila orientation aho</option></select></div>
+<div class="field"><label for="format">Format tiana</label><select id="format" required><option value="">Safidio</option><option>Cours en ligne en groupe (6 ka hatramin’ny 15)</option><option>Micro-cohorte manokana en ligne</option><option>English Speaking Club ihany</option><option>Fiofanana orinasa na andrim-panjakana en ligne</option><option>Tsy mbola azoko antoka</option></select></div>
+<div class="field"><label for="goal">Tanjona lehibe</label><select id="goal" required><option value="">Safidio</option><option>Asa</option><option>Fandrosoana amin’ny asa</option><option>Fianarana any ivelany</option><option>Dia</option><option>Business</option><option>Fampandrosoana manokana</option><option>Hafa</option></select></div>
+<div class="field full"><label for="message">Hafatra fanampiny</label><textarea id="message" rows="5" placeholder="Lazao ny tanjonao, fotoana malalaka na fanontanianao."></textarea></div></div><label class="privacy-consent"><input type="checkbox" required><span>Novakiako ny politika momba ny tsiambaratelo ary ekeko ny hanomanana ity hafatra WhatsApp ity. <a href="tsiambaratelo.html">tsiambaratelo.html</a></span></label><label class="privacy-consent"><input type="checkbox" required><span>Fantatro fa voamarina ihany ny toerana sy fandoavana rehefa voaraiko ny fepetra an-tsoratra. <a href="fepetra.html">fepetra.html</a></span></label><button class="btn btn-whatsapp" type="submit">Hanomana ny fangatahana amin’ny WhatsApp</button></form></div><aside class="side-card"><h3>Mila fanampiana alohan’ny fisoratana?</h3><p>Rehefa voaray ny hafatrao dia hamafisinay an-tsoratra ny orientation, groupe, vidiny ary fepetra.</p><ul><li>WhatsApp: +261 34 920 1200</li><li>Email: contact@allianceanglophone.mg</li><li>Manomboka ny Alatsinainy 7 Septambra 2026 ny cours en ligne. Manomboka ny Asabotsy 12 Septambra 2026 ny English Speaking Club.</li></ul><a class="btn btn-secondary" href="fifandraisana.html">Hifandray amin’ny WhatsApp</a></aside></div></section></main>
 
   <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
 
   <footer>
-    <p>© 2026 Alliance Anglophone. Miorina eto Toamasina, Madagasikara. Ho avy tsy ho ela ny fiofanana an-tserasera.</p>
-  <p>
-  <a href="https://www.facebook.com/EnglishSkillsBooster" target="_blank">Facebook - English Skills Booster</a>
-</p>
-  </footer>
+    <p>© 2026 Alliance Anglophone. Misokatra ny fisoratana anarana — manomboka ny 7 Septambra 2026 ny fiofanana an-tserasera.</p>
 
-  <script>
-    document.getElementById("registrationForm").addEventListener("submit", function(event) {
-      event.preventDefault();
-
-      const fullName = document.getElementById("fullName").value.trim();
-      const age = document.getElementById("age").value.trim();
-      const whatsapp = document.getElementById("whatsapp").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const city = document.getElementById("city").value.trim();
-      const level = document.getElementById("level").value;
-      const program = document.getElementById("program").value;
-      const format = document.getElementById("format").value;
-      const goal = document.getElementById("goal").value;
-      const message = document.getElementById("message").value.trim();
-
-      const text =
-        "Salama Alliance Anglophone,%0A%0A" +
-        "Te hisoratra anarana na hahazo fanazavana momba ny programa teny anglisy aho.%0A%0A" +
-        "Anarana feno : " + encodeURIComponent(fullName) + "%0A" +
-        "Taona : " + encodeURIComponent(age) + "%0A" +
-        "Laharana WhatsApp : " + encodeURIComponent(whatsapp) + "%0A" +
-        "Email : " + encodeURIComponent(email || "Tsy voalaza") + "%0A" +
-        "Tanàna / Toerana : " + encodeURIComponent(city || "Tsy voalaza") + "%0A" +
-        "Niveau anglisy : " + encodeURIComponent(level) + "%0A" +
-        "Programa tiana harahina : " + encodeURIComponent(program) + "%0A" +
-        "Format tiana : " + encodeURIComponent(format) + "%0A" +
-        "Tanjona lehibe : " + encodeURIComponent(goal) + "%0A" +
-        "Hafatra fanampiny : " + encodeURIComponent(message || "Tsy misy hafatra fanampiny") + "%0A%0A" +
-        "Misaotra.";
-
-      const whatsappUrl = "https://wa.me/261349201200?text=" + text;
-      window.open(whatsappUrl, "_blank");
-      window.location.href = "misaotra.html";
-    });
-  </script>
-
-  <script src="../assets/mobile-nav.js"></script>
+    <nav class="footer-links" aria-label="Fifandraisana">
+      <a href="tsiambaratelo.html">Tsiambaratelo</a>
+      <a href="fepetra.html">Fandoavam-bola sy fepetra</a>
+      <a href="fifandraisana.html">Fifandraisana</a>
+      <a href="https://www.facebook.com/AllianceAnglophoneMG" target="_blank" rel="noopener noreferrer">Facebook — Alliance Anglophone</a>
+    </nav>
+</footer>
+  <script src="../assets/registration-v2.js"></script>
+  <script src="../assets/site-v2.js"></script>
 </body>
 </html>

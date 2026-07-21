@@ -18,363 +18,58 @@
   <meta name="description" content="Alliance Anglophone dia manolotra fiofanana teny anglisy an-tserasera mifantoka amin’ny asa, fahaiza-mifandray, fahatokisan-tena ary fahafahana matihanina eto Madagasikara." />
 
   <link rel="canonical" href="https://allianceanglophone.mg/mg/index.html">
-  
+
   <link rel="alternate" hreflang="fr" href="https://allianceanglophone.mg/fr/index.html">
 <link rel="alternate" hreflang="en" href="https://allianceanglophone.mg/en/index.html">
 <link rel="alternate" hreflang="mg" href="https://allianceanglophone.mg/mg/index.html">
 <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/index.html">
-  
-  <link rel="stylesheet" href="../assets/style.css" />
 
-  <style>
-    :root {
-      --blue: #0f4fbf;
-      --dark-blue: #062b63;
-      --gold: #d8aa2b;
-      --light: #f4f7fb;
-      --dark: #111827;
-      --text: #374151;
-      --white: #ffffff;
-      --green: #25d366;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .topbar {
-      background: var(--blue);
-      color: var(--white);
-      padding: 18px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #ffffff;
-      font-weight: 700;
-      font-size: 1.1rem;
-      text-decoration: none;
-    }
-
-    .brand img {
-      width: 56px;
-      height: 56px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: #ffffff;
-      padding: 4px;
-    }
-
-    .brand span { color: #ffffff; }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      font-size: 0.95rem;
-    }
-
-    nav a {
-      color: white;
-      opacity: 0.95;
-    }
-
-    nav a:hover,
-    nav a.active {
-      color: var(--gold);
-    }
-
-    .hero {
-      min-height: 620px;
-      background:
-        linear-gradient(rgba(6, 43, 99, 0.45), rgba(6, 43, 99, 0.45)),
-        url("../assets/hero-home-v2.webp") center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      padding: 80px 8%;
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 780px;
-      background: rgba(0, 0, 0, 0.55);
-      padding: 42px;
-      border-radius: 18px;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      line-height: 1.1;
-      margin: 0 0 18px;
-    }
-
-    .hero h2 {
-      font-size: 1.45rem;
-      color: var(--gold);
-      margin: 0 0 20px;
-    }
-
-    .hero p {
-      font-size: 1.08rem;
-      margin-bottom: 24px;
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 13px 22px;
-      border-radius: 8px;
-      font-weight: 700;
-      transition: 0.2s;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: var(--dark);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--dark-blue);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.92;
-    }
-
-    section { padding: 70px 8%; }
-
-    .section-white { background: white; }
-
-    .section-title {
-      max-width: 850px;
-      margin-bottom: 36px;
-    }
-
-    .section-title h2 {
-      color: var(--dark-blue);
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    .section-title p { font-size: 1.05rem; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      background: white;
-      padding: 26px;
-      border-radius: 14px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
-      border-top: 4px solid var(--blue);
-    }
-
-    .section-white .card { background: var(--light); }
-
-    .card h3 {
-      margin-top: 0;
-      color: var(--dark-blue);
-      font-size: 1.2rem;
-    }
-
-    .card p { margin-bottom: 0; }
-
-    .highlight {
-      background: var(--dark-blue);
-      color: white;
-      padding: 70px 8%;
-    }
-
-    .highlight h2 {
-      color: var(--gold);
-      font-size: 2rem;
-      margin-top: 0;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 34px;
-      align-items: start;
-    }
-
-    .price-list {
-      display: grid;
-      gap: 16px;
-    }
-
-    .price-item {
-      background: white;
-      border-left: 5px solid var(--gold);
-      padding: 18px 22px;
-      border-radius: 10px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .price-item strong { color: var(--dark-blue); }
-
-    .status-box {
-      background: #fff7dd;
-      border-left: 5px solid var(--gold);
-      padding: 22px;
-      border-radius: 12px;
-    }
-
-    .cta {
-      text-align: center;
-      background: var(--blue);
-      color: white;
-    }
-
-    .cta h2 {
-      font-size: 2rem;
-      margin-top: 0;
-    }
-
-    .whatsapp-float {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      background: var(--green);
-      color: white;
-      padding: 14px 18px;
-      border-radius: 50px;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.22);
-      z-index: 999;
-    }
-
-    footer {
-      background: var(--dark-blue);
-      color: white;
-      text-align: center;
-      padding: 26px 8%;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 900px) {
-      .grid,
-      .two-col {
-        grid-template-columns: 1fr;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 60px 5%;
-      }
-
-      .hero-content { padding: 28px; }
-
-      .hero h1 { font-size: 2.2rem; }
-
-      .topbar { padding: 16px 5%; }
-
-      section,
-      .highlight {
-        padding: 55px 5%;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="../assets/style-v2.css" />
+  <link rel="stylesheet" href="../assets/core-pages-v2.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "Alliance Anglophone",
   "url": "https://allianceanglophone.mg",
-  "logo": "https://allianceanglophone.mg/assets/logo.JPG",
+  "logo": "https://allianceanglophone.mg/assets/logo-v2.webp",
   "sameAs": [
-    "https://www.facebook.com/EnglishSkillsBooster"
+    "https://www.facebook.com/AllianceAnglophoneMG"
   ],
   "description": "Alliance Anglophone provides professional English and employability training for learners in Madagascar."
 }
 </script>
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+  <link rel="preload" as="image" href="../assets/hero-home-v2.webp" fetchpriority="high">
 
-<!-- Open Graph: Facebook, LinkedIn and messaging apps -->
-<meta property="og:title"
-      content="Alliance Anglophone | Teny anglisy sy fahaiza-miasa">
-
-<meta property="og:description"
-      content="Ampitomboy ny fahaizanao miteny anglisy, ny fahatokisan-tenanao ary ny fahaiza-mifandray amin’ny asa mba hahazoana fahafahana tsara kokoa.">
-
-<meta property="og:type" content="website">
-
-<meta property="og:url"
-      content="https://allianceanglophone.mg/mg/index.html">
-
-<meta property="og:image"
-      content="https://allianceanglophone.mg/assets/social-preview-home-v2.jpg">
-
-<meta property="og:image:secure_url"
-      content="https://allianceanglophone.mg/assets/social-preview-home-v2.jpg">
-
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-
-<meta property="og:image:alt"
-      content="Alliance Anglophone — teny anglisy ho an’ny asa, fahaiza-miasa ary fahafahana vaovao">
-
-<meta property="og:site_name" content="Alliance Anglophone">
-<meta property="og:locale" content="mg_MG">
-
-<!-- Large social card -->
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="twitter:title"
-      content="Alliance Anglophone | Teny anglisy sy fahaiza-miasa">
-
-<meta name="twitter:description"
-      content="Mianara, mampihatra ary mandrosoa amin’ny teny anglisy mba hahazoana fahafahana tsara kokoa.">
-
-<meta name="twitter:image"
-      content="https://allianceanglophone.mg/assets/social-preview-home-v2.jpg">
-
-<meta name="twitter:image:alt"
-      content="Alliance Anglophone — teny anglisy sy fahaiza-miasa">
+  <!-- Social sharing metadata -->
+  <meta property="og:title" content="Alliance Anglophone | Anglisy ho an’ny asa sy ny hoavy eto Madagasikara">
+  <meta property="og:description" content="Alliance Anglophone dia manolotra fiofanana teny anglisy an-tserasera mifantoka amin’ny asa, fahaiza-mifandray, fahatokisan-tena ary fahafahana matihanina eto Madagasikara.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://allianceanglophone.mg/mg/index.html">
+  <meta property="og:image" content="https://allianceanglophone.mg/assets/social-preview-home-v2.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Alliance Anglophone | Anglisy ho an’ny asa sy ny hoavy eto Madagasikara">
+  <meta property="og:site_name" content="Alliance Anglophone">
+  <meta property="og:locale" content="mg_MG">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Alliance Anglophone | Anglisy ho an’ny asa sy ny hoavy eto Madagasikara">
+  <meta name="twitter:description" content="Alliance Anglophone dia manolotra fiofanana teny anglisy an-tserasera mifantoka amin’ny asa, fahaiza-mifandray, fahatokisan-tena ary fahafahana matihanina eto Madagasikara.">
+  <meta name="twitter:image" content="https://allianceanglophone.mg/assets/social-preview-home-v2.jpg">
 </head>
 
 <body class="home-page">
 
   <header class="topbar">
     <a class="brand" href="index.html">
-      <img src="../assets/logo.JPG" alt="Logo Alliance Anglophone">
+      <img src="../assets/logo-v2.webp" alt="Logo Alliance Anglophone" width="56" height="56" decoding="async">
       <span>Alliance Anglophone</span>
     </a>
 
-    <nav>
-      <a class="active" href="index.html">Fandraisana</a>
+    <nav aria-label="Fitetezana lehibe">
+      <a class="active" aria-current="page" href="index.html">Fandraisana</a>
       <a href="programa.html">Programa</a>
       <a href="saram-piofanana.html">Saram-piofanana</a>
       <a href="iraka.html">Iraka</a>
@@ -382,269 +77,35 @@
       <a href="asa-an-tsitrapo.html">Asa an-tsitrapo</a>
       <a href="fisoratana.html">Fisoratana</a>
       <a href="fifandraisana.html">Fifandraisana</a>
-      <a href="../fr/index.html"><img src="../assets/flag-fr.png" alt="Français" class="flag-icon"> FR</a>
-      <a href="../en/index.html"><img src="../assets/flag-us.png" alt="English" class="flag-icon"> EN</a>
-      <a href="index.html"><img src="../assets/flag-mg.png" alt="Malagasy" class="flag-icon"> MG</a>
+      <a href="../fr/index.html" lang="fr"><img src="../assets/flag-fr-v2.svg" alt="" class="flag-icon" width="18" height="12"> FR</a>
+      <a href="../en/index.html" lang="en"><img src="../assets/flag-us-v2.svg" alt="" class="flag-icon" width="18" height="12"> EN</a>
+      <a href="index.html" lang="mg"><img src="../assets/flag-mg-v2.svg" alt="" class="flag-icon" width="18" height="12"> MG</a>
     </nav>
   </header>
 
-  <main>
-
-    <section class="hero hero-home" aria-labelledby="hero-title">
-  <div class="hero-content hero-home-content">
-
-    <p class="hero-kicker">
-      Teny anglisy • Fahaiza-miasa • Fahafahana
-    </p>
-
-    <h1 id="hero-title">
-      Teny anglisy ho an’ny asa sy fahafahana tsara kokoa
-    </h1>
-
-    <p class="hero-lead">
-      Alliance Anglophone dia manampy ireo mpianatra eto Madagasikara
-      hampivelatra teny anglisy azo ampiharina, fifandraisana matihanina
-      ary fahaiza-manao ilaina amin’ny asa mba handrosoany
-      amim-pahatokisana.
-    </p>
-
-    <div class="hero-points">
-      <span>Fanazaran-tena am-bava arahina</span>
-      <span>Fahaiza-manao matihanina</span>
-      <span>Fiofanana an-tserasera mora idirana</span>
-    </div>
-
-    <div class="btn-row">
-      <a class="btn btn-primary" href="fisoratana.html">
-        Hanomboka izao
-      </a>
-
-      <a
-        class="btn btn-secondary"
-        href="https://wa.me/261349201200"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Hifandray aminay amin’ny WhatsApp
-      </a>
-    </div>
-
-    <p class="hero-meta">
-      Fianarana an-tserasera • Toamasina, Madagasikara
-    </p>
-
-  </div>
-</section>
-
-    <section class="section-white">
-      <div class="section-title">
-        <h2>Tsy sekoly teny anglisy tsotra fotsiny</h2>
-        <p>
-          Alliance Anglophone dia sehatra iray mampifandray ny fianarana teny anglisy amin’ny employability,
-          izany hoe ny fahavononana hiditra amin’ny tontolon’ny asa. Ny tanjonay dia tsy ny mampianatra teny anglisy fotsiny,
-          fa ny manampy ny mpianatra ho matoky tena, ho vonona amin’ny asa ary hahita lalana mazava kokoa amin’ny hoaviny.
-        </p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Anglisy azo ampiasaina</h3>
-          <p>Mianatra teny anglisy ho an’ny resaka andavanandro, asa, dinidinika, fianarana ary fitomboana matihanina.</p>
-        </div>
-
-        <div class="card">
-          <h3>Fifantohana amin’ny employability</h3>
-          <p>Manamafy ny fifandraisana, fahatokisan-tena, discipline, fanomanana entretien, fiaraha-miasa ary fiomanana amin’ny tontolon’ny asa.</p>
-        </div>
-
-        <div class="card">
-          <h3>Lalana mankany amin’ny asa</h3>
-          <p>Miomana amin’ny sehatra toy ny fizahantany, hôtellerie, ONG, développement, BPO, maritime ary asa lavitra.</p>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">
-        <h2>Toetry ny fiofanana amin’izao fotoana izao</h2>
-        <p>
-          Eo am-panomanana fiofanana an-tserasera voarindra izahay, alohan’ny hanokafana ny hetsika mivantana amin’ny hoavy.
-        </p>
-      </div>
-
-      <div class="status-box">
-        <p><strong>Fiofanana an-tserasera :</strong> kasaina hisokatra tsy ho ela, raha azo atao ao anatin’ny roa volana manaraka.</p>
-        <p><strong>Fiofanana mivantana :</strong> tsy mbola kasaina hatao amin’ity taona ity.</p>
-        <p><strong>Foibe fianarana :</strong> mbola eo am-panomanana eto Toamasina, Madagasikara.</p>
-        <p><strong>Fifandraisana :</strong> WhatsApp +261 34 920 1200.</p>
-      </div>
-    </section>
-
-    <section class="section-white">
-      <div class="section-title">
-        <h2>Programa</h2>
-        <p>
-          Safidio ny programa mifanaraka amin’ny haavon’ny fahaizanao, ny tanjonao matihanina ary ny fotoana anananao.
-        </p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Anglisy ankapobeny</h3>
-          <p>Grammaire, voambolana, fihainoana, fitenenana, famakiana ary fanoratana, manomboka amin’ny débutant ka hatramin’ny avancé.</p>
-        </div>
-
-        <div class="card">
-          <h3>Fitenenana anglisy intensive</h3>
-          <p>Programa mifantoka amin’ny fahaizana miteny amin’ny fomba voajanahary sy matoky tena kokoa.</p>
-        </div>
-
-        <div class="card">
-          <h3>Business English</h3>
-          <p>Fifandraisana matihanina ho an’ny réunion, email, présentation, service client ary fiaraha-miasa amin’ny ekipa.</p>
-        </div>
-
-        <div class="card">
-          <h3>Anglisy ho an’ny fizahantany sy hôtellerie</h3>
-          <p>Anglisy ho an’ny hôtel, restaurant, réception, guide, service touristique ary relation client.</p>
-        </div>
-
-        <div class="card">
-          <h3>Anglisy Call Center / BPO</h3>
-          <p>Anglisy azo ampiasaina amin’ny support client, antso an-telefaonina, script ary fifandraisana amin’ny mpanjifa.</p>
-        </div>
-
-        <div class="card">
-          <h3>Anglisy teknika sy maritime</h3>
-          <p>Voambolana sy fifandraisana ho an’ny logistics, port, maritime, teknika ary asa opérationnelle.</p>
-        </div>
-
-        <div class="card">
-          <h3>Anglisy ONG sy développement</h3>
-          <p>Anglisy ho an’ny projet, communication terrain, rapport, coordination ary fiaraha-miasa amin’ny mpiara-miombon’antoka iraisam-pirenena.</p>
-        </div>
-
-        <div class="card">
-          <h3>CV sy fanomanana entretien</h3>
-          <p>Fanomanana CV, entraînement entretien ary fomba fampisehoana ny traikefa amin’ny fomba matihanina.</p>
-        </div>
-
-        <div class="card">
-          <h3>Prononciation sy fahatokisan-tena</h3>
-          <p>Fanatsarana ny mazava, rythme, prononciation, fahatokisan-tena ary communication matihanina.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="highlight">
-      <div class="two-col">
-        <div>
-          <h2>Bibliothèque ho an’ny fianarana sy ny asa</h2>
-          <p>
-            Alliance Anglophone dia manomana toerana fianarana hybride, natao hanohanana ny fianarana mitohy,
-            ny autoformation ary ny fanomanana asa.
-          </p>
-          <p>
-            Ao anatin’izany vinavina izany dia hisy boky anglisy, audio, vidéo, voambolana matihanina,
-            fanazaran-tena entretien ary toerana mangina hianarana.
-          </p>
-        </div>
-
-        <div class="status-box">
-          <p><strong>Tanjona :</strong> manampy ny mpianatra mihoatra noho ny fotoam-pianarana fotsiny.</p>
-          <p><strong>Fifantohana :</strong> anglisy, employability, fahatokisan-tena ary fanomanana asa.</p>
-          <p><strong>Toetry ny tetikasa :</strong> mbola eo am-panomanana.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section-white">
-      <div class="section-title">
-        <h2>Saram-piofanana</h2>
-        <p>
-          Saram-piofanana mazava sy azo takarina ho an’ny mpianatra, matihanina ary fikambanana.
-        </p>
-      </div>
-
-      <div class="price-list">
-        <div class="price-item">
-          <strong>Anglisy ankapobeny</strong>
-          <span>70 000 Ar / volana</span>
-        </div>
-
-        <div class="price-item">
-          <strong>Anglisy matihanina sy carrière</strong>
-          <span>90 000 Ar / module</span>
-        </div>
-
-        <div class="price-item">
-          <strong>Anglisy ho an’ny ankizy sy tanora</strong>
-          <span>35 000 Ar / volana</span>
-        </div>
-
-        <div class="price-item">
-          <strong>Fiofanana ho an’ny orinasa sy institution</strong>
-          <span>Manomboka amin’ny 70 000 Ar / séance</span>
-        </div>
-
-        <div class="price-item">
-          <strong>Club de conversation anglaise</strong>
-          <span>20 000 Ar / volana</span>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">
-        <h2>Fiantraikany sy fiaraha-miasa</h2>
-        <p>
-          Alliance Anglophone dia mikendry vokatra azo refesina :
-          fanatsarana ny fifandraisana amin’ny teny anglisy, fiomanana amin’ny asa,
-          fahatokisan-tena, fidirana amin’ny asa na fiofanana ary fitohizan’ny fandrosoana matihanina.
-        </p>
-      </div>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Ho an’ny mpianatra</h3>
-          <p>Mampivelatra fahaizana anglisy azo ampiasaina, fahatokisan-tena ary lalana mazava kokoa mankany amin’ny asa.</p>
-        </div>
-
-        <div class="card">
-          <h3>Ho an’ny mpampiasa asa</h3>
-          <p>Mahazo kandidà vonona kokoa, manana fahaiza-mifandray tsara kokoa ary mahazatra kokoa ny tontolon’ny asa.</p>
-        </div>
-
-        <div class="card">
-          <h3>Ho an’ny institution</h3>
-          <p>Mamolavola fiaraha-miasa amin’ny fiofanana misy vokatra azo refesina, suivi ary tatitra momba ny fiantraikany.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="cta">
-      <h2>Atombohy ny dianao amin’ny fianarana teny anglisy</h2>
-      <p>
-        Eo am-panomanana ny fiofanana an-tserasera. Afaka mifandray aminay ianao raha liana na mila fanazavana fanampiny.
-      </p>
-
-      <div class="btn-row" style="justify-content:center;">
-        <a class="btn btn-primary" href="fisoratana.html">Hisoratra anarana</a>
-        <a class="btn btn-secondary" href="https://wa.me/261349201200">WhatsApp : +261 34 920 1200</a>
-      </div>
-    </section>
-
+  <main id="main-content">
+    <section class="hero hero-home" aria-labelledby="hero-title"><div class="hero-content hero-home-content"><p class="hero-kicker">Anglisy • Fahaiza-miasa • Fahafahana</p><h1 id="hero-title">Anglisy matihanina ho an’ny fahafahana tsara kokoa</h1><p class="hero-lead">Alliance Anglophone dia manampy ny mpianatra eto Madagasikara hampivelatra anglisy azo ampiasaina, fifandraisana matihanina ary fahaiza-miasa.</p><div class="btn-row"><a class="btn btn-primary" href="fisoratana.html">Hanomboka</a><a class="btn btn-secondary" href="https://wa.me/261349201200">Hifandray amin’ny WhatsApp</a></div><p class="hero-meta">Fiofanana an-tserasera • Toamasina, Madagasikara</p></div></section>
+    <section class="section-white"><div class="section-title"><h2>Tsy sekoly anglisy tsotra fotsiny</h2><p>Ny lalam-piofananay dia mampifandray ny fampiharana anglisy amin’ny filàna tena izy amin’ny fianarana, asa, fandraharahana ary fifandraisana matihanina.</p></div><div class="grid"><article class="card"><h3>Anglisy azo ampiasaina</h3><p>Resaka, fahazoana, voambolana ary fanehoan-kevitra amin’ny toe-javatra tena izy.</p></article>
+<article class="card"><h3>Fahaiza-manao matihanina</h3><p>CV, entretien, fiaraha-miasa, fahatokisan-tena ary fifandraisana amin’ny asa.</p></article>
+<article class="card"><h3>Lalana manokana</h3><p>Fizahantany, hôtellerie, fahasalamana, ONG, BPO, maritime, fampianarana ary fandraharahana.</p></article></div></section>
+    <section><div class="section-title"><h2>Misokatra ny fisoratana</h2><p>Manomboka ny Alatsinainy 7 Septambra 2026 ny cours en ligne. Manomboka ny Asabotsy 12 Septambra 2026 ny English Speaking Club.</p></div><div class="status-box"><ul><li>Mpandray anjara 6 ka hatramin’ny 15 isaky ny groupe</li><li>Séance mivantana ny Asabotsy araka ny groupe voamarina</li><li>Fandoavana amin’ny MVola na Orange Money rehefa voaray ny fanamafisana an-tsoratra</li></ul></div></section>
+    <section class="section-white"><div class="two-col"><div><h2>Safidio ny lalanao</h2><p>Jereo ny programa rehetra, ny faharetany ary ny sarany alohan’ny handefasana ny fangatahanao.</p><div class="btn-row"><a class="btn btn-primary" href="programa.html">Hijery programa rehetra</a><a class="btn btn-secondary" href="saram-piofanana.html">Hijery saram-piofanana</a></div></div><aside class="trust-note">Alohan’ny handoavana dia mahazo fanamafisana an-tsoratra momba ny programa, daty, vola ary fepetra ampiharina ianao.</aside></div></section>
+    <section class="cta"><h2>Vonona hanatsara ny anglisy ve ianao?</h2><div class="btn-row" style="justify-content:center"><a class="btn btn-primary" href="fisoratana.html">Hanomboka</a><a class="btn btn-secondary" href="fifandraisana.html">Hifandray amin’ny WhatsApp</a></div></section>
   </main>
 
   <a class="whatsapp-float" href="https://wa.me/261349201200">WhatsApp</a>
 
   <footer>
-  <p>© 2026 Alliance Anglophone. Miorina eto Toamasina, Madagasikara. Ho avy tsy ho ela ny fiofanana an-tserasera.</p>
-  <p>
-    <a href="https://www.facebook.com/EnglishSkillsBooster" target="_blank">Facebook - English Skills Booster</a>
-  </p>
+  <p>© 2026 Alliance Anglophone. Misokatra ny fisoratana anarana — manomboka ny 7 Septambra 2026 ny fiofanana an-tserasera.</p>
+
+    <nav class="footer-links" aria-label="Fifandraisana">
+      <a href="tsiambaratelo.html">Tsiambaratelo</a>
+      <a href="fepetra.html">Fandoavam-bola sy fepetra</a>
+      <a href="fifandraisana.html">Fifandraisana</a>
+      <a href="https://www.facebook.com/AllianceAnglophoneMG" target="_blank" rel="noopener noreferrer">Facebook — Alliance Anglophone</a>
+    </nav>
 </footer>
 
-  <script src="../assets/mobile-nav.js"></script>
+  <script src="../assets/site-v2.js"></script>
 </body>
 </html>

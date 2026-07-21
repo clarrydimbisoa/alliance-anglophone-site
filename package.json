@@ -1,0 +1,8 @@
+{
+  "name": "alliance-anglophone-site",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/generate-core-pages.mjs && node scripts/generate-policy-pages.mjs && node scripts/upgrade-site.mjs && node scripts/consolidate-core-styles.mjs && node scripts/consolidate-secondary-styles.mjs && node scripts/generate-seo-files.mjs && node scripts/format-generated.mjs",
+    "test": "node scripts/validate-site.mjs && node --check assets/site-v2.js && node --check assets/registration-v2.js"
+  }
+}
