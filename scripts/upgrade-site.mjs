@@ -140,13 +140,26 @@ function standardizePrimaryNavigation(content, language, page) {
     const active = page === target ? ' class="active" aria-current="page"' : "";
     return `<a${active} href="${equivalents[target][language]}">${labels[target]}</a>`;
   });
-  const languageLinks = [
-    `<a href="${language === "fr" ? equivalents[page].fr : `../fr/${equivalents[page].fr}`}" lang="fr"><img src="../assets/flag-fr-v2.svg" alt="" class="flag-icon" width="18" height="12"> FR</a>`,
-    `<a href="${language === "en" ? equivalents[page].en : `../en/${equivalents[page].en}`}" lang="en"><img src="../assets/flag-us-v2.svg" alt="" class="flag-icon" width="18" height="12"> EN</a>`,
-    `<a href="${language === "mg" ? equivalents[page].mg : `../mg/${equivalents[page].mg}`}" lang="mg"><img src="../assets/flag-mg-v2.svg" alt="" class="flag-icon" width="18" height="12"> MG</a>`
-  ];
+  const languageNames = {
+    fr: { fr: "Français", en: "French", mg: "Frantsay" },
+    en: { fr: "Anglais", en: "English", mg: "Anglisy" },
+    mg: { fr: "Malgache", en: "Malagasy", mg: "Malagasy" }
+  };
+  const languageSwitcherLabels = {
+    fr: "Choisir une autre langue",
+    en: "Choose another language",
+    mg: "Misafidiana fiteny hafa"
+  };
+  const flags = { fr: "fr", en: "us", mg: "mg" };
+  const alternativeLanguages = ["fr", "en", "mg"].filter((target) => target !== language);
+  const languageLinks = alternativeLanguages.map((target) => {
+    const href = `../${target}/${equivalents[page][target]}`;
+    const name = languageNames[target][language];
+    return `<a href="${href}" lang="${target}" hreflang="${target}" aria-label="${name}" title="${name}"><img src="../assets/flag-${flags[target]}-v2.svg" alt="" class="flag-icon" width="24" height="16"></a>`;
+  });
+  const languageSwitcher = `<div class="language-switcher" aria-label="${languageSwitcherLabels[language]}">\n        ${languageLinks.join("\n        ")}\n      </div>`;
   const label = { fr: "Navigation principale", en: "Primary navigation", mg: "Fitetezana lehibe" }[language];
-  const nav = `<nav aria-label="${label}">\n      ${[...links, ...languageLinks].join("\n      ")}\n    </nav>`;
+  const nav = `<nav aria-label="${label}">\n      ${[languageSwitcher, ...links].join("\n      ")}\n    </nav>`;
   return content.replace(/(<header\s+class="topbar"[\s\S]*?)<nav[^>]*>[\s\S]*?<\/nav>([\s\S]*?<\/header>)/i, `$1${nav}$2`);
 }
 
