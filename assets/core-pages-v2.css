@@ -1316,3 +1316,131 @@
 .registration-page .page-hero {
   background: linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)), url("hero-registration-v1.webp") center/cover no-repeat;
 }
+
+/* September 2026 enrollment campaign */
+.hero-home-content {
+  max-width: 820px;
+}
+
+.hero-home-content .hero-kicker {
+  color: var(--gold);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.hero-home-content .hero-meta {
+  margin: 22px 0 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.sample-session-box {
+  max-width: 900px;
+}
+
+.sample-session-box ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.sample-session-box li {
+  padding: 12px;
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--dark-blue);
+  font-weight: 700;
+  text-align: center;
+}
+
+.sample-session-box .btn {
+  width: auto;
+}
+
+.quick-path-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 34px;
+}
+
+.quick-path-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+  border: 1px solid var(--border);
+  border-top: 5px solid var(--blue);
+  border-radius: 16px;
+  background: var(--light);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.07);
+}
+
+.quick-path-card.featured {
+  border-top-color: var(--gold);
+}
+
+.quick-path-card h3 {
+  margin: 0 0 10px;
+  color: var(--dark-blue);
+  font-size: 1.4rem;
+}
+
+.quick-path-card p {
+  flex: 1;
+  margin: 0;
+}
+
+.quick-path-card .btn {
+  width: 100%;
+}
+
+.full-registration {
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.full-registration > summary {
+  padding: 18px 22px;
+  color: var(--dark-blue);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.full-registration[open] > summary {
+  border-bottom: 1px solid var(--border);
+}
+
+.full-registration .detailed-form-title {
+  margin: 28px 30px 0;
+}
+
+.full-registration .layout {
+  padding: 0 30px 30px;
+}
+
+@media (max-width: 900px) {
+  .sample-session-box ul,
+  .quick-path-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .sample-session-box ul,
+  .quick-path-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .full-registration .detailed-form-title {
+    margin: 24px 20px 0;
+  }
+
+  .full-registration .layout {
+    padding: 0 20px 20px;
+  }
+}

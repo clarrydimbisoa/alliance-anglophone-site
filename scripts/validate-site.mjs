@@ -59,18 +59,27 @@ for (const file of ["fr/programmes.html", "en/programs.html", "mg/programa.html"
 
 for (const file of ["fr/tarifs.html", "en/pricing.html", "mg/saram-piofanana.html"]) {
   const html = readFileSync(join(root, file), "utf8");
-  assert((html.match(/<article class="price-card">/g) || []).length === 14, `${file}: expected 14 pricing cards`);
+  assert((html.match(/<article class="price-card(?: featured)?">/g) || []).length === 14, `${file}: expected 14 pricing cards`);
+  assert((html.match(/<article class="price-card featured">/g) || []).length === 1, `${file}: beginner launch offer should be featured once`);
 }
 
 for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratana.html"]) {
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/<option/g) || []).length === 81, `${file}: registration choices are not in parity`);
+  assert((html.match(/class="quick-path-card/g) || []).length === 2, `${file}: expected beginner and sample-lesson quick paths`);
+  assert(/<details class="full-registration">/.test(html), `${file}: detailed registration form should remain available`);
   assert((html.match(/class="privacy-consent"/g) || []).length === 2, `${file}: missing privacy/terms acknowledgements`);
   for (const token of ['autocomplete="name"', 'autocomplete="tel"', 'autocomplete="email"', 'autocomplete="address-level2"', "registration-v2.js"]) {
     assert(html.includes(token), `${file}: missing ${token}`);
   }
   assert(!/<a href="[^"]+">(?:privacy|terms|confidentialite|conditions|tsiambaratelo|fepetra)\.html<\/a>/i.test(html), `${file}: raw filename used as consent-link label`);
   assert(/<aside class="side-card">[\s\S]*?href="https:\/\/wa\.me\/261349201200"/i.test(html), `${file}: help CTA must open WhatsApp`);
+}
+
+for (const file of ["fr/index.html", "en/index.html", "mg/index.html"]) {
+  const html = readFileSync(join(root, file), "utf8");
+  assert((html.match(/class="status-box sample-session-box"/g) || []).length === 1, `${file}: missing free sample-lesson schedule`);
+  assert((html.match(/https:\/\/wa\.me\/261349201200\?text=/g) || []).length >= 3, `${file}: campaign calls to action must use prepared WhatsApp messages`);
 }
 
 for (const file of ["fr/merci.html", "en/thank-you.html", "mg/misaotra.html"]) {
