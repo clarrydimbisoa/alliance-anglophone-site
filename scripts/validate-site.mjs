@@ -87,7 +87,7 @@ for (const file of ["fr/merci.html", "en/thank-you.html", "mg/misaotra.html"]) {
 }
 
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
-assert((sitemap.match(/<url>/g) || []).length === 31, "sitemap.xml: expected 31 URLs");
+assert((sitemap.match(/<url>/g) || []).length === 34, "sitemap.xml: expected 34 URLs");
 assert(!/<priority>|<changefreq>|2026-06-05/.test(sitemap), "sitemap.xml: stale or ignored metadata remains");
 assert(existsSync(join(root, "404.html")), "Missing multilingual 404 page");
 

@@ -14,6 +14,7 @@ const equivalents = {
   "programs": { fr: "programmes.html", en: "programs.html", mg: "programa.html" },
   "pricing": { fr: "tarifs.html", en: "pricing.html", mg: "saram-piofanana.html" },
   "mission": { fr: "mission.html", en: "mission.html", mg: "iraka.html" },
+  "about": { fr: "a-propos.html", en: "about.html", mg: "momba-anay.html" },
   "impact": { fr: "impact.html", en: "impact.html", mg: "fiantraikany.html" },
   "volunteer": { fr: "benevolat.html", en: "volunteer.html", mg: "asa-an-tsitrapo.html" },
   "registration": { fr: "inscription.html", en: "registration.html", mg: "fisoratana.html" },
@@ -35,6 +36,7 @@ const heroForPage = {
   programs: "hero-programs-v1.webp",
   pricing: "hero-options-v1.webp",
   mission: "hero-mission-v1.webp",
+  about: "hero-mission-v1.webp",
   impact: "hero-impact-v1.webp",
   volunteer: "hero-volunteer-v1.webp",
   registration: "hero-registration-v1.webp",
@@ -49,6 +51,7 @@ const socialForPage = {
   programs: "social-preview-programs-v1.jpg",
   pricing: "social-preview-options-v1.jpg",
   mission: "social-preview-mission-v1.jpg",
+  about: "social-preview-mission-v1.jpg",
   impact: "social-preview-impact-v1.jpg",
   volunteer: "social-preview-volunteer-v1.jpg",
   registration: "social-preview-registration-v1.jpg",
@@ -65,15 +68,15 @@ const scheduleFooter = {
 };
 
 const footerLabels = {
-  fr: { privacy: "Confidentialité", terms: "Paiement et conditions", contact: "Contact", facebook: "Facebook — Alliance Anglophone" },
-  en: { privacy: "Privacy", terms: "Payment and terms", contact: "Contact", facebook: "Facebook — Alliance Anglophone" },
-  mg: { privacy: "Tsiambaratelo", terms: "Fandoavam-bola sy fepetra", contact: "Fifandraisana", facebook: "Facebook — Alliance Anglophone" }
+  fr: { about: "À propos", privacy: "Confidentialité", terms: "Paiement et conditions", contact: "Contact", facebook: "Facebook — Alliance Anglophone" },
+  en: { about: "About us", privacy: "Privacy", terms: "Payment and terms", contact: "Contact", facebook: "Facebook — Alliance Anglophone" },
+  mg: { about: "Momba anay", privacy: "Tsiambaratelo", terms: "Fandoavam-bola sy fepetra", contact: "Fifandraisana", facebook: "Facebook — Alliance Anglophone" }
 };
 
 const navLabels = {
-  fr: { index: "Accueil", programs: "Programmes", pricing: "Tarifs", mission: "Mission", impact: "Impact", volunteer: "Bénévolat", registration: "Inscription", contact: "Contact" },
-  en: { index: "Home", programs: "Programs", pricing: "Pricing", mission: "Mission", impact: "Impact", volunteer: "Volunteer", registration: "Registration", contact: "Contact" },
-  mg: { index: "Fandraisana", programs: "Programa", pricing: "Saram-piofanana", mission: "Iraka", impact: "Fiantraikany", volunteer: "Asa an-tsitrapo", registration: "Fisoratana", contact: "Fifandraisana" }
+  fr: { index: "Accueil", programs: "Programmes", pricing: "Tarifs", mission: "Mission", about: "À propos", impact: "Impact", volunteer: "Bénévolat", registration: "Inscription", contact: "Contact" },
+  en: { index: "Home", programs: "Programs", pricing: "Pricing", mission: "Mission", about: "About us", impact: "Impact", volunteer: "Volunteer", registration: "Registration", contact: "Contact" },
+  mg: { index: "Fandraisana", programs: "Programa", pricing: "Saram-piofanana", mission: "Iraka", about: "Momba anay", impact: "Fiantraikany", volunteer: "Asa an-tsitrapo", registration: "Fisoratana", contact: "Fifandraisana" }
 };
 
 function escapeAttribute(value) {
@@ -135,7 +138,7 @@ function updateLanguageLinks(content, language, page) {
 
 function standardizePrimaryNavigation(content, language, page) {
   const labels = navLabels[language];
-  const pages = ["index", "programs", "pricing", "mission", "impact", "volunteer", "registration", "contact"];
+  const pages = ["index", "programs", "pricing", "mission", "about", "impact", "volunteer", "registration", "contact"];
   const links = pages.map((target) => {
     const active = page === target ? ' class="active" aria-current="page"' : "";
     return `<a${active} href="${equivalents[target][language]}">${labels[target]}</a>`;
@@ -173,6 +176,9 @@ function updateFooter(content, language) {
     const contactFile = files.contact[language];
     const links = `\n    <nav class="footer-links" aria-label="${labels.contact}">\n      <a href="${files.privacy[language]}">${labels.privacy}</a>\n      <a href="${files.terms[language]}">${labels.terms}</a>\n      <a href="${contactFile}">${labels.contact}</a>\n      <a href="${facebook}" target="_blank" rel="noopener noreferrer">${labels.facebook}</a>\n    </nav>\n`;
     content = content.replace("</footer>", `${links}</footer>`);
+  }
+  if (!content.includes(`href="${files.about[language]}"`)) {
+    content = content.replace(/(<nav class="footer-links"[^>]*>)/, `$1\n      <a href="${files.about[language]}">${labels.about}</a>`);
   }
   return content;
 }
