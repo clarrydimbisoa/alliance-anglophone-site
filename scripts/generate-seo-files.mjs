@@ -7,7 +7,6 @@ const groups = {
   programs: { fr: "fr/programmes.html", en: "en/programs.html", mg: "mg/programa.html" },
   pricing: { fr: "fr/tarifs.html", en: "en/pricing.html", mg: "mg/saram-piofanana.html" },
   mission: { fr: "fr/mission.html", en: "en/mission.html", mg: "mg/iraka.html" },
-  about: { fr: "fr/a-propos.html", en: "en/about.html", mg: "mg/momba-anay.html" },
   impact: { fr: "fr/impact.html", en: "en/impact.html", mg: "mg/fiantraikany.html" },
   volunteer: { fr: "fr/benevolat.html", en: "en/volunteer.html", mg: "mg/asa-an-tsitrapo.html" },
   registration: { fr: "fr/inscription.html", en: "en/registration.html", mg: "mg/fisoratana.html" },
