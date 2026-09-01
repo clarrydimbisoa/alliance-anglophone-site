@@ -31,7 +31,9 @@ for (const path of primary) {
   assert(html.includes("favicon-32.png"), `${file}: missing favicon`);
   assert(html.includes('property="og:image"'), `${file}: missing Open Graph image`);
   assert(!/EnglishSkillsBooster|logo\.JPG|flag-(?:fr|us|mg)\.png|assets\/style\.css|mobile-nav\.js/i.test(html), `${file}: stale branding or asset reference`);
-  assert(!/opening soon|next two months|kasaina hisokatra tsy ho ela|ho avy tsy ho ela/i.test(html), `${file}: stale launch timing`);
+  assert(!/opening soon|currently being prepared|next two months|kasaina hisokatra tsy ho ela|ho avy tsy ho ela/i.test(html), `${file}: stale launch timing`);
+  assert(!/(?<!\d)50(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: discontinued 50,000 Ar launch price remains`);
+  assert(!/(?:15|22|29) (?:August|août|Aogositra) 2026/i.test(html), `${file}: obsolete August sample-lesson date remains`);
 
   const ids = Array.from(html.matchAll(/\bid="([^"]+)"/g), (match) => match[1]);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
@@ -55,12 +57,16 @@ for (const file of ["fr/programmes.html", "en/programs.html", "mg/programa.html"
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/<article class="program-card">/g) || []).length === 16, `${file}: expected 16 program cards`);
   assert((html.match(/"@type": "Course"/g) || []).length === 16, `${file}: expected 16 Course schema entries`);
+  assert(html.includes('class="program-grid swipe-track"'), `${file}: missing touch-friendly programme track`);
 }
 
 for (const file of ["fr/tarifs.html", "en/pricing.html", "mg/saram-piofanana.html"]) {
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/<article class="price-card(?: featured)?">/g) || []).length === 14, `${file}: expected 14 pricing cards`);
   assert((html.match(/<article class="price-card featured">/g) || []).length === 1, `${file}: beginner launch offer should be featured once`);
+  assert(html.includes('class="pricing-grid swipe-track"'), `${file}: missing touch-friendly pricing track`);
+  assert(/90(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: missing 90,000 Ar General English price`);
+  assert(/125(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: missing 125,000 Ar specialist price`);
 }
 
 for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratana.html"]) {
@@ -74,12 +80,16 @@ for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratan
   }
   assert(!/<a href="[^"]+">(?:privacy|terms|confidentialite|conditions|tsiambaratelo|fepetra)\.html<\/a>/i.test(html), `${file}: raw filename used as consent-link label`);
   assert(/<aside class="side-card">[\s\S]*?href="https:\/\/wa\.me\/261349201200"/i.test(html), `${file}: help CTA must open WhatsApp`);
+  assert(/3 (?:September|septembre|Septambra) 2026/i.test(html), `${file}: missing 3 September request deadline`);
+  assert(/7(?:[–-]| to | au )11 (?:September|septembre|Septambra)/i.test(html), `${file}: missing 7–11 September WhatsApp trial schedule`);
+  assert(/12 (?:September|septembre|Septambra)[\s\S]{0,80}(?:10(?::00| h| ora))/i.test(html), `${file}: missing 12 September 10:00 group session`);
 }
 
 for (const file of ["fr/index.html", "en/index.html", "mg/index.html"]) {
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/class="status-box sample-session-box"/g) || []).length === 1, `${file}: missing free sample-lesson schedule`);
   assert((html.match(/https:\/\/wa\.me\/261349201200\?text=/g) || []).length >= 3, `${file}: campaign calls to action must use prepared WhatsApp messages`);
+  assert((html.match(/class="faq-item/g) || []).length === 5, `${file}: expected five concise FAQ items`);
 }
 
 for (const file of ["fr/merci.html", "en/thank-you.html", "mg/misaotra.html"]) {

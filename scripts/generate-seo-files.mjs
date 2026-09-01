@@ -17,11 +17,11 @@ const groups = {
 
 const base = "https://allianceanglophone.mg/";
 const alternateTags = (versions) => Object.entries(versions).map(([lang, path]) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${base}${path}"/>`).join("\n");
-const entries = [`  <url>\n    <loc>${base}</loc>\n    <lastmod>2026-08-13</lastmod>\n${alternateTags(groups.home)}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}${groups.home.fr}"/>\n  </url>`];
+const entries = [`  <url>\n    <loc>${base}</loc>\n    <lastmod>2026-09-01</lastmod>\n${alternateTags(groups.home)}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}${groups.home.fr}"/>\n  </url>`];
 
 for (const versions of Object.values(groups)) {
   for (const path of Object.values(versions)) {
-    entries.push(`  <url>\n    <loc>${base}${path}</loc>\n    <lastmod>2026-08-13</lastmod>\n${alternateTags(versions)}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}${versions.fr}"/>\n  </url>`);
+    entries.push(`  <url>\n    <loc>${base}${path}</loc>\n    <lastmod>2026-09-01</lastmod>\n${alternateTags(versions)}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}${versions.fr}"/>\n  </url>`);
   }
 }
 

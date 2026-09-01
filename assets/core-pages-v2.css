@@ -1444,3 +1444,155 @@
     padding: 0 20px 20px;
   }
 }
+
+/* Modern programme exploration, FAQ, and touch-friendly sliding tracks */
+.home-page main > section:not(.hero),
+.programs-page main > section,
+.pricing-page main > section,
+.registration-page main > section {
+  position: relative;
+}
+
+.program-card,
+.price-card,
+.quick-path-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.program-card:hover,
+.price-card:hover,
+.quick-path-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(215, 168, 79, 0.62);
+  box-shadow: 0 20px 42px rgba(2, 33, 87, 0.14);
+}
+
+.faq-section {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(215, 168, 79, 0.13), transparent 34%),
+    linear-gradient(180deg, #f8faff 0%, #eef4ff 100%);
+}
+
+.faq-list {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: 12px;
+}
+
+.faq-item {
+  overflow: hidden;
+  border: 1px solid rgba(2, 33, 87, 0.12);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 24px rgba(2, 33, 87, 0.06);
+}
+
+.faq-item summary {
+  position: relative;
+  padding: 20px 58px 20px 22px;
+  color: #022157;
+  font-weight: 800;
+  cursor: pointer;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 22px;
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #eef4ff;
+  color: #0f4fbf;
+  font-size: 1.35rem;
+  transform: translateY(-50%);
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.faq-item[open] summary::after {
+  content: "−";
+  background: #fff3ce;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-item p {
+  margin: 0;
+  padding: 0 22px 22px;
+  color: #52627a;
+  line-height: 1.7;
+}
+
+.swipe-hint {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .swipe-hint {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 16px;
+    color: #40526d;
+    font-size: 0.88rem;
+    font-weight: 700;
+  }
+
+  .swipe-hint::before {
+    content: "↔";
+    color: #0f4fbf;
+    font-size: 1.25rem;
+  }
+
+  .program-grid.swipe-track,
+  .pricing-grid.swipe-track {
+    display: flex;
+    gap: 16px;
+    margin-right: -5%;
+    padding: 4px 5% 22px 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-padding-inline: 0 5%;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: #9bb7e5 #e8eef8;
+  }
+
+  .swipe-track > .program-card,
+  .swipe-track > .price-card {
+    flex: 0 0 min(84vw, 350px);
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .swipe-track::-webkit-scrollbar {
+    height: 7px;
+  }
+
+  .swipe-track::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: #9bb7e5;
+  }
+
+  .swipe-track::-webkit-scrollbar-track {
+    border-radius: 999px;
+    background: #e8eef8;
+  }
+
+  .program-card:hover,
+  .price-card:hover,
+  .quick-path-card:hover {
+    transform: none;
+  }
+}

@@ -1151,3 +1151,74 @@ header p{
     padding: 25px;
   }
 }
+
+/* Purposeful motion and mobile enrollment support */
+.motion-ready .reveal-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 620ms cubic-bezier(.2, .75, .25, 1) var(--reveal-delay, 0ms),
+    transform 620ms cubic-bezier(.2, .75, .25, 1) var(--reveal-delay, 0ms);
+}
+
+.motion-ready .reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sticky-enrollment {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  body.has-sticky-enrollment {
+    padding-bottom: 88px;
+  }
+
+  .sticky-enrollment {
+    position: fixed;
+    z-index: 2147483000;
+    right: 12px;
+    bottom: 10px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 10px 10px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 18px;
+    background: rgba(2, 33, 87, 0.96);
+    box-shadow: 0 18px 46px rgba(2, 20, 52, 0.34);
+    color: #ffffff;
+    backdrop-filter: blur(16px);
+  }
+
+  .sticky-enrollment-label {
+    max-width: 58%;
+    font-size: 0.78rem;
+    font-weight: 750;
+    line-height: 1.35;
+  }
+
+  .sticky-enrollment .btn {
+    min-height: 46px;
+    margin: 0;
+    padding: 10px 13px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  body.has-sticky-enrollment .whatsapp-float {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-ready .reveal-item {
+    opacity: 1;
+    transform: none;
+  }
+}

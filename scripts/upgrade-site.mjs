@@ -59,9 +59,9 @@ const socialForPage = {
 };
 
 const scheduleFooter = {
-  fr: "Inscriptions ouvertes — cours en ligne à partir du 7 septembre 2026.",
-  en: "Registration is open — online classes begin on 7 September 2026.",
-  mg: "Misokatra ny fisoratana anarana — manomboka ny 7 Septambra 2026 ny fiofanana an-tserasera."
+  fr: "Demandes jusqu’au 3 septembre — essai gratuit du 7 au 12 septembre 2026.",
+  en: "Requests through 3 September — free trial from 7 to 12 September 2026.",
+  mg: "Fangatahana hatramin’ny 3 Septambra — essai maimaim-poana ny 7–12 Septambra 2026."
 };
 
 const footerLabels = {
@@ -220,9 +220,15 @@ for (const file of htmlFiles) {
   content = content
     .replaceAll("https://allianceanglophone.mg/assets/logo.JPG", "https://allianceanglophone.mg/assets/logo-v2.webp")
     .replaceAll("Online classes are currently being prepared and are expected to open soon.", "Online classes begin on 7 September 2026.")
+    .replaceAll("Online classes are currently being prepared. You can continue exploring our programs", "The first online cohort starts on 7 September 2026. You can continue exploring our programs")
     .replaceAll("Online classes are being prepared and are expected to open soon.", "Online classes begin on 7 September 2026.")
     .replaceAll("Online classes are being prepared and may open soon.", "Online classes begin on 7 September 2026.")
     .replaceAll("Online classes:</strong> opening soon", "Online classes:</strong> begin on 7 September 2026")
+    .replaceAll("Alliance Anglophone prépare actuellement ses programmes d’anglais en ligne.", "Alliance Anglophone lance sa première cohorte d’anglais général en ligne le 7 septembre 2026.")
+    .replaceAll("Les cours en ligne sont actuellement en préparation et devraient ouvrir prochainement.", "La première cohorte de cours en ligne commence le 7 septembre 2026.")
+    .replaceAll("Les cours en ligne sont actuellement en préparation. Vous pouvez continuer à consulter nos programmes", "La première cohorte en ligne commence le 7 septembre 2026. Vous pouvez continuer à consulter nos programmes")
+    .replaceAll("Alliance Anglophone prépare actuellement son offre de formation en ligne.", "Alliance Anglophone lance sa première cohorte de formation en ligne le 7 septembre 2026.")
+    .replaceAll("Les cours en ligne sont en préparation et devraient ouvrir prochainement.", "La première cohorte de cours en ligne commence le 7 septembre 2026.")
     .replaceAll("Mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.", "Manomboka ny 7 Septambra 2026 ny cours en ligne.")
     .replaceAll("Cours en ligne :</strong> ho avy tsy ho ela", "Cours en ligne :</strong> manomboka ny 7 Septambra 2026")
     .replaceAll("Toetry ny fiofanana :</strong> mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.", "Toetry ny fiofanana :</strong> misokatra ny fisoratana ary manomboka ny 7 Septambra 2026 ny cours en ligne.");
