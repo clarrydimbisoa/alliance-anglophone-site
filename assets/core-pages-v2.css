@@ -1317,7 +1317,7 @@
   background: linear-gradient(rgba(6, 43, 99, 0.78), rgba(6, 43, 99, 0.78)), url("hero-registration-v1.webp") center/cover no-repeat;
 }
 
-/* September 2026 enrollment campaign */
+/* Evergreen enrollment experience */
 .hero-home-content {
   max-width: 820px;
 }
@@ -1332,53 +1332,6 @@
   margin: 22px 0 0;
   font-size: 0.95rem;
   font-weight: 700;
-}
-
-.sample-session-box {
-  max-width: 900px;
-}
-
-.sample-session-box ul {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-  padding: 0;
-  list-style: none;
-}
-
-.sample-session-box li {
-  padding: 12px;
-  border-radius: 8px;
-  background: #ffffff;
-  color: var(--dark-blue);
-  font-weight: 700;
-  text-align: center;
-}
-
-.sample-session-box .btn {
-  width: auto;
-}
-
-.trial-closed-status {
-  display: inline-flex;
-  align-items: center;
-  width: fit-content;
-  margin: 18px 0 0;
-  padding: 10px 14px;
-  border: 1px solid #9a3412;
-  border-radius: 999px;
-  background: #fff7ed;
-  color: #7c2d12;
-  font-weight: 800;
-  line-height: 1.35;
-}
-
-.hero-trial-status {
-  margin: 0;
-  border-color: rgba(255, 255, 255, 0.65);
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  backdrop-filter: blur(8px);
 }
 
 .quick-path-grid {
@@ -1419,13 +1372,6 @@
   width: 100%;
 }
 
-.quick-path-card .trial-closed-status {
-  width: 100%;
-  box-sizing: border-box;
-  justify-content: center;
-  text-align: center;
-}
-
 .full-registration {
   margin-top: 16px;
   border: 1px solid var(--border);
@@ -1453,14 +1399,12 @@
 }
 
 @media (max-width: 900px) {
-  .sample-session-box ul,
   .quick-path-grid {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (max-width: 600px) {
-  .sample-session-box ul,
   .quick-path-grid {
     grid-template-columns: 1fr;
   }

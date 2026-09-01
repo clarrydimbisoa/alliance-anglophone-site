@@ -35,6 +35,9 @@ for (const path of primary) {
   assert(!/(?<!\d)50(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: discontinued 50,000 Ar launch price remains`);
   assert(!/(?:15|22|29) (?:August|août|Aogositra) 2026/i.test(html), `${file}: obsolete August sample-lesson date remains`);
   assert(!html.includes("js-trial-cta"), `${file}: active free-trial registration link remains`);
+  assert(!/(?:free[- ]trial|trial week|semaine d’essai|cours d’essai|herinandro fitsapana|fisoratana amin’ny essai)/i.test(html), `${file}: temporary trial campaign wording remains`);
+  assert(!/(?:pilot 2026 price|tarif pilote 2026|vidiny pilote 2026)/i.test(html), `${file}: temporary pilot-price wording remains`);
+  assert(!/(?:another September 2026 cohort|cohorte de novembre 2026|cohorte hafa amin’ny Septambra 2026|7 September 2026|7 septembre 2026|7 Septambra 2026)/i.test(html), `${file}: date-specific launch wording remains`);
 
   const ids = Array.from(html.matchAll(/\bid="([^"]+)"/g), (match) => match[1]);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
@@ -64,7 +67,7 @@ for (const file of ["fr/programmes.html", "en/programs.html", "mg/programa.html"
 for (const file of ["fr/tarifs.html", "en/pricing.html", "mg/saram-piofanana.html"]) {
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/<article class="price-card(?: featured)?">/g) || []).length === 14, `${file}: expected 14 pricing cards`);
-  assert((html.match(/<article class="price-card featured">/g) || []).length === 1, `${file}: beginner launch offer should be featured once`);
+  assert((html.match(/<article class="price-card featured">/g) || []).length === 1, `${file}: General English should be featured once`);
   assert(html.includes('class="pricing-grid swipe-track"'), `${file}: missing touch-friendly pricing track`);
   assert(/90(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: missing 90,000 Ar General English price`);
   assert(/125(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: missing 125,000 Ar specialist price`);
@@ -73,8 +76,8 @@ for (const file of ["fr/tarifs.html", "en/pricing.html", "mg/saram-piofanana.htm
 for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratana.html"]) {
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/<option/g) || []).length === 85, `${file}: registration choices are not in parity`);
-  assert((html.match(/class="quick-path-card/g) || []).length === 2, `${file}: expected paid-course and closed-trial quick paths`);
-  assert((html.match(/class="trial-closed-status"/g) || []).length === 1, `${file}: missing closed free-trial status`);
+  assert((html.match(/class="quick-path-card/g) || []).length === 2, `${file}: expected General English and specialist quick paths`);
+  assert(!html.includes("trial-closed-status"), `${file}: closed-trial status should not be public`);
   assert(/<details class="full-registration">/.test(html), `${file}: detailed registration form should remain available`);
   assert((html.match(/class="privacy-consent"/g) || []).length === 2, `${file}: missing privacy/terms acknowledgements`);
   for (const token of ['autocomplete="name"', 'autocomplete="tel"', 'autocomplete="email"', 'autocomplete="address-level2"', 'id="cohort"', "registration-v2.js"]) {
@@ -82,21 +85,18 @@ for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratan
   }
   assert(!/<a href="[^"]+">(?:privacy|terms|confidentialite|conditions|tsiambaratelo|fepetra)\.html<\/a>/i.test(html), `${file}: raw filename used as consent-link label`);
   assert(/<aside class="side-card">[\s\S]*?href="https:\/\/wa\.me\/261349201200"/i.test(html), `${file}: help CTA must open WhatsApp`);
-  assert(/September|septembre|Septambra/i.test(html), `${file}: missing September cohort choice`);
-  assert(/November|novembre|Novambra/i.test(html), `${file}: missing November cohort choice`);
-  assert(/later month|mois ultérieur|volana manaraka/i.test(html), `${file}: missing later-cohort choice`);
-  assert(/7(?:[–-]| to | au )11 (?:September|septembre|Septambra)/i.test(html), `${file}: missing 7–11 September WhatsApp trial schedule`);
-  assert(/12 (?:September|septembre|Septambra)[\s\S]{0,80}(?:10(?::00| h| ora))/i.test(html), `${file}: missing 12 September 10:00 group session`);
-  assert(/(?:(?:trial|essai|fitsapana)[\s\S]{0,90}(?:closed|closes|nikatona)|(?:closed|closes|nikatona)[\s\S]{0,90}(?:trial|essai|fitsapana))/i.test(html), `${file}: free-trial closure is not explicit`);
+  assert(/Next available cohort|Prochaine cohorte disponible|Cohorte manaraka misy toerana/i.test(html), `${file}: missing evergreen next-cohort choice`);
+  assert(/A later cohort|Une cohorte ultérieure|Cohorte any aoriana/i.test(html), `${file}: missing later-cohort choice`);
+  assert(/Flexible start|Date flexible|Daty malalaka/i.test(html), `${file}: missing flexible-start choice`);
+  assert(/125(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: missing specialist quick-path price`);
 }
 
 for (const file of ["fr/index.html", "en/index.html", "mg/index.html"]) {
   const html = readFileSync(join(root, file), "utf8");
-  assert((html.match(/class="status-box sample-session-box"/g) || []).length === 1, `${file}: missing free sample-lesson schedule`);
   assert((html.match(/https:\/\/wa\.me\/261349201200\?text=/g) || []).length >= 2, `${file}: paid-course calls to action must use prepared WhatsApp messages`);
-  assert((html.match(/class="trial-closed-status/g) || []).length === 2, `${file}: expected two visible free-trial closure notices`);
+  assert(!html.includes("trial-closed-status"), `${file}: closed-trial status should not be public`);
   assert((html.match(/class="faq-item/g) || []).length === 5, `${file}: expected five concise FAQ items`);
-  assert(/September|septembre|Septambra/i.test(html) && /November|novembre|Novambra/i.test(html), `${file}: upcoming September and November registration is not visible`);
+  assert(/year-round|toute l’année|mandritra ny taona/i.test(html), `${file}: evergreen registration wording is not visible`);
 }
 
 const sharedScript = readFileSync(join(root, "assets/site-v2.js"), "utf8");

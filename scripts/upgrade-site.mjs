@@ -59,9 +59,9 @@ const socialForPage = {
 };
 
 const scheduleFooter = {
-  fr: "Inscriptions ouvertes pour les prochaines cohortes — inscriptions à l’essai closes.",
-  en: "Upcoming-cohort registration is open — free-trial registration closed.",
-  mg: "Misokatra ny fisoratana amin’ny cohorte manaraka — nikatona ny fisoratana amin’ny essai."
+  fr: "Anglais pratique pour les études, le travail et la communication professionnelle.",
+  en: "Practical English for study, work, and professional communication.",
+  mg: "Anglisy azo ampiasaina amin’ny fianarana, asa ary fifandraisana matihanina."
 };
 
 const footerLabels = {
@@ -219,19 +219,29 @@ for (const file of htmlFiles) {
 
   content = content
     .replaceAll("https://allianceanglophone.mg/assets/logo.JPG", "https://allianceanglophone.mg/assets/logo-v2.webp")
-    .replaceAll("Online classes are currently being prepared and are expected to open soon.", "Online classes begin on 7 September 2026.")
-    .replaceAll("Online classes are currently being prepared. You can continue exploring our programs", "The first online cohort starts on 7 September 2026. You can continue exploring our programs")
-    .replaceAll("Online classes are being prepared and are expected to open soon.", "Online classes begin on 7 September 2026.")
-    .replaceAll("Online classes are being prepared and may open soon.", "Online classes begin on 7 September 2026.")
-    .replaceAll("Online classes:</strong> opening soon", "Online classes:</strong> begin on 7 September 2026")
-    .replaceAll("Alliance Anglophone prépare actuellement ses programmes d’anglais en ligne.", "Alliance Anglophone lance sa première cohorte d’anglais général en ligne le 7 septembre 2026.")
-    .replaceAll("Les cours en ligne sont actuellement en préparation et devraient ouvrir prochainement.", "La première cohorte de cours en ligne commence le 7 septembre 2026.")
-    .replaceAll("Les cours en ligne sont actuellement en préparation. Vous pouvez continuer à consulter nos programmes", "La première cohorte en ligne commence le 7 septembre 2026. Vous pouvez continuer à consulter nos programmes")
-    .replaceAll("Alliance Anglophone prépare actuellement son offre de formation en ligne.", "Alliance Anglophone lance sa première cohorte de formation en ligne le 7 septembre 2026.")
-    .replaceAll("Les cours en ligne sont en préparation et devraient ouvrir prochainement.", "La première cohorte de cours en ligne commence le 7 septembre 2026.")
-    .replaceAll("Mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.", "Manomboka ny 7 Septambra 2026 ny cours en ligne.")
-    .replaceAll("Cours en ligne :</strong> ho avy tsy ho ela", "Cours en ligne :</strong> manomboka ny 7 Septambra 2026")
-    .replaceAll("Toetry ny fiofanana :</strong> mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.", "Toetry ny fiofanana :</strong> misokatra ny fisoratana ary manomboka ny 7 Septambra 2026 ny cours en ligne.");
+    .replaceAll("Online classes are currently being prepared and are expected to open soon.", "Online courses are organised by scheduled cohort.")
+    .replaceAll("Online classes are currently being prepared. You can continue exploring our programs", "Online courses are organised by scheduled cohort. You can continue exploring our programs")
+    .replaceAll("Online classes are being prepared and are expected to open soon.", "Online courses are organised by scheduled cohort.")
+    .replaceAll("Online classes are being prepared and may open soon.", "Online courses are organised by scheduled cohort.")
+    .replaceAll("Online classes begin on 7 September 2026.", "Online courses are organised by scheduled cohort.")
+    .replaceAll("The first online cohort starts on 7 September 2026. You can continue exploring our programs", "Online courses are organised by scheduled cohort. You can continue exploring our programs")
+    .replaceAll("Online classes:</strong> opening soon", "Online classes:</strong> organised by scheduled cohort")
+    .replaceAll("Online classes:</strong> begin on 7 September 2026", "Online classes:</strong> organised by scheduled cohort")
+    .replaceAll("Alliance Anglophone prépare actuellement ses programmes d’anglais en ligne.", "Alliance Anglophone organise ses cours en ligne par cohortes planifiées.")
+    .replaceAll("Les cours en ligne sont actuellement en préparation et devraient ouvrir prochainement.", "Les cours en ligne sont organisés par cohortes planifiées.")
+    .replaceAll("Les cours en ligne sont actuellement en préparation. Vous pouvez continuer à consulter nos programmes", "Les cours en ligne sont organisés par cohortes planifiées. Vous pouvez continuer à consulter nos programmes")
+    .replaceAll("Alliance Anglophone prépare actuellement son offre de formation en ligne.", "Alliance Anglophone organise ses formations en ligne par cohortes planifiées.")
+    .replaceAll("Les cours en ligne sont en préparation et devraient ouvrir prochainement.", "Les cours en ligne sont organisés par cohortes planifiées.")
+    .replaceAll("Alliance Anglophone lance sa première cohorte d’anglais général en ligne le 7 septembre 2026.", "Alliance Anglophone organise ses cours d’anglais en ligne par cohortes planifiées.")
+    .replaceAll("Alliance Anglophone lance sa première cohorte de formation en ligne le 7 septembre 2026.", "Alliance Anglophone organise ses formations en ligne par cohortes planifiées.")
+    .replaceAll("La première cohorte de cours en ligne commence le 7 septembre 2026.", "Les cours en ligne sont organisés par cohortes planifiées.")
+    .replaceAll("La première cohorte en ligne commence le 7 septembre 2026. Vous pouvez continuer à consulter nos programmes", "Les cours en ligne sont organisés par cohortes planifiées. Vous pouvez continuer à consulter nos programmes")
+    .replaceAll("Mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.", "Cohorte voalahatra no anaovana ny cours en ligne.")
+    .replaceAll("Cours en ligne :</strong> ho avy tsy ho ela", "Cours en ligne :</strong> atao amin’ny cohorte voalahatra")
+    .replaceAll("Toetry ny fiofanana :</strong> mbola eo am-panomanana ny cours en ligne ary kasaina hisokatra tsy ho ela.", "Toetry ny fiofanana :</strong> atao amin’ny cohorte voalahatra ny cours en ligne.")
+    .replaceAll("Manomboka ny 7 Septambra 2026 ny cours en ligne.", "Cohorte voalahatra no anaovana ny cours en ligne.")
+    .replaceAll("Cours en ligne :</strong> manomboka ny 7 Septambra 2026", "Cours en ligne :</strong> atao amin’ny cohorte voalahatra")
+    .replaceAll("Toetry ny fiofanana :</strong> misokatra ny fisoratana ary manomboka ny 7 Septambra 2026 ny cours en ligne.", "Toetry ny fiofanana :</strong> atao amin’ny cohorte voalahatra ny cours en ligne.");
 
   content = content.replace(/<img src="\.\.\/assets\/logo-v2\.webp" alt="([^"]*)">/g, '<img src="../assets/logo-v2.webp" alt="$1" width="56" height="56" decoding="async">');
   content = content.replace(/<a([^>]*target="_blank"(?![^>]*\brel=)[^>]*)>/g, '<a$1 rel="noopener noreferrer">');
