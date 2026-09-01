@@ -59,9 +59,9 @@ const socialForPage = {
 };
 
 const scheduleFooter = {
-  fr: "Demandes jusqu’au 3 septembre — essai gratuit du 7 au 12 septembre 2026.",
-  en: "Requests through 3 September — free trial from 7 to 12 September 2026.",
-  mg: "Fangatahana hatramin’ny 3 Septambra — essai maimaim-poana ny 7–12 Septambra 2026."
+  fr: "Demandes de cours jusqu’au 3 septembre — inscriptions à l’essai closes.",
+  en: "Course requests through 3 September — free-trial registration closed.",
+  mg: "Fangatahana cours hatramin’ny 3 Septambra — nikatona ny fisoratana amin’ny essai."
 };
 
 const footerLabels = {

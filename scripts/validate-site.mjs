@@ -34,6 +34,7 @@ for (const path of primary) {
   assert(!/opening soon|currently being prepared|next two months|kasaina hisokatra tsy ho ela|ho avy tsy ho ela/i.test(html), `${file}: stale launch timing`);
   assert(!/(?<!\d)50(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: discontinued 50,000 Ar launch price remains`);
   assert(!/(?:15|22|29) (?:August|août|Aogositra) 2026/i.test(html), `${file}: obsolete August sample-lesson date remains`);
+  assert(!html.includes("js-trial-cta"), `${file}: active free-trial registration link remains`);
 
   const ids = Array.from(html.matchAll(/\bid="([^"]+)"/g), (match) => match[1]);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
@@ -72,7 +73,8 @@ for (const file of ["fr/tarifs.html", "en/pricing.html", "mg/saram-piofanana.htm
 for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratana.html"]) {
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/<option/g) || []).length === 81, `${file}: registration choices are not in parity`);
-  assert((html.match(/class="quick-path-card/g) || []).length === 2, `${file}: expected beginner and sample-lesson quick paths`);
+  assert((html.match(/class="quick-path-card/g) || []).length === 2, `${file}: expected paid-course and closed-trial quick paths`);
+  assert((html.match(/class="trial-closed-status"/g) || []).length === 1, `${file}: missing closed free-trial status`);
   assert(/<details class="full-registration">/.test(html), `${file}: detailed registration form should remain available`);
   assert((html.match(/class="privacy-consent"/g) || []).length === 2, `${file}: missing privacy/terms acknowledgements`);
   for (const token of ['autocomplete="name"', 'autocomplete="tel"', 'autocomplete="email"', 'autocomplete="address-level2"', "registration-v2.js"]) {
@@ -83,12 +85,14 @@ for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratan
   assert(/3 (?:September|septembre|Septambra) 2026/i.test(html), `${file}: missing 3 September request deadline`);
   assert(/7(?:[–-]| to | au )11 (?:September|septembre|Septambra)/i.test(html), `${file}: missing 7–11 September WhatsApp trial schedule`);
   assert(/12 (?:September|septembre|Septambra)[\s\S]{0,80}(?:10(?::00| h| ora))/i.test(html), `${file}: missing 12 September 10:00 group session`);
+  assert(/(?:(?:trial|essai|fitsapana)[\s\S]{0,90}(?:closed|closes|nikatona)|(?:closed|closes|nikatona)[\s\S]{0,90}(?:trial|essai|fitsapana))/i.test(html), `${file}: free-trial closure is not explicit`);
 }
 
 for (const file of ["fr/index.html", "en/index.html", "mg/index.html"]) {
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/class="status-box sample-session-box"/g) || []).length === 1, `${file}: missing free sample-lesson schedule`);
-  assert((html.match(/https:\/\/wa\.me\/261349201200\?text=/g) || []).length >= 3, `${file}: campaign calls to action must use prepared WhatsApp messages`);
+  assert((html.match(/https:\/\/wa\.me\/261349201200\?text=/g) || []).length >= 2, `${file}: paid-course calls to action must use prepared WhatsApp messages`);
+  assert((html.match(/class="trial-closed-status/g) || []).length === 2, `${file}: expected two visible free-trial closure notices`);
   assert((html.match(/class="faq-item/g) || []).length === 5, `${file}: expected five concise FAQ items`);
 }
 

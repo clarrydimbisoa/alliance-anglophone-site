@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const futureHref = "https://wa.me/261349201200?text=" + encodeURIComponent(copy.futureMessage);
 
   if (deadlinePassed) {
-    document.querySelectorAll(".js-intake-cta, .js-trial-cta").forEach(function (link) {
+    document.querySelectorAll(".js-intake-cta").forEach(function (link) {
       link.href = futureHref;
       link.textContent = copy.futureCta;
     });

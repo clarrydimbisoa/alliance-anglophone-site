@@ -1359,6 +1359,28 @@
   width: auto;
 }
 
+.trial-closed-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin: 18px 0 0;
+  padding: 10px 14px;
+  border: 1px solid #9a3412;
+  border-radius: 999px;
+  background: #fff7ed;
+  color: #7c2d12;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.hero-trial-status {
+  margin: 0;
+  border-color: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
+}
+
 .quick-path-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1395,6 +1417,13 @@
 
 .quick-path-card .btn {
   width: 100%;
+}
+
+.quick-path-card .trial-closed-status {
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
+  text-align: center;
 }
 
 .full-registration {
