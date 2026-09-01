@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       skip: "Aller au contenu principal",
       whatsapp: "Contacter Alliance Anglophone sur WhatsApp",
       stickyLabel: "Programmes d’anglais en ligne · Inscriptions ouvertes",
-      stickyCta: "Demander l’inscription"
+      stickyCta: "Demander une place"
     },
     en: {
       menu: "Menu",
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function () {
       skip: "Skip to main content",
       whatsapp: "Contact Alliance Anglophone on WhatsApp",
       stickyLabel: "Online English programs · Registration open",
-      stickyCta: "Request registration"
+      stickyCta: "Request a place"
     },
     mg: {
       menu: "Menu",
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
       skip: "Mandehana any amin’ny votoaty lehibe",
       whatsapp: "Hifandray amin’ny Alliance Anglophone amin’ny WhatsApp",
       stickyLabel: "Programa anglisy en ligne · Misokatra ny fisoratana",
-      stickyCta: "Hangataka fisoratana"
+      stickyCta: "Hangataka toerana"
     }
   };
   const copy = labels[language] || labels.fr;

@@ -1368,6 +1368,19 @@
   margin: 0;
 }
 
+.quick-path-price-link {
+  margin: 16px 0;
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.quick-path-price-link:hover,
+.quick-path-price-link:focus-visible {
+  color: var(--dark-blue);
+}
+
 .quick-path-card .btn {
   width: 100%;
 }

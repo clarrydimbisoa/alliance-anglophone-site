@@ -15,6 +15,8 @@ function walk(dir) {
 const allFiles = walk(root);
 const htmlFiles = allFiles.filter((file) => file.endsWith(".html"));
 const primary = htmlFiles.filter((file) => /\/(fr|en|mg)\//.test(file));
+const pricingPages = new Set(["fr/tarifs.html", "en/pricing.html", "mg/saram-piofanana.html"]);
+const tuitionAmount = /\b\d{2,3}(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar\b/i;
 
 for (const path of primary) {
   const file = path.slice(root.length);
@@ -38,6 +40,7 @@ for (const path of primary) {
   assert(!/(?:free[- ]trial|trial week|semaine d’essai|cours d’essai|herinandro fitsapana|fisoratana amin’ny essai)/i.test(html), `${file}: temporary trial campaign wording remains`);
   assert(!/(?:pilot 2026 price|tarif pilote 2026|vidiny pilote 2026)/i.test(html), `${file}: temporary pilot-price wording remains`);
   assert(!/(?:another September 2026 cohort|cohorte de novembre 2026|cohorte hafa amin’ny Septambra 2026|7 September 2026|7 septembre 2026|7 Septambra 2026)/i.test(html), `${file}: date-specific launch wording remains`);
+  if (!pricingPages.has(file)) assert(!tuitionAmount.test(html), `${file}: numerical tuition must appear only on the pricing page`);
 
   const ids = Array.from(html.matchAll(/\bid="([^"]+)"/g), (match) => match[1]);
   const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
@@ -88,7 +91,8 @@ for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratan
   assert(/Next available cohort|Prochaine cohorte disponible|Cohorte manaraka misy toerana/i.test(html), `${file}: missing evergreen next-cohort choice`);
   assert(/A later cohort|Une cohorte ultérieure|Cohorte any aoriana/i.test(html), `${file}: missing later-cohort choice`);
   assert(/Flexible start|Date flexible|Daty malalaka/i.test(html), `${file}: missing flexible-start choice`);
-  assert(/125(?:[ ,.\u00a0]|&nbsp;)*000\s*Ar/i.test(html), `${file}: missing specialist quick-path price`);
+  const pricingHref = file.startsWith("fr/") ? "tarifs.html" : file.startsWith("en/") ? "pricing.html" : "saram-piofanana.html";
+  assert((html.match(new RegExp(`class="quick-path-price-link" href="${pricingHref}"`, "g")) || []).length === 2, `${file}: quick paths must link to the single pricing source`);
 }
 
 for (const file of ["fr/index.html", "en/index.html", "mg/index.html"]) {
@@ -97,6 +101,12 @@ for (const file of ["fr/index.html", "en/index.html", "mg/index.html"]) {
   assert(!html.includes("trial-closed-status"), `${file}: closed-trial status should not be public`);
   assert((html.match(/class="faq-item/g) || []).length === 5, `${file}: expected five concise FAQ items`);
   assert(/year-round|toute l’année|mandritra ny taona/i.test(html), `${file}: evergreen registration wording is not visible`);
+  const approvedCta = file.startsWith("fr/")
+    ? "N’attendez plus—commencez dès aujourd’hui à progresser en anglais."
+    : file.startsWith("en/")
+      ? "Don’t wait—start improving your English today."
+      : "Aza miandry ela—atombohy anio ny fandrosoanao amin’ny teny anglisy.";
+  assert(html.includes(approvedCta), `${file}: approved homepage CTA wording is missing`);
 }
 
 const sharedScript = readFileSync(join(root, "assets/site-v2.js"), "utf8");
