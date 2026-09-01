@@ -59,9 +59,9 @@ const socialForPage = {
 };
 
 const scheduleFooter = {
-  fr: "Demandes de cours jusqu’au 3 septembre — inscriptions à l’essai closes.",
-  en: "Course requests through 3 September — free-trial registration closed.",
-  mg: "Fangatahana cours hatramin’ny 3 Septambra — nikatona ny fisoratana amin’ny essai."
+  fr: "Inscriptions ouvertes pour les prochaines cohortes — inscriptions à l’essai closes.",
+  en: "Upcoming-cohort registration is open — free-trial registration closed.",
+  mg: "Misokatra ny fisoratana amin’ny cohorte manaraka — nikatona ny fisoratana amin’ny essai."
 };
 
 const footerLabels = {

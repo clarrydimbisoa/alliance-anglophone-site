@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     fr: {
       greeting: "Bonjour Alliance Anglophone,",
       request: "Je souhaite m’inscrire ou recevoir des informations sur vos programmes.",
-      labels: ["Nom complet", "Âge", "Numéro WhatsApp", "Email", "Ville / Localisation", "Niveau actuel en anglais", "Programme souhaité", "Module de développement de carrière", "Module de développement personnel", "Durée souhaitée", "Format souhaité", "Objectif principal", "Message complémentaire"],
+      labels: ["Nom complet", "Âge", "Numéro WhatsApp", "Email", "Ville / Localisation", "Niveau actuel en anglais", "Programme souhaité", "Module de développement de carrière", "Module de développement personnel", "Cohorte ou mois de début souhaité", "Durée souhaitée", "Format souhaité", "Objectif principal", "Message complémentaire"],
       missing: "Non renseigné",
       thanks: "Merci.",
       thankYou: "merci.html"
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     en: {
       greeting: "Hello Alliance Anglophone,",
       request: "I would like to register or receive information about your programs.",
-      labels: ["Full name", "Age", "WhatsApp number", "Email", "City / Location", "Current English level", "Program of interest", "Career development module", "Personal development module", "Preferred duration", "Preferred format", "Main goal", "Additional message"],
+      labels: ["Full name", "Age", "WhatsApp number", "Email", "City / Location", "Current English level", "Program of interest", "Career development module", "Personal development module", "Preferred cohort or starting month", "Preferred duration", "Preferred format", "Main goal", "Additional message"],
       missing: "Not provided",
       thanks: "Thank you.",
       thankYou: "thank-you.html"
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     mg: {
       greeting: "Salama Alliance Anglophone,",
       request: "Te hisoratra anarana na hahazo fanazavana momba ny programa aho.",
-      labels: ["Anarana feno", "Taona", "Laharana WhatsApp", "Email", "Tanàna / Toerana", "Haavo amin’ny teny anglisy", "Programa tiana", "Module fampandrosoana ny asa", "Module fampandrosoana manokana", "Faharetana tiana", "Format tiana", "Tanjona lehibe", "Hafatra fanampiny"],
+      labels: ["Anarana feno", "Taona", "Laharana WhatsApp", "Email", "Tanàna / Toerana", "Haavo amin’ny teny anglisy", "Programa tiana", "Module fampandrosoana ny asa", "Module fampandrosoana manokana", "Cohorte na volana hanombohana tiana", "Faharetana tiana", "Format tiana", "Tanjona lehibe", "Hafatra fanampiny"],
       missing: "Tsy voalaza",
       thanks: "Misaotra.",
       thankYou: "misaotra.html"
@@ -80,6 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
       program.value,
       careerModule.value,
       personalModule.value,
+      document.getElementById("cohort").value,
       document.getElementById("duration").value,
       document.getElementById("format").value,
       document.getElementById("goal").value,

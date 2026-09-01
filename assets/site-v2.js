@@ -7,11 +7,8 @@ document.addEventListener("DOMContentLoaded", function () {
       close: "Fermer",
       skip: "Aller au contenu principal",
       whatsapp: "Contacter Alliance Anglophone sur WhatsApp",
-      stickyLabel: "Anglais général · 90 000 Ar/mois · demande avant le 3 septembre",
-      stickyCta: "Demander l’inscription",
-      futureLabel: "Les demandes pour la cohorte de septembre sont closes",
-      futureCta: "Demander la prochaine cohorte",
-      futureMessage: "Bonjour Alliance Anglophone,\n\nJe souhaite recevoir des informations sur votre prochaine cohorte d’anglais général. Merci."
+      stickyLabel: "Prochaines cohortes · Septembre, novembre et mois suivants",
+      stickyCta: "Demander l’inscription"
     },
     en: {
       menu: "Menu",
@@ -19,11 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
       close: "Close",
       skip: "Skip to main content",
       whatsapp: "Contact Alliance Anglophone on WhatsApp",
-      stickyLabel: "General English · 90,000 Ar/month · request by 3 September",
-      stickyCta: "Request registration",
-      futureLabel: "Requests for the September cohort are closed",
-      futureCta: "Ask about the next cohort",
-      futureMessage: "Hello Alliance Anglophone,\n\nI would like information about your next General English cohort. Thank you."
+      stickyLabel: "Upcoming cohorts · September, November, and later",
+      stickyCta: "Request registration"
     },
     mg: {
       menu: "Menu",
@@ -31,11 +25,8 @@ document.addEventListener("DOMContentLoaded", function () {
       close: "Akatona",
       skip: "Mandehana any amin’ny votoaty lehibe",
       whatsapp: "Hifandray amin’ny Alliance Anglophone amin’ny WhatsApp",
-      stickyLabel: "Anglisy ankapobeny · 90 000 Ar/volana · fangatahana alohan’ny 3 Septambra",
-      stickyCta: "Hangataka fisoratana",
-      futureLabel: "Nikatona ny fangatahana ho an’ny cohorte Septambra",
-      futureCta: "Hanontany ny cohorte manaraka",
-      futureMessage: "Salama Alliance Anglophone,\n\nTe hahazo fanazavana momba ny cohorte Anglisy ankapobeny manaraka aho. Misaotra."
+      stickyLabel: "Cohorte manaraka · Septambra, Novambra ary volana ho avy",
+      stickyCta: "Hangataka fisoratana"
     }
   };
   const copy = labels[language] || labels.fr;
@@ -67,16 +58,6 @@ document.addEventListener("DOMContentLoaded", function () {
     link.setAttribute("aria-current", "page");
   });
 
-  const deadlinePassed = Date.now() > Date.parse("2026-09-03T23:59:59+03:00");
-  const futureHref = "https://wa.me/261349201200?text=" + encodeURIComponent(copy.futureMessage);
-
-  if (deadlinePassed) {
-    document.querySelectorAll(".js-intake-cta").forEach(function (link) {
-      link.href = futureHref;
-      link.textContent = copy.futureCta;
-    });
-  }
-
   if (!document.body.matches(".policy-page, .thank-you-page") && !document.querySelector(".sticky-enrollment")) {
     const sticky = document.createElement("aside");
     sticky.className = "sticky-enrollment";
@@ -84,14 +65,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const label = document.createElement("span");
     label.className = "sticky-enrollment-label";
-    label.textContent = deadlinePassed ? copy.futureLabel : copy.stickyLabel;
+    label.textContent = copy.stickyLabel;
 
     const link = document.createElement("a");
     link.className = "btn btn-whatsapp";
-    link.href = deadlinePassed
-      ? futureHref
-      : document.querySelector(".js-intake-cta")?.href || "https://wa.me/261349201200";
-    link.textContent = deadlinePassed ? copy.futureCta : copy.stickyCta;
+    link.href = document.querySelector(".js-intake-cta")?.href || "https://wa.me/261349201200";
+    link.textContent = copy.stickyCta;
 
     sticky.append(label, link);
     document.body.appendChild(sticky);
