@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
       close: "Fermer",
       skip: "Aller au contenu principal",
       whatsapp: "Contacter Alliance Anglophone sur WhatsApp",
-      stickyLabel: "Programmes d’anglais en ligne · Inscriptions ouvertes",
+      stickyLabel: "Nouvelle cohorte · Premier lundi de chaque mois",
       stickyCta: "Demander une place"
     },
     en: {
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
       close: "Close",
       skip: "Skip to main content",
       whatsapp: "Contact Alliance Anglophone on WhatsApp",
-      stickyLabel: "Online English programs · Registration open",
+      stickyLabel: "New online cohort · First Monday of every month",
       stickyCta: "Request a place"
     },
     mg: {
@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
       close: "Akatona",
       skip: "Mandehana any amin’ny votoaty lehibe",
       whatsapp: "Hifandray amin’ny Alliance Anglophone amin’ny WhatsApp",
-      stickyLabel: "Programa anglisy en ligne · Misokatra ny fisoratana",
+      stickyLabel: "Cohorte vaovao en ligne · Alatsinainy voalohany amin’ny volana",
       stickyCta: "Hangataka toerana"
     }
   };

@@ -59,9 +59,9 @@ const socialForPage = {
 };
 
 const scheduleFooter = {
-  fr: "Anglais pratique pour les études, le travail et la communication professionnelle.",
-  en: "Practical English for study, work, and professional communication.",
-  mg: "Anglisy azo ampiasaina amin’ny fianarana, asa ary fifandraisana matihanina."
+  fr: "Anglais pratique pour les études, le travail et la communication professionnelle. Nouvelle cohorte en ligne le premier lundi de chaque mois.",
+  en: "Practical English for study, work, and professional communication. New online cohort on the first Monday of every month.",
+  mg: "Anglisy azo ampiasaina amin’ny fianarana, asa ary fifandraisana matihanina. Cohorte vaovao en ligne amin’ny Alatsinainy voalohany amin’ny volana."
 };
 
 const footerLabels = {
@@ -242,6 +242,20 @@ for (const file of htmlFiles) {
     .replaceAll("Manomboka ny 7 Septambra 2026 ny cours en ligne.", "Cohorte voalahatra no anaovana ny cours en ligne.")
     .replaceAll("Cours en ligne :</strong> manomboka ny 7 Septambra 2026", "Cours en ligne :</strong> atao amin’ny cohorte voalahatra")
     .replaceAll("Toetry ny fiofanana :</strong> misokatra ny fisoratana ary manomboka ny 7 Septambra 2026 ny cours en ligne.", "Toetry ny fiofanana :</strong> atao amin’ny cohorte voalahatra ny cours en ligne.");
+
+  content = content
+    .replaceAll("Alliance Anglophone is currently preparing its online learning offer.", "Alliance Anglophone organises new online cohorts beginning on the first Monday of every month.")
+    .replaceAll("Alliance Anglophone is currently preparing its online English programs.", "Alliance Anglophone organises new online English cohorts beginning on the first Monday of every month.")
+    .replaceAll("Online courses are organised by scheduled cohort.", "New online cohorts begin on the first Monday of every month.")
+    .replaceAll("Online classes:</strong> organised by scheduled cohort", "Online classes:</strong> new cohort on the first Monday of every month")
+    .replaceAll("Alliance Anglophone organise ses formations en ligne par cohortes planifiées.", "Alliance Anglophone organise de nouvelles cohortes en ligne qui commencent le premier lundi de chaque mois.")
+    .replaceAll("Alliance Anglophone organise ses cours d’anglais en ligne par cohortes planifiées.", "Alliance Anglophone organise de nouvelles cohortes d’anglais en ligne qui commencent le premier lundi de chaque mois.")
+    .replaceAll("Les cours en ligne sont organisés par cohortes planifiées.", "Les nouvelles cohortes en ligne commencent le premier lundi de chaque mois.")
+    .replaceAll("Cours en ligne :</strong> bientôt disponibles", "Cours en ligne :</strong> nouvelle cohorte le premier lundi de chaque mois")
+    .replaceAll("Alliance Anglophone dia manomana ny fiofanana en ligne amin’izao fotoana izao.", "Ny Alliance Anglophone dia manomana cohorte vaovao en ligne manomboka amin’ny Alatsinainy voalohany amin’ny volana.")
+    .replaceAll("Alliance Anglophone dia manomana ny programa teny anglisy an-tserasera.", "Ny Alliance Anglophone dia manomana cohorte vaovao amin’ny teny anglisy an-tserasera manomboka amin’ny Alatsinainy voalohany amin’ny volana.")
+    .replaceAll("Cohorte voalahatra no anaovana ny cours en ligne.", "Manomboka amin’ny Alatsinainy voalohany amin’ny volana ny cohorte vaovao en ligne.")
+    .replaceAll("Cours en ligne :</strong> atao amin’ny cohorte voalahatra", "Cours en ligne :</strong> cohorte vaovao amin’ny Alatsinainy voalohany amin’ny volana");
 
   content = content.replace(/<img src="\.\.\/assets\/logo-v2\.webp" alt="([^"]*)">/g, '<img src="../assets/logo-v2.webp" alt="$1" width="56" height="56" decoding="async">');
   content = content.replace(/<a([^>]*target="_blank"(?![^>]*\brel=)[^>]*)>/g, '<a$1 rel="noopener noreferrer">');

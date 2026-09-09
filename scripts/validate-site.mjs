@@ -40,6 +40,8 @@ for (const path of primary) {
   assert(!/(?:free[- ]trial|trial week|semaine d’essai|cours d’essai|herinandro fitsapana|fisoratana amin’ny essai)/i.test(html), `${file}: temporary trial campaign wording remains`);
   assert(!/(?:pilot 2026 price|tarif pilote 2026|vidiny pilote 2026)/i.test(html), `${file}: temporary pilot-price wording remains`);
   assert(!/(?:another September 2026 cohort|cohorte de novembre 2026|cohorte hafa amin’ny Septambra 2026|7 September 2026|7 septembre 2026|7 Septambra 2026)/i.test(html), `${file}: date-specific launch wording remains`);
+  assert(!/(?:scheduled cohort|cohortes planifiées|cohorte voalahatra)/i.test(html), `${file}: vague cohort schedule remains`);
+  assert(/first Monday of every month|premier lundi de chaque mois|Alatsinainy voalohany amin’ny volana/i.test(html), `${file}: monthly first-Monday cohort schedule is missing`);
   if (!pricingPages.has(file)) assert(!tuitionAmount.test(html), `${file}: numerical tuition must appear only on the pricing page`);
 
   const ids = Array.from(html.matchAll(/\bid="([^"]+)"/g), (match) => match[1]);
@@ -88,11 +90,20 @@ for (const file of ["fr/inscription.html", "en/registration.html", "mg/fisoratan
   }
   assert(!/<a href="[^"]+">(?:privacy|terms|confidentialite|conditions|tsiambaratelo|fepetra)\.html<\/a>/i.test(html), `${file}: raw filename used as consent-link label`);
   assert(/<aside class="side-card">[\s\S]*?href="https:\/\/wa\.me\/261349201200"/i.test(html), `${file}: help CTA must open WhatsApp`);
-  assert(/Next available cohort|Prochaine cohorte disponible|Cohorte manaraka misy toerana/i.test(html), `${file}: missing evergreen next-cohort choice`);
-  assert(/A later cohort|Une cohorte ultérieure|Cohorte any aoriana/i.test(html), `${file}: missing later-cohort choice`);
+  assert(/Next cohort.+first Monday|Prochaine cohorte.+premier lundi|Cohorte manaraka.+Alatsinainy voalohany/i.test(html), `${file}: missing first-Monday next-cohort choice`);
+  assert(/later monthly cohort|Cohorte d’un mois ultérieur|Cohorte amin’ny volana any aoriana/i.test(html), `${file}: missing later monthly-cohort choice`);
   assert(/Flexible start|Date flexible|Daty malalaka/i.test(html), `${file}: missing flexible-start choice`);
   const pricingHref = file.startsWith("fr/") ? "tarifs.html" : file.startsWith("en/") ? "pricing.html" : "saram-piofanana.html";
   assert((html.match(new RegExp(`class="quick-path-price-link" href="${pricingHref}"`, "g")) || []).length === 2, `${file}: quick paths must link to the single pricing source`);
+}
+
+for (const file of [
+  "fr/index.html", "fr/programmes.html", "fr/tarifs.html", "fr/inscription.html", "fr/mission.html",
+  "en/index.html", "en/programs.html", "en/pricing.html", "en/registration.html", "en/mission.html",
+  "mg/index.html", "mg/programa.html", "mg/saram-piofanana.html", "mg/fisoratana.html", "mg/iraka.html"
+]) {
+  const html = readFileSync(join(root, file), "utf8");
+  assert(/CEFR|CECRL/i.test(html), `${file}: CEFR-informed positioning is missing`);
 }
 
 for (const file of ["fr/index.html", "en/index.html", "mg/index.html"]) {
