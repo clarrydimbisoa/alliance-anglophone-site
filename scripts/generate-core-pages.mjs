@@ -156,24 +156,185 @@ function whatsappHref(message) {
   return `https://wa.me/261349201200?text=${encodeURIComponent(message)}`;
 }
 
+
+const growthCopy = {
+  fr: {
+    kicker: "Anglais · Employabilité · Opportunités",
+    title: "L’anglais pour le travail, les opportunités et la progression professionnelle.",
+    lead: "Développez un anglais pratique, la confiance et les compétences professionnelles utiles pour étudier, travailler et évoluer à Madagascar ou à l’international.",
+    trust: ["Inscriptions ouvertes toute l’année", "Nouvelle cohorte le premier lundi du mois", "Français · English · Malagasy", "Confirmation écrite avant paiement"],
+    pathwaysTitle: "Quatre parcours clairs",
+    pathwaysLead: "Commencez par votre objectif. Les parcours spécialisés restent disponibles sans surcharger votre choix initial.",
+    pathways: [
+      ["Anglais général", "De débutant à avancé, avec pratique orale, intensif, Speaking Club et options jeunes.", "general"],
+      ["Anglais pour le travail", "CV, entretiens, confiance professionnelle, communication et compétences d’employabilité.", "work"],
+      ["Anglais professionnel", "Business, tourisme, BPO, ONG, maritime, santé, enseignement et autres secteurs.", "professional"],
+      ["Organisations & équipes", "Formation sur mesure pour entreprises, ONG, écoles, institutions et projets.", "partners"]
+    ],
+    howTitle: "Comment commencer",
+    steps: [
+      ["1. Choisissez votre objectif", "Consultez les quatre familles et le détail des programmes."],
+      ["2. Demandez votre place", "Indiquez votre niveau, votre objectif et votre disponibilité."],
+      ["3. Recevez la confirmation écrite", "Programme, date, horaires, montant et conditions sont confirmés avant tout paiement."]
+    ],
+    impactTitle: "Un cadre d’impact fondé sur des preuves",
+    impactBody: "Nous suivons la progression linguistique, l’employabilité et l’accès aux opportunités. Les résultats chiffrés ne sont publiés qu’après collecte et vérification.",
+    impactCta: "Voir notre cadre d’impact",
+    partnerTitle: "Pour les organisations",
+    partnerBody: "Construisez une formation adaptée à votre équipe, vos bénéficiaires ou votre projet.",
+    partnerCta: "Demander une proposition",
+    volunteerTitle: "Contribuer comme bénévole",
+    volunteerBody: "Choisissez un rôle, un engagement réaliste et un processus de candidature clair.",
+    volunteerCta: "Voir les rôles bénévoles",
+    faqTitle: "Avant de commencer",
+    faqs: [
+      ["Quand commence la prochaine cohorte ?", "Une nouvelle cohorte en ligne commence le premier lundi de chaque mois. La place et les horaires sont confirmés par écrit."],
+      ["Comment choisir le bon programme ?", "Commencez par la famille correspondant à votre objectif. Si vous hésitez, indiquez votre besoin dans la demande et nous vous orienterons."],
+      ["Quand dois-je payer ?", "Uniquement après avoir reçu la confirmation écrite du programme, du groupe, du montant et des conditions applicables."],
+      ["Le CECRL est-il utilisé ?", "Oui, l’anglais général suit une progression informée par le CECRL avec des objectifs communicatifs observables. Alliance Anglophone ne délivre pas de certification CECRL officielle."]
+    ],
+    finalTitle: "Choisissez votre prochaine étape",
+    links: { impact: "impact.html", volunteer: "benevolat.html", partners: "partenaires.html" },
+    families: [
+      ["general", "1. Anglais général", "Construire une base solide, progresser en communication et pratiquer régulièrement.", [0,1,12,14]],
+      ["work", "2. Anglais pour le travail", "Renforcer l’employabilité, la confiance et la préparation professionnelle.", [8,9]],
+      ["professional", "3. Anglais professionnel et sectoriel", "Développer la communication adaptée à un métier ou un secteur.", [2,3,4,5,6,7,10,11,13]],
+      ["partners", "4. Organisations & équipes", "Construire une formation personnalisée pour une équipe, une institution ou un projet.", [15]]
+    ],
+    programsTitle: "Des programmes organisés autour de quatre objectifs",
+    programsLead: "Tous les programmes restent disponibles. Ils sont regroupés pour vous aider à trouver plus vite le parcours adapté.",
+    familySwipe: "Sur téléphone, faites glisser les cartes de chaque famille pour explorer."
+  },
+  en: {
+    kicker: "English · Employability · Opportunity",
+    title: "English for work, opportunity, and career growth.",
+    lead: "Build practical English, confidence, and professional skills for study, work, and career opportunities in Madagascar and internationally.",
+    trust: ["Registration open year-round", "New cohort on the first Monday of every month", "French · English · Malagasy", "Written confirmation before payment"],
+    pathwaysTitle: "Four clear pathways",
+    pathwaysLead: "Start with your goal. Specialist options remain available without making the first choice overwhelming.",
+    pathways: [
+      ["General English", "Beginner to advanced, with speaking practice, intensive learning, Speaking Club, and youth options.", "general"],
+      ["English for Work", "CVs, interviews, professional confidence, workplace communication, and employability skills.", "work"],
+      ["Professional English", "Business, tourism, BPO, NGOs, maritime, health, teaching, and other sector pathways.", "professional"],
+      ["Organizations & Teams", "Tailored training for companies, NGOs, schools, institutions, and projects.", "partners"]
+    ],
+    howTitle: "How to get started",
+    steps: [
+      ["1. Choose your goal", "Explore the four families and the detailed programs."],
+      ["2. Request your place", "Share your level, goal, and availability."],
+      ["3. Receive written confirmation", "Program, date, timetable, amount, and terms are confirmed before any payment."]
+    ],
+    impactTitle: "An evidence-based impact framework",
+    impactBody: "We track language progress, employability, and access to opportunity. Numerical results are published only after collection and verification.",
+    impactCta: "View our impact framework",
+    partnerTitle: "For organizations",
+    partnerBody: "Build training suited to your team, participants, or project.",
+    partnerCta: "Request a proposal",
+    volunteerTitle: "Contribute as a volunteer",
+    volunteerBody: "Choose a defined role, a realistic commitment, and a clear application process.",
+    volunteerCta: "View volunteer roles",
+    faqTitle: "Before you begin",
+    faqs: [
+      ["When does the next cohort begin?", "A new online cohort begins on the first Monday of every month. Your place and timetable are confirmed in writing."],
+      ["How do I choose the right program?", "Start with the pathway that matches your goal. If you are unsure, describe your need in the request and we will help orient you."],
+      ["When should I pay?", "Only after receiving written confirmation of the program, group, amount, and applicable terms."],
+      ["Do you use the CEFR?", "Yes. General English uses CEFR-informed progression with observable communicative goals. Alliance Anglophone does not award an official CEFR qualification."]
+    ],
+    finalTitle: "Choose your next step",
+    links: { impact: "impact.html", volunteer: "volunteer.html", partners: "partners.html" },
+    families: [
+      ["general", "1. General English", "Build a strong foundation, improve communication, and practise consistently.", [0,1,12,14]],
+      ["work", "2. English for Work", "Strengthen employability, confidence, and professional readiness.", [8,9]],
+      ["professional", "3. Professional and Sector English", "Develop communication for a specific profession or sector.", [2,3,4,5,6,7,10,11,13]],
+      ["partners", "4. Organizations & Teams", "Build tailored training for a team, institution, or project.", [15]]
+    ],
+    programsTitle: "Programs organized around four goals",
+    programsLead: "Every program remains available. They are grouped to help you find the most relevant pathway faster.",
+    familySwipe: "On a phone, swipe the cards in each family to explore."
+  },
+  mg: {
+    kicker: "Anglisy · Employability · Fahafahana",
+    title: "Anglisy ho an’ny asa, fahafahana ary fandrosoana matihanina.",
+    lead: "Ampivoaro ny anglisy azo ampiasaina, fahatokisana ary fahaiza-manao matihanina ilaina amin’ny fianarana, asa ary fahafahana eto Madagasikara sy iraisam-pirenena.",
+    trust: ["Misokatra mandritra ny taona ny fisoratana", "Cohorte vaovao amin’ny Alatsinainy voalohany amin’ny volana", "Français · English · Malagasy", "Fanamafisana an-tsoratra alohan’ny fandoavana"],
+    pathwaysTitle: "Lalana efatra mazava",
+    pathwaysLead: "Atombohy amin’ny tanjonao. Mbola azo fidina avokoa ireo programa manokana nefa tsy manasarotra ny safidy voalohany.",
+    pathways: [
+      ["Anglisy ankapobeny", "Débutant ka hatramin’ny avancé, miaraka amin’ny pratique orale, intensif, Speaking Club ary options ho an’ny tanora.", "general"],
+      ["Anglisy ho an’ny asa", "CV, entretien, fahatokisana matihanina, fifandraisana ary fahaiza-manao employability.", "work"],
+      ["Anglisy matihanina", "Business, tourisme, BPO, ONG, maritime, santé, enseignement ary sehatra hafa.", "professional"],
+      ["Organisation & ekipa", "Fiofanana namboarina ho an’ny orinasa, ONG, sekoly, institution ary projet.", "partners"]
+    ],
+    howTitle: "Ahoana no hanombohana",
+    steps: [
+      ["1. Safidio ny tanjonao", "Jereo ireo sokajy efatra sy ny antsipirian’ny programa."],
+      ["2. Mangataha toerana", "Lazao ny haavonao, tanjonao ary fotoana malalaka anananao."],
+      ["3. Raiso ny fanamafisana an-tsoratra", "Hamafisina ny programa, daty, ora, vola ary fepetra alohan’ny fandoavana."]
+    ],
+    impactTitle: "Rafitra fiantraikany miorina amin’ny porofo",
+    impactBody: "Arahinay ny fandrosoana amin’ny fiteny, employability ary fidirana amin’ny fahafahana. Tsy avoaka ny tarehimarika raha tsy voaangona sy voamarina.",
+    impactCta: "Hijery ny rafitra fiantraikany",
+    partnerTitle: "Ho an’ny organisation",
+    partnerBody: "Manamboara fiofanana mifanaraka amin’ny ekipanao, mpandray anjara na projet-nao.",
+    partnerCta: "Hangataka proposition",
+    volunteerTitle: "Handray anjara ho bénévole",
+    volunteerBody: "Safidio ny rôle, engagement azo tanterahina ary processus candidature mazava.",
+    volunteerCta: "Hijery rôles bénévole",
+    faqTitle: "Alohan’ny hanombohana",
+    faqs: [
+      ["Rahoviana no manomboka ny cohorte manaraka ?", "Manomboka amin’ny Alatsinainy voalohany amin’ny volana ny cohorte vaovao en ligne. Hamafisina an-tsoratra ny toerana sy ny ora."],
+      ["Ahoana no hisafidianana ny programa mety ?", "Atombohy amin’ny sokajy mifanaraka amin’ny tanjonao. Raha tsy azonao antoka dia soraty ao amin’ny fangatahana ny filànao dia hanoro lalana izahay."],
+      ["Rahoviana no mandoa vola ?", "Rehefa voaray ihany ny fanamafisana an-tsoratra momba ny programa, groupe, vola ary fepetra ampiharina."],
+      ["Mampiasa CEFR ve ianareo ?", "Eny. Ny Anglisy ankapobeny dia mampiasa ny CEFR ho tari-dalana miaraka amin’ny tanjona fifandraisana azo jerena. Tsy manome certification CEFR ofisialy ny Alliance Anglophone."]
+    ],
+    finalTitle: "Safidio ny dingana manaraka",
+    links: { impact: "fiantraikany.html", volunteer: "asa-an-tsitrapo.html", partners: "mpiara-miombon-antoka.html" },
+    families: [
+      ["general", "1. Anglisy ankapobeny", "Manorina fototra mafy, manatsara ny fifandraisana ary manao pratique tsy tapaka.", [0,1,12,14]],
+      ["work", "2. Anglisy ho an’ny asa", "Manamafy employability, fahatokisana ary fiomanana matihanina.", [8,9]],
+      ["professional", "3. Anglisy matihanina sy sectoriel", "Mampivelatra fifandraisana mifanaraka amin’ny asa na sehatra iray.", [2,3,4,5,6,7,10,11,13]],
+      ["partners", "4. Organisation & ekipa", "Manamboatra fiofanana manokana ho an’ny ekipa, institution na projet.", [15]]
+    ],
+    programsTitle: "Programa voalamina araka ny tanjona efatra",
+    programsLead: "Mbola misy avokoa ny programa rehetra. Natambatra ho sokajy izy ireo mba hahitana haingana ny lalana mety.",
+    familySwipe: "Amin’ny finday, ahosoy ireo karatra isaky ny sokajy mba hijerena azy rehetra."
+  }
+};
+
+
 function renderHome(language, c) {
   const h = c.home;
-  const conversion = conversionCopy[language];
-  const cards = h.pillars.map(([title, body]) => `<article class="card"><h3>${title}</h3><p>${body}</p></article>`).join("\n");
-  const faqItems = conversion.faqs.map(([question, answer], index) => `<details class="faq-item"${index === 0 ? " open" : ""}><summary>${question}</summary><p>${answer}</p></details>`).join("\n");
-  const beginnerHref = whatsappHref(h.primaryMessage);
+  const g = growthCopy[language];
+  const studentHref = whatsappHref(h.primaryMessage);
+  const pathways = g.pathways.map(([title, body, target]) => {
+    const href = target === "partners" ? g.links.partners : `${c.links.programs}#${target}`;
+    return `<article class="pathway-card"><h3>${title}</h3><p>${body}</p><a class="text-link" href="${href}">${target === "partners" ? g.partnerCta : h.viewPrograms}</a></article>`;
+  }).join("");
+  const trust = g.trust.map((item) => `<span>${item}</span>`).join("");
+  const steps = g.steps.map(([title, body]) => `<article class="action-card"><h3>${title}</h3><p>${body}</p></article>`).join("");
+  const faqs = g.faqs.map(([question, answer], index) => `<details class="faq-item"${index === 0 ? " open" : ""}><summary>${question}</summary><p>${answer}</p></details>`).join("");
   return `<main id="main-content">
-    <section class="hero hero-home" aria-labelledby="hero-title"><div class="hero-content hero-home-content"><p class="hero-kicker">${h.kicker}</p><h1 id="hero-title">${h.title}</h1><p class="hero-lead">${h.lead}</p><div class="btn-row"><a class="btn btn-primary js-intake-cta" href="${beginnerHref}">${h.primary}</a><a class="btn btn-secondary" href="${c.links.programs}">${h.viewPrograms}</a></div><p class="hero-meta">${h.meta}</p></div></section>
-    <section class="section-white"><div class="section-title"><h2>${h.aboutTitle}</h2><p>${h.about}</p></div><div class="grid">${cards}</div></section>
-    <section class="section-white"><div class="two-col"><div><h2>${h.exploreTitle}</h2><p>${h.explore}</p><div class="btn-row"><a class="btn btn-primary" href="${c.links.programs}">${h.viewPrograms}</a><a class="btn btn-secondary" href="${c.links.pricing}">${h.viewPricing}</a></div></div><aside class="trust-note">${h.trust}</aside></div></section>
-    <section class="faq-section"><div class="section-title"><h2>${conversion.faqTitle}</h2></div><div class="faq-list">${faqItems}</div></section>
-    <section class="cta"><h2>${h.cta}</h2><div class="btn-row" style="justify-content:center"><a class="btn btn-primary js-intake-cta" href="${beginnerHref}">${h.primary}</a><a class="btn btn-secondary" href="${c.links.registration}">${h.viewPrograms}</a></div></section>
+    <section class="hero hero-home" aria-labelledby="hero-title"><div class="hero-content hero-home-content"><p class="hero-kicker">${g.kicker}</p><h1 id="hero-title">${g.title}</h1><p class="hero-lead">${g.lead}</p><div class="btn-row"><a class="btn btn-primary js-intake-cta" data-event="student_lead" href="${studentHref}">${h.primary}</a><a class="btn btn-secondary" data-event="programs_view" href="${c.links.programs}">${h.viewPrograms}</a></div><p class="hero-meta">${g.trust[1]}. ${g.trust[3]}.</p></div></section>
+    <section class="trust-strip" aria-label="${g.pathwaysTitle}">${trust}</section>
+    <section class="section-white"><div class="section-title"><h2>${g.pathwaysTitle}</h2><p>${g.pathwaysLead}</p></div><div class="pathway-grid">${pathways}</div></section>
+    <section><div class="section-title"><h2>${g.howTitle}</h2></div><div class="steps-grid">${steps}</div></section>
+    <section class="section-white"><div class="two-col"><div><h2>${g.impactTitle}</h2><p>${g.impactBody}</p><a class="btn btn-secondary" data-event="impact_view" href="${g.links.impact}">${g.impactCta}</a></div><aside class="trust-note">${g.impactBody}</aside></div></section>
+    <section><div class="action-grid"><article class="action-card"><h2>${g.partnerTitle}</h2><p>${g.partnerBody}</p><a class="btn btn-primary" data-event="partner_interest" href="${g.links.partners}">${g.partnerCta}</a></article><article class="action-card"><h2>${g.volunteerTitle}</h2><p>${g.volunteerBody}</p><a class="btn btn-secondary" data-event="volunteer_interest" href="${g.links.volunteer}">${g.volunteerCta}</a></article></div></section>
+    <section class="faq-section"><div class="section-title"><h2>${g.faqTitle}</h2></div><div class="faq-list">${faqs}</div></section>
+    <section class="cta"><h2>${g.finalTitle}</h2><div class="btn-row" style="justify-content:center"><a class="btn btn-primary js-intake-cta" data-event="student_lead" href="${studentHref}">${h.primary}</a><a class="btn btn-secondary" data-event="partner_interest" href="${g.links.partners}">${g.partnerCta}</a><a class="btn btn-secondary" data-event="volunteer_interest" href="${g.links.volunteer}">${g.volunteerCta}</a></div></section>
   </main>`;
 }
 
+
 function renderPrograms(language, c) {
-  const cards = c.programs.map(([tag, name, description]) => `<article class="program-card"><span class="tag">${tag}</span><h3>${name}</h3><p>${description}</p><a class="btn btn-primary" href="${c.links.registration}?programme=${encodeURIComponent(name)}">${c.home.register}</a></article>`).join("\n");
-  return `<main id="main-content"><section class="page-hero"><h1>${c.programsHeading[0]}</h1><p>${c.programsHeading[1]}</p></section><section class="section-white"><p class="swipe-hint">${conversionCopy[language].swipe}</p><div class="program-grid swipe-track">${cards}</div></section><section><div class="trust-note">${c.home.trust}</div><div class="btn-row" style="margin-top:24px"><a class="btn btn-primary" href="${c.links.pricing}">${c.home.viewPricing}</a><a class="btn btn-secondary" href="${c.links.contact}">${c.home.contact}</a></div></section></main>`;
+  const g = growthCopy[language];
+  const cardFor = (index) => {
+    const [tag, name, description] = c.programs[index];
+    return `<article class="program-card"><span class="tag">${tag}</span><h3>${name}</h3><p>${description}</p><a class="btn btn-primary" data-event="program_select" href="${c.links.registration}?programme=${encodeURIComponent(name)}">${c.home.register}</a></article>`;
+  };
+  const families = g.families.map(([id, title, body, indices]) => `<section class="program-family" id="${id}"><div class="section-title"><h2>${title}</h2><p>${body}</p></div><p class="swipe-hint">${g.familySwipe}</p><div class="program-grid swipe-track">${indices.map(cardFor).join("\n")}</div></section>`).join("\n");
+  const jump = g.families.map(([id, title]) => `<a href="#${id}">${title.replace(/^\d+\.\s*/, "")}</a>`).join("");
+  return `<main id="main-content"><section class="page-hero"><h1>${g.programsTitle}</h1><p>${g.programsLead}</p></section><section class="section-white"><nav class="family-jump" aria-label="${g.programsTitle}">${jump}</nav></section>${families}<section><div class="trust-note">${c.home.trust}</div><div class="btn-row" style="margin-top:24px"><a class="btn btn-primary" data-event="pricing_view" href="${c.links.pricing}">${c.home.viewPricing}</a><a class="btn btn-secondary" data-event="partner_interest" href="${g.links.partners}">${g.partnerCta}</a></div></section></main>`;
 }
 
 function renderPricing(language, c) {
