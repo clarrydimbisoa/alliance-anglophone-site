@@ -110,14 +110,37 @@ for (const file of ["fr/index.html", "en/index.html", "mg/index.html"]) {
   const html = readFileSync(join(root, file), "utf8");
   assert((html.match(/https:\/\/wa\.me\/261349201200\?text=/g) || []).length >= 2, `${file}: paid-course calls to action must use prepared WhatsApp messages`);
   assert(!html.includes("trial-closed-status"), `${file}: closed-trial status should not be public`);
-  assert((html.match(/class="faq-item/g) || []).length === 5, `${file}: expected five concise FAQ items`);
+  assert((html.match(/class="faq-item/g) || []).length === 4, `${file}: expected four concise FAQ items`);
   assert(/year-round|toute l’année|mandritra ny taona/i.test(html), `${file}: evergreen registration wording is not visible`);
-  const approvedCta = file.startsWith("fr/")
-    ? "N’attendez plus—commencez dès aujourd’hui à progresser en anglais."
+  const approvedPositioning = file.startsWith("fr/")
+    ? "L’anglais pour le travail, les opportunités et la progression professionnelle."
     : file.startsWith("en/")
-      ? "Don’t wait—start improving your English today."
-      : "Aza miandry ela—atombohy anio ny fandrosoanao amin’ny teny anglisy.";
-  assert(html.includes(approvedCta), `${file}: approved homepage CTA wording is missing`);
+      ? "English for work, opportunity, and career growth."
+      : "Anglisy ho an’ny asa, fahafahana ary fandrosoana matihanina.";
+  assert(html.includes(approvedPositioning), `${file}: approved homepage positioning is missing`);
+}
+
+
+for (const file of ["fr/partenaires.html", "en/partners.html", "mg/mpiara-miombon-antoka.html"]) {
+  const html = readFileSync(join(root, file), "utf8");
+  assert(/data-whatsapp-form="partner"/.test(html), `${file}: missing organization lead form`);
+  assert(/data-event-submit="partner_lead"/.test(html), `${file}: missing organization conversion event`);
+}
+
+for (const file of ["fr/benevolat.html", "en/volunteer.html", "mg/asa-an-tsitrapo.html"]) {
+  const html = readFileSync(join(root, file), "utf8");
+  assert(/data-whatsapp-form="volunteer"/.test(html), `${file}: missing volunteer application form`);
+  assert(/data-event-submit="volunteer_apply"/.test(html), `${file}: missing volunteer conversion event`);
+}
+
+for (const file of ["fr/impact.html", "en/impact.html", "mg/fiantraikany.html"]) {
+  const html = readFileSync(join(root, file), "utf8");
+  assert(/cadre de mesure|measurement framework|rafitra fandrefesana/i.test(html), `${file}: evidence-safe impact framework wording is missing`);
+}
+
+for (const file of ["fr/conditions.html", "en/terms.html", "mg/fepetra.html"]) {
+  const html = readFileSync(join(root, file), "utf8");
+  assert(!/Ranoelison Dimbisoa Clarry/i.test(html), `${file}: personal payment-holder name must not be public`);
 }
 
 const sharedScript = readFileSync(join(root, "assets/site-v2.js"), "utf8");
@@ -128,7 +151,7 @@ for (const file of ["fr/merci.html", "en/thank-you.html", "mg/misaotra.html"]) {
 }
 
 const sitemap = readFileSync(join(root, "sitemap.xml"), "utf8");
-assert((sitemap.match(/<url>/g) || []).length === 31, "sitemap.xml: expected 31 URLs");
+assert((sitemap.match(/<url>/g) || []).length === 34, "sitemap.xml: expected 34 URLs");
 assert(!/<priority>|<changefreq>|2026-06-05/.test(sitemap), "sitemap.xml: stale or ignored metadata remains");
 assert(existsSync(join(root, "404.html")), "Missing multilingual 404 page");
 
