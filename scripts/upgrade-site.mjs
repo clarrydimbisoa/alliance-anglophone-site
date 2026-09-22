@@ -114,14 +114,17 @@ function addHeadAssets(content, page) {
 
 function addCanonicalAndAlternates(content, file, page) {
   const canonical = `https://allianceanglophone.mg/${file}`;
-  if (!/<link\s+rel="canonical"/i.test(content)) {
+  const versions = equivalents[page];
+  const block = ["fr", "en", "mg"].map((lang) => `  <link rel="alternate" hreflang="${lang}" href="https://allianceanglophone.mg/${lang}/${versions[lang]}">`).join("\n");
+
+  if (/<link\s+rel="canonical"/i.test(content)) {
+    content = content.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?\s*>/i, `<link rel="canonical" href="${canonical}">`);
+  } else {
     content = content.replace("</head>", `  <link rel="canonical" href="${canonical}">\n</head>`);
   }
-  if (!/<link\s+rel="alternate"\s+hreflang=/i.test(content)) {
-    const versions = equivalents[page];
-    const block = ["fr", "en", "mg"].map((lang) => `  <link rel="alternate" hreflang="${lang}" href="https://allianceanglophone.mg/${lang}/${versions[lang]}">`).join("\n");
-    content = content.replace("</head>", `${block}\n  <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/${versions.fr}">\n</head>`);
-  }
+
+  content = content.replace(/\s*<link\s+rel="alternate"\s+hreflang="(?:fr|en|mg|x-default)"[^>]*>\s*/gi, "\n");
+  content = content.replace("</head>", `${block}\n  <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/${versions.fr}">\n</head>`);
   return content;
 }
 
