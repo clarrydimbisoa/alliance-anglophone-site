@@ -162,7 +162,7 @@ const growthCopy = {
     kicker: "Anglais · Employabilité · Opportunités",
     title: "L’anglais pour le travail, les opportunités et la progression professionnelle.",
     lead: "Développez un anglais pratique, la confiance et les compétences professionnelles utiles pour étudier, travailler et évoluer à Madagascar ou à l’international.",
-    trust: ["100 % en ligne", "Nouvelle cohorte le premier lundi du mois", "Français · English · Malagasy", "Confirmation écrite avant paiement"],
+    trust: ["Inscriptions ouvertes toute l’année", "Nouvelle cohorte le premier lundi du mois", "Français · English · Malagasy", "Confirmation écrite avant paiement"],
     pathwaysTitle: "Quatre parcours clairs",
     pathwaysLead: "Commencez par votre objectif. Les parcours spécialisés restent disponibles sans surcharger votre choix initial.",
     pathways: [
@@ -209,7 +209,7 @@ const growthCopy = {
     kicker: "English · Employability · Opportunity",
     title: "English for work, opportunity, and career growth.",
     lead: "Build practical English, confidence, and professional skills for study, work, and career opportunities in Madagascar and internationally.",
-    trust: ["100% online", "New cohort on the first Monday of every month", "French · English · Malagasy", "Written confirmation before payment"],
+    trust: ["Registration open year-round", "New cohort on the first Monday of every month", "French · English · Malagasy", "Written confirmation before payment"],
     pathwaysTitle: "Four clear pathways",
     pathwaysLead: "Start with your goal. Specialist options remain available without making the first choice overwhelming.",
     pathways: [
@@ -256,7 +256,7 @@ const growthCopy = {
     kicker: "Anglisy · Employability · Fahafahana",
     title: "Anglisy ho an’ny asa, fahafahana ary fandrosoana matihanina.",
     lead: "Ampivoaro ny anglisy azo ampiasaina, fahatokisana ary fahaiza-manao matihanina ilaina amin’ny fianarana, asa ary fahafahana eto Madagasikara sy iraisam-pirenena.",
-    trust: ["100% en ligne", "Cohorte vaovao amin’ny Alatsinainy voalohany amin’ny volana", "Français · English · Malagasy", "Fanamafisana an-tsoratra alohan’ny fandoavana"],
+    trust: ["Misokatra mandritra ny taona ny fisoratana", "Cohorte vaovao amin’ny Alatsinainy voalohany amin’ny volana", "Français · English · Malagasy", "Fanamafisana an-tsoratra alohan’ny fandoavana"],
     pathwaysTitle: "Lalana efatra mazava",
     pathwaysLead: "Atombohy amin’ny tanjonao. Mbola azo fidina avokoa ireo programa manokana nefa tsy manasarotra ny safidy voalohany.",
     pathways: [
@@ -333,7 +333,7 @@ function renderPrograms(language, c) {
     return `<article class="program-card"><span class="tag">${tag}</span><h3>${name}</h3><p>${description}</p><a class="btn btn-primary" data-event="program_select" href="${c.links.registration}?programme=${encodeURIComponent(name)}">${c.home.register}</a></article>`;
   };
   const families = g.families.map(([id, title, body, indices]) => `<section class="program-family" id="${id}"><div class="section-title"><h2>${title}</h2><p>${body}</p></div><p class="swipe-hint">${g.familySwipe}</p><div class="program-grid swipe-track">${indices.map(cardFor).join("\n")}</div></section>`).join("\n");
-  const jump = g.families.map(([id, title]) => `<a href="#${id}">${title.replace(/^\\d+\\.\\s*/, "")}</a>`).join("");
+  const jump = g.families.map(([id, title]) => `<a href="#${id}">${title.replace(/^\d+\.\s*/, "")}</a>`).join("");
   return `<main id="main-content"><section class="page-hero"><h1>${g.programsTitle}</h1><p>${g.programsLead}</p></section><section class="section-white"><nav class="family-jump" aria-label="${g.programsTitle}">${jump}</nav></section>${families}<section><div class="trust-note">${c.home.trust}</div><div class="btn-row" style="margin-top:24px"><a class="btn btn-primary" data-event="pricing_view" href="${c.links.pricing}">${c.home.viewPricing}</a><a class="btn btn-secondary" data-event="partner_interest" href="${g.links.partners}">${g.partnerCta}</a></div></section></main>`;
 }
 
