@@ -98,6 +98,72 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
+  /* Privacy-safe conversion instrumentation. No form values are sent to analytics. */
+  function trackConversion(action) {
+    const payload = {
+      event: "aa_conversion",
+      action: action,
+      language: language,
+      path: window.location.pathname
+    };
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push(payload);
+    document.dispatchEvent(new CustomEvent("aa:conversion", { detail: payload }));
+  }
+
+  document.querySelectorAll("[data-event]").forEach(function (element) {
+    element.addEventListener("click", function () {
+      trackConversion(element.getAttribute("data-event"));
+    });
+  });
+
+  document.querySelectorAll(".program-card a").forEach(function (link) {
+    if (link.hasAttribute("data-event")) return;
+    link.addEventListener("click", function () { trackConversion("program_select"); });
+  });
+
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(function (link) {
+    if (link.hasAttribute("data-event")) return;
+    link.addEventListener("click", function () { trackConversion("whatsapp_click"); });
+  });
+
+  const registrationForm = document.getElementById("registrationForm");
+  if (registrationForm) {
+    registrationForm.addEventListener("focusin", function () {
+      trackConversion("registration_start");
+    }, { once: true });
+  }
+
+  const formIntro = {
+    fr: { volunteer: "Candidature bénévole", partner: "Demande de formation pour organisation" },
+    en: { volunteer: "Volunteer application", partner: "Organization training request" },
+    mg: { volunteer: "Candidature bénévole", partner: "Fangatahana fiofanana ho an’ny organisation" }
+  };
+
+  document.querySelectorAll("form[data-whatsapp-form]").forEach(function (form) {
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+
+      const kind = form.getAttribute("data-whatsapp-form") || "request";
+      const lines = [formIntro[language]?.[kind] || formIntro.fr[kind] || "Alliance Anglophone"];
+      const data = new FormData(form);
+
+      for (const [name, value] of data.entries()) {
+        if (name === "consent" || !String(value).trim()) continue;
+        const field = form.elements.namedItem(name);
+        const id = field && field.id;
+        const label = id ? form.querySelector('label[for="' + CSS.escape(id) + '"]') : null;
+        const key = label ? label.textContent.trim() : name;
+        lines.push(key + ": " + String(value).trim());
+      }
+
+      trackConversion(form.getAttribute("data-event-submit") || (kind === "volunteer" ? "volunteer_apply" : "partner_lead"));
+      window.location.href = "https://wa.me/261349201200?text=" + encodeURIComponent(lines.join("\n"));
+    });
+  });
+
   const header = document.querySelector(".topbar");
   const nav = header ? header.querySelector("nav") : null;
 

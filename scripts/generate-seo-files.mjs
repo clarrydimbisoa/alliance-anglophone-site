@@ -8,6 +8,7 @@ const groups = {
   pricing: { fr: "fr/tarifs.html", en: "en/pricing.html", mg: "mg/saram-piofanana.html" },
   mission: { fr: "fr/mission.html", en: "en/mission.html", mg: "mg/iraka.html" },
   impact: { fr: "fr/impact.html", en: "en/impact.html", mg: "mg/fiantraikany.html" },
+  partners: { fr: "fr/partenaires.html", en: "en/partners.html", mg: "mg/mpiara-miombon-antoka.html" },
   volunteer: { fr: "fr/benevolat.html", en: "en/volunteer.html", mg: "mg/asa-an-tsitrapo.html" },
   registration: { fr: "fr/inscription.html", en: "en/registration.html", mg: "mg/fisoratana.html" },
   contact: { fr: "fr/contact.html", en: "en/contact.html", mg: "mg/fifandraisana.html" },
@@ -17,11 +18,11 @@ const groups = {
 
 const base = "https://allianceanglophone.mg/";
 const alternateTags = (versions) => Object.entries(versions).map(([lang, path]) => `    <xhtml:link rel="alternate" hreflang="${lang}" href="${base}${path}"/>`).join("\n");
-const entries = [`  <url>\n    <loc>${base}</loc>\n    <lastmod>2026-09-01</lastmod>\n${alternateTags(groups.home)}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}${groups.home.fr}"/>\n  </url>`];
+const entries = [`  <url>\n    <loc>${base}</loc>\n    <lastmod>2026-09-22</lastmod>\n${alternateTags(groups.home)}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}${groups.home.fr}"/>\n  </url>`];
 
 for (const versions of Object.values(groups)) {
   for (const path of Object.values(versions)) {
-    entries.push(`  <url>\n    <loc>${base}${path}</loc>\n    <lastmod>2026-09-01</lastmod>\n${alternateTags(versions)}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}${versions.fr}"/>\n  </url>`);
+    entries.push(`  <url>\n    <loc>${base}${path}</loc>\n    <lastmod>2026-09-22</lastmod>\n${alternateTags(versions)}\n    <xhtml:link rel="alternate" hreflang="x-default" href="${base}${versions.fr}"/>\n  </url>`);
   }
 }
 

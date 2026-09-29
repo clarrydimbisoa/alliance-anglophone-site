@@ -15,6 +15,7 @@ const equivalents = {
   "pricing": { fr: "tarifs.html", en: "pricing.html", mg: "saram-piofanana.html" },
   "mission": { fr: "mission.html", en: "mission.html", mg: "iraka.html" },
   "impact": { fr: "impact.html", en: "impact.html", mg: "fiantraikany.html" },
+  "partners": { fr: "partenaires.html", en: "partners.html", mg: "mpiara-miombon-antoka.html" },
   "volunteer": { fr: "benevolat.html", en: "volunteer.html", mg: "asa-an-tsitrapo.html" },
   "registration": { fr: "inscription.html", en: "registration.html", mg: "fisoratana.html" },
   "contact": { fr: "contact.html", en: "contact.html", mg: "fifandraisana.html" },
@@ -36,6 +37,7 @@ const heroForPage = {
   pricing: "hero-options-v1.webp",
   mission: "hero-mission-v1.webp",
   impact: "hero-impact-v1.webp",
+  partners: "hero-contact-v1.webp",
   volunteer: "hero-volunteer-v1.webp",
   registration: "hero-registration-v1.webp",
   contact: "hero-contact-v1.webp",
@@ -50,6 +52,7 @@ const socialForPage = {
   pricing: "social-preview-options-v1.jpg",
   mission: "social-preview-mission-v1.jpg",
   impact: "social-preview-impact-v1.jpg",
+  partners: "social-preview-contact-v1.jpg",
   volunteer: "social-preview-volunteer-v1.jpg",
   registration: "social-preview-registration-v1.jpg",
   contact: "social-preview-contact-v1.jpg",
@@ -71,9 +74,9 @@ const footerLabels = {
 };
 
 const navLabels = {
-  fr: { index: "Accueil", programs: "Programmes", pricing: "Tarifs", mission: "Mission", impact: "Impact", volunteer: "Bénévolat", registration: "Inscription", contact: "Contact" },
-  en: { index: "Home", programs: "Programs", pricing: "Pricing", mission: "Mission", impact: "Impact", volunteer: "Volunteer", registration: "Registration", contact: "Contact" },
-  mg: { index: "Fandraisana", programs: "Programa", pricing: "Saram-piofanana", mission: "Iraka", impact: "Fiantraikany", volunteer: "Asa an-tsitrapo", registration: "Fisoratana", contact: "Fifandraisana" }
+  fr: { index: "Accueil", programs: "Programmes", pricing: "Tarifs", mission: "Mission", impact: "Impact", partners: "Organisations", volunteer: "Bénévolat", registration: "Inscription", contact: "Contact" },
+  en: { index: "Home", programs: "Programs", pricing: "Pricing", mission: "Mission", impact: "Impact", partners: "Organizations", volunteer: "Volunteer", registration: "Registration", contact: "Contact" },
+  mg: { index: "Fandraisana", programs: "Programa", pricing: "Saram-piofanana", mission: "Iraka", impact: "Fiantraikany", partners: "Organisation", volunteer: "Asa an-tsitrapo", registration: "Fisoratana", contact: "Fifandraisana" }
 };
 
 function escapeAttribute(value) {
@@ -111,14 +114,17 @@ function addHeadAssets(content, page) {
 
 function addCanonicalAndAlternates(content, file, page) {
   const canonical = `https://allianceanglophone.mg/${file}`;
-  if (!/<link\s+rel="canonical"/i.test(content)) {
+  const versions = equivalents[page];
+  const block = ["fr", "en", "mg"].map((lang) => `  <link rel="alternate" hreflang="${lang}" href="https://allianceanglophone.mg/${lang}/${versions[lang]}">`).join("\n");
+
+  if (/<link\s+rel="canonical"/i.test(content)) {
+    content = content.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?\s*>/i, `<link rel="canonical" href="${canonical}">`);
+  } else {
     content = content.replace("</head>", `  <link rel="canonical" href="${canonical}">\n</head>`);
   }
-  if (!/<link\s+rel="alternate"\s+hreflang=/i.test(content)) {
-    const versions = equivalents[page];
-    const block = ["fr", "en", "mg"].map((lang) => `  <link rel="alternate" hreflang="${lang}" href="https://allianceanglophone.mg/${lang}/${versions[lang]}">`).join("\n");
-    content = content.replace("</head>", `${block}\n  <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/${versions.fr}">\n</head>`);
-  }
+
+  content = content.replace(/\s*<link\s+rel="alternate"\s+hreflang="(?:fr|en|mg|x-default)"[^>]*>\s*/gi, "\n");
+  content = content.replace("</head>", `${block}\n  <link rel="alternate" hreflang="x-default" href="https://allianceanglophone.mg/fr/${versions.fr}">\n</head>`);
   return content;
 }
 
@@ -135,7 +141,7 @@ function updateLanguageLinks(content, language, page) {
 
 function standardizePrimaryNavigation(content, language, page) {
   const labels = navLabels[language];
-  const pages = ["index", "programs", "pricing", "mission", "impact", "volunteer", "registration", "contact"];
+  const pages = ["index", "programs", "pricing", "mission", "impact", "partners", "volunteer", "registration", "contact"];
   const links = pages.map((target) => {
     const active = page === target ? ' class="active" aria-current="page"' : "";
     return `<a${active} href="${equivalents[target][language]}">${labels[target]}</a>`;

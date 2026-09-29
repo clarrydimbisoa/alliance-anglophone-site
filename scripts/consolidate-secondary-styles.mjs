@@ -15,6 +15,7 @@ if (!existsSync(cssPath)) {
   const overrides = `
 .mission-page .page-hero{background:linear-gradient(rgba(6,43,99,.78),rgba(6,43,99,.78)),url("hero-mission-v1.webp") center/cover no-repeat}
 .impact-page .page-hero{background:linear-gradient(rgba(6,43,99,.78),rgba(6,43,99,.78)),url("hero-impact-v1.webp") center/cover no-repeat}
+.partner-page .page-hero{background:linear-gradient(rgba(6,43,99,.78),rgba(6,43,99,.78)),url("hero-contact-v1.webp") center/cover no-repeat}
 .volunteer-page .page-hero{background:linear-gradient(rgba(6,43,99,.78),rgba(6,43,99,.78)),url("hero-volunteer-v1.webp") center/cover no-repeat}
 .contact-page .page-hero{background:linear-gradient(rgba(6,43,99,.78),rgba(6,43,99,.78)),url("hero-contact-v1.webp") center/cover no-repeat}
 .thank-you-page .hero{background:linear-gradient(rgba(6,43,99,.7),rgba(6,43,99,.7)),url("hero-thankyou-v1.webp") center/cover no-repeat}
@@ -25,6 +26,7 @@ if (!existsSync(cssPath)) {
 const groups = {
   "mission-page": ["fr/mission.html", "en/mission.html", "mg/iraka.html"],
   "impact-page": ["fr/impact.html", "en/impact.html", "mg/fiantraikany.html"],
+  "partner-page": ["fr/partenaires.html", "en/partners.html", "mg/mpiara-miombon-antoka.html"],
   "volunteer-page": ["fr/benevolat.html", "en/volunteer.html", "mg/asa-an-tsitrapo.html"],
   "contact-page": ["fr/contact.html", "en/contact.html", "mg/fifandraisana.html"],
   "thank-you-page": ["fr/merci.html", "en/thank-you.html", "mg/misaotra.html"]

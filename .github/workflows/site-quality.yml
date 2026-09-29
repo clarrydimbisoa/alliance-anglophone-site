@@ -1,0 +1,29 @@
+name: Site quality
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Check generator syntax
+        run: find scripts -name '*.mjs' -print0 | xargs -0 -n1 node --check
+      - name: Build site
+        run: npm run build
+      - name: Validate site
+        run: npm test
+      - name: Check whitespace errors
+        run: git diff --check
