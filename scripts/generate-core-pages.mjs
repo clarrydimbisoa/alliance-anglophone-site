@@ -202,7 +202,7 @@ const growthCopy = {
       ["partners", "4. Organisations & équipes", "Construire une formation personnalisée pour une équipe, une institution ou un projet.", [15]]
     ],
     programsTitle: "Des programmes organisés autour de quatre objectifs",
-    programsLead: "Tous les programmes restent disponibles. Ils sont regroupés pour vous aider à trouver plus vite le parcours adapté.",
+    programsLead: "Tous les programmes restent disponibles. Ils sont regroupés pour vous aider à trouver plus vite le parcours adapté. L’anglais général suit une progression informée par le CECRL, centrée sur des objectifs communicatifs observables.",
     familySwipe: "Sur téléphone, faites glisser les cartes de chaque famille pour explorer."
   },
   en: {
@@ -249,7 +249,7 @@ const growthCopy = {
       ["partners", "4. Organizations & Teams", "Build tailored training for a team, institution, or project.", [15]]
     ],
     programsTitle: "Programs organized around four goals",
-    programsLead: "Every program remains available. They are grouped to help you find the most relevant pathway faster.",
+    programsLead: "Every program remains available. They are grouped to help you find the most relevant pathway faster. General English follows CEFR-informed progression focused on observable communicative goals.",
     familySwipe: "On a phone, swipe the cards in each family to explore."
   },
   mg: {
@@ -296,7 +296,7 @@ const growthCopy = {
       ["partners", "4. Organisation & ekipa", "Manamboatra fiofanana manokana ho an’ny ekipa, institution na projet.", [15]]
     ],
     programsTitle: "Programa voalamina araka ny tanjona efatra",
-    programsLead: "Mbola misy avokoa ny programa rehetra. Natambatra ho sokajy izy ireo mba hahitana haingana ny lalana mety.",
+    programsLead: "Mbola misy avokoa ny programa rehetra. Natambatra ho sokajy izy ireo mba hahitana haingana ny lalana mety. Ny Anglisy ankapobeny dia mampiasa ny CEFR ho tari-dalana ary mifantoka amin’ny tanjona fifandraisana azo jerena.",
     familySwipe: "Amin’ny finday, ahosoy ireo karatra isaky ny sokajy mba hijerena azy rehetra."
   }
 };

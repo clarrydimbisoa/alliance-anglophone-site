@@ -140,7 +140,7 @@ for (const file of ["fr/impact.html", "en/impact.html", "mg/fiantraikany.html"])
 
 for (const file of ["fr/conditions.html", "en/terms.html", "mg/fepetra.html"]) {
   const html = readFileSync(join(root, file), "utf8");
-  assert(!/Ranoelison Dimbisoa Clarry/i.test(html), `${file}: personal payment-holder name must not be public`);
+  assert(!/(?:registered\s+(?:to|in the name of|under)|au\s+nom\s+de|enregistr(?:é|ée|és|ées)\s+au\s+nom|amin[’\']ny\s+anaran)/i.test(html), `${file}: payment-holder identity must not be public`);
 }
 
 const sharedScript = readFileSync(join(root, "assets/site-v2.js"), "utf8");
